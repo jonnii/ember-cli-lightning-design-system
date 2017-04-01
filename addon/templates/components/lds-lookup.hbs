@@ -1,0 +1,33 @@
+<div class="slds-form-element slds-lookup {{displayClass}}">
+  <label class="slds-assistive-text" for="{{lookupElementId}}">{{placeholder}}</label>
+  <div class="slds-form-element__control lookup__search-control slds-input-has-icon slds-input-has-icon--left">
+    <svg class="slds-input__icon" aria-hidden="true">
+      <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#search"></use>
+    </svg>
+    {{input
+      type="search" 
+      id=lookupElementId
+      class="slds-input slds-lookup__search-input"
+      placeholder=placeholder
+      focus-in=(action 'onFocusIn')
+      focus-out=(action 'onFocusOut')}}
+  </div>
+
+<div class="slds-lookup__menu" id="lookup-65">
+    <div class="slds-lookup__item--label slds-text-body--small">{{prompt}}</div>
+    <ul class="slds-lookup__list" role="listbox">
+      
+      {{lds-lookup-item}}
+      {{lds-lookup-item}}
+      
+      <li role="presentation">
+        <span class="slds-lookup__item-action slds-lookup__item-action--label" id="lookup-option-504" role="option">
+          <svg class="slds-icon slds-icon--x-small slds-icon-text-default" aria-hidden="true">
+            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#add"></use>
+          </svg>
+          <span class="slds-truncate" title="{ props.text || &#x27;New Account&#x27; }">New Account</span>
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>

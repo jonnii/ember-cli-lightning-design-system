@@ -30,6 +30,12 @@ module.exports = {
       destDir: 'fonts'
     });
 
-    return mergeTrees([icons, fonts]);
+
+    let imagesPath = path.join(nodeModulesPath, '@salesforce-ux', 'design-system', 'assets', 'images');
+    let images = new Funnel(imagesPath, {
+      destDir: 'assets/images'
+    });
+
+    return mergeTrees([icons, fonts, images]);
   }
 };
