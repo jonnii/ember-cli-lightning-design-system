@@ -1,27 +1,6 @@
 # ember-cli-lightning-design-system
 
-This README outlines the details of collaborating on this Ember addon.
+An `ember-cli` addon for using the salesforce lightning design system
+in your ember applications. 
 
-## Installation
-
-* `git clone <repository-url>` this repository
-* `cd ember-cli-lightning-design-system`
-* `npm install`
-* `bower install`
-
-## Running
-
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-
-## Running Tests
-
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+___This is very much a work in progress___
