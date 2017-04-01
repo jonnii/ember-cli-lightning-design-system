@@ -18,7 +18,10 @@
     "test": "ember try:each"
   },
   "dependencies": {
-    "ember-cli-babel": "^5.1.7"
+    "@salesforce-ux/design-system": "^2.2.2",
+    "ember-cli-babel": "^5.1.7",
+    "ember-cli-htmlbars": "^1.2.0",
+    "ember-cli-sass": "^6.1.2"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
