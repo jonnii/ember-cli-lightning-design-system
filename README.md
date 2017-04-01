@@ -15,7 +15,7 @@ ember install ember-cli-lightning-design-system
 
 #### Import the design system
 
-```
+```scss
 // in your app.scss
 @import 'ember-cli-lightning-design-system/scss/index.scss';
 ```
@@ -26,7 +26,7 @@ ember install ember-cli-lightning-design-system
 
 #### Button
 
-```
+```hbs
 {{lds-button text='click me'}}
 
 {{#lds-button}}
