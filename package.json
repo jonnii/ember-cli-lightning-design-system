@@ -1,9 +1,12 @@
 {
   "name": "ember-cli-lightning-design-system",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Easy installation and reusable components for the salesforce lightning design system.",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "lightning",
+    "design system",
+    "salesforce"
   ],
   "license": "MIT",
   "author": "",
@@ -11,7 +14,10 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonnii/ember-cli-lightning-design-system"
+  },
   "scripts": {
     "build": "ember build",
     "start": "ember server",
@@ -48,6 +54,9 @@
     "node": ">= 4"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "versionCompatibility": {
+      "ember": ">=2.8.0"
+    }
   }
 }
