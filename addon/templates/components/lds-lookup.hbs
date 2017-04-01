@@ -16,18 +16,7 @@
 <div class="slds-lookup__menu" id="lookup-65">
     <div class="slds-lookup__item--label slds-text-body--small">{{prompt}}</div>
     <ul class="slds-lookup__list" role="listbox">
-      
-      {{lds-lookup-item}}
-      {{lds-lookup-item}}
-      
-      <li role="presentation">
-        <span class="slds-lookup__item-action slds-lookup__item-action--label" id="lookup-option-504" role="option">
-          <svg class="slds-icon slds-icon--x-small slds-icon-text-default" aria-hidden="true">
-            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#add"></use>
-          </svg>
-          <span class="slds-truncate" title="{ props.text || &#x27;New Account&#x27; }">New Account</span>
-        </span>
-      </li>
+      {{yield (hash item=(component 'lds-lookup-item') action=(component 'lds-lookup-action'))}}
     </ul>
   </div>
 </div>

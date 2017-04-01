@@ -5,21 +5,22 @@ moduleForComponent('lds-badge', 'Integration | Component | lds badge', {
   integration: true
 });
 
-test('it renders', function(assert) {
-
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
+test('it renders without text', function(assert) {
   this.render(hbs`{{lds-badge}}`);
+  assert.equal(this.$().text().trim(), 'badge');
+});
 
-  assert.equal(this.$().text().trim(), '');
+test('it renders with text attribute', function(assert) {
+  this.render(hbs`{{lds-badge text='textytext'}}`);
+  assert.equal(this.$().text().trim(), 'textytext');
+});
 
-  // Template block usage:
+test('it renders with block', function(assert) {
   this.render(hbs`
     {{#lds-badge}}
-      template block text
+      i love blocks
     {{/lds-badge}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$().text().trim(), 'i love blocks');
 });

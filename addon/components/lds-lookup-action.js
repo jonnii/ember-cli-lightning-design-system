@@ -1,7 +1,7 @@
 import Ember from 'ember';
-import layout from '../templates/components/lds-badge';
+import layout from '../templates/components/lds-lookup-action';
 
 export default Ember.Component.extend({
   layout,
-  text: 'badge'
+  tagName: ''
 });
