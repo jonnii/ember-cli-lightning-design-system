@@ -6,20 +6,17 @@ moduleForComponent('lds-breadcrumbs', 'Integration | Component | lds breadcrumbs
 });
 
 test('it renders', function(assert) {
-
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
   this.render(hbs`{{lds-breadcrumbs}}`);
-
   assert.equal(this.$().text().trim(), '');
+});
 
-  // Template block usage:
+test('it renders with crumb items', function(assert) {
   this.render(hbs`
-    {{#lds-breadcrumbs}}
-      template block text
-    {{/lds-breadcrumbs}}
-  `);
+    {{#lds-breadcrumbs as |crumb|}}
+      {{#crumb.item}}Parent Entity{{/crumb.item}}
+      {{#crumb.item}}Parent Record Name{{/crumb.item}}
+    {{/lds-breadcrumbs}}`);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$('.slds-breadcrumb__item:first').text().trim(), 'Parent Entity');
+  assert.equal(this.$('.slds-breadcrumb__item:last').text().trim(), 'Parent Record Name');
 });
