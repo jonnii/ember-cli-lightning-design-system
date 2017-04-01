@@ -9,22 +9,22 @@ in your ember applications.
 
 ## Installation
 
-1. Install the add-on
+#### Install the add-on
 
 ```
 ember install ember-cli-lightning-design-system
 ```
 
-2. Import the design system
+#### Import the design system
 
 ```
 // in your app.scss
 @import 'ember-cli-lightning-design-system/scss/index.scss';
 ```
 
-## Supported Components
+## Supported Components (WIP)
 
-* [Button](#button)
+ * [Button](#button)
 
 #### Button
 
