@@ -7,16 +7,20 @@
 An `ember-cli` addon for using the [salesforce lightning design system](https://www.lightningdesignsystem.com)
 in your ember applications.
 
-### Installation
+## Installation
+
+1. Install the add-on
 
 ```
 ember install ember-cli-lightning-design-system
 ```
 
-### Requirements
+2. Import the design system
 
-Currently the only pre-processor that the lightning design system supports is sass, so this 
-add-on requires `ember-cli-sass`. 
+```
+// in your app.scss
+@import 'ember-cli-lightning-design-system/scss/index.scss';
+```
 
 ## Supported Components
 
