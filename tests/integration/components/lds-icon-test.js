@@ -50,3 +50,10 @@ test('it renders doctype', function(assert) {
 
   assert.equal(this.$('use').attr('xlink:href'), '/assets/icons/doctype-sprite/svg/symbols.svg#unknown');
 });
+
+test('it renders sizes', function(assert) {
+  this.render(hbs`{{lds-icon size='x-small'}}`);
+  
+  const icon = this.$('.slds-icon');
+  assert.equal(icon.attr('class'), 'slds-icon slds-icon--x-small');
+});
