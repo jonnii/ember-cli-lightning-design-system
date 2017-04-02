@@ -5,5 +5,6 @@ export default Ember.Component.extend({
   layout,
   tagName: '',
   sprite: 'standard',
-  icon: 'default'
+  icon: 'default',
+  description: null
 });

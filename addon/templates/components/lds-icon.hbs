@@ -1,6 +1,8 @@
-<span class="slds-icon_container slds-icon-{{sprite}}-{{icon}}" title="description of icon when needed">
+<span class="slds-icon_container slds-icon-{{sprite}}-{{icon}}" title={{description}}>
   <svg class="slds-icon" aria-hidden="true">
     <use xlink:href="/assets/icons/{{sprite}}-sprite/svg/symbols.svg#{{icon}}"></use>
   </svg>
-  <span class="slds-assistive-text">Description of icon</span>
+  {{#if description}}
+    <span class="slds-assistive-text">{{description}}</span>
+  {{/if}}
 </span>
