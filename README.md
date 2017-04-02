@@ -22,6 +22,9 @@ ember install ember-cli-lightning-design-system
 
 ## Supported Components
 
+You can use this add-on without any of the supplied components, however if you would like
+to save yourself some time the following components are supported.
+
  * [Badge](#badge)
  * [Button](#button)
 
