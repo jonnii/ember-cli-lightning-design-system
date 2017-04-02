@@ -1,5 +1,6 @@
 {{lds-button}}
-{{lds-button text='Click me' type='brand'}}
-{{lds-button text='You Win' type='success'}}
-{{lds-button text='Neutral' type='neutral'}}
-{{lds-button text='Neutral Disabled' type='neutral' disabled=true}}
+{{lds-button text='Click me' type='brand' clicked=(action 'buttonClicked')}}
+{{lds-button text='You Win' type='success' clicked=(action 'buttonClicked')}}
+{{lds-button text='Neutral' type='neutral' clicked=(action 'buttonClicked')}}
+{{lds-button text='Neutral Disabled' type='neutral' disabled=true clicked=(action 'buttonClicked')}}
+{{lds-button text='Neutral Disabled' type='brand' disabled=true clicked=(action 'buttonClicked')}}

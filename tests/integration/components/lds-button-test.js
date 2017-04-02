@@ -21,3 +21,14 @@ test('it renders disabled', function(assert) {
   this.render(hbs`{{lds-button type='brand' disabled=true}}`);
   assert.ok(this.$('button:disabled'));
 });
+
+test('it is clickable', function(assert) {
+  assert.expect(1);
+
+  this.set('externalAction', (message) => {
+    assert.equal(message, 'pressed');
+  });
+
+  this.render(hbs`{{lds-button type='brand' clicked=(action externalAction 'pressed')}}`);
+  this.$('button').click();
+});

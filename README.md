@@ -44,7 +44,7 @@ ember install ember-cli-lightning-design-system
 ```hbs
 {{lds-button text='click me'}}
 
-{{#lds-button}}
+{{#lds-button clicked=(action 'doYourThing')}}
   Click Me
 {{/lds-button}}
 
