@@ -6,20 +6,13 @@ moduleForComponent('lds-navigation-bar', 'Integration | Component | lds navigati
 });
 
 test('it renders', function(assert) {
-
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
   this.render(hbs`{{lds-navigation-bar}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(this.$('.slds-context-bar__app-name').text().trim(), 'App Name');
+});
 
-  // Template block usage:
-  this.render(hbs`
-    {{#lds-navigation-bar}}
-      template block text
-    {{/lds-navigation-bar}}
-  `);
+test('it renders', function(assert) {
+  this.render(hbs`{{lds-navigation-bar applicationName='Super App'}}`);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$('.slds-context-bar__app-name').text().trim(), 'Super App');
 });
