@@ -37,7 +37,16 @@ test('it renders utility', function(assert) {
   assert.equal(icon.attr('class').trim(), 'slds-icon slds-icon-text-default');
 
   assert.equal(this.$('use').attr('xlink:href'), '/assets/icons/utility-sprite/svg/symbols.svg#question');
+});
 
-  //slds-icon-text-default
-  // question
+test('it renders doctype', function(assert) {
+  this.render(hbs`{{lds-icon sprite='doctype'}}`);
+
+  const container = this.$('span.slds-icon_container');
+  assert.equal(container.attr('class').trim(), 'slds-icon_container');
+  
+  const icon = this.$('.slds-icon');
+  assert.equal(icon.attr('class').trim(), 'slds-icon');
+
+  assert.equal(this.$('use').attr('xlink:href'), '/assets/icons/doctype-sprite/svg/symbols.svg#unknown');
 });
