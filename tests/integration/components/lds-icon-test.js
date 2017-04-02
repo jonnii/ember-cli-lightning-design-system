@@ -5,20 +5,39 @@ moduleForComponent('lds-icon', 'Integration | Component | lds icon', {
   integration: true
 });
 
-test('it renders default icon', function(assert) {
+test('it renders default standard', function(assert) {
   this.render(hbs`{{lds-icon}}`);
-  const icon = this.$('span.slds-icon_container');
-  
-  assert.equal(icon.attr('class').trim(), 'slds-icon_container slds-icon-standard-default');
-  assert.notOk(icon.attr('title'));
+
+  const container = this.$('span.slds-icon_container');
+  assert.equal(container.attr('class').trim(), 'slds-icon_container slds-icon-standard-default');
+  assert.notOk(container.attr('title'));
   assert.equal(this.$('span.slds-assistive-text').length, 0);
+
+  const icon = this.$('.slds-icon');
+  assert.equal(icon.attr('class').trim(), 'slds-icon');
+  assert.equal(this.$('use').attr('xlink:href'), '/assets/icons/standard-sprite/svg/symbols.svg#default');
 });
 
-test('it renders with description', function(assert) {
+test('it renders standard with description', function(assert) {
   this.render(hbs`{{lds-icon description='fancy description'}}`);
-  const icon = this.$('span.slds-icon_container');
+  const container = this.$('span.slds-icon_container');
   
-  assert.equal(icon.attr('class').trim(), 'slds-icon_container slds-icon-standard-default');
-  assert.equal(icon.attr('title'), 'fancy description');
+  assert.equal(container.attr('class').trim(), 'slds-icon_container slds-icon-standard-default');
+  assert.equal(container.attr('title'), 'fancy description');
   assert.equal(this.$('.slds-assistive-text').text().trim(), 'fancy description');
+});
+
+test('it renders utility', function(assert) {
+  this.render(hbs`{{lds-icon sprite='utility'}}`);
+
+  const container = this.$('span.slds-icon_container');
+  assert.equal(container.attr('class').trim(), 'slds-icon_container');
+  
+  const icon = this.$('.slds-icon');
+  assert.equal(icon.attr('class').trim(), 'slds-icon slds-icon-text-default');
+
+  assert.equal(this.$('use').attr('xlink:href'), '/assets/icons/utility-sprite/svg/symbols.svg#question');
+
+  //slds-icon-text-default
+  // question
 });
