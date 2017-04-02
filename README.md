@@ -52,3 +52,13 @@ ember install ember-cli-lightning-design-system
 ```
 
 ## WIP Components
+
+## Contributing 
+
+### Publishing 
+
+```
+npm version <version>
+git push origin master --follow-tags
+npm publish
+```
