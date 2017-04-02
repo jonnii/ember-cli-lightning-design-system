@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('examples', function() {
     this.route('navigation');
     this.route('lookup');
+    this.route('notifications');
   });
 });
 

@@ -1,0 +1,18 @@
+<div class="slds-notify_container">
+  <div class="slds-notify slds-notify--alert slds-theme--alert-texture" role="alert">
+    <button class="slds-button slds-notify__close slds-button--icon-inverse" title="Close">
+      <svg class="slds-button__icon" aria-hidden="true">
+        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+      </svg>
+      <span class="slds-assistive-text">Close</span>
+    </button>
+    <span class="slds-assistive-text">Info</span>
+    <h2>
+      {{#if hasBlock}}
+        {{yield}}
+      {{else}}
+        {{text}}
+      {{/if}}
+    </h2>
+  </div>
+</div>
