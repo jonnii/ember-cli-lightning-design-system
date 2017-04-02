@@ -10,7 +10,7 @@ Router.map(function() {
   this.route('examples', function() {
     this.route('navigation');
     this.route('lookup');
-    this.route('notifications');
+    this.route('notification');
     this.route('navigation-bar');
     this.route('button');
   });
