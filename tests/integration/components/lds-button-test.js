@@ -6,21 +6,18 @@ moduleForComponent('lds-button', 'Integration | Component | lds button', {
 });
 
 test('it renders', function(assert) {
-  assert.expect(0);
-
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
   this.render(hbs`{{lds-button}}`);
+  assert.equal(this.$().text().trim(), 'Submit');
+  assert.equal(this.$('button').attr('class').trim(), 'slds-button');
+  assert.notOk(this.$('button').is('[disabled=disabled]'));
+});
 
-  // assert.equal(this.$().text().trim(), '');
+test('it renders with type brand', function(assert) {
+  this.render(hbs`{{lds-button type='brand'}}`);
+  assert.equal(this.$('button').attr('class').trim(), 'slds-button slds-button--brand');
+});
 
-  // Template block usage:
-  this.render(hbs`
-    {{#lds-button}}
-      template block text
-    {{/lds-button}}
-  `);
-
-  // assert.equal(this.$().text().trim(), 'template block text');
+test('it renders disabled', function(assert) {
+  this.render(hbs`{{lds-button type='brand' disabled=true}}`);
+  assert.ok(this.$('button:disabled'));
 });

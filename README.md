@@ -47,6 +47,8 @@ ember install ember-cli-lightning-design-system
 {{#lds-button}}
   Click Me
 {{/lds-button}}
+
+{{lds-button text='click me' type='brand'}}
 ```
 
 ## WIP Components

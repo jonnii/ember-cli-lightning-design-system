@@ -12,6 +12,7 @@ Router.map(function() {
     this.route('lookup');
     this.route('notifications');
     this.route('navigation-bar');
+    this.route('button');
   });
 });
 
