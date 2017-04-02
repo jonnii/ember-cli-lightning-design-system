@@ -1,8 +1,4 @@
-<h2 class="slds-text-title--caps slds-p-around--medium" id="entity-header">Reports</h2>
+<h2 class="slds-text-title--caps slds-p-around--medium" id="entity-header">{{title}}</h2>
 <ul>
-  <li class="slds-is-active"><a href="javascript:void(0);" class="slds-navigation-list--vertical__action slds-text-link--reset" aria-describedby="entity-header">Recent</a></li>
-  <li><a href="javascript:void(0);" class="slds-navigation-list--vertical__action slds-text-link--reset" aria-describedby="entity-header">Created by Me</a></li>
-  <li><a href="javascript:void(0);" class="slds-navigation-list--vertical__action slds-text-link--reset" aria-describedby="entity-header">Private Reports</a></li>
-  <li><a href="javascript:void(0);" class="slds-navigation-list--vertical__action slds-text-link--reset" aria-describedby="entity-header">Public Reports</a></li>
-  <li><a href="javascript:void(0);" class="slds-navigation-list--vertical__action slds-text-link--reset" aria-describedby="entity-header">All Reports</a></li>
+    {{yield (hash action=(component 'lds-navigation-action'))}}
 </ul>
