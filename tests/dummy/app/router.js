@@ -13,6 +13,7 @@ Router.map(function() {
     this.route('notification');
     this.route('navigation-bar');
     this.route('button');
+    this.route('icon');
   });
 });
 
