@@ -20,16 +20,14 @@ ember install ember-cli-lightning-design-system
 @import 'ember-cli-lightning-design-system/scss/index.scss';
 ```
 
-## Supported Components (WIP)
+## Supported Components
 
  * [Badge](#badge)
  * [Button](#button)
 
 #### Badge
 
- - [Component Documentation](https://www.lightningdesignsystem.com/components/badges/)
- - :white_check_mark: Tests?
- - :soon: Example Page?
+ - [Component Documentation](https://www.lightningdesignsystem.com/components/badges)
 
 ```hbs
 {{lds-badge text='badger'}}
@@ -41,6 +39,8 @@ ember install ember-cli-lightning-design-system
 
 #### Button
 
+ - [Component Documentation](https://www.lightningdesignsystem.com/components/buttons)
+
 ```hbs
 {{lds-button text='click me'}}
 
@@ -48,3 +48,5 @@ ember install ember-cli-lightning-design-system
   Click Me
 {{/lds-button}}
 ```
+
+## WIP Components
