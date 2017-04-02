@@ -22,7 +22,22 @@ ember install ember-cli-lightning-design-system
 
 ## Supported Components (WIP)
 
+ * [Badge](#badge)
  * [Button](#button)
+
+#### Badge
+
+ - [Component Documentation](https://www.lightningdesignsystem.com/components/badges/)
+ - :check: Tests?
+ - :cross: Example Page?
+
+```hbs
+{{lds-badge text='badger'}}
+
+{{#lds-badge}}
+  Badger badger
+{{/lds-badge}}
+```
 
 #### Button
 
