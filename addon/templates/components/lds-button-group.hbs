@@ -1,12 +1,6 @@
 <div class="slds-button-group" role="group">
-    {{yield (hash button=(component 'lds-button'))}}
-
-    <div class="slds-dropdown-trigger slds-dropdown-trigger--click slds-button--last" aria-expanded="false">
-        <button class="slds-button slds-button--icon-border-filled" aria-haspopup="true" title="More Actions">
-            <svg class="slds-button__icon" aria-hidden="true">
-              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
-            </svg>
-            <span class="slds-assistive-text">More Actions</span>
-          </button>
-    </div>
+    {{yield (hash 
+        button=(component 'lds-button' type='neutral') 
+        more=(component 'lds-button-group-more')
+    )}}
 </div>

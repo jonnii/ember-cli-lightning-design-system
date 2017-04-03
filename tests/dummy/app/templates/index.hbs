@@ -12,26 +12,9 @@
 
 <hr/>
 
-{{#lds-breadcrumb as |crumb|}}
-    {{#crumb.item}}Parent Entity{{/crumb.item}}
-    {{#crumb.item}}Parent Record Name{{/crumb.item}}
-{{/lds-breadcrumb}}
-
-<hr/>
-
 {{lds-button-stateful 
     isSelected=isFollowing
     notSelected='Follow' 
     selected='Following' 
     selectedFocus='Unfollow'
     onChanged=(action 'statefulButtonPressed')}}
-
-<hr/>
-
-{{lds-badge text="Awesome badge"}}
-
-<hr/>
-
-{{lds-button}}
-{{lds-button text='Click me' type='brand'}}
-{{lds-button text='You Win' type='success'}}

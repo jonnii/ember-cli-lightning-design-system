@@ -5,19 +5,14 @@ moduleForComponent('lds-button-group', 'Integration | Component | lds button gro
   integration: true
 });
 
-test('it renders', function(assert) {
-  assert.expect(0);
-
-  this.render(hbs`{{lds-button-group}}`);
-
-  // assert.equal(this.$().text().trim(), 'More Actions');
-
-  // Template block usage:
+test('it renders with button group options', function(assert) {
   this.render(hbs`
-    {{#lds-button-group}}
-      template block text
+    {{#lds-button-group as |group|}}
+      {{group.button text='Option1'}}
+      {{group.button text='Option2'}}
+      {{group.button text='Option3'}}
     {{/lds-button-group}}
   `);
 
-  // assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$('button').length, 3);
 });
