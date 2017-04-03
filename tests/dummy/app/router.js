@@ -16,6 +16,7 @@ Router.map(function() {
     this.route('icon');
     this.route('breadcrumb');
     this.route('button-group');
+    this.route('button-icon');
   });
 });
 
