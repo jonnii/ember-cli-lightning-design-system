@@ -14,6 +14,7 @@ Router.map(function() {
     this.route('navigation-bar');
     this.route('button');
     this.route('icon');
+    this.route('breadcrumb');
   });
 });
 
