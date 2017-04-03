@@ -52,6 +52,9 @@ to save yourself some time the following components are supported.
 {{/lds-button}}
 
 {{lds-button text='click me' type='brand'}}
+
+{{lds-button text='click me' type='brand' icon='user'}}
+{{lds-button text='click me' type='brand' icon='down' iconPosition='right'}}
 ```
 
 ## WIP Components

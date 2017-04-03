@@ -10,6 +10,7 @@ test('it renders', function(assert) {
   assert.equal(this.$().text().trim(), 'Submit');
   assert.equal(this.$('button').attr('class').trim(), 'slds-button');
   assert.notOk(this.$('button').is('[disabled=disabled]'));
+  assert.equal(this.$('svg').length, 0);
 });
 
 test('it renders with type brand', function(assert) {
@@ -19,7 +20,7 @@ test('it renders with type brand', function(assert) {
 
 test('it renders disabled', function(assert) {
   this.render(hbs`{{lds-button type='brand' disabled=true}}`);
-  assert.ok(this.$('button:disabled'));
+  assert.equal(this.$('button:disabled').length, 1);
 });
 
 test('it is clickable', function(assert) {
@@ -31,4 +32,16 @@ test('it is clickable', function(assert) {
 
   this.render(hbs`{{lds-button type='brand' clicked=(action externalAction 'pressed')}}`);
   this.$('button').click();
+});
+
+test('it renders with icon', function(assert) {
+  this.render(hbs`{{lds-button type='brand' icon='user'}}`);
+  assert.equal(this.$('svg').attr('class'), 'slds-button__icon slds-button__icon--left');
+  assert.equal(this.$('use').attr('xlink:href'), '/assets/icons/utility-sprite/svg/symbols.svg#user');
+});
+
+test('it renders with icon (right)', function(assert) {
+  this.render(hbs`{{lds-button type='brand' icon='down' iconPosition='right'}}`);
+  assert.equal(this.$('svg').attr('class'), 'slds-button__icon slds-button__icon--right');
+  assert.equal(this.$('use').attr('xlink:href'), '/assets/icons/utility-sprite/svg/symbols.svg#down');
 });
