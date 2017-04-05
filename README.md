@@ -27,6 +27,8 @@ to save yourself some time the following components are supported.
 
  * [Badge](#badge)
  * [Button](#button)
+ * [Button Group](#button-group)
+ * [Button Icon](#button-icon)
 
 #### Badge
 
@@ -78,6 +80,19 @@ to save yourself some time the following components are supported.
     {{more.item text="Overflow 3" clicked=(action 'buttonClicked' 'overflow3')}}
   {{/group.more}}
 {{/lds-button-group}}
+```
+
+#### Button Icon
+
+ - [Component Documentation](https://www.lightningdesignsystem.com/components/button-icons)
+
+```hbs
+{{lds-button-icon}}
+{{lds-button-icon icon='user'}}
+{{lds-button-icon icon='user' type='error'}}
+{{lds-button-icon icon='warning' type='error'}}
+{{lds-button-icon icon='warning' type='error' disabled=true}}
+{{lds-button-icon icon='warning' type='error' size='large'}}
 ```
 
 ## WIP Components
