@@ -6,6 +6,11 @@ const typeMappings = {
   'error': 'slds-button--icon-error'
 };
 
+const borderMappings = {
+  'outline': 'slds-button--icon-border',
+  'filled': 'slds-button--icon-border-filled'
+};
+
 export default Ember.Component.extend({
   layout,
   tagName: '',
@@ -14,8 +19,11 @@ export default Ember.Component.extend({
   sprite: 'utility',
   icon: 'question',
   size: 'default',
+  border: 'none',
 
-  buttonClass: Ember.computed('type', function() {
+  clicked: null,
+
+  typeClass: Ember.computed('type', function() {
     const type = this.get('type');
     return typeMappings[type];
   }),
@@ -27,5 +35,18 @@ export default Ember.Component.extend({
     }
 
     return ` slds-button__icon--${size}`
-  })
+  }),
+
+  borderClass: Ember.computed('border', function(){
+    const border = this.get('border');
+    return border == 'none' ? '' : ` ${borderMappings[border]}`;
+  }),
+
+  actions: {
+    clicked(handler) {
+      if(handler != null) {
+        handler();
+      }
+    }
+  }
 });

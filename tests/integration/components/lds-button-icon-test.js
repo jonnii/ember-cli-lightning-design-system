@@ -46,3 +46,25 @@ test('it renders with size x-small', function(assert) {
 
   assert.equal(this.$('svg').attr('class'), 'slds-button__icon slds-button__icon--x-small');
 });
+
+test('it renders with border outline', function(assert) {
+  this.render(hbs`{{lds-button-icon border='outline'}}`);
+
+  assert.equal(this.$('button').attr('class'), 'slds-button slds-button--icon slds-button--icon-border');
+});
+
+test('it renders with border filled', function(assert) {
+  this.render(hbs`{{lds-button-icon border='filled'}}`);
+
+  assert.equal(this.$('button').attr('class'), 'slds-button slds-button--icon slds-button--icon-border-filled');
+});
+
+test('it calls action when clicked', function(assert) {
+  this.set('clicked', (message) => {
+    assert.equal(message, 'icon');
+  });
+  
+  this.render(hbs`{{lds-button-icon clicked=(action clicked 'icon')}}`);
+
+  this.$('button').click();
+});
