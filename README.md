@@ -95,8 +95,6 @@ to save yourself some time the following components are supported.
 {{lds-button-icon icon='warning' type='error' size='large'}}
 ```
 
-## WIP Components
-
 ## Contributing 
 
 ### Publishing 
