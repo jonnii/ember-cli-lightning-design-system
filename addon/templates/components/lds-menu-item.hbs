@@ -1,0 +1,11 @@
+<li class="slds-dropdown__item" role="presentation">
+  <a href="javascript:void(0);" role="menuitem" tabindex="0">
+    <span class="slds-truncate">
+      {{#if hasBlock}}
+        {{yield}}
+      {{else}}
+        {{text}}
+      {{/if}}
+    </span>
+  </a>
+</li>

@@ -1,0 +1,14 @@
+<div class="slds-dropdown-trigger slds-dropdown-trigger--click slds-is-open">
+  
+  {{lds-button-icon border='filled' title='Show More' icon='down' clicked=(action 'toggle')}}
+  
+  {{#if isOpen}}
+    <div class="slds-dropdown slds-dropdown--left">
+      <ul class="slds-dropdown__list" role="menu">
+        {{yield (hash 
+          item=(component 'lds-menu-item')
+          separator=(component 'lds-menu-separator'))}}
+      </ul>
+    </div>
+  {{/if}}
+</div>

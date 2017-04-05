@@ -1,0 +1,11 @@
+{{lds-menu}}
+
+<hr/>
+
+{{#lds-menu isOpen=true as |menu|}}
+  {{menu.item text='Menu Item 1'}}
+  {{menu.item text='Menu Item 2'}}
+  {{menu.item text='Menu Item 3'}}
+  {{menu.separator}}
+  {{#menu.item}}Menu Item 4{{/menu.item}}
+{{/lds-menu}}
