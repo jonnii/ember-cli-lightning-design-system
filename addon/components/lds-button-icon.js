@@ -42,6 +42,11 @@ export default Ember.Component.extend({
     return border == 'none' ? '' : ` ${borderMappings[border]}`;
   }),
 
+  selectedClass: Ember.computed('isSelected', function() {
+    const isSelected = this.get('isSelected');
+    return isSelected ? ' slds-is-selected' : '';
+  }),
+
   actions: {
     clicked(handler) {
       if(handler != null) {

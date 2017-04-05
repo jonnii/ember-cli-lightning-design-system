@@ -59,6 +59,12 @@ test('it renders with border filled', function(assert) {
   assert.equal(this.$('button').attr('class'), 'slds-button slds-button--icon slds-button--icon-border-filled');
 });
 
+test('it renders when selected', function(assert) {
+  this.render(hbs`{{lds-button-icon isSelected=true}}`);
+
+  assert.equal(this.$('button').attr('class'), 'slds-button slds-button--icon slds-is-selected');
+});
+
 test('it calls action when clicked', function(assert) {
   this.set('clicked', (message) => {
     assert.equal(message, 'icon');
