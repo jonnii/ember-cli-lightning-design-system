@@ -93,6 +93,7 @@ to save yourself some time the following components are supported.
 {{lds-button-icon icon='warning' type='error'}}
 {{lds-button-icon icon='warning' type='error' disabled=true}}
 {{lds-button-icon icon='warning' type='error' size='large'}}
+{{lds-button-icon icon='like' border='outline' clicked=(action 'liked')}}
 ```
 
 ## Contributing 

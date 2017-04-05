@@ -65,6 +65,13 @@ test('it renders when selected', function(assert) {
   assert.equal(this.$('button').attr('class'), 'slds-button slds-button--icon slds-is-selected');
 });
 
+test('it renders with title', function(assert) {
+  this.render(hbs`{{lds-button-icon title='superman'}}`);
+
+  assert.equal(this.$('button').attr('title').trim(), 'superman');
+  assert.equal(this.$('span.slds-assistive-text').text().trim(), 'superman');
+});
+
 test('it calls action when clicked', function(assert) {
   this.set('clicked', (message) => {
     assert.equal(message, 'icon');

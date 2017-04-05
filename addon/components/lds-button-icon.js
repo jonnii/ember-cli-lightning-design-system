@@ -20,7 +20,8 @@ export default Ember.Component.extend({
   icon: 'question',
   size: 'default',
   border: 'none',
-
+  titleWithDefault: Ember.computed.or('title', 'icon'),
+  
   clicked: null,
 
   typeClass: Ember.computed('type', function() {
