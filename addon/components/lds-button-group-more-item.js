@@ -7,11 +7,9 @@ export default Ember.Component.extend({
   clicked: null,
   
   actions: {
-    clicked() {
-      const callback = this.get('_clicked');
-      
-      if(callback) { 
-        callback(this.get('clicked'));
+    clicked(handler, next) {      
+      if(handler) { 
+        handler(next);
       }
     }
   }
