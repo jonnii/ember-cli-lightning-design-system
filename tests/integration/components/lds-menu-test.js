@@ -1,5 +1,6 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+import Ember from 'ember';
 
 moduleForComponent('lds-menu', 'Integration | Component | lds menu', {
   integration: true
@@ -65,9 +66,6 @@ test('it closes when clicked', function(assert) {
 test('it closes when item clicked', function(assert) {
   this.set('clicked', (message) => {
     assert.equal(message, 'overflow1');
-    
-    // TODO: figure out how to check this after runloop has run
-    // assert.equal(this.$('div.slds-dropdown-trigger.slds-is-open').length, 0);
   });
 
   this.render(hbs`
@@ -81,6 +79,6 @@ test('it closes when item clicked', function(assert) {
   this.$('button').click();
 
   assert.equal(this.$('div.slds-dropdown-trigger.slds-is-open').length, 1);
-
-  this.$('li.slds-dropdown__item:first a').click();
+  Ember.run(() => this.$('li.slds-dropdown__item:first a').click());
+  assert.equal(this.$('div.slds-dropdown-trigger.slds-is-open').length, 0);
 });
