@@ -1,5 +1,5 @@
 <li class="slds-dropdown__item" role="presentation">
-  <a href="javascript:void(0);" role="menuitem" tabindex="0">
+  <a role="menuitem" tabindex="0" {{action 'clicked' _clicked clicked}}>
     <span class="slds-truncate">
       {{#if hasBlock}}
         {{yield}}

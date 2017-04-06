@@ -74,11 +74,11 @@ to save yourself some time the following components are supported.
   {{group.button text='Option1' clicked=(action 'buttonClicked' 'option1')}}
   {{group.button text='Option2' clicked=(action 'buttonClicked' 'option2')}}
   {{group.button text='Option3' disabled=true clicked=(action 'buttonClicked' 'option3')}}
-  {{#group.more as |more|}}
-    {{more.item text="Overflow 1" clicked=(action 'buttonClicked' 'overflow1')}}
-    {{more.item text="Overflow 2" clicked=(action 'buttonClicked' 'overflow2')}}
-    {{more.item text="Overflow 3" clicked=(action 'buttonClicked' 'overflow3')}}
-  {{/group.more}}
+  {{#group.menu as |menu|}}
+    {{menu.item text="Overflow 1" clicked=(action 'buttonClicked' 'overflow1')}}
+    {{menu.item text="Overflow 3" clicked=(action 'buttonClicked' 'overflow3')}}
+    {{menu.item text="Overflow 2" clicked=(action 'buttonClicked' 'overflow2')}}
+  {{/group.menu}}
 {{/lds-button-group}}
 ```
 

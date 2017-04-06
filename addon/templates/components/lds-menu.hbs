@@ -1,4 +1,4 @@
-<div class="slds-dropdown-trigger slds-dropdown-trigger--click {{class}}{{openClass}}">
+<div class="slds-dropdown-trigger slds-dropdown-trigger--click {{class}}{{openClass}}" aria-expanded="{{isOpen}}">
   
   {{lds-button-icon 
     disabled=disabled
@@ -11,7 +11,7 @@
     <ul class="slds-dropdown__list" role="menu">
       {{yield (hash 
         heading=(component 'lds-menu-heading')
-        item=(component 'lds-menu-item')
+        item=(component 'lds-menu-item' _clicked=(action 'clicked'))
         separator=(component 'lds-menu-separator'))}}
     </ul>
   </div>

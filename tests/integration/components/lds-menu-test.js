@@ -10,6 +10,7 @@ test('it renders', function(assert) {
   
   assert.equal(this.$('button.slds-button:disabled').length, 0);
   assert.equal(this.$('div.slds-dropdown-trigger.slds-is-open').length, 0);
+  assert.equal(this.$('div.slds-dropdown-trigger').attr('aria-expanded'), 'false');
   assert.equal(this.$('.slds-dropdown').attr('class'), 'slds-dropdown slds-dropdown--left');
 });
 
@@ -29,6 +30,7 @@ test('it renders when open', function(assert) {
   this.render(hbs`{{lds-menu isOpen=true}}`);
 
   assert.equal(this.$('div.slds-dropdown-trigger.slds-is-open').length, 1);
+  assert.equal(this.$('div.slds-dropdown-trigger').attr('aria-expanded'), 'true');
 });
 
 test('it renders with items', function(assert) {
