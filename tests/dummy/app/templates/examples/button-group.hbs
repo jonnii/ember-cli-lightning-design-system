@@ -10,11 +10,11 @@
   {{group.button text='Option1' clicked=(action 'buttonClicked' 'option1')}}
   {{group.button text='Option2' clicked=(action 'buttonClicked' 'option2')}}
   {{group.button text='Option3' disabled=true clicked=(action 'buttonClicked' 'option3')}}
-  {{#group.more as |more|}}
+  {{#group.menu as |more|}}
     {{more.item text="Overflow 1" clicked=(action 'buttonClicked' 'overflow1')}}
     {{more.item text="Overflow 2" clicked=(action 'buttonClicked' 'overflow2')}}
     {{more.item text="Overflow 3" clicked=(action 'buttonClicked' 'overflow3')}}
-  {{/group.more}}
+  {{/group.menu}}
 {{/lds-button-group}}
 
 <hr />
@@ -32,9 +32,9 @@
   {{group.button text='Option1' clicked=(action 'buttonClicked' 'option1')}}
   {{group.button text='Option2' clicked=(action 'buttonClicked' 'option2')}}
   {{group.button text='Option3' disabled=true clicked=(action 'buttonClicked' 'option3')}}
-  {{#group.more open=true as |more|}}
+  {{#group.menu open=true as |more|}}
     {{more.item text="Overflow 1" clicked=(action 'buttonClicked' 'overflow1')}}
     {{more.item text="Overflow 2" clicked=(action 'buttonClicked' 'overflow2')}}
     {{more.item text="Overflow 3" clicked=(action 'buttonClicked' 'overflow3')}}
-  {{/group.more}}
+  {{/group.menu}}
 {{/lds-button-group}}

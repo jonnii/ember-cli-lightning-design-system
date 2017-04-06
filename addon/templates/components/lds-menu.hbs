@@ -1,14 +1,45 @@
-<div class="slds-dropdown-trigger slds-dropdown-trigger--click slds-is-open">
+<div class="slds-dropdown-trigger slds-dropdown-trigger--click {{class}}{{openClass}}">
   
-  {{lds-button-icon border='filled' title='Show More' icon='down' clicked=(action 'toggle')}}
+  {{lds-button-icon 
+    disabled=disabled
+    border='filled' 
+    title='Show More' 
+    icon='down'
+    clicked=(action 'toggle')}}
   
-  {{#if isOpen}}
-    <div class="slds-dropdown slds-dropdown--left">
-      <ul class="slds-dropdown__list" role="menu">
-        {{yield (hash 
-          item=(component 'lds-menu-item')
-          separator=(component 'lds-menu-separator'))}}
-      </ul>
-    </div>
-  {{/if}}
+  <div class="slds-dropdown{{positionClass}}">
+    <ul class="slds-dropdown__list" role="menu">
+      {{yield (hash 
+        heading=(component 'lds-menu-heading')
+        item=(component 'lds-menu-item')
+        separator=(component 'lds-menu-separator'))}}
+    </ul>
+  </div>
 </div>
+
+
+
+
+
+{{!--<div class="slds-dropdown-trigger slds-dropdown-trigger--click slds-button--last{{openClass}}" aria-expanded="false">
+  <button 
+    class="slds-button slds-button--icon-border-filled" 
+    disabled={{disabled}}  
+    aria-haspopup="true" 
+    title="More Actions"
+    {{action 'toggleOpen'}}>
+    
+    <svg class="slds-button__icon" aria-hidden="true">
+      <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+    </svg>
+    <span class="slds-assistive-text">More Actions</span>
+  </button>
+
+  <div class="slds-dropdown slds-dropdown--right">
+    <ul class="slds-dropdown__list" role="menu">
+      {{yield (hash 
+        item=(component 'lds-button-group-more-item' _clicked=(action 'clicked'))
+      )}}
+    </ul>
+  </div>
+</div>--}}
