@@ -12,6 +12,7 @@ test('it renders', function(assert) {
   assert.equal(this.$('div.slds-dropdown-trigger.slds-is-open').length, 0);
   assert.equal(this.$('div.slds-dropdown-trigger').attr('aria-expanded'), 'false');
   assert.equal(this.$('.slds-dropdown').attr('class'), 'slds-dropdown slds-dropdown--left');
+  assert.equal(this.$('.slds-button').attr('aria-haspopup'), 'true');
 });
 
 test('it renders with position', function(assert) {

@@ -8,9 +8,13 @@ moduleForComponent('lds-button-icon', 'Integration | Component | lds button icon
 test('it renders with default icon', function(assert) {
   this.render(hbs`{{lds-button-icon}}`);
 
+  const button = this.$('button');
+
+  assert.equal(button.attr('class').trim(), 'slds-button slds-button--icon');
+  assert.equal(button.attr('title').trim(), 'question');
+  assert.notOk(button.attr('aria-haspopup'));
+
   assert.equal(this.$('svg').attr('class'), 'slds-button__icon');
-  assert.equal(this.$('button').attr('class').trim(), 'slds-button slds-button--icon');
-  assert.equal(this.$('button').attr('title').trim(), 'question');
   assert.equal(this.$('use').attr('xlink:href').trim(), '/assets/icons/utility-sprite/svg/symbols.svg#question');
   assert.equal(this.$('span.slds-assistive-text').text().trim(), 'question');
 });
@@ -21,6 +25,12 @@ test('it renders with icon', function(assert) {
   assert.equal(this.$('button').attr('title').trim(), 'user');
   assert.equal(this.$('use').attr('xlink:href').trim(), '/assets/icons/utility-sprite/svg/symbols.svg#user');
   assert.equal(this.$('span.slds-assistive-text').text().trim(), 'user');
+});
+
+test('it renders with aria-popup', function(assert) {
+  this.render(hbs`{{lds-button-icon ariaHaspopup='true'}}`);
+
+  assert.equal(this.$('button').attr('aria-haspopup'), 'true');
 });
 
 test('it renders warning', function(assert) {

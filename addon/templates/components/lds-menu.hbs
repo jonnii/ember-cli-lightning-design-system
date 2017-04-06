@@ -1,10 +1,10 @@
 <div class="slds-dropdown-trigger slds-dropdown-trigger--click {{class}}{{openClass}}" aria-expanded="{{isOpen}}">
-  
   {{lds-button-icon 
     disabled=disabled
     border='filled' 
     title='Show More' 
     icon='down'
+    ariaHaspopup=true
     clicked=(action 'toggle')}}
   
   <div class="slds-dropdown{{positionClass}}">
