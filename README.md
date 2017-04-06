@@ -29,6 +29,7 @@ to save yourself some time the following components are supported.
  * [Button](#button)
  * [Button Group](#button-group)
  * [Button Icon](#button-icon)
+ * [Menu](#menu)
 
 #### Badge
 
@@ -94,6 +95,24 @@ to save yourself some time the following components are supported.
 {{lds-button-icon icon='warning' type='error' disabled=true}}
 {{lds-button-icon icon='warning' type='error' size='large'}}
 {{lds-button-icon icon='like' border='outline' clicked=(action 'liked')}}
+```
+
+#### Menu
+
+ - [Component Documentation](https://www.lightningdesignsystem.com/components/menus)
+
+```hbs
+{{#lds-menu isOpen=true as |menu|}}
+  {{menu.heading text="Heading"}}
+  {{menu.item text='Menu Item 1' clicked=(action 'itemSelected' 'item1')}}
+  {{menu.item text='Menu Item 2' clicked=(action 'itemSelected' 'item1')}}
+  {{menu.item text='Menu Item 3' clicked=(action 'itemSelected' 'item1')}}
+  {{menu.separator}}
+  {{#menu.item clicked=(action 'itemSelected' 'item1')}}
+    Menu Item 4
+  {{/menu.item}}
+{{/lds-menu}}
+
 ```
 
 ## Contributing 
