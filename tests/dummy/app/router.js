@@ -18,6 +18,7 @@ Router.map(function() {
     this.route('button-group');
     this.route('button-icon');
     this.route('menu');
+    this.route('form');
   });
 });
 
