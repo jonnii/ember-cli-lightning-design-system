@@ -1,8 +1,8 @@
   <div class="slds-dropdown{{positionClass}}">
     <ul class="slds-dropdown__list" role="menu">
       {{yield (hash 
-        heading=(component 'lds-menu-heading')
-        item=(component 'lds-menu-item' _clicked=clicked)
-        separator=(component 'lds-menu-separator'))}}
+        header=(component 'lds-dropdown-header')
+        item=(component 'lds-dropdown-item' _clicked=clicked)
+        separator=(component 'lds-dropdown-separator'))}}
     </ul>
   </div>

@@ -102,15 +102,15 @@ to save yourself some time the following components are supported.
  - [Component Documentation](https://www.lightningdesignsystem.com/components/menus)
 
 ```hbs
-{{#lds-menu isOpen=true as |menu|}}
-  {{menu.heading text="Heading"}}
-  {{menu.item text='Menu Item 1' clicked=(action 'itemSelected' 'item1')}}
-  {{menu.item text='Menu Item 2' clicked=(action 'itemSelected' 'item1')}}
-  {{menu.item text='Menu Item 3' clicked=(action 'itemSelected' 'item1')}}
-  {{menu.separator}}
-  {{#menu.item clicked=(action 'itemSelected' 'item1')}}
+{{#lds-menu isOpen=true as |dropdown|}}
+  {{dropdown.header text="Heading"}}
+  {{dropdown.item text='Menu Item 1' clicked=(action 'itemSelected' 'item1')}}
+  {{dropdown.item text='Menu Item 2' clicked=(action 'itemSelected' 'item1')}}
+  {{dropdown.item text='Menu Item 3' clicked=(action 'itemSelected' 'item1')}}
+  {{dropdown.separator}}
+  {{#dropdown.item clicked=(action 'itemSelected' 'item1')}}
     Menu Item 4
-  {{/menu.item}}
+  {{/dropdown.item}}
 {{/lds-menu}}
 
 ```

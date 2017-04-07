@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import layout from '../templates/components/lds-menu-item';
+import layout from '../templates/components/lds-dropdown-item';
 
 export default Ember.Component.extend({
   layout,

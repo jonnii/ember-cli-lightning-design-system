@@ -2,11 +2,11 @@
 
 <hr/>
 
-{{#lds-menu isOpen=true as |menu|}}
-  {{menu.heading text="Heading"}}
-  {{menu.item text='Menu Item 1'}}
-  {{menu.item text='Menu Item 2'}}
-  {{menu.item text='Menu Item 3'}}
-  {{menu.separator}}
-  {{#menu.item}}Menu Item 4{{/menu.item}}
+{{#lds-menu isOpen=true as |dropdown|}}
+  {{dropdown.header text="Heading"}}
+  {{dropdown.item text='Menu Item 1'}}
+  {{dropdown.item text='Menu Item 2'}}
+  {{dropdown.item text='Menu Item 3'}}
+  {{dropdown.separator}}
+  {{#dropdown.item}}Menu Item 4{{/dropdown.item}}
 {{/lds-menu}}
