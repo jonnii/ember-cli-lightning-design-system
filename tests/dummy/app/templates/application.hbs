@@ -2,14 +2,21 @@
 
 {{#lds-navigation-bar applicationName='Lightning Examples' as |bar|}}
   {{#bar.menu text='Components' as |dropdown|}}
-    {{dropdown.header text="Basics"}}
+    {{dropdown.header text="Buttons"}}
     {{dropdown.item text='Buttons' clicked=(route-action 'navigateTo' 'examples.button')}}
-    {{dropdown.item text='Icons' clicked=(route-action 'navigateTo' 'examples.icon')}}
+    {{dropdown.item text='Button Groups' clicked=(route-action 'navigateTo' 'examples.button-group')}}
+    {{dropdown.item text='Button Icons' clicked=(route-action 'navigateTo' 'examples.button-icon')}}
+    
     {{dropdown.separator}}
-    {{#dropdown.item}}Menu Item 4{{/dropdown.item}}
+    
+    {{dropdown.header text="Navigation"}}
+    {{dropdown.item text='Breadcrumbs' clicked=(route-action 'navigateTo' 'examples.breadcrumb')}}
+    {{dropdown.item text='Global Header' clicked=(route-action 'navigateTo' 'examples.global-header')}}
+    {{dropdown.item text='Navigation Bar' clicked=(route-action 'navigateTo' 'examples.navigation-bar')}}
+    {{dropdown.item text='Menus' clicked=(route-action 'navigateTo' 'examples.menu')}}
+
   {{/bar.menu}}
 
-  {{#bar.item path='examples.button'}}Buttons{{/bar.item}}
   {{#bar.item path='examples.icon'}}Icons{{/bar.item}}
 {{/lds-navigation-bar}}
 
