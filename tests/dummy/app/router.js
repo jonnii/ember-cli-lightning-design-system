@@ -19,6 +19,7 @@ Router.map(function() {
     this.route('button-icon');
     this.route('menu');
     this.route('form');
+    this.route('global-header');
   });
 });
 

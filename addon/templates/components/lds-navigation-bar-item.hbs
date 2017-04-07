@@ -1,0 +1,11 @@
+{{#link-to path tagName='li' class='slds-context-bar__item' activeClass='slds-is-active'}}
+  <a href={{view.href}} class="slds-context-bar__label-action" title={{titleWithDefault}}>
+    <span class="slds-truncate">
+      {{#if hasBlock}}
+        {{yield}}
+      {{else}}
+        {{textWithDefault}}
+      {{/if}}
+    </span>
+  </a>
+{{/link-to}}

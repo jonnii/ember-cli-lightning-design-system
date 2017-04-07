@@ -24,7 +24,10 @@
   </div>
   <nav class="slds-context-bar__secondary" role="navigation">
     <ul class="slds-grid">
-      {{yield (hash action=(component 'lds-navigation-bar-action'))}}
+      {{yield (hash 
+        item=(component 'lds-navigation-bar-item')
+        menu=(component 'lds-navigation-bar-menu')
+      )}}
     </ul>
   </nav>
 </div>
