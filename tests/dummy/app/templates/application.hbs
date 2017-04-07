@@ -14,9 +14,10 @@
     {{dropdown.item text='Menus' clicked=(route-action 'navigateTo' 'examples.menu')}}
   {{/bar.menu}}
 
-  {{#bar.menu text='Composite' as |dropdown|}}
+  {{#bar.menu text='Navigation' as |dropdown|}}
     {{dropdown.item text='Global Header' clicked=(route-action 'navigateTo' 'examples.global-header')}}
     {{dropdown.item text='Navigation Bar' clicked=(route-action 'navigateTo' 'examples.navigation-bar')}}
+    {{dropdown.item text='Navigation' clicked=(route-action 'navigateTo' 'examples.navigation')}}    
   {{/bar.menu}}
 
   {{#bar.item path='examples.icon'}}Icons{{/bar.item}}

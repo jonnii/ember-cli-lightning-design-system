@@ -13,3 +13,19 @@
     {{#section.action}}All Folders{{/section.action}}
   {{/nav.section}}
 {{/lds-navigation}}
+
+{{#lds-navigation type='inverse' as |nav|}}
+  {{#nav.section title="Reports" as |section|}}
+    {{#section.action path='examples.navigation'}}Recent{{/section.action}}
+    {{#section.action}}Created by Me{{/section.action}}
+    {{#section.action}}Private Reports{{/section.action}}
+    {{#section.action}}Public Reports{{/section.action}}
+    {{#section.action}}All Reports{{/section.action}}
+  {{/nav.section}}
+
+  {{#nav.section title="Folders" as |section|}}
+    {{#section.action}}Created by Me{{/section.action}}
+    {{#section.action}}Shared with Me{{/section.action}}
+    {{#section.action}}All Folders{{/section.action}}
+  {{/nav.section}}
+{{/lds-navigation}}

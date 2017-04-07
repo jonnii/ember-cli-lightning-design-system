@@ -6,20 +6,13 @@ moduleForComponent('lds-navigation', 'Integration | Component | lds navigation',
 });
 
 test('it renders', function(assert) {
-
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
   this.render(hbs`{{lds-navigation}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(this.$('.slds-navigation-list--vertical').attr('class'), 'slds-grid slds-grid--vertical slds-navigation-list--vertical');
+});
 
-  // Template block usage:
-  this.render(hbs`
-    {{#lds-navigation}}
-      template block text
-    {{/lds-navigation}}
-  `);
+test('it renders inverse', function(assert) {
+  this.render(hbs`{{lds-navigation type='inverse'}}`);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$('.slds-navigation-list--vertical').attr('class'), 'slds-grid slds-grid--vertical slds-navigation-list--vertical slds-navigation-list--vertical-inverse');
 });
