@@ -1,0 +1,11 @@
+<span class="slds-avatar slds-avatar--{{size}}{{typeClass}}">
+  {{#if hasBlock}}
+    {{yield}}
+  {{else}}
+    {{#if name}}
+      <abbr class="slds-avatar__initials slds-icon-{{sprite}}-{{icon}}" title={{name}}>{{shortName}}</abbr>
+    {{else}}
+      <img src="/assets/images/avatar2.jpg" alt="default avatar" />
+    {{/if}}
+  {{/if}}
+</span>

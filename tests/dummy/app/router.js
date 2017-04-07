@@ -20,6 +20,7 @@ Router.map(function() {
     this.route('menu');
     this.route('form');
     this.route('global-header');
+    this.route('image');
   });
 });
 
