@@ -1,7 +1,12 @@
 {{lds-global-header}}
 
 {{#lds-navigation-bar applicationName='Lightning Examples' as |bar|}}
-  {{#bar.menu text='Components' as |menu|}}
+  {{#bar.menu text='Components' as |dropdown|}}
+    {{dropdown.heading text="Basics"}}
+    {{dropdown.item text='Buttons'}}
+    {{dropdown.item text='Icons'}}
+    {{dropdown.separator}}
+    {{#dropdown.item}}Menu Item 4{{/dropdown.item}}
   {{/bar.menu}}
 
   {{#bar.item path='examples.button'}}Buttons{{/bar.item}}

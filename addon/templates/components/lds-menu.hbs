@@ -7,12 +7,7 @@
     ariaHaspopup=true
     clicked=(action 'toggle')}}
   
-  <div class="slds-dropdown{{positionClass}}">
-    <ul class="slds-dropdown__list" role="menu">
-      {{yield (hash 
-        heading=(component 'lds-menu-heading')
-        item=(component 'lds-menu-item' _clicked=(action 'clicked'))
-        separator=(component 'lds-menu-separator'))}}
-    </ul>
-  </div>
+  {{#lds-dropdown position=position clicked=(action 'clicked') as |dropdown|}}
+    {{yield dropdown}}
+  {{/lds-dropdown}}
 </div>
