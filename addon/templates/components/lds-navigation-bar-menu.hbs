@@ -12,7 +12,7 @@
     </button>
   </div>
   
-  {{#lds-dropdown as |dropdown|}}
+  {{#lds-dropdown clicked=(action 'clicked') as |dropdown|}}
     {{yield dropdown}}
   {{/lds-dropdown}}
 

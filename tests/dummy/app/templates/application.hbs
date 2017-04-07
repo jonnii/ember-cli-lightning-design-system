@@ -3,8 +3,8 @@
 {{#lds-navigation-bar applicationName='Lightning Examples' as |bar|}}
   {{#bar.menu text='Components' as |dropdown|}}
     {{dropdown.header text="Basics"}}
-    {{dropdown.item text='Buttons'}}
-    {{dropdown.item text='Icons'}}
+    {{dropdown.item text='Buttons' clicked=(route-action 'navigateTo' 'examples.button')}}
+    {{dropdown.item text='Icons' clicked=(route-action 'navigateTo' 'examples.icon')}}
     {{dropdown.separator}}
     {{#dropdown.item}}Menu Item 4{{/dropdown.item}}
   {{/bar.menu}}
