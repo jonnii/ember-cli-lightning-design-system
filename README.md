@@ -25,11 +25,40 @@ ember install ember-cli-lightning-design-system
 You can use this add-on without any of the supplied components, however if you would like
 to save yourself some time the following components are supported.
 
+ * [Avatar](#avatar)
  * [Badge](#badge)
  * [Button](#button)
  * [Button Group](#button-group)
  * [Button Icon](#button-icon)
  * [Menu](#menu)
+
+#### Avatar
+
+ - [Component Documentation](https://www.lightningdesignsystem.com/components/images/)
+
+```hbs
+{{lds-avatar}}
+
+{{#lds-avatar}}
+  <img src="/assets/images/avatar1.jpg" alt="default avatar" />
+{{/lds-avatar}}
+
+{{#lds-avatar}}
+  <img src="/assets/images/avatar1.jpg" alt="default avatar" />
+{{/lds-avatar}}
+
+{{#lds-avatar type='circle'}}
+  <img src="/assets/images/avatar1.jpg" alt="default avatar" />
+{{/lds-avatar}}
+
+{{#lds-avatar size='large'}}
+  <img src="/assets/images/avatar1.jpg" alt="default avatar" />
+{{/lds-avatar}}
+
+{{lds-avatar name='Bobby Jenkins'}}
+{{lds-avatar name='Terrorcorp'}}
+{{lds-avatar name='Apache Helicopter' sprite='action' icon='announcement'}}
+```
 
 #### Badge
 
