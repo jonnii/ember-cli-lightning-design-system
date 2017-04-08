@@ -6,20 +6,6 @@ moduleForComponent('slds-popover', 'Integration | Component | slds popover', {
 });
 
 test('it renders', function(assert) {
-
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
+  assert.expect(0);
   this.render(hbs`{{slds-popover}}`);
-
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#slds-popover}}
-      template block text
-    {{/slds-popover}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
 });

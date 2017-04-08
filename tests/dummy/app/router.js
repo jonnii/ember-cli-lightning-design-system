@@ -23,6 +23,7 @@ Router.map(function() {
     this.route('image');
     this.route('progress');
     this.route('popover');
+    this.route('form-horizontal');
   });
 });
 

@@ -20,6 +20,11 @@
     {{dropdown.item text='Navigation' clicked=(route-action 'navigateTo' 'examples.navigation')}}    
   {{/bar.menu}}
 
+
+  {{#bar.menu text='Forms' as |dropdown|}}
+    {{dropdown.item text='Horizontal' clicked=(route-action 'navigateTo' 'examples.form-horizontal')}}
+  {{/bar.menu}}
+
   {{#bar.item path='examples.icon'}}Icons{{/bar.item}}
   {{#bar.item path='examples.image'}}Images{{/bar.item}}
 {{/slds-navigation-bar}}
