@@ -21,6 +21,7 @@ Router.map(function() {
     this.route('form');
     this.route('global-header');
     this.route('image');
+    this.route('progress');
   });
 });
 

@@ -1,0 +1,14 @@
+<li class="slds-progress__item{{stateClass}}">
+  {{#if hasIcon}}
+    <button class="slds-button slds-button--icon slds-progress__marker slds-progress__marker--icon" aria-describedby={{text}} title={{text}}>
+      <svg class="slds-button__icon" aria-hidden="true">
+        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#{{icon}}"></use>
+      </svg>
+      <span class="slds-assistive-text">{{text}}</span>
+    </button>
+  {{else}}
+    <button class="slds-button slds-progress__marker" aria-describedby={{text}}>
+      <span class="slds-assistive-text">{{text}}</span>
+    </button>
+  {{/if}}
+</li>

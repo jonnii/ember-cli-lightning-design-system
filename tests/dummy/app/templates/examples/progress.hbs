@@ -1,0 +1,21 @@
+<hr/>
+
+{{slds-progress-bar progress=10}}
+
+<hr/>
+
+{{slds-progress-bar progress=50}}
+
+<hr/>
+
+{{slds-progress-bar progress=100}}
+
+<hr/>
+
+{{#slds-progress value=60 as |progress|}}
+  {{progress.item text='Item 1' state='completed'}}
+  {{progress.item text='Item 2' state='active'}}
+  {{progress.item text='Item 3' state='error'}}
+  {{progress.item text='Item 4'}}
+  {{progress.item text='Item 5'}}
+{{/slds-progress}}
