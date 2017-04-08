@@ -4,11 +4,10 @@
       sprite='utility' 
       icon=icon 
       title=text 
-      ariaDescribedBy=text
       type='progress'
       clicked=clicked}}
   {{else}}
-    <button class="slds-button slds-progress__marker" {{action clicked}} aria-describedby={{text}}>
+    <button class="slds-button slds-progress__marker" {{action clicked}}}>
       <span class="slds-assistive-text">{{text}}</span>
     </button>
   {{/if}}
