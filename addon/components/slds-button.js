@@ -1,6 +1,15 @@
 import Ember from 'ember';
 import layout from '../templates/components/slds-button';
 
+const typeMap = {
+  'progress': ' slds-progress__marker',
+  'brand': ' slds-button--brand',
+  'success': ' slds-button--success',
+  'neutral': ' slds-button--neutral',
+  'destructive': ' slds-button--destructive',
+  'inverse': ' slds-button--inverse',
+};
+
 export default Ember.Component.extend({
   layout,
   tagName: '',
@@ -13,9 +22,12 @@ export default Ember.Component.extend({
 
   typeClass: Ember.computed('type', function() {
     const type = this.get('type');
-    return Ember.isEmpty(type) 
-      ? '' 
-      : `slds-button--${type}`
+    
+    if(Ember.isEmpty(type)) {
+      return '';
+    }
+
+    return typeMap[type];
   }),
 
   shouldRenderLeftIcon: Ember.computed('icon', 'iconPosition', function() {

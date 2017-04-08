@@ -10,7 +10,6 @@ test('it renders', function(assert) {
 
   assert.equal(this.$('li').attr('class'), 'slds-progress__item');
   assert.equal(this.$('.slds-assistive-text').text().trim(), 'item 1');
-  assert.equal(this.$('button').attr('aria-describedby'), 'item 1');
 });
 
 test('it renders active', function(assert) {
@@ -24,7 +23,6 @@ test('it renders complete', function(assert) {
 
   assert.equal(this.$('li').attr('class'), 'slds-progress__item slds-is-completed');
   assert.equal(this.$('.slds-assistive-text').text().trim(), 'item 3');
-  assert.equal(this.$('button').attr('aria-describedby'), 'item 3');
   assert.ok(this.$('.slds-button__icon'));
   assert.equal(this.$('use').attr('xlink:href'), '/assets/icons/utility-sprite/svg/symbols.svg#success');
 });
@@ -34,7 +32,6 @@ test('it renders error', function(assert) {
 
   assert.equal(this.$('li').attr('class'), 'slds-progress__item slds-has-error');
   assert.equal(this.$('.slds-assistive-text').text().trim(), 'item 3');
-  assert.equal(this.$('button').attr('aria-describedby'), 'item 3');
   assert.ok(this.$('.slds-button__icon'));
   assert.equal(this.$('use').attr('xlink:href'), '/assets/icons/utility-sprite/svg/symbols.svg#warning');
 });

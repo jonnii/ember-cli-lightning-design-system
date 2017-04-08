@@ -7,8 +7,8 @@
       type='progress'
       clicked=clicked}}
   {{else}}
-    <button class="slds-button slds-progress__marker" {{action clicked}}}>
+    {{#slds-button type='progress' clicked=clicked}}
       <span class="slds-assistive-text">{{text}}</span>
-    </button>
+    {{/slds-button}}
   {{/if}}
 </li>
