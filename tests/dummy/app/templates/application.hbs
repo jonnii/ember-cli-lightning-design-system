@@ -1,6 +1,6 @@
-{{lds-global-header}}
+{{slds-global-header}}
 
-{{#lds-navigation-bar applicationName='Lightning Examples' as |bar|}}
+{{#slds-navigation-bar applicationName='Lightning Examples' as |bar|}}
   {{#bar.menu text='Basic' as |dropdown|}}
     {{dropdown.header text="Buttons"}}
     {{dropdown.item text='Buttons' clicked=(route-action 'navigateTo' 'examples.button')}}
@@ -22,6 +22,6 @@
 
   {{#bar.item path='examples.icon'}}Icons{{/bar.item}}
   {{#bar.item path='examples.image'}}Images{{/bar.item}}
-{{/lds-navigation-bar}}
+{{/slds-navigation-bar}}
 
 {{outlet}}

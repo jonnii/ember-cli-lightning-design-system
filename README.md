@@ -37,27 +37,27 @@ to save yourself some time the following components are supported.
  - [Component Documentation](https://www.lightningdesignsystem.com/components/images/)
 
 ```hbs
-{{lds-avatar}}
+{{slds-avatar}}
 
-{{#lds-avatar}}
+{{#slds-avatar}}
   <img src="/assets/images/avatar1.jpg" alt="default avatar" />
-{{/lds-avatar}}
+{{/slds-avatar}}
 
-{{#lds-avatar}}
+{{#slds-avatar}}
   <img src="/assets/images/avatar1.jpg" alt="default avatar" />
-{{/lds-avatar}}
+{{/slds-avatar}}
 
-{{#lds-avatar type='circle'}}
+{{#slds-avatar type='circle'}}
   <img src="/assets/images/avatar1.jpg" alt="default avatar" />
-{{/lds-avatar}}
+{{/slds-avatar}}
 
-{{#lds-avatar size='large'}}
+{{#slds-avatar size='large'}}
   <img src="/assets/images/avatar1.jpg" alt="default avatar" />
-{{/lds-avatar}}
+{{/slds-avatar}}
 
-{{lds-avatar name='Bobby Jenkins'}}
-{{lds-avatar name='Terrorcorp'}}
-{{lds-avatar name='Apache Helicopter' sprite='action' icon='announcement'}}
+{{slds-avatar name='Bobby Jenkins'}}
+{{slds-avatar name='Terrorcorp'}}
+{{slds-avatar name='Apache Helicopter' sprite='action' icon='announcement'}}
 ```
 
 #### Badge
@@ -65,11 +65,11 @@ to save yourself some time the following components are supported.
  - [Component Documentation](https://www.lightningdesignsystem.com/components/badges)
 
 ```hbs
-{{lds-badge text='badger'}}
+{{slds-badge text='badger'}}
 
-{{#lds-badge}}
+{{#slds-badge}}
   Badger badger
-{{/lds-badge}}
+{{/slds-badge}}
 ```
 
 #### Button
@@ -77,16 +77,16 @@ to save yourself some time the following components are supported.
  - [Component Documentation](https://www.lightningdesignsystem.com/components/buttons)
 
 ```hbs
-{{lds-button text='click me'}}
+{{slds-button text='click me'}}
 
-{{#lds-button clicked=(action 'doYourThing')}}
+{{#slds-button clicked=(action 'doYourThing')}}
   Click Me
-{{/lds-button}}
+{{/slds-button}}
 
-{{lds-button text='click me' type='brand'}}
+{{slds-button text='click me' type='brand'}}
 
-{{lds-button text='click me' type='brand' icon='user'}}
-{{lds-button text='click me' type='brand' icon='down' iconPosition='right'}}
+{{slds-button text='click me' type='brand' icon='user'}}
+{{slds-button text='click me' type='brand' icon='down' iconPosition='right'}}
 ```
 
 #### Button Group
@@ -94,13 +94,13 @@ to save yourself some time the following components are supported.
  - [Component Documentation](https://www.lightningdesignsystem.com/components/button-groups)
 
 ```hbs
-{{#lds-button-group as |group|}}
+{{#slds-button-group as |group|}}
   {{group.button text='Option1' clicked=(action 'buttonClicked' 'option1')}}
   {{group.button text='Option2' clicked=(action 'buttonClicked' 'option2')}}
   {{group.button text='Option3' disabled=true clicked=(action 'buttonClicked' 'option3')}}
-{{/lds-button-group}}
+{{/slds-button-group}}
 
-{{#lds-button-group as |group|}}
+{{#slds-button-group as |group|}}
   {{group.button text='Option1' clicked=(action 'buttonClicked' 'option1')}}
   {{group.button text='Option2' clicked=(action 'buttonClicked' 'option2')}}
   {{group.button text='Option3' disabled=true clicked=(action 'buttonClicked' 'option3')}}
@@ -109,7 +109,7 @@ to save yourself some time the following components are supported.
     {{menu.item text="Overflow 3" clicked=(action 'buttonClicked' 'overflow3')}}
     {{menu.item text="Overflow 2" clicked=(action 'buttonClicked' 'overflow2')}}
   {{/group.menu}}
-{{/lds-button-group}}
+{{/slds-button-group}}
 ```
 
 #### Button Icon
@@ -117,13 +117,13 @@ to save yourself some time the following components are supported.
  - [Component Documentation](https://www.lightningdesignsystem.com/components/button-icons)
 
 ```hbs
-{{lds-button-icon}}
-{{lds-button-icon icon='user'}}
-{{lds-button-icon icon='user' type='error'}}
-{{lds-button-icon icon='warning' type='error'}}
-{{lds-button-icon icon='warning' type='error' disabled=true}}
-{{lds-button-icon icon='warning' type='error' size='large'}}
-{{lds-button-icon icon='like' border='outline' clicked=(action 'liked')}}
+{{slds-button-icon}}
+{{slds-button-icon icon='user'}}
+{{slds-button-icon icon='user' type='error'}}
+{{slds-button-icon icon='warning' type='error'}}
+{{slds-button-icon icon='warning' type='error' disabled=true}}
+{{slds-button-icon icon='warning' type='error' size='large'}}
+{{slds-button-icon icon='like' border='outline' clicked=(action 'liked')}}
 ```
 
 #### Menu
@@ -131,7 +131,7 @@ to save yourself some time the following components are supported.
  - [Component Documentation](https://www.lightningdesignsystem.com/components/menus)
 
 ```hbs
-{{#lds-menu isOpen=true as |dropdown|}}
+{{#slds-menu isOpen=true as |dropdown|}}
   {{dropdown.header text="Heading"}}
   {{dropdown.item text='Menu Item 1' clicked=(action 'itemSelected' 'item1')}}
   {{dropdown.item text='Menu Item 2' clicked=(action 'itemSelected' 'item1')}}
@@ -140,7 +140,7 @@ to save yourself some time the following components are supported.
   {{#dropdown.item clicked=(action 'itemSelected' 'item1')}}
     Menu Item 4
   {{/dropdown.item}}
-{{/lds-menu}}
+{{/slds-menu}}
 
 ```
 

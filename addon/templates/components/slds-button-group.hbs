@@ -1,0 +1,6 @@
+<div class="slds-button-group" role="group">
+    {{yield (hash 
+        button=(component 'slds-button' type='neutral') 
+        menu=(component 'slds-menu' position='topRight' class='slds-button--last')
+    )}}
+</div>
