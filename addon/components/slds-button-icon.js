@@ -2,8 +2,9 @@ import Ember from 'ember';
 import layout from '../templates/components/slds-button-icon';
 
 const typeMappings = {
-  'default': 'slds-button--icon',
-  'error': 'slds-button--icon-error'
+  'default':  'slds-button--icon',
+  'error':    'slds-button--icon-error',
+  'progress': 'slds-button--icon slds-progress__marker slds-progress__marker--icon'
 };
 
 const borderMappings = {

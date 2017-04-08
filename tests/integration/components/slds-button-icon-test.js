@@ -39,6 +39,12 @@ test('it renders warning', function(assert) {
   assert.equal(this.$('button').attr('class').trim(), 'slds-button slds-button--icon-error');
 });
 
+test('it renders progress', function(assert) {
+  this.render(hbs`{{slds-button-icon icon='warning' type='progress'}}`);
+
+  assert.equal(this.$('button').attr('class').trim(), 'slds-button slds-button--icon slds-progress__marker slds-progress__marker--icon');
+});
+
 test('it renders disabled', function(assert) {
   this.render(hbs`{{slds-button-icon disabled=true}}`);
 
