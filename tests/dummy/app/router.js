@@ -22,6 +22,7 @@ Router.map(function() {
     this.route('global-header');
     this.route('image');
     this.route('progress');
+    this.route('popover');
   });
 });
 
