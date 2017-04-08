@@ -6,7 +6,7 @@ moduleForComponent('slds-control', 'Integration | Component | slds control', {
 });
 
 test('it renders', function(assert) {
-  this.render(hbs`{{slds-control label='awesome label'  }}`);
+  this.render(hbs`{{slds-control label='awesome label'}}`);
 
   assert.expect(0);
 });

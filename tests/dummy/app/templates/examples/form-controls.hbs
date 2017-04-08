@@ -1,15 +1,27 @@
-{{slds-input label='Text Input'}}
-
-{{slds-input label='Text Input' placeholder='Placeholder Text'}}
-
-{{!--{{#slds-input label='Text Input' placeholder='Placeholder Text' as |input|}}
-  {{input.icon}}
-  {{input.input}}
-  {{input.button}}  
-{{/slds-input}}--}}
-
 {{#slds-control label='choose your fate' as |control|}}
   {{control.radio}}
   {{control.radio}}
   {{control.checkbox}}
+{{/slds-control}}
+
+{{#slds-control label='Required Field' isRequired=true as |control|}}
+  {{control.input placeholder='placeholder text'}}
+{{/slds-control}}
+
+{{#slds-control label='Error Field' isRequired=true isError=true errorMessage='you forgot to select the doodat' as |control|}}
+  {{control.input placeholder='placeholder text'}}
+{{/slds-control}}
+
+{{#slds-control label='Disabled Field' as |control|}}
+  {{control.input placeholder='placeholder text' isDisabled=true}}
+{{/slds-control}}
+
+{{#slds-control label='Disabled Field' as |control|}}
+  {{#control.input placeholder='placeholder text' as |input|}}
+    
+  {{/control.input}}
+{{/slds-control}}
+
+{{#slds-control label='Text Area' as |control|}}
+  {{control.textarea placeholder='placeholder text'}}
 {{/slds-control}}

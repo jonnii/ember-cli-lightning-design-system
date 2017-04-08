@@ -5,14 +5,14 @@ moduleForComponent('slds-input', 'Integration | Component | slds input', {
   integration: true
 });
 
-test('it renders', function(assert) {
-  this.render(hbs`{{slds-input label='some label'}}`);
+// test('it renders', function(assert) {
+//   this.render(hbs`{{slds-input label='some label'}}`);
 
-  assert.equal(this.$('label').attr('for'), this.$('input').attr('id'));
-  assert.equal(this.$('label').text().trim(), 'some label');
-  assert.equal(this.$('input').attr('type'), 'text');
-  assert.notOk(this.$('input').attr('placeholder'));
-});
+//   assert.equal(this.$('label').attr('for'), this.$('input').attr('id'));
+//   assert.equal(this.$('label').text().trim(), 'some label');
+//   assert.equal(this.$('input').attr('type'), 'text');
+//   assert.notOk(this.$('input').attr('placeholder'));
+// });
 
 test('it renders with placeholder', function(assert) {
   this.render(hbs`{{slds-input label='some label' placeholder='awesome placeholder'}}`);

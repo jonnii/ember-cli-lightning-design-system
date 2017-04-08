@@ -1,6 +1,16 @@
-<label class="slds-form-element__label" for="{{formElementId}}">{{label}}</label>
-<div class="slds-form-element__control">
-  {{yield (hash 
-    radio=(component 'slds-radio')
-    checkbox=(component 'slds-checkbox'))}}
-</div>
+<label class="slds-form-element__label" for="{{formElementId}}">
+  {{#if isRequired}}
+    <abbr class="slds-required" title="required">*</abbr>
+  {{/if}}
+  {{label}}
+</label>
+
+{{yield (hash 
+  input=(component 'slds-input' formElementId=formElementId errorElementId=errorElementId isRequired=isRequired)
+  radio=(component 'slds-radio' formElementId=formElementId errorElementId=errorElementId)
+  checkbox=(component 'slds-checkbox' formElementId=formElementId errorElementId=errorElementId)
+  textarea=(component 'slds-textarea' formElementId=formElementId errorElementId=errorElementId))}}
+
+{{#if isError}}
+  <div id={{errorElementId}} class="slds-form-element__help">{{errorMessage}}</div>
+{{/if}}

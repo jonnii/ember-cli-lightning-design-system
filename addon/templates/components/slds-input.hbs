@@ -1,7 +1,16 @@
-<label class="slds-form-element__label" for="{{formElementId}}">{{label}}</label>
 <div class="slds-form-element__control">
+
   {{#if hasBlock}}
+
   {{else}}
-    <input type="{{type}}" id="{{formElementId}}" class="slds-input" placeholder={{placeholder}} />
+    <input 
+      disabled={{isDisabled}}
+      required="{{isRequired}}"
+      aria-describedby={{errorElementId}} 
+      type="{{type}}" 
+      id="{{formElementId}}" 
+      class="slds-input" 
+      placeholder={{placeholder}} />
   {{/if}}
+
 </div>
