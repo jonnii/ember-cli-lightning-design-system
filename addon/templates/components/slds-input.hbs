@@ -1,4 +1,7 @@
 <label class="slds-form-element__label" for="{{formElementId}}">{{label}}</label>
 <div class="slds-form-element__control">
-  <input type="text" id="{{formElementId}}" class="slds-input" placeholder="{{placeholder}}" />
+  {{#if hasBlock}}
+  {{else}}
+    <input type="{{type}}" id="{{formElementId}}" class="slds-input" placeholder={{placeholder}} />
+  {{/if}}
 </div>

@@ -24,6 +24,7 @@ Router.map(function() {
     this.route('progress');
     this.route('popover');
     this.route('form-horizontal');
+    this.route('form-controls');
   });
 });
 

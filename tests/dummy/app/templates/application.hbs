@@ -22,6 +22,7 @@
 
 
   {{#bar.menu text='Forms' as |dropdown|}}
+    {{dropdown.item text='Controls' clicked=(route-action 'navigateTo' 'examples.form-controls')}}
     {{dropdown.item text='Horizontal' clicked=(route-action 'navigateTo' 'examples.form-horizontal')}}
   {{/bar.menu}}
 

@@ -1,0 +1,6 @@
+<label class="slds-form-element__label" for="{{formElementId}}">{{label}}</label>
+<div class="slds-form-element__control">
+  {{yield (hash 
+    radio=(component 'slds-radio')
+    checkbox=(component 'slds-checkbox'))}}
+</div>
