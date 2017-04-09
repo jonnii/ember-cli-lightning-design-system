@@ -6,21 +6,30 @@ moduleForComponent('slds-lookup', 'Integration | Component | slds lookup', {
 });
 
 test('it renders', function(assert) {
-  assert.expect(0);
-
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
-  this.render(hbs`{{slds-lookup}}`);
-
-  // assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
   this.render(hbs`
     {{#slds-lookup}}
-      template block text
     {{/slds-lookup}}
   `);
 
-  // assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$('label').text().trim(), 'Search');
+  assert.equal(this.$('.slds-lookup').attr('class'), 'slds-form-element slds-lookup');
 });
+
+test('it renders with placeholder', function(assert) {
+  this.render(hbs`
+    {{#slds-lookup placeholder='Find Product'}}
+    {{/slds-lookup}}
+  `);
+
+  assert.equal(this.$('label').text().trim(), 'Find Product');
+});
+
+test('it renders with when open', function(assert) {
+  this.render(hbs`
+    {{#slds-lookup isOpen=true}}
+    {{/slds-lookup}}
+  `);
+
+  assert.equal(this.$('.slds-lookup').attr('class'), 'slds-form-element slds-lookup slds-is-open');
+});
+

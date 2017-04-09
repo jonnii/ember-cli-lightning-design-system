@@ -1,4 +1,4 @@
-<div class="slds-form-element slds-lookup {{displayClass}}">
+<div class="slds-form-element slds-lookup{{openClass}}">
   <label class="slds-assistive-text" for="{{lookupElementId}}">{{placeholder}}</label>
   <div class="slds-form-element__control lookup__search-control slds-input-has-icon slds-input-has-icon--left">
     <svg class="slds-input__icon" aria-hidden="true">
@@ -13,10 +13,13 @@
       focus-out=(action 'onFocusOut')}}
   </div>
 
-<div class="slds-lookup__menu" id="lookup-65">
+  <div class="slds-lookup__menu" id="lookup-65">
     <div class="slds-lookup__item--label slds-text-body--small">{{prompt}}</div>
     <ul class="slds-lookup__list" role="listbox">
-      {{yield (hash item=(component 'slds-lookup-item') action=(component 'slds-lookup-action'))}}
+      {{yield (hash 
+        item=(component 'slds-lookup-item') 
+        action=(component 'slds-lookup-action')
+      )}}
     </ul>
   </div>
 </div>

@@ -7,8 +7,10 @@ export default Ember.Component.extend({
   placeholder: 'Search',
   prompt: 'Recent Items',
 
-  displayClass: Ember.computed('isShowingDropDown', function() {
-    return this.get('isShowingDropDown') ? 'slds-is-open' : '';
+  openClass: Ember.computed('isOpen', function() {
+    return this.get('isOpen') 
+      ? ' slds-is-open' 
+      : '';
   }),
 
   lookupElementId: Ember.computed(function(){
@@ -18,11 +20,11 @@ export default Ember.Component.extend({
 
   actions: {
     onFocusIn() {
-      this.set('isShowingDropDown', true);
+      this.set('isOpen', true);
     },
 
     onFocusOut() {
-      this.set('isShowingDropDown', false);
+      this.set('isOpen', false);
     }
   }
 });
