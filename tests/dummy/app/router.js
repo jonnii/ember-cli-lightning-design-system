@@ -25,6 +25,7 @@ Router.map(function() {
     this.route('popover');
     this.route('form-horizontal');
     this.route('form-controls');
+    this.route('card');
   });
 });
 
