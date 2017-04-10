@@ -8,14 +8,14 @@ moduleForComponent('slds-button', 'Integration | Component | slds button', {
 test('it renders', function(assert) {
   this.render(hbs`{{slds-button}}`);
   assert.equal(this.$().text().trim(), 'Submit');
-  assert.equal(this.$('button').attr('class').trim(), 'slds-button');
+  assert.equal(this.$('button').attr('class').trim(), 'slds-button ember-view');
   assert.notOk(this.$('button').is('[disabled=disabled]'));
   assert.equal(this.$('svg').length, 0);
 });
 
 test('it renders with type brand', function(assert) {
   this.render(hbs`{{slds-button type='brand'}}`);
-  assert.equal(this.$('button').attr('class').trim(), 'slds-button slds-button--brand');
+  assert.equal(this.$('button').attr('class').trim(), 'slds-button slds-button--brand ember-view');
 });
 
 test('it renders disabled', function(assert) {

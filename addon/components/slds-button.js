@@ -2,17 +2,21 @@ import Ember from 'ember';
 import layout from '../templates/components/slds-button';
 
 const typeMap = {
-  'progress': ' slds-progress__marker',
-  'brand': ' slds-button--brand',
-  'success': ' slds-button--success',
-  'neutral': ' slds-button--neutral',
-  'destructive': ' slds-button--destructive',
-  'inverse': ' slds-button--inverse',
+  'brand': 'slds-button--brand',
+  'success': 'slds-button--success',
+  'neutral': 'slds-button--neutral',
+  'destructive': 'slds-button--destructive',
+  'inverse': 'slds-button--inverse',
 };
 
 export default Ember.Component.extend({
   layout,
-  tagName: '',
+  tagName: 'button',
+
+  classNames: ['slds-button'],
+  classNameBindings: ['typeClass'],
+  attributeBindings: ['disabled'],
+
   type: '',
   text: 'Submit',
   disabled: false,
@@ -49,6 +53,10 @@ export default Ember.Component.extend({
 
     return iconPosition == 'right';
   }),
+
+  click(){
+    this.sendAction('clicked');
+  },
 
   actions: {
     clicked() {
