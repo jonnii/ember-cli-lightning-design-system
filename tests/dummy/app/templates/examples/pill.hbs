@@ -3,5 +3,9 @@
 {{slds-pill label='awesome pill'}}
 
 {{#slds-pill label='awesome pill' as |pill|}}
-  {{pill.icon}}
+  {{pill.icon icon='user'}}
+  <a href="javascript:void(0);" class="slds-pill__label" title="Full pill label verbiage mirrored here">awesome pill</a>
+  {{pill.button}}
 {{/slds-pill}}
+
+{{slds-pill-container}}
