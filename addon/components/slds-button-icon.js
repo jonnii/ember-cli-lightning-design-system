@@ -4,7 +4,6 @@ import layout from '../templates/components/slds-button-icon';
 const typeMappings = {
   'default':  'slds-button--icon',
   'error':    'slds-button--icon-error',
-  'progress': 'slds-button--icon slds-progress__marker slds-progress__marker--icon'
 };
 
 const borderMappings = {
@@ -14,7 +13,10 @@ const borderMappings = {
 
 export default Ember.Component.extend({
   layout,
-  tagName: '',
+  tagName: 'button',
+  classNames: ['slds-button'],
+  classNameBindings: ['typeClass', 'borderClass', 'selectedClass'],
+  attributeBindings: ['titleWithDefault:title', 'disabled', 'ariaHaspopup:aria-haspopup'],
 
   type: 'default',
   sprite: 'utility',
@@ -41,13 +43,17 @@ export default Ember.Component.extend({
 
   borderClass: Ember.computed('border', function(){
     const border = this.get('border');
-    return border == 'none' ? '' : ` ${borderMappings[border]}`;
+    return border == 'none' ? '' : `${borderMappings[border]}`;
   }),
 
   selectedClass: Ember.computed('isSelected', function() {
     const isSelected = this.get('isSelected');
-    return isSelected ? ' slds-is-selected' : '';
+    return isSelected ? 'slds-is-selected' : '';
   }),
+
+  click() {
+    this.sendAction('clicked', this.get('clicked'))
+  },
 
   actions: {
     clicked(handler) {
