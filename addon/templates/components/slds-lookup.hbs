@@ -10,16 +10,13 @@
       class="slds-input slds-lookup__search-input"
       placeholder=placeholder
       focus-in=(action 'onFocusIn')
-      focus-out=(action 'onFocusOut')}}
+      focus-out=(action 'onFocusOut')
+      value=query}}
   </div>
 
   <div class="slds-lookup__menu" id="lookup-65">
-    <div class="slds-lookup__item--label slds-text-body--small">{{prompt}}</div>
-    <ul class="slds-lookup__list" role="listbox">
-      {{yield (hash 
-        item=(component 'slds-lookup-item') 
-        action=(component 'slds-lookup-action')
-      )}}
-    </ul>
+    {{yield (hash
+      header=(component 'slds-lookup-header' prompt=prompt query=query)
+      list=(component 'slds-lookup-list' query=query))}}
   </div>
 </div>

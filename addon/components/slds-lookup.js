@@ -5,7 +5,12 @@ export default Ember.Component.extend({
   layout,
   tagName: '',
   placeholder: 'Search',
-  prompt: 'Recent Items',
+  prompt: 'Recent',
+
+  hasQuery: Ember.computed('query', function() {
+    const query = this.get('query');
+    return !Ember.isEmpty(query);
+  }),
 
   openClass: Ember.computed('isOpen', function() {
     return this.get('isOpen') 

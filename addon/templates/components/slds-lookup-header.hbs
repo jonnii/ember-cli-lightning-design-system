@@ -1,0 +1,9 @@
+{{#unless query}}
+  <div class="slds-lookup__item--label slds-text-body--small">
+    {{#if hasBlock}}
+      {{yield}}
+    {{else}}
+      {{prompt}}
+    {{/if}}
+  </div>
+{{/unless}}

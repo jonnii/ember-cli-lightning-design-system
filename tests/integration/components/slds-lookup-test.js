@@ -32,4 +32,3 @@ test('it renders with when open', function(assert) {
 
   assert.equal(this.$('.slds-lookup').attr('class'), 'slds-form-element slds-lookup slds-is-open');
 });
-

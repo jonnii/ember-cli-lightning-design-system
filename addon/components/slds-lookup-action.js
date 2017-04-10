@@ -3,5 +3,7 @@ import layout from '../templates/components/slds-lookup-action';
 
 export default Ember.Component.extend({
   layout,
-  tagName: ''
+  tagName: '',
+
+  icon: 'question'
 });

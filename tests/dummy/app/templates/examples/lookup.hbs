@@ -6,8 +6,32 @@
 
 <hr/>
 
-{{#slds-lookup isOpen=true as |lookup|}}
-  {{lookup.item text="The Boston Consulting Group" meta="Account • Boston"}}
-  {{lookup.item text="The New York Consulting Group" meta="Account • New York"}}
-  {{lookup.action text="Create Account"}}
-{{/slds-lookup}}
+<div class="slds-grid">
+  <div class="slds-col">
+    <div class="slds-box slds-box--small slds-theme--shade slds-text-align--center">
+      {{#slds-lookup isOpen=true as |control|}}
+        {{control.header}}
+
+        {{#control.list as |list|}}
+          {{list.item text="The Boston Consulting Group" meta="Account • Boston"}}
+          {{list.item text="The New York Consulting Group" meta="Account • New York"}}
+          {{list.action icon='add' text="Create Account"}}
+        {{/control.list}}
+      {{/slds-lookup}}
+    </div>
+  </div>
+  <div class="slds-col">
+    <div class="slds-box slds-box--small slds-theme--shade slds-text-align--center">
+      {{#slds-lookup query='awesome query' isOpen=true as |control|}}
+        {{control.header}}
+
+        {{#control.list as |list query|}}
+          {{list.action icon='search' text=query}}
+          {{list.item text="The Boston Consulting Group" meta="Account • Boston"}}
+          {{list.item text="The New York Consulting Group" meta="Account • New York"}}
+          {{list.action icon='add' text="Create Account"}}
+        {{/control.list}}
+      {{/slds-lookup}}
+    </div>
+  </div>
+</div>

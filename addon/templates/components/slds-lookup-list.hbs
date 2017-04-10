@@ -1,0 +1,6 @@
+<ul class="slds-lookup__list" role="listbox">
+  {{yield (hash 
+    item=(component 'slds-lookup-item') 
+    action=(component 'slds-lookup-action')
+  ) query}}
+</ul>
