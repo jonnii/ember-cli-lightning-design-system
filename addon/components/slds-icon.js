@@ -9,7 +9,12 @@ const defaults = {
 
 export default Ember.Component.extend({
   layout,
-  tagName: '',
+
+  tagName: 'span',
+  classNames: ['slds-icon_container'],
+  classNameBindings: ['backgroundClass'],
+  attributeBindings: ['description:title'],
+
   sprite: 'standard',
   icon: '',
   description: null,
@@ -26,7 +31,7 @@ export default Ember.Component.extend({
     if(sprite === 'utility' || sprite === 'doctype') {
       return '';
     } else {
-      return ` slds-icon-${sprite}-${iconWithDefaults}`;
+      return `slds-icon-${sprite}-${iconWithDefaults}`;
     }
   }),
 
