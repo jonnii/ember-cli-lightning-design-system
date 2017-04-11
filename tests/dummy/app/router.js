@@ -28,6 +28,7 @@ Router.map(function() {
     this.route('card');
     this.route('pill');
     this.route('process');
+    this.route('modal');
   });
 });
 
