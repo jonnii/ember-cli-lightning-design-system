@@ -1,13 +1,20 @@
-<span class="slds-pill">
-  {{#if hasBlock}}
-    {{yield (hash
-      icon=(component 'slds-icon' sprite='standard' icon='account' text='Account' class='slds-pill__icon_container')
-      button=(component 'slds-button-icon' icon='close' class='slds-pill__remove' title='Remove')
-      )
-      label
-    }}  
-  {{else}}
-    <a href="javascript:void(0);" class="slds-pill__label" title="Full pill label verbiage mirrored here">{{label}}</a>
-    {{slds-button-icon icon='close' class='slds-pill__remove' title='Remove'}}
+{{#if hasBlock}}
+  {{yield (hash
+    icon=(component 'slds-icon' sprite='standard' icon='account' text='Account' class='slds-pill__icon_container')
+    button=(component 'slds-button-icon' icon='close' class='slds-pill__remove' title='Remove')
+    )
+    label
+  }}  
+{{else}}
+  {{#if isError}}
+    <span class="slds-icon_container slds-pill__icon_container slds-m-left--xx-small">
+      <svg class="icon-error slds-icon--x-small slds-icon-text-error" aria-hidden="true">
+        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#warning"></use>
+      </svg>
+      <span class="slds-assistive-text">Warning</span>
+    </span>
   {{/if}}
-</span>
+  
+  <a href="javascript:void(0);" class="slds-pill__label" title="Full pill label verbiage mirrored here">{{label}}</a>
+  {{slds-button-icon icon='close' class='slds-pill__remove' title='Remove'}}
+{{/if}}
