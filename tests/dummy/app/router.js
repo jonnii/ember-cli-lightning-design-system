@@ -27,6 +27,7 @@ Router.map(function() {
     this.route('form-controls');
     this.route('card');
     this.route('pill');
+    this.route('process');
   });
 });
 
