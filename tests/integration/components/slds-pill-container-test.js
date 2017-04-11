@@ -5,22 +5,14 @@ moduleForComponent('slds-pill-container', 'Integration | Component | slds pill c
   integration: true
 });
 
-test('it renders', function(assert) {
+test('it renders with pills', function(assert) {
+  this.render(hbs`
+    {{#slds-pill-container as |container|}}
+      {{container.pill}}
+      {{container.pill}}
+      {{container.pill}}
+    {{/slds-pill-container}}
+  `);
 
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
-  this.render(hbs`{{slds-pill-container}}`);
-  assert.expect(0);
-
-  // assert.equal(this.$().text().trim(), '');
-
-  // // Template block usage:
-  // this.render(hbs`
-  //   {{#slds-pill-container}}
-  //     template block text
-  //   {{/slds-pill-container}}
-  // `);
-
-  // assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$('.slds-pill').length, 3);
 });

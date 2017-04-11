@@ -8,4 +8,8 @@
   {{pill.button}}
 {{/slds-pill}}
 
-{{slds-pill-container}}
+{{#slds-pill-container as |container|}}
+  {{container.pill label='option1'}}
+  {{container.pill label='option2'}}
+  {{container.pill label='option3'}}
+{{/slds-pill-container}}
