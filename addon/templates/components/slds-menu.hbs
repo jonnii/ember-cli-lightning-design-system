@@ -1,13 +1,11 @@
-<div class="slds-dropdown-trigger slds-dropdown-trigger--click {{class}}{{openClass}}" aria-expanded="{{isOpen}}">
-  {{slds-button-icon 
-    disabled=disabled
-    border='filled' 
-    title='Show More' 
-    icon='down'
-    ariaHaspopup='true'
-    clicked=(action 'toggle')}}
-  
-  {{#slds-dropdown position=position clicked=(action 'clicked') as |dropdown|}}
-    {{yield dropdown}}
-  {{/slds-dropdown}}
-</div>
+{{slds-button-icon 
+  disabled=disabled
+  border='filled' 
+  title='Show More' 
+  icon='down'
+  ariaHaspopup='true'
+  clicked=(action 'toggle')}}
+
+{{#slds-dropdown position=position clicked=(action 'clicked') as |dropdown|}}
+  {{yield dropdown}}
+{{/slds-dropdown}}
