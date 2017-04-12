@@ -1,7 +1,8 @@
 <div class="slds-progress">
   <ol class="slds-progress__list">
     {{yield (hash 
-      item=(component 'slds-progress-item'))}}
+      item=(component 'slds-progress-item')
+    )}}
   </ol>
   {{slds-progress-bar value=value}}
 </div>
