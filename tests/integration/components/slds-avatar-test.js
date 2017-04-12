@@ -22,7 +22,7 @@ test('it renders with type', function(assert) {
 test('it renders with size', function(assert) {
   this.render(hbs`{{slds-avatar type='circle' size='small'}}`);
 
-  assert.equal(this.$('span').attr('class'), 'slds-avatar slds-avatar--small slds-avatar--circle ember-viewcls');
+  assert.equal(this.$('span').attr('class'), 'slds-avatar slds-avatar--small slds-avatar--circle ember-view');
 });
 
 test('it renders with custom image', function(assert) {

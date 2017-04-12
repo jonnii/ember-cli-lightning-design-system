@@ -15,6 +15,7 @@ test('it renders with default icon', function(assert) {
   assert.notOk(button.attr('aria-haspopup'));
 
   assert.equal(this.$('svg').attr('class'), 'slds-button__icon');
+  assert.equal(this.$('svg').attr('aria-hidden'), 'true');
   assert.equal(this.$('use').attr('xlink:href').trim(), '/assets/icons/utility-sprite/svg/symbols.svg#question');
   assert.equal(this.$('span.slds-assistive-text').text().trim(), 'question');
 });

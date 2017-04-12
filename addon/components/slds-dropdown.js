@@ -1,19 +1,21 @@
 import Ember from 'ember';
 import layout from '../templates/components/slds-dropdown';
 
-
 const positionClassMap = {
-  'topLeft': ' slds-dropdown--left',
+  'topLeft': 'slds-dropdown--left',
   'top': '',
-  'topRight': ' slds-dropdown--right',
-  'bottomLeft': ' slds-dropdown--bottom slds-dropdown--left',
-  'bottom': ' slds-dropdown--bottom',
-  'bottomRight': ' slds-dropdown--bottom slds-dropdown--right',
+  'topRight': 'slds-dropdown--right',
+  'bottomLeft': 'slds-dropdown--bottom slds-dropdown--left',
+  'bottom': 'slds-dropdown--bottom',
+  'bottomRight': 'slds-dropdown--bottom slds-dropdown--right',
 };
 
 export default Ember.Component.extend({
   layout,
-  tagName: '',
+  
+  classNames: ['slds-dropdown'],
+  classNameBindings: ['positionClass'],
+
   isOpen: false,
   position: 'topLeft',
 

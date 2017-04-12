@@ -3,9 +3,9 @@ import layout from '../templates/components/slds-progress-item';
 
 const stateMap = {
   'default': '',
-  'active': ' slds-is-active',
-  'completed': ' slds-is-completed',
-  'error': ' slds-has-error'
+  'active': 'slds-is-active',
+  'completed': 'slds-is-completed',
+  'error': 'slds-has-error'
 };
 
 const iconMap = {
@@ -15,7 +15,11 @@ const iconMap = {
 
 export default Ember.Component.extend({
   layout,
-  tagName: '',
+
+  tagName: 'li',
+  classNames: ['slds-progress__item'],
+  classNameBindings: ['stateClass'],
+
   state: 'default',
 
   stateClass: Ember.computed('state', function() {

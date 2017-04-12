@@ -1,14 +1,12 @@
-<li class="slds-progress__item{{stateClass}}">
-  {{#if hasIcon}}
-    {{slds-button-icon 
-      sprite='utility' 
-      icon=icon 
-      title=text 
-      class='slds-progress__marker slds-progress__marker--icon'
-      clicked=clicked}}
-  {{else}}
-    {{#slds-button class='slds-progress__marker' clicked=clicked}}
-      <span class="slds-assistive-text">{{text}}</span>
-    {{/slds-button}}
-  {{/if}}
-</li>
+{{#if hasIcon}}
+  {{slds-button-icon 
+    sprite='utility' 
+    icon=icon 
+    title=text 
+    class='slds-progress__marker slds-progress__marker--icon'
+    clicked=clicked}}
+{{else}}
+  {{#slds-button class='slds-progress__marker' clicked=clicked}}
+    <span class="slds-assistive-text">{{text}}</span>
+  {{/slds-button}}
+{{/if}}
