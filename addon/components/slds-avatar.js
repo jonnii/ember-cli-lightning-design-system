@@ -3,12 +3,16 @@ import layout from '../templates/components/slds-avatar';
 
 const typeMap = {
   'square': '',
-  'circle': ' slds-avatar--circle'
-}
+  'circle': 'slds-avatar--circle'
+};
 
 export default Ember.Component.extend({
   layout,
-  tagName: '',
+  tagName: 'span',
+
+  classNames: ['slds-avatar'],
+  classNameBindings: ['sizeClass', 'typeClass'],
+
   type: 'square',
   size: 'medium',
   sprite: 'standard',
@@ -17,6 +21,11 @@ export default Ember.Component.extend({
   typeClass: Ember.computed('type', function() {
     const type = this.get('type');
     return typeMap[type];
+  }),
+
+  sizeClass: Ember.computed('size', function() {
+    const size = this.get('size');
+    return `slds-avatar--${size}`;
   }),
 
   shortName: Ember.computed('name', function() {

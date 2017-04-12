@@ -29,6 +29,7 @@ Router.map(function() {
     this.route('pill');
     this.route('process');
     this.route('modal');
+    this.route('avatar');
   });
 });
 

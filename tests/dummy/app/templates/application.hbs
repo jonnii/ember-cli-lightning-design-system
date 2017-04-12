@@ -12,6 +12,10 @@
     {{dropdown.header text="Navigation"}}
     {{dropdown.item text='Breadcrumbs' clicked=(route-action 'navigateTo' 'examples.breadcrumb')}}
     {{dropdown.item text='Menus' clicked=(route-action 'navigateTo' 'examples.menu')}}
+
+    {{dropdown.separator}}
+    {{dropdown.header text="Images"}}
+    {{dropdown.item text='Avatars' clicked=(route-action 'navigateTo' 'examples.avatar')}}
   {{/bar.menu}}
 
   {{#bar.menu text='Navigation' as |dropdown|}}

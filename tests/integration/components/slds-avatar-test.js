@@ -8,7 +8,7 @@ moduleForComponent('slds-avatar', 'Integration | Component | slds avatar', {
 test('it renders', function(assert) {
   this.render(hbs`{{slds-avatar}}`);
 
-  assert.equal(this.$('span').attr('class'), 'slds-avatar slds-avatar--medium');
+  assert.equal(this.$('span').attr('class'), 'slds-avatar slds-avatar--medium ember-view');
   assert.equal(this.$('img').attr('src'), '/assets/images/avatar2.jpg');
   assert.equal(this.$('img').attr('alt'), 'default avatar');
 });
@@ -16,13 +16,13 @@ test('it renders', function(assert) {
 test('it renders with type', function(assert) {
   this.render(hbs`{{slds-avatar type='circle'}}`);
 
-  assert.equal(this.$('span').attr('class'), 'slds-avatar slds-avatar--medium slds-avatar--circle');
+  assert.equal(this.$('span').attr('class'), 'slds-avatar slds-avatar--medium slds-avatar--circle ember-view');
 });
 
 test('it renders with size', function(assert) {
   this.render(hbs`{{slds-avatar type='circle' size='small'}}`);
 
-  assert.equal(this.$('span').attr('class'), 'slds-avatar slds-avatar--small slds-avatar--circle');
+  assert.equal(this.$('span').attr('class'), 'slds-avatar slds-avatar--small slds-avatar--circle ember-viewcls');
 });
 
 test('it renders with custom image', function(assert) {
