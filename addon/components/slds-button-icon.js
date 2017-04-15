@@ -4,6 +4,7 @@ import layout from '../templates/components/slds-button-icon';
 const typeMappings = {
   'default':  'slds-button--icon',
   'error':    'slds-button--icon-error',
+  'inverse':  'slds-button--icon-inverse',
 };
 
 const borderMappings = {

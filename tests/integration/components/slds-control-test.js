@@ -5,8 +5,14 @@ moduleForComponent('slds-control', 'Integration | Component | slds control', {
   integration: true
 });
 
-test('it renders', function(assert) {
-  this.render(hbs`{{slds-control label='awesome label'}}`);
+test('it renders with input', function(assert) {
+  this.render(hbs`
+    {{#slds-control label='Required Field' as |control|}}
+      {{control.input placeholder='placeholder text'}}
+    {{/slds-control}}
+  `);
 
-  assert.expect(0);
+  assert.equal(
+    this.$('.slds-form-element label.slds-form-element__label').attr('for'), 
+    this.$('input.slds-input').attr('id'));
 });
