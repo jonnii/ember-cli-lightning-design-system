@@ -1,30 +1,34 @@
-<div class="slds-form--horizontal">
-  
-  {{#slds-control label='Text Input' as |control|}}
-    {{control.input placeholder='Placeholder Text'}}
-  {{/slds-control}}
+{{#slds-box}}
 
-  {{#slds-control label='Textarea Label' as |control|}}
-    {{control.textarea}}
-  {{/slds-control}}
+  <div class="slds-form--horizontal">
+    
+    {{#slds-control label='Text Input' as |control|}}
+      {{control.input placeholder='Placeholder Text'}}
+    {{/slds-control}}
 
-  {{#slds-control-group label='Checkbox Group label' as |control|}}
-    {{control.checkbox label='All opportunities owned by you'}}
-    {{control.checkbox label='All contacts in the account owned by you'}}
-  {{/slds-control-group}}
+    {{#slds-control label='Textarea Label' as |control|}}
+      {{control.textarea}}
+    {{/slds-control}}
 
-  {{#slds-control-group label='Radio Group label' as |control|}}
-    {{control.radio label='Lead Generation'}}
-    {{control.radio label='Education Leads'}}
-  {{/slds-control-group}}
+    {{#slds-control-group label='Checkbox Group label' as |control|}}
+      {{control.checkbox label='All opportunities owned by you'}}
+      {{control.checkbox label='All contacts in the account owned by you'}}
+    {{/slds-control-group}}
 
-  <div class="slds-form-element">
-    <div class="slds-form-element__control">
-      <label class="slds-checkbox" for="agree">
-        <input type="checkbox" name="default" id="agree" />
-        <span class="slds-checkbox--faux"></span>
-        <span class="slds-form-element__label">I agree to the Terms &amp; Service</span>
-      </label>
+    {{#slds-control-group label='Radio Group label' as |control|}}
+      {{control.radio label='Lead Generation'}}
+      {{control.radio label='Education Leads'}}
+    {{/slds-control-group}}
+
+    <div class="slds-form-element">
+      <div class="slds-form-element__control">
+        <label class="slds-checkbox" for="agree">
+          <input type="checkbox" name="default" id="agree" />
+          <span class="slds-checkbox--faux"></span>
+          <span class="slds-form-element__label">I agree to the Terms &amp; Service</span>
+        </label>
+      </div>
     </div>
   </div>
-</div>
+
+{{/slds-box}}
