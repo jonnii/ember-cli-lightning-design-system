@@ -3,9 +3,6 @@ const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
 module.exports = function(defaults) {
   var app = new EmberAddon(defaults, {
-    fingerprint: {
-      prepend: 'https://jonnii.github.io/'
-    }
   });
 
   /*
