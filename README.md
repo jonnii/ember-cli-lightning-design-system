@@ -40,19 +40,19 @@ to save yourself some time the following components are supported.
 {{slds-avatar}}
 
 {{#slds-avatar}}
-  <img src="/assets/images/avatar1.jpg" alt="default avatar" />
+  <img src="assets/images/avatar1.jpg" alt="default avatar" />
 {{/slds-avatar}}
 
 {{#slds-avatar}}
-  <img src="/assets/images/avatar1.jpg" alt="default avatar" />
+  <img src="assets/images/avatar1.jpg" alt="default avatar" />
 {{/slds-avatar}}
 
 {{#slds-avatar type='circle'}}
-  <img src="/assets/images/avatar1.jpg" alt="default avatar" />
+  <img src="assets/images/avatar1.jpg" alt="default avatar" />
 {{/slds-avatar}}
 
 {{#slds-avatar size='large'}}
-  <img src="/assets/images/avatar1.jpg" alt="default avatar" />
+  <img src="assets/images/avatar1.jpg" alt="default avatar" />
 {{/slds-avatar}}
 
 {{slds-avatar name='Bobby Jenkins'}}

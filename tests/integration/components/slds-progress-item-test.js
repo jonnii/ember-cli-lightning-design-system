@@ -24,7 +24,7 @@ test('it renders complete', function(assert) {
   assert.equal(this.$('li').attr('class'), 'slds-progress__item slds-is-completed ember-view');
   assert.equal(this.$('.slds-assistive-text').text().trim(), 'item 3');
   assert.ok(this.$('.slds-button__icon'));
-  assert.equal(this.$('use').attr('xlink:href'), '/assets/icons/utility-sprite/svg/symbols.svg#success');
+  assert.equal(this.$('use').attr('xlink:href'), 'assets/icons/utility-sprite/svg/symbols.svg#success');
 });
 
 test('it renders error', function(assert) {
@@ -33,5 +33,5 @@ test('it renders error', function(assert) {
   assert.equal(this.$('li').attr('class'), 'slds-progress__item slds-has-error ember-view');
   assert.equal(this.$('.slds-assistive-text').text().trim(), 'item 3');
   assert.ok(this.$('.slds-button__icon'));
-  assert.equal(this.$('use').attr('xlink:href'), '/assets/icons/utility-sprite/svg/symbols.svg#warning');
+  assert.equal(this.$('use').attr('xlink:href'), 'assets/icons/utility-sprite/svg/symbols.svg#warning');
 });

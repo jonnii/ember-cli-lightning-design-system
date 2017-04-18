@@ -16,7 +16,7 @@ test('it renders with default icon', function(assert) {
 
   assert.equal(this.$('svg').attr('class'), 'slds-button__icon');
   assert.equal(this.$('svg').attr('aria-hidden'), 'true');
-  assert.equal(this.$('use').attr('xlink:href').trim(), '/assets/icons/utility-sprite/svg/symbols.svg#question');
+  assert.equal(this.$('use').attr('xlink:href').trim(), 'assets/icons/utility-sprite/svg/symbols.svg#question');
   assert.equal(this.$('span.slds-assistive-text').text().trim(), 'question');
 });
 
@@ -32,7 +32,7 @@ test('it renders with icon', function(assert) {
   this.render(hbs`{{slds-button-icon icon='user'}}`);
 
   assert.equal(this.$('button').attr('title').trim(), 'user');
-  assert.equal(this.$('use').attr('xlink:href').trim(), '/assets/icons/utility-sprite/svg/symbols.svg#user');
+  assert.equal(this.$('use').attr('xlink:href').trim(), 'assets/icons/utility-sprite/svg/symbols.svg#user');
   assert.equal(this.$('span.slds-assistive-text').text().trim(), 'user');
 });
 

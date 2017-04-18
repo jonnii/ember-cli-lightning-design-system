@@ -9,7 +9,7 @@ test('it renders', function(assert) {
   this.render(hbs`{{slds-avatar}}`);
 
   assert.equal(this.$('span').attr('class'), 'slds-avatar slds-avatar--medium ember-view');
-  assert.equal(this.$('img').attr('src'), '/assets/images/avatar2.jpg');
+  assert.equal(this.$('img').attr('src'), 'assets/images/avatar2.jpg');
   assert.equal(this.$('img').attr('alt'), 'default avatar');
 });
 

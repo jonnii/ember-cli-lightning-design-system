@@ -15,7 +15,7 @@ test('it renders default standard', function(assert) {
 
   const icon = this.$('.slds-icon');
   assert.equal(icon.attr('class').trim(), 'slds-icon');
-  assert.equal(this.$('use').attr('xlink:href'), '/assets/icons/standard-sprite/svg/symbols.svg#default');
+  assert.equal(this.$('use').attr('xlink:href'), 'assets/icons/standard-sprite/svg/symbols.svg#default');
 });
 
 test('it renders standard with description', function(assert) {
@@ -36,7 +36,7 @@ test('it renders utility', function(assert) {
   const icon = this.$('.slds-icon');
   assert.equal(icon.attr('class').trim(), 'slds-icon slds-icon-text-default');
 
-  assert.equal(this.$('use').attr('xlink:href'), '/assets/icons/utility-sprite/svg/symbols.svg#question');
+  assert.equal(this.$('use').attr('xlink:href'), 'assets/icons/utility-sprite/svg/symbols.svg#question');
 });
 
 test('it renders doctype', function(assert) {
@@ -48,7 +48,7 @@ test('it renders doctype', function(assert) {
   const icon = this.$('.slds-icon');
   assert.equal(icon.attr('class').trim(), 'slds-icon');
 
-  assert.equal(this.$('use').attr('xlink:href'), '/assets/icons/doctype-sprite/svg/symbols.svg#unknown');
+  assert.equal(this.$('use').attr('xlink:href'), 'assets/icons/doctype-sprite/svg/symbols.svg#unknown');
 });
 
 test('it renders sizes', function(assert) {
