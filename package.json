@@ -60,6 +60,7 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
+    "demoURL": "https://jonnii.github.io/ember-cli-lightning-design-system/",
     "versionCompatibility": {
       "ember": ">=2.8.0"
     }
