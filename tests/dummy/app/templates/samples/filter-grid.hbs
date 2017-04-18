@@ -2,7 +2,8 @@
 
 <main>
   {{#slds-navigation-bar applicationName='Filter Grid' as |bar|}}
-    {{#bar.item path='samples.filter-grid'}}Current Page{{/bar.item}}
+    {{#bar.item path='samples.filter-grid'}}Filter Grid{{/bar.item}}
+    {{#bar.item path='samples.index'}}Samples{{/bar.item}}
   {{/slds-navigation-bar}}
 </main>
 
@@ -10,7 +11,6 @@
 
 <div class="slds-grid">
   <div class="slds-col">
-
     <table class="slds-table slds-table--bordered slds-table--resizable-cols slds-table--fixed-layout" role="grid">
       <thead>
         <tr class="slds-line-height--reset">
