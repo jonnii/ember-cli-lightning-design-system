@@ -30,6 +30,7 @@ Router.map(function() {
     this.route('process');
     this.route('modal');
     this.route('avatar');
+    this.route('media');
   });
   this.route('samples', function() {
     this.route('filter-grid');
