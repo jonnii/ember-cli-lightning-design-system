@@ -8,9 +8,9 @@ moduleForComponent('slds-button-icon', 'Integration | Component | slds button ic
 test('it renders with default icon', function(assert) {
   this.render(hbs`{{slds-button-icon}}`);
 
-  const button = this.$('button');
+  const button = this.$('button.slds-button.slds-button--icon');
 
-  assert.equal(button.attr('class').trim(), 'slds-button slds-button--icon ember-view');
+  assert.ok(button.length);
   assert.equal(button.attr('title').trim(), 'question');
   assert.notOk(button.attr('aria-haspopup'));
 
@@ -23,9 +23,7 @@ test('it renders with default icon', function(assert) {
 test('it renders with custom class', function(assert) {
   this.render(hbs`{{slds-button-icon class='slds-pill__remove'}}`);
 
-  const button = this.$('button');
-
-  assert.equal(button.attr('class').trim(), 'slds-pill__remove slds-button slds-button--icon ember-view');
+  assert.ok(this.$('button.slds-pill__remove.slds-button.slds-button--icon').length);
 });
 
 test('it renders with icon', function(assert) {
@@ -45,7 +43,7 @@ test('it renders with aria-popup', function(assert) {
 test('it renders warning', function(assert) {
   this.render(hbs`{{slds-button-icon icon='warning' type='error'}}`);
 
-  assert.equal(this.$('button').attr('class').trim(), 'slds-button slds-button--icon-error ember-view');
+  assert.ok(this.$('button.slds-button.slds-button--icon-error').length);
 });
 
 test('it renders disabled', function(assert) {
@@ -69,19 +67,19 @@ test('it renders with size x-small', function(assert) {
 test('it renders with border outline', function(assert) {
   this.render(hbs`{{slds-button-icon border='outline'}}`);
 
-  assert.equal(this.$('button').attr('class'), 'slds-button slds-button--icon slds-button--icon-border ember-view');
+  assert.ok(this.$('button.slds-button.slds-button--icon.slds-button--icon-border').length);
 });
 
 test('it renders with border filled', function(assert) {
   this.render(hbs`{{slds-button-icon border='filled'}}`);
 
-  assert.equal(this.$('button').attr('class'), 'slds-button slds-button--icon slds-button--icon-border-filled ember-view');
+  assert.ok(this.$('button.slds-button.slds-button--icon.slds-button--icon-border-filled').length);
 });
 
 test('it renders when selected', function(assert) {
   this.render(hbs`{{slds-button-icon isSelected=true}}`);
 
-  assert.equal(this.$('button').attr('class'), 'slds-button slds-button--icon slds-is-selected ember-view');
+  assert.ok(this.$('button.slds-button.slds-button--icon.slds-is-selected').length);
 });
 
 test('it renders with title', function(assert) {

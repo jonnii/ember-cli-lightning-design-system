@@ -30,6 +30,6 @@ test('it renders with menu', function(assert) {
   `);
 
   assert.equal(this.$('.slds-dropdown-trigger').length, 1);
-  assert.equal(this.$('.slds-dropdown-trigger').attr('class'), 'slds-button--last slds-dropdown-trigger slds-dropdown-trigger--click ember-view');
-  assert.equal(this.$('.slds-dropdown').attr('class'), 'slds-dropdown slds-dropdown--right ember-view');
+  assert.ok(this.$('.slds-button--last.slds-dropdown-trigger.slds-dropdown-trigger--click').length);
+  assert.ok(this.$('.slds-dropdown.slds-dropdown--right').length);
 });
