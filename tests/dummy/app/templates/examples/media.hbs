@@ -1,4 +1,23 @@
 {{#slds-media as |media|}}
-  {{#media.figure}}figure{{/media.figure}}
+  {{#media.figure}}
+    <img src="/assets/images/avatar3.jpg" class="slds-avatar--large" alt="Placeholder" />
+  {{/media.figure}}
   {{#media.body}}body{{/media.body}}
+{{/slds-media}}
+
+{{#slds-media alignment='center' as |media|}}
+  {{#media.figure}}
+    <img src="/assets/images/avatar3.jpg" class="slds-avatar--large" alt="Placeholder" />
+  {{/media.figure}}
+  {{#media.body}}body{{/media.body}}
+{{/slds-media}}
+
+{{#slds-media alignment='center' as |media|}}
+  {{#media.figure}}
+    <img src="/assets/images/avatar3.jpg" class="slds-avatar--large" alt="Placeholder" />
+  {{/media.figure}}
+  {{#media.body}}body{{/media.body}}
+  {{#media.figure type='reverse'}}
+    <img src="/assets/images/avatar3.jpg" class="slds-avatar--large" alt="Placeholder" />
+  {{/media.figure}}
 {{/slds-media}}

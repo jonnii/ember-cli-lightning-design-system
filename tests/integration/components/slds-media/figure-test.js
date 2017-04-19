@@ -6,15 +6,6 @@ moduleForComponent('slds-media/figure', 'Integration | Component | slds media/fi
 });
 
 test('it renders', function(assert) {
-
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
-  this.render(hbs`{{slds-media/figure}}`);
-
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
   this.render(hbs`
     {{#slds-media/figure}}
       template block text
@@ -22,4 +13,14 @@ test('it renders', function(assert) {
   `);
 
   assert.equal(this.$().text().trim(), 'template block text');
+});
+
+test('it renders reverse', function(assert) {
+  this.render(hbs`
+    {{#slds-media/figure type='reverse'}}
+      template block text
+    {{/slds-media/figure}}
+  `);
+
+  assert.ok(this.$('.slds-media__figure.slds-media__figure--reverse').length);
 });
