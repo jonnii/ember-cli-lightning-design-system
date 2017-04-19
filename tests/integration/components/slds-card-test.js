@@ -7,16 +7,6 @@ moduleForComponent('slds-card', 'Integration | Component | slds card', {
 
 test('it renders', function(assert) {
   this.render(hbs`{{slds-card}}`);
-  assert.expect(0);
 
-  // assert.equal(this.$().text().trim(), '');
-
-  // // Template block usage:
-  // this.render(hbs`
-  //   {{#slds-card}}
-  //     template block text
-  //   {{/slds-card}}
-  // `);
-
-  // assert.equal(this.$().text().trim(), 'template block text');
+  assert.ok(this.$('header.slds-media.slds-media--center').length);
 });
