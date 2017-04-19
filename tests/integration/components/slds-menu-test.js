@@ -12,14 +12,14 @@ test('it renders', function(assert) {
   assert.equal(this.$('button.slds-button:disabled').length, 0);
   assert.equal(this.$('div.slds-dropdown-trigger.slds-is-open').length, 0);
   assert.equal(this.$('div.slds-dropdown-trigger').attr('aria-expanded'), 'false');
-  assert.equal(this.$('.slds-dropdown').attr('class'), 'slds-dropdown slds-dropdown--left ember-view');
+  assert.ok(this.$('.slds-dropdown.slds-dropdown--left').length);
   assert.equal(this.$('.slds-button').attr('aria-haspopup'), 'true');
 });
 
 test('it renders with position', function(assert) {
   this.render(hbs`{{slds-menu position='bottomRight'}}`);
   
-  assert.equal(this.$('.slds-dropdown').attr('class'), 'slds-dropdown slds-dropdown--bottom slds-dropdown--right ember-view');
+  assert.ok(this.$('.slds-dropdown.slds-dropdown--bottom.slds-dropdown--right').length);
 });
 
 test('it renders disabled', function(assert) {
