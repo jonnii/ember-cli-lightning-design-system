@@ -30,7 +30,6 @@ module.exports = {
       destDir: 'fonts'
     });
 
-
     let imagesPath = path.join(nodeModulesPath, '@salesforce-ux', 'design-system', 'assets', 'images');
     let images = new Funnel(imagesPath, {
       destDir: 'assets/images'
