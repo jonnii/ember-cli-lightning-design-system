@@ -8,8 +8,8 @@ moduleForComponent('slds-icon', 'Integration | Component | slds icon', {
 test('it renders default standard', function(assert) {
   this.render(hbs`{{slds-icon}}`);
 
-  const container = this.$('span.slds-icon_container');
-  assert.equal(container.attr('class').trim(), 'slds-icon_container slds-icon-standard-default ember-view');
+  const container = this.$('span.slds-icon_container.slds-icon-standard-default');
+  assert.ok(container.length);
   assert.notOk(container.attr('title'));
   assert.equal(this.$('span.slds-assistive-text').length, 0);
 
@@ -20,9 +20,9 @@ test('it renders default standard', function(assert) {
 
 test('it renders standard with description', function(assert) {
   this.render(hbs`{{slds-icon description='fancy description'}}`);
-  const container = this.$('span.slds-icon_container');
+  const container = this.$('span.slds-icon_container.slds-icon-standard-default');
   
-  assert.equal(container.attr('class').trim(), 'slds-icon_container slds-icon-standard-default ember-view');
+  assert.ok(container.length);
   assert.equal(container.attr('title'), 'fancy description');
   assert.equal(this.$('.slds-assistive-text').text().trim(), 'fancy description');
 });
@@ -31,7 +31,7 @@ test('it renders utility', function(assert) {
   this.render(hbs`{{slds-icon sprite='utility'}}`);
 
   const container = this.$('span.slds-icon_container');
-  assert.equal(container.attr('class').trim(), 'slds-icon_container ember-view');
+  assert.ok(container.length);
   
   const icon = this.$('.slds-icon');
   assert.equal(icon.attr('class').trim(), 'slds-icon slds-icon-text-default');
@@ -43,7 +43,7 @@ test('it renders doctype', function(assert) {
   this.render(hbs`{{slds-icon sprite='doctype'}}`);
 
   const container = this.$('span.slds-icon_container');
-  assert.equal(container.attr('class').trim(), 'slds-icon_container ember-view');
+  assert.ok(container.length);
   
   const icon = this.$('.slds-icon');
   assert.equal(icon.attr('class').trim(), 'slds-icon');
