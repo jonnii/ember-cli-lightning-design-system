@@ -16,13 +16,14 @@ export default Ember.Component.extend({
   layout,
   tagName: 'button',
   classNames: ['slds-button'],
-  classNameBindings: ['typeClass', 'borderClass', 'selectedClass'],
+  classNameBindings: ['typeClass', 'borderClass', 'selectedClass', 'containerSizeClass'],
   attributeBindings: ['titleWithDefault:title', 'disabled', 'ariaHaspopup:aria-haspopup'],
 
   type: 'default',
   sprite: 'utility',
   icon: 'question',
   size: 'default',
+  containerSize: 'default',
   border: 'none',
   titleWithDefault: Ember.computed.or('title', 'icon'),
   
@@ -40,6 +41,15 @@ export default Ember.Component.extend({
     }
 
     return ` slds-button__icon--${size}`
+  }),
+
+  containerSizeClass: Ember.computed('containerSize', function() {
+    const containerSize = this.get('containerSize');
+    if(containerSize == 'default') {
+      return '';
+    }
+
+    return `slds-button--icon-${containerSize}`
   }),
 
   borderClass: Ember.computed('border', function(){

@@ -38,9 +38,11 @@ test('it renders when open', function(assert) {
 test('it renders with items', function(assert) {
   this.render(hbs`
     {{#slds-menu as |menu|}}
-      {{menu.item text="Overflow 1"}}
-      {{menu.item text="Overflow 2"}}
-      {{menu.item text="Overflow 3"}}
+      {{#menu.dropdown as |dropdown|}}
+        {{dropdown.item text="Overflow 1"}}
+        {{dropdown.item text="Overflow 2"}}
+        {{dropdown.item text="Overflow 3"}}
+      {{/menu.dropdown}}
     {{/slds-menu}}
   `);
 
@@ -70,9 +72,12 @@ test('it closes when item clicked', function(assert) {
 
   this.render(hbs`
     {{#slds-menu as |menu|}}
-      {{menu.item text="Overflow 1" clicked=(action clicked 'overflow1')}}
-      {{menu.item text="Overflow 2" clicked=(action clicked 'overflow2')}}
-      {{menu.item text="Overflow 3" clicked=(action clicked 'overflow3')}}
+      {{menu.trigger}}
+      {{#menu.dropdown as |dropdown|}}
+        {{dropdown.item text="Overflow 1" clicked=(action clicked 'overflow1')}}
+        {{dropdown.item text="Overflow 2" clicked=(action clicked 'overflow2')}}
+        {{dropdown.item text="Overflow 3" clicked=(action clicked 'overflow3')}}
+      {{/menu.dropdown}}
     {{/slds-menu}}
   `);
 

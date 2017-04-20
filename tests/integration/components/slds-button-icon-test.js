@@ -64,6 +64,12 @@ test('it renders with size x-small', function(assert) {
   assert.equal(this.$('svg').attr('class'), 'slds-button__icon slds-button__icon--x-small');
 });
 
+test('it renders with container size', function(assert) {
+  this.render(hbs`{{slds-button-icon containerSize='small'}}`);
+
+  assert.ok(this.$('button.slds-button--icon-small').length);
+});
+
 test('it renders with border outline', function(assert) {
   this.render(hbs`{{slds-button-icon border='outline'}}`);
 

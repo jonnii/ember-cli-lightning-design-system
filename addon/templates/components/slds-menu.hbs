@@ -1,11 +1,26 @@
-{{slds-button-icon 
-  disabled=disabled
-  border='filled' 
-  title='Show More' 
-  icon='down'
-  ariaHaspopup='true'
-  clicked=(action 'toggle')}}
-
-{{#slds-dropdown position=position clicked=(action 'clicked') as |dropdown|}}
-  {{yield dropdown}}
-{{/slds-dropdown}}
+{{#if hasBlock}}
+  {{yield (hash
+    trigger=(component 'slds-button-icon' 
+      disabled=disabled 
+      border='filled' 
+      title='Show More' 
+      icon='down'
+      ariaHaspopup='true'
+      clicked=(action 'toggle'))
+    dropdown=(component 'slds-dropdown'
+      position=position 
+      clicked=(action 'clicked'))
+  )}}
+{{else}}
+  {{slds-button-icon 
+    disabled=disabled
+    border='filled' 
+    title='Show More' 
+    icon='down'
+    ariaHaspopup='true'
+    clicked=(action 'toggle')}}
+  
+  {{#slds-dropdown position=position clicked=(action 'clicked') as |dropdown|}}
+    {{dropdown.item text="Item"}}
+  {{/slds-dropdown}}
+{{/if}}

@@ -24,7 +24,9 @@ test('it renders with menu', function(assert) {
       {{group.button text='Option2'}}
       {{group.button text='Option3'}}
       {{#group.menu as |menu|}}
-        {{menu.item text='option1'}}
+        {{#menu.dropdown as |dropdown|}}
+          {{dropdown.item text='option1'}}
+        {{/menu.dropdown}}
       {{/group.menu}}
     {{/slds-button-group}}
   `);

@@ -2,11 +2,14 @@
 
 <hr/>
 
-{{#slds-menu isOpen=true as |dropdown|}}
-  {{dropdown.header text="Heading"}}
-  {{dropdown.item text='Menu Item 1'}}
-  {{dropdown.item text='Menu Item 2'}}
-  {{dropdown.item text='Menu Item 3'}}
-  {{dropdown.separator}}
-  {{#dropdown.item}}Menu Item 4{{/dropdown.item}}
+{{#slds-menu isOpen=true as |menu|}}
+  {{menu.trigger icon='add'}}
+  {{#menu.dropdown as |dropdown|}}
+    {{dropdown.header text="Heading"}}
+    {{dropdown.item text='Menu Item 1'}}
+    {{dropdown.item text='Menu Item 2'}}
+    {{dropdown.item text='Menu Item 3'}}
+    {{dropdown.separator}}
+    {{#dropdown.item}}Menu Item 4{{/dropdown.item}}
+  {{/menu.dropdown}}
 {{/slds-menu}}
