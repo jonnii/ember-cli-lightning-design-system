@@ -19,7 +19,7 @@ export default Ember.Component.extend({
     toggle() {
       this.toggleProperty('isOpen');
     },
-    
+
     clicked(itemClickAction) {
       this.set('isOpen', false);
       itemClickAction();

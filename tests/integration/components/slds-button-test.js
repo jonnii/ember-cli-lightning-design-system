@@ -7,7 +7,7 @@ moduleForComponent('slds-button', 'Integration | Component | slds button', {
 
 test('it renders', function(assert) {
   this.render(hbs`{{slds-button}}`);
-  
+
   assert.equal(this.$().text().trim(), 'Submit');
   assert.ok(this.$('button.slds-button').length);
   assert.notOk(this.$('button').is('[disabled=disabled]'));
@@ -16,20 +16,20 @@ test('it renders', function(assert) {
 
 test('it renders with type brand', function(assert) {
   this.render(hbs`{{slds-button type='brand'}}`);
-  
+
   assert.ok(this.$('button.slds-button.slds-button--brand').length);
 });
 
 test('it renders disabled', function(assert) {
   this.render(hbs`{{slds-button type='brand' disabled=true}}`);
-  
+
   assert.equal(this.$('button:disabled').length, 1);
 });
 
 test('it is clickable', function(assert) {
   assert.expect(1);
 
-  this.set('externalAction', (message) => {
+  this.set('externalAction', message => {
     assert.equal(message, 'pressed');
   });
 

@@ -2,14 +2,14 @@ import Ember from 'ember';
 import layout from '../templates/components/slds-button-icon';
 
 const typeMappings = {
-  'default':  'slds-button--icon',
-  'error':    'slds-button--icon-error',
-  'inverse':  'slds-button--icon-inverse',
+  default: 'slds-button--icon',
+  error: 'slds-button--icon-error',
+  inverse: 'slds-button--icon-inverse'
 };
 
 const borderMappings = {
-  'outline': 'slds-button--icon-border',
-  'filled': 'slds-button--icon-border-filled'
+  outline: 'slds-button--icon-border',
+  filled: 'slds-button--icon-border-filled'
 };
 
 export default Ember.Component.extend({
@@ -26,7 +26,7 @@ export default Ember.Component.extend({
   containerSize: 'default',
   border: 'none',
   titleWithDefault: Ember.computed.or('title', 'icon'),
-  
+
   clicked: null,
 
   typeClass: Ember.computed('type', function() {
@@ -36,23 +36,23 @@ export default Ember.Component.extend({
 
   sizeClass: Ember.computed('size', function() {
     const size = this.get('size');
-    if(size == 'default') {
+    if (size == 'default') {
       return '';
     }
 
-    return ` slds-button__icon--${size}`
+    return ` slds-button__icon--${size}`;
   }),
 
   containerSizeClass: Ember.computed('containerSize', function() {
     const containerSize = this.get('containerSize');
-    if(containerSize == 'default') {
+    if (containerSize == 'default') {
       return '';
     }
 
-    return `slds-button--icon-${containerSize}`
+    return `slds-button--icon-${containerSize}`;
   }),
 
-  borderClass: Ember.computed('border', function(){
+  borderClass: Ember.computed('border', function() {
     const border = this.get('border');
     return border == 'none' ? '' : `${borderMappings[border]}`;
   }),
@@ -63,12 +63,12 @@ export default Ember.Component.extend({
   }),
 
   click() {
-    this.sendAction('clicked', this.get('clicked'))
+    this.sendAction('clicked', this.get('clicked'));
   },
 
   actions: {
     clicked(handler) {
-      if(handler != null) {
+      if (handler != null) {
         handler();
       }
     }

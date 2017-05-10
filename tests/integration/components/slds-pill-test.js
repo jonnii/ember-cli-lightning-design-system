@@ -23,5 +23,8 @@ test('it renders with error', function(assert) {
   this.render(hbs`{{slds-pill isError=true}}`);
 
   assert.ok(this.$('.slds-pill.slds-has-error').length);
-  assert.equal(this.$('.slds-icon_container').attr('class'), 'slds-icon_container slds-pill__icon_container slds-m-left--xx-small');
+  assert.equal(
+    this.$('.slds-icon_container').attr('class'),
+    'slds-icon_container slds-pill__icon_container slds-m-left--xx-small'
+  );
 });

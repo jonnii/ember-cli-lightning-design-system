@@ -5,10 +5,10 @@ export default Ember.Component.extend({
   layout,
   tagName: '',
   clicked: null,
-  
+
   actions: {
-    clicked(handler, next) {      
-      if(handler) { 
+    clicked(handler, next) {
+      if (handler) {
         handler(next);
       }
     }
