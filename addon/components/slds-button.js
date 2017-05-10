@@ -2,11 +2,11 @@ import Ember from 'ember';
 import layout from '../templates/components/slds-button';
 
 const typeMap = {
-  'brand': 'slds-button--brand',
-  'success': 'slds-button--success',
-  'neutral': 'slds-button--neutral',
-  'destructive': 'slds-button--destructive',
-  'inverse': 'slds-button--inverse',
+  brand: 'slds-button--brand',
+  success: 'slds-button--success',
+  neutral: 'slds-button--neutral',
+  destructive: 'slds-button--destructive',
+  inverse: 'slds-button--inverse'
 };
 
 export default Ember.Component.extend({
@@ -26,8 +26,8 @@ export default Ember.Component.extend({
 
   typeClass: Ember.computed('type', function() {
     const type = this.get('type');
-    
-    if(Ember.isEmpty(type)) {
+
+    if (Ember.isEmpty(type)) {
       return '';
     }
 
@@ -35,9 +35,9 @@ export default Ember.Component.extend({
   }),
 
   shouldRenderLeftIcon: Ember.computed('icon', 'iconPosition', function() {
-    const { icon, iconPosition} = this.getProperties('icon', 'iconPosition');
+    const { icon, iconPosition } = this.getProperties('icon', 'iconPosition');
 
-    if(Ember.isEmpty(icon)) {
+    if (Ember.isEmpty(icon)) {
       return false;
     }
 
@@ -45,24 +45,24 @@ export default Ember.Component.extend({
   }),
 
   shouldRenderRightIcon: Ember.computed('icon', 'iconPosition', function() {
-    const { icon, iconPosition} = this.getProperties('icon', 'iconPosition');
-    
-    if(Ember.isEmpty(icon)) {
+    const { icon, iconPosition } = this.getProperties('icon', 'iconPosition');
+
+    if (Ember.isEmpty(icon)) {
       return false;
     }
 
     return iconPosition == 'right';
   }),
 
-  click(){
+  click() {
     this.sendAction('clicked');
   },
 
   actions: {
     clicked() {
       const callback = this.get('clicked');
-      
-      if(callback) { 
+
+      if (callback) {
         callback();
       }
     }

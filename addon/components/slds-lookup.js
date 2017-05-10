@@ -13,12 +13,10 @@ export default Ember.Component.extend({
   }),
 
   openClass: Ember.computed('isOpen', function() {
-    return this.get('isOpen') 
-      ? ' slds-is-open' 
-      : '';
+    return this.get('isOpen') ? ' slds-is-open' : '';
   }),
 
-  lookupElementId: Ember.computed(function(){
+  lookupElementId: Ember.computed(function() {
     let id = Ember.guidFor(this);
     return `global-search-${id}`;
   }),

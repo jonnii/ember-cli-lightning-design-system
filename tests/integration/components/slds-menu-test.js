@@ -8,7 +8,7 @@ moduleForComponent('slds-menu', 'Integration | Component | slds menu', {
 
 test('it renders', function(assert) {
   this.render(hbs`{{slds-menu}}`);
-  
+
   assert.equal(this.$('button.slds-button:disabled').length, 0);
   assert.equal(this.$('div.slds-dropdown-trigger.slds-is-open').length, 0);
   assert.equal(this.$('div.slds-dropdown-trigger').attr('aria-expanded'), 'false');
@@ -18,7 +18,7 @@ test('it renders', function(assert) {
 
 test('it renders with position', function(assert) {
   this.render(hbs`{{slds-menu position='bottomRight'}}`);
-  
+
   assert.ok(this.$('.slds-dropdown.slds-dropdown--bottom.slds-dropdown--right').length);
 });
 
@@ -51,22 +51,22 @@ test('it renders with items', function(assert) {
 
 test('it opens when clicked', function(assert) {
   this.render(hbs`{{slds-menu}}`);
-  
+
   this.$('button').click();
-  
+
   assert.equal(this.$('div.slds-dropdown-trigger.slds-is-open').length, 1);
 });
 
 test('it closes when clicked', function(assert) {
   this.render(hbs`{{slds-menu isOpen=true}}`);
-  
+
   this.$('button').click();
-  
+
   assert.equal(this.$('div.slds-dropdown-trigger.slds-is-open').length, 0);
 });
 
 test('it closes when item clicked', function(assert) {
-  this.set('clicked', (message) => {
+  this.set('clicked', message => {
     assert.equal(message, 'overflow1');
   });
 

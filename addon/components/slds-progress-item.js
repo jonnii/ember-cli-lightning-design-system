@@ -2,15 +2,15 @@ import Ember from 'ember';
 import layout from '../templates/components/slds-progress-item';
 
 const stateMap = {
-  'default': '',
-  'active': 'slds-is-active',
-  'completed': 'slds-is-completed',
-  'error': 'slds-has-error'
+  default: '',
+  active: 'slds-is-active',
+  completed: 'slds-is-completed',
+  error: 'slds-has-error'
 };
 
 const iconMap = {
-  'completed': 'success',
-  'error': 'warning'
+  completed: 'success',
+  error: 'warning'
 };
 
 export default Ember.Component.extend({
@@ -35,5 +35,5 @@ export default Ember.Component.extend({
   icon: Ember.computed('state', function() {
     const state = this.get('state');
     return iconMap[state];
-  }),
+  })
 });

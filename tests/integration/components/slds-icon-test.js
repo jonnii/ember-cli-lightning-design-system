@@ -21,7 +21,7 @@ test('it renders default standard', function(assert) {
 test('it renders standard with description', function(assert) {
   this.render(hbs`{{slds-icon description='fancy description'}}`);
   const container = this.$('span.slds-icon_container.slds-icon-standard-default');
-  
+
   assert.ok(container.length);
   assert.equal(container.attr('title'), 'fancy description');
   assert.equal(this.$('.slds-assistive-text').text().trim(), 'fancy description');
@@ -32,7 +32,7 @@ test('it renders utility', function(assert) {
 
   const container = this.$('span.slds-icon_container');
   assert.ok(container.length);
-  
+
   const icon = this.$('.slds-icon');
   assert.equal(icon.attr('class').trim(), 'slds-icon slds-icon-text-default');
 
@@ -44,7 +44,7 @@ test('it renders doctype', function(assert) {
 
   const container = this.$('span.slds-icon_container');
   assert.ok(container.length);
-  
+
   const icon = this.$('.slds-icon');
   assert.equal(icon.attr('class').trim(), 'slds-icon');
 
@@ -53,7 +53,7 @@ test('it renders doctype', function(assert) {
 
 test('it renders sizes', function(assert) {
   this.render(hbs`{{slds-icon size='x-small'}}`);
-  
+
   const icon = this.$('.slds-icon');
   assert.equal(icon.attr('class'), 'slds-icon slds-icon--x-small');
 });

@@ -6,13 +6,13 @@ export default Ember.Component.extend({
   tagName: '',
   isSelected: false,
 
-  notSelected:    'Select',
-  selected:       'Selected',
-  selectedFocus:  'Unselect',
+  notSelected: 'Select',
+  selected: 'Selected',
+  selectedFocus: 'Unselect',
 
   onChanged: null,
 
-  state: Ember.computed('isSelected', function () {
+  state: Ember.computed('isSelected', function() {
     const isSelected = this.get('isSelected');
     return isSelected ? 'is-selected' : 'not-selected';
   }),
@@ -20,10 +20,10 @@ export default Ember.Component.extend({
   actions: {
     pressed() {
       let func = this.get('onChanged');
-      if (func) { 
-        func(); 
-      } else { 
-        this.toggleProperty('isSelected'); 
+      if (func) {
+        func();
+      } else {
+        this.toggleProperty('isSelected');
       }
     }
   }

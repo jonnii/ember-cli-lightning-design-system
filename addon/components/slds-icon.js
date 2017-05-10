@@ -2,9 +2,9 @@ import Ember from 'ember';
 import layout from '../templates/components/slds-icon';
 
 const defaults = {
-  'standard': 'default',
-  'utility': 'question',
-  'doctype': 'unknown'
+  standard: 'default',
+  utility: 'question',
+  doctype: 'unknown'
 };
 
 export default Ember.Component.extend({
@@ -27,29 +27,27 @@ export default Ember.Component.extend({
 
   backgroundClass: Ember.computed('sprite', 'iconWithDefaults', function() {
     const { sprite, iconWithDefaults } = this.getProperties('sprite', 'iconWithDefaults');
-    
-    if(sprite === 'utility' || sprite === 'doctype') {
+
+    if (sprite === 'utility' || sprite === 'doctype') {
       return '';
     } else {
       return `slds-icon-${sprite}-${iconWithDefaults}`;
     }
   }),
 
-  colorClass: Ember.computed('sprite', function(){
+  colorClass: Ember.computed('sprite', function() {
     const sprite = this.get('sprite');
-    
-    if(sprite === 'utility') {
+
+    if (sprite === 'utility') {
       return ' slds-icon-text-default';
     } else {
       return '';
     }
   }),
 
-  sizeClass: Ember.computed('size', function(){
+  sizeClass: Ember.computed('size', function() {
     const size = this.get('size');
-    
-    return (size === 'medium') 
-      ?  ''
-      : ` slds-icon--${size}`;
+
+    return size === 'medium' ? '' : ` slds-icon--${size}`;
   })
 });

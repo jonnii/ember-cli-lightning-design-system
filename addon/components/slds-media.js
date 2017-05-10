@@ -2,8 +2,8 @@ import Ember from 'ember';
 import layout from '../templates/components/slds-media';
 
 const alignmentMap = {
-  'top': '',
-  'center': 'slds-media--center'
+  top: '',
+  center: 'slds-media--center'
 };
 
 export default Ember.Component.extend({

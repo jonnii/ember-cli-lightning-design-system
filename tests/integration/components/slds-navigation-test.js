@@ -14,5 +14,8 @@ test('it renders', function(assert) {
 test('it renders inverse', function(assert) {
   this.render(hbs`{{slds-navigation type='inverse'}}`);
 
-  assert.ok(this.$('.slds-grid.slds-grid--vertical.slds-navigation-list--vertical.slds-navigation-list--vertical-inverse').length);
+  assert.ok(
+    this.$('.slds-grid.slds-grid--vertical.slds-navigation-list--vertical.slds-navigation-list--vertical-inverse')
+      .length
+  );
 });

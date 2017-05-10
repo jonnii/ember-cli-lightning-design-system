@@ -3,7 +3,7 @@ import layout from '../templates/components/slds-navigation';
 
 export default Ember.Component.extend({
   layout,
-  
+
   classNames: ['slds-grid', 'slds-grid--vertical', 'slds-navigation-list--vertical'],
   classNameBindings: ['typeClass'],
 

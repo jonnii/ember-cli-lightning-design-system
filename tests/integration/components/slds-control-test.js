@@ -13,6 +13,7 @@ test('it renders with input', function(assert) {
   `);
 
   assert.equal(
-    this.$('.slds-form-element label.slds-form-element__label').attr('for'), 
-    this.$('input.slds-input').attr('id'));
+    this.$('.slds-form-element label.slds-form-element__label').attr('for'),
+    this.$('input.slds-input').attr('id')
+  );
 });

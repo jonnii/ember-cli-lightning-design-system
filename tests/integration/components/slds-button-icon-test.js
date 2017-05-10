@@ -96,10 +96,10 @@ test('it renders with title', function(assert) {
 });
 
 test('it calls action when clicked', function(assert) {
-  this.set('clicked', (message) => {
+  this.set('clicked', message => {
     assert.equal(message, 'icon');
   });
-  
+
   this.render(hbs`{{slds-button-icon clicked=(action clicked 'icon')}}`);
 
   this.$('button').click();

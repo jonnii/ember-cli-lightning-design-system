@@ -2,8 +2,8 @@ import Ember from 'ember';
 import layout from '../../templates/components/slds-media/figure';
 
 const typeMap = {
-  'default': '',
-  'reverse': 'slds-media__figure--reverse'
+  default: '',
+  reverse: 'slds-media__figure--reverse'
 };
 
 export default Ember.Component.extend({

@@ -7,7 +7,7 @@ export default Ember.Component.extend({
 
   actions: {
     closed(close) {
-      if(close) {
+      if (close) {
         close();
       }
     }
