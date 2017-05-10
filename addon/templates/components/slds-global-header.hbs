@@ -26,16 +26,16 @@
         </span>
       </li>
 
-      {{#slds-menu isOpen=true tagName='li' icon='add' class='slds-p-horizontal--xxx-small' as |menu|}}
+      {{#slds-menu tagName='li' class='slds-p-horizontal--xxx-small' as |menu|}}
         {{menu.trigger 
           icon='add' 
           containerSize='x-small' 
-          border='default' 
+          border='default'
           class='slds-global-header__button--icon-actions slds-m-horizontal--xx-small'}}
         {{#menu.dropdown position='topRight' nubbin='topRight' as |dropdown|}}
-          {{dropdown.header text="Create"}}
+          {{dropdown.header text="Setup"}}
           {{#dropdown.item}}
-            {{slds-icon size='small' sprite='standard' icon='note' class='slds-m-right--x-small'}} New Note
+            Setup Home
           {{/dropdown.item}}
         {{/menu.dropdown}}
       {{/slds-menu}}
@@ -48,6 +48,22 @@
           <span class="slds-assistive-text">Help and Training</span>
         </button>
       </li>
+
+      {{#slds-menu tagName='li' as |menu|}}
+        {{menu.trigger 
+          icon='setup' 
+          border='none'
+          size='small'
+          class='slds-global-header__button--icon slds-global-header__icon'}}
+        {{#menu.dropdown position='topRight' nubbin='topRight' as |dropdown|}}
+          {{dropdown.header text="Create"}}
+          {{#dropdown.item}}
+            {{slds-icon size='small' sprite='standard' icon='note' class='slds-m-right--x-small'}} New Note
+          {{/dropdown.item}}
+        {{/menu.dropdown}}
+      {{/slds-menu}}
+
+
       <li class="slds-dropdown-trigger slds-dropdown-trigger--click">
         <button class="slds-button slds-button--icon slds-button--icon-container slds-button--icon-small slds-global-header__button--icon" aria-haspopup="true" title="Setup">
           <svg class="slds-button__icon slds-global-header__icon" aria-hidden="true">
