@@ -31,8 +31,7 @@
   {{/slds-control-group}}
   
   {{#slds-control-group legend='Choose all your fates' name='fates' as |control|}}
-    {{control.checkbox label='Cake' isChecked=true}}
-    {{control.checkbox label='Death' isChecked=false}}
+    {{control.checkbox label='Cake' isChecked=true checked=(action 'checked' 'cake')}}
+    {{control.checkbox label='Death' isChecked=false checked=(action 'checked' 'death')}}
   {{/slds-control-group}}
-
 {{/slds-box}}
