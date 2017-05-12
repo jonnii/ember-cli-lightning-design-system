@@ -1,10 +1,10 @@
 <fieldset class="slds-form-element">
-  <legend class="slds-form-element__legend slds-form-element__label">Radio Group Label</legend>
+  <legend class="slds-form-element__legend slds-form-element__label">{{legend}}</legend>
   <div class="slds-form-element__control">
 
   {{yield (hash 
-    radio=(component 'slds-radio' formElementId=formElementId errorElementId=errorElementId)
-    checkbox=(component 'slds-checkbox' formElementId=formElementId errorElementId=errorElementId)
+    radio=(component 'slds-control-group/radio' name=name)
+    checkbox=(component 'slds-control-group/checkbox' name=name)
   )}}
 
   </div>

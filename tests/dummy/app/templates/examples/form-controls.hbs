@@ -25,14 +25,14 @@
     {{control.textarea placeholder='placeholder text'}}
   {{/slds-control}}
 
-  {{#slds-control-group label='choose your fate' as |control|}}
-    {{control.radio}}
-    {{control.radio}}
+  {{#slds-control-group legend='Choose your fate' name='fate' as |control|}}
+    {{control.radio value='butter'}}
+    {{control.radio value='batter'}}
   {{/slds-control-group}}
   
-  {{#slds-control-group label='choose your fate' as |control|}}
-    {{control.checkbox}}
-    {{control.checkbox}}
+  {{#slds-control-group legend='Choose all your fates' name='fates' as |control|}}
+    {{control.checkbox label='Cake' isChecked=true}}
+    {{control.checkbox label='Death' isChecked=false}}
   {{/slds-control-group}}
 
 {{/slds-box}}
