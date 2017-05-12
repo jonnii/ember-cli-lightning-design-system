@@ -5,7 +5,38 @@ moduleForComponent('slds-control-group', 'Integration | Component | slds control
   integration: true
 });
 
-test('it renders', function(assert) {
-  this.render(hbs`{{slds-control-group}}`);
-  assert.expect(0);
+test('it renders legend', function(assert) {
+  this.render(hbs`{{slds-control-group legend='choose your fate'}}`);
+
+  assert.equal(this.$('legend').text(), 'choose your fate');
+});
+
+test('it renders checkbox checked', function(assert) {
+  this.render(hbs`
+    {{#slds-control-group label='choose your fate' as |input|}}
+      {{input.checkbox isChecked=true}}
+    {{/slds-control-group}}
+  `);
+
+  assert.ok(this.$('input:checked'));
+});
+
+test('it renders checkbox with name', function(assert) {
+  this.render(hbs`
+    {{#slds-control-group name='fates' as |input|}}
+      {{input.checkbox isChecked=true}}
+    {{/slds-control-group}}
+  `);
+
+  assert.equal(this.$('input').attr('name'), 'fates');
+});
+
+test('it renders radio', function(assert) {
+  this.render(hbs`
+    {{#slds-control-group name='fates' as |input|}}
+      {{input.radio}}
+    {{/slds-control-group}}
+  `);
+
+  assert.equal(this.$('input').attr('name'), 'fates');
 });
