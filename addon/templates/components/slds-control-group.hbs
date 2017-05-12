@@ -1,5 +1,9 @@
 <fieldset class="slds-form-element">
-  <legend class="slds-form-element__legend slds-form-element__label">{{legend}}</legend>
+  <legend class="slds-form-element__legend slds-form-element__label">
+    {{#if isRequired}}
+      <abbr class="slds-required" title="required">*</abbr>
+    {{/if}}
+    {{legend}}</legend>
   <div class="slds-form-element__control">
 
   {{yield (hash 

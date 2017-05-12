@@ -8,7 +8,14 @@ moduleForComponent('slds-control-group', 'Integration | Component | slds control
 test('it renders legend', function(assert) {
   this.render(hbs`{{slds-control-group legend='choose your fate'}}`);
 
-  assert.equal(this.$('legend').text(), 'choose your fate');
+  assert.equal(this.$('legend').text().trim(), 'choose your fate');
+  assert.notOk(this.$('.slds-required').length);
+});
+
+test('it renders required', function(assert) {
+  this.render(hbs`{{slds-control-group isRequired=true}}`);
+
+  assert.ok(this.$('.slds-required').length);
 });
 
 test('it renders checkbox checked', function(assert) {

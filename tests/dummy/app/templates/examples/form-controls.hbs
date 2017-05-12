@@ -25,13 +25,15 @@
     {{control.textarea placeholder='placeholder text'}}
   {{/slds-control}}
 
-  {{#slds-control-group legend='Choose your fate' name='fate' as |control|}}
+  {{#slds-control-group isRequired=true legend='Choose your fate' name='fate' as |control|}}
     {{control.radio label="Butter" value='butter'}}
     {{control.radio label="Batter" value='batter'}}
   {{/slds-control-group}}
   
-  {{#slds-control-group legend='Choose all your fates' name='fates' as |control|}}
+  {{#slds-control-group isRequired=true legend='Choose all your fates' name='fates' as |control|}}
     {{control.checkbox label='Cake' isChecked=true checked=(action 'checked' 'cake')}}
     {{control.checkbox label='Death' isChecked=false checked=(action 'checked' 'death')}}
   {{/slds-control-group}}
+
+  {{lastCheckedValue}}
 {{/slds-box}}
