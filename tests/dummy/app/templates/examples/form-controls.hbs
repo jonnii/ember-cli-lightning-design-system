@@ -1,39 +1,52 @@
-{{#slds-box}}
-  <div class="slds-text-heading--large">Basic Inputs</div>
+<div class="slds-grid slds-grid--pull-padded-medium slds-m-horizontal--x-small">
+  <div class="slds-col slds-p-around--small">
+    <div class="slds-box slds-box--small slds-theme--shade">
+      <div class="slds-text-heading--large">Basic Inputs</div>
+      {{#slds-control label='Required Field' isRequired=true as |control|}}
+        {{control.input placeholder='placeholder text'}}
+      {{/slds-control}}
 
-  {{#slds-control label='Required Field' isRequired=true as |control|}}
-    {{control.input placeholder='placeholder text'}}
-  {{/slds-control}}
+      {{#slds-control label='Error Field' isRequired=true isError=true errorMessage='you forgot to select the doodat' as |control|}}
+        {{control.input placeholder='placeholder text'}}
+      {{/slds-control}}
 
-  {{#slds-control label='Error Field' isRequired=true isError=true errorMessage='you forgot to select the doodat' as |control|}}
-    {{control.input placeholder='placeholder text'}}
-  {{/slds-control}}
+      {{#slds-control label='Disabled Field' as |control|}}
+        {{control.input placeholder='placeholder text' isDisabled=true}}
+      {{/slds-control}}
 
-  {{#slds-control label='Disabled Field' as |control|}}
-    {{control.input placeholder='placeholder text' isDisabled=true}}
-  {{/slds-control}}
+      {{#slds-control label='Disabled Field' as |control|}}
+        {{#control.input placeholder='placeholder text' as |input|}}
+          {{input.icon}}
+          {{input.input}}
+          {{input.button}}
+        {{/control.input}}
+      {{/slds-control}}
 
-  {{#slds-control label='Disabled Field' as |control|}}
-    {{#control.input placeholder='placeholder text' as |input|}}
-      {{input.icon}}
-      {{input.input}}
-      {{input.button}}
-    {{/control.input}}
-  {{/slds-control}}
+      {{#slds-control label='Text Area' as |control|}}
+        {{control.textarea placeholder='placeholder text'}}
+      {{/slds-control}}
 
-  {{#slds-control label='Text Area' as |control|}}
-    {{control.textarea placeholder='placeholder text'}}
-  {{/slds-control}}
+      {{#slds-control-group isRequired=true legend='Choose your fate' name='fate' as |control|}}
+        {{control.radio label="Butter" value='butter'}}
+        {{control.radio label="Batter" value='batter'}}
+      {{/slds-control-group}}
+      
+      {{#slds-control-group isRequired=true legend='Choose all your fates' name='fates' as |control|}}
+        {{control.checkbox label='Cake' isChecked=cake checked=(action 'toggle' 'cake')}}
+        {{control.checkbox label='Death' isChecked=death checked=(action 'toggle' 'death')}}
+      {{/slds-control-group}}
+    </div>
+  </div>
+  <div class="slds-col slds-p-around--small">
+    <div class="slds-box slds-box--small slds-theme--shade">
 
-  {{#slds-control-group isRequired=true legend='Choose your fate' name='fate' as |control|}}
-    {{control.radio label="Butter" value='butter'}}
-    {{control.radio label="Batter" value='batter'}}
-  {{/slds-control-group}}
-  
-  {{#slds-control-group isRequired=true legend='Choose all your fates' name='fates' as |control|}}
-    {{control.checkbox label='Cake' isChecked=true checked=(action 'checked' 'cake')}}
-    {{control.checkbox label='Death' isChecked=false checked=(action 'checked' 'death')}}
-  {{/slds-control-group}}
-
-  {{lastCheckedValue}}
-{{/slds-box}}
+      <div class="slds-list--horizontal slds-wrap">
+        <div class="slds-item--label slds-text-color--weak slds-truncate" title="Cake">Cake</div>
+        <div class="slds-item--detail slds-truncate">{{cake}}</div>
+        
+        <div class="slds-item--label slds-text-color--weak slds-truncate" title="Death">Death</div>
+        <div class="slds-item--detail slds-truncate">{{death}}</div>
+      </div>
+    </div>
+  </div>
+</div>

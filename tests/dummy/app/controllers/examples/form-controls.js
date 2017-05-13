@@ -1,9 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  cake: true,
+  death: false,
+  
   actions: {
-    checked(value) {
-      this.set('lastCheckedValue', value);
+    toggle(value) {
+      this.toggleProperty(value);
     }
   }
 });
