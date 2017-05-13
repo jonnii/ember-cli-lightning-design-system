@@ -7,6 +7,10 @@ export default Ember.Controller.extend({
   actions: {
     toggle(value) {
       this.toggleProperty(value);
+    },
+
+    choose(fate){
+      this.set('fate', fate);
     }
   }
 });

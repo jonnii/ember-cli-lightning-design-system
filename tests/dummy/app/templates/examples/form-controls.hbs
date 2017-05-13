@@ -27,8 +27,8 @@
       {{/slds-control}}
 
       {{#slds-control-group isRequired=true legend='Choose your fate' name='fate' as |control|}}
-        {{control.radio label="Butter" value='butter'}}
-        {{control.radio label="Batter" value='batter'}}
+        {{control.radio label="Butter" value='butter' selected=(action 'choose' 'butter')}}
+        {{control.radio label="Batter" value='batter' selected=(action 'choose' 'batter')}}
       {{/slds-control-group}}
       
       {{#slds-control-group isRequired=true legend='Choose all your fates' name='fates' as |control|}}
@@ -41,6 +41,10 @@
     <div class="slds-box slds-box--small slds-theme--shade">
 
       <div class="slds-list--horizontal slds-wrap">
+        <div class="slds-item--label slds-text-color--weak slds-truncate" title="Fate">Fate</div>
+        <div class="slds-item--detail slds-truncate">{{fate}}</div>
+
+
         <div class="slds-item--label slds-text-color--weak slds-truncate" title="Cake">Cake</div>
         <div class="slds-item--detail slds-truncate">{{cake}}</div>
         
