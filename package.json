@@ -27,7 +27,7 @@
     "lint:fix": "eslint --fix ."
   },
   "dependencies": {
-    "@salesforce-ux/design-system": "^2.2.2",
+    "@salesforce-ux/design-system": "^2.3.0",
     "ember-cli-babel": "^6.0.0",
     "ember-cli-htmlbars": "^1.2.0",
     "ember-cli-sass": "^6.1.2"
