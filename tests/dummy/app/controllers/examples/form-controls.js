@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   cake: true,
   death: false,
+  life: false,
 
   actions: {
     toggle(value) {
