@@ -31,6 +31,7 @@ Router.map(function() {
     this.route('modal');
     this.route('avatar');
     this.route('media');
+    this.route('spinner');
   });
   this.route('samples', function() {
     this.route('filter-grid');
