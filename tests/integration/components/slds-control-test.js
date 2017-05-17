@@ -25,5 +25,6 @@ test('it renders with checkbox', function(assert) {
     {{/slds-control}}
   `);
 
+  assert.ok(this.$('div.slds-form-element .slds-form-element__control .slds-checkbox input').length);
   assert.equal(this.$('input').attr('type'), 'checkbox');
 });
