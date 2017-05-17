@@ -1,11 +1,16 @@
-<div class="slds-icon-waffle">
-  <div class="slds-r1"></div>
-  <div class="slds-r2"></div>
-  <div class="slds-r3"></div>
-  <div class="slds-r4"></div>
-  <div class="slds-r5"></div>
-  <div class="slds-r6"></div>
-  <div class="slds-r7"></div>
-  <div class="slds-r8"></div>
-  <div class="slds-r9"></div>
-</div>
+<button class="slds-button slds-icon-waffle_container" title={{title}}>
+  <span class="slds-icon-waffle">
+    <span class="slds-r1"></span>
+    <span class="slds-r2"></span>
+    <span class="slds-r3"></span>
+    <span class="slds-r4"></span>
+    <span class="slds-r5"></span>
+    <span class="slds-r6"></span>
+    <span class="slds-r7"></span>
+    <span class="slds-r8"></span>
+    <span class="slds-r9"></span>
+  </span>
+  {{#if title}}
+    <span class="slds-assistive-text">{{title}}</span>
+  {{/if}}
+</button>
