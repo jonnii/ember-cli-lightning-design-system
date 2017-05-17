@@ -30,6 +30,14 @@
         {{control.checkbox label='Awesome Check' isChecked=isAwesome checked=(action 'toggle' 'isAwesome')}}
       {{/slds-control}}
 
+      {{#slds-control isRequired=true as |control|}}
+        {{control.checkbox label='Awesome Check Required' isChecked=isAwesome checked=(action 'toggle' 'isAwesome')}}
+      {{/slds-control}}
+
+      {{#slds-control isRequired=true isError=true errorMessage='you goofed' as |control|}}
+        {{control.checkbox label='Awesome Check Error' isChecked=isAwesome checked=(action 'toggle' 'isAwesome')}}
+      {{/slds-control}}
+
       {{#slds-control-group isRequired=true legend='Choose your fate' name='fate' as |control|}}
         {{control.radio label="Butter" value='butter' selected=(action 'choose' 'butter')}}
         {{control.radio label="Batter" value='batter' selected=(action 'choose' 'batter')}}

@@ -1,15 +1,17 @@
 {{#slds-control-identity as |formElementId errorElementId|}}
-  <label class="slds-form-element__label" for="{{formElementId}}">
-    {{#if isRequired}}
-      <abbr class="slds-required" title="required">*</abbr>
-    {{/if}}
-    {{label}}
-  </label>
+  {{#if label}}
+    <label class="slds-form-element__label" for="{{formElementId}}">
+      {{#if isRequired}}
+        <abbr class="slds-required" title="required">*</abbr>
+      {{/if}}
+      {{label}}
+    </label>
+  {{/if}}
 
   <div class="slds-form-element__control">
     {{yield (hash 
       input=(component 'slds-control/input' formElementId=formElementId errorElementId=errorElementId isRequired=isRequired) 
-      checkbox=(component 'slds-control/checkbox' formElementId=formElementId errorElementId=errorElementId)
+      checkbox=(component 'slds-control/checkbox' formElementId=formElementId errorElementId=errorElementId isRequired=isRequired)
       textarea=(component 'slds-control/textarea' formElementId=formElementId errorElementId=errorElementId)
     )}}
   </div>

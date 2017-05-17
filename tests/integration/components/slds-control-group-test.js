@@ -27,6 +27,7 @@ test('it renders checkbox checked', function(assert) {
 
   assert.ok(this.$('input:checked').length);
   assert.ok(this.$('fieldset.slds-form-element .slds-form-element__control .slds-checkbox input').length);
+  assert.ok(this.$('input:not([aria-describedby])').length, 'should not have aria description');
 });
 
 test('it renders checkbox with name', function(assert) {
@@ -37,6 +38,19 @@ test('it renders checkbox with name', function(assert) {
   `);
 
   assert.equal(this.$('input').attr('name'), 'fates');
+});
+
+test('it renders checkbox with error', function(assert) {
+  this.render(hbs`
+    {{#slds-control-group name='fates' isError=true errorMessage='you fell over' as |input|}}
+      {{input.checkbox}}
+    {{/slds-control-group}}
+  `);
+
+  assert.equal(this.$('.slds-form-element__help').text().trim(), 'you fell over');
+
+  // assert.ok(this.$('input[aria-describedby]').length, 'has aria description');
+  // assert.equal(this.$('input').attr('aria-describedby'), this.$('.slds-form-element__help').attr('id'));
 });
 
 test('it renders radio', function(assert) {
