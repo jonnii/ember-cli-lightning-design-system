@@ -3,5 +3,6 @@ import layout from '../../templates/components/slds-control/checkbox';
 
 export default Ember.Component.extend({
   layout,
-  tagName: ''
+  tagName: 'span',
+  classNames: 'slds-checkbox'
 });
