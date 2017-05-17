@@ -1,17 +1,19 @@
-<legend class="slds-form-element__legend slds-form-element__label">
-  {{#if isRequired}}
-    <abbr class="slds-required" title="required">*</abbr>
+{{#slds-control-identity as |formElementId errorElementId|}}
+  <legend class="slds-form-element__legend slds-form-element__label">
+    {{#if isRequired}}
+      <abbr class="slds-required" title="required">*</abbr>
+    {{/if}}
+    {{legend}}
+  </legend>
+
+  <div class="slds-form-element__control">
+    {{yield (hash 
+      radio=(component 'slds-control-group/radio' name=name errorElementId=errorElementId)
+      checkbox=(component 'slds-control/checkbox' name=name errorElementId=errorElementId)
+    )}}
+  </div>
+
+  {{#if isError}}
+    <div id={{errorElementId}} class="slds-form-element__help">{{errorMessage}}</div>
   {{/if}}
-  {{legend}}
-</legend>
-
-<div class="slds-form-element__control">
-  {{yield (hash 
-    radio=(component 'slds-control-group/radio' name=name)
-    checkbox=(component 'slds-control/checkbox' name=name)
-  )}}
-</div>
-
-{{#if isError}}
-  <div id={{errorElementId}} class="slds-form-element__help">{{errorMessage}}</div>
-{{/if}}
+{{/slds-control-identity}}
