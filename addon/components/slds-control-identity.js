@@ -5,13 +5,17 @@ export default Ember.Component.extend({
   layout,
   tagName: '',
 
-  formElementId: Ember.computed('elementId', function() {
-    let elementId = this.get('elementId');
-    return `${elementId}-field`;
+  componentId: Ember.computed(function(){
+    return Ember.guidFor(this);
   }),
 
-  errorElementId: Ember.computed('elementId', function() {
-    let elementId = this.get('elementId');
-    return `${elementId}-error`;
+  formElementId: Ember.computed('componentId', function() {
+    let componentId = this.get('componentId');
+    return `${componentId}-field`;
+  }),
+
+  errorElementId: Ember.computed('componentId', function() {
+    let componentId = this.get('componentId');
+    return `${componentId}-error`;
   })
 });
