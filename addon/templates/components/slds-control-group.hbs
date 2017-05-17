@@ -8,8 +8,8 @@
 
   <div class="slds-form-element__control">
     {{yield (hash 
-      radio=(component 'slds-control-group/radio' name=name errorElementId=errorElementId)
-      checkbox=(component 'slds-control/checkbox' name=name errorElementId=errorElementId)
+      radio=(component 'slds-control-group/radio' name=name errorElementId=errorElementId isError=isError)
+      checkbox=(component 'slds-control/checkbox' name=name errorElementId=errorElementId isError=isError)
     )}}
   </div>
 

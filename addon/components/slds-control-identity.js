@@ -5,7 +5,7 @@ export default Ember.Component.extend({
   layout,
   tagName: '',
 
-  componentId: Ember.computed(function(){
+  componentId: Ember.computed(function() {
     return Ember.guidFor(this);
   }),
 
