@@ -17,3 +17,13 @@ test('it renders with input', function(assert) {
     this.$('input.slds-input').attr('id')
   );
 });
+
+test('it renders with checkbox', function(assert) {
+  this.render(hbs`
+    {{#slds-control label='check' as |control|}}
+      {{control.checkbox}}
+    {{/slds-control}}
+  `);
+
+  assert.equal(this.$('input').attr('type'), 'checkbox');
+});

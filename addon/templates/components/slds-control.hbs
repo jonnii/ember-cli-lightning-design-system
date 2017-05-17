@@ -5,10 +5,13 @@
   {{label}}
 </label>
 
-{{yield (hash 
-  input=(component 'slds-control/input' formElementId=formElementId errorElementId=errorElementId isRequired=isRequired)
-  textarea=(component 'slds-control/textarea' formElementId=formElementId errorElementId=errorElementId)
-)}}
+<div class="slds-form-element__control">
+  {{yield (hash 
+    input=(component 'slds-control/input' formElementId=formElementId errorElementId=errorElementId isRequired=isRequired) 
+    checkbox=(component 'slds-control/checkbox' formElementId=formElementId errorElementId=errorElementId)
+    textarea=(component 'slds-control/textarea' formElementId=formElementId errorElementId=errorElementId)
+  )}}
+</div>
 
 {{#if isError}}
   <div id={{errorElementId}} class="slds-form-element__help">{{errorMessage}}</div>
