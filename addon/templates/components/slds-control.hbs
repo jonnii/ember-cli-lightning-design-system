@@ -1,18 +1,20 @@
-<label class="slds-form-element__label" for="{{formElementId}}">
-  {{#if isRequired}}
-    <abbr class="slds-required" title="required">*</abbr>
+{{#slds-control-identity as |formElementId errorElementId|}}
+  <label class="slds-form-element__label" for="{{formElementId}}">
+    {{#if isRequired}}
+      <abbr class="slds-required" title="required">*</abbr>
+    {{/if}}
+    {{label}}
+  </label>
+
+  <div class="slds-form-element__control">
+    {{yield (hash 
+      input=(component 'slds-control/input' formElementId=formElementId errorElementId=errorElementId isRequired=isRequired) 
+      checkbox=(component 'slds-control/checkbox' formElementId=formElementId errorElementId=errorElementId)
+      textarea=(component 'slds-control/textarea' formElementId=formElementId errorElementId=errorElementId)
+    )}}
+  </div>
+
+  {{#if isError}}
+    <div id={{errorElementId}} class="slds-form-element__help">{{errorMessage}}</div>
   {{/if}}
-  {{label}}
-</label>
-
-<div class="slds-form-element__control">
-  {{yield (hash 
-    input=(component 'slds-control/input' formElementId=formElementId errorElementId=errorElementId isRequired=isRequired) 
-    checkbox=(component 'slds-control/checkbox' formElementId=formElementId errorElementId=errorElementId)
-    textarea=(component 'slds-control/textarea' formElementId=formElementId errorElementId=errorElementId)
-  )}}
-</div>
-
-{{#if isError}}
-  <div id={{errorElementId}} class="slds-form-element__help">{{errorMessage}}</div>
-{{/if}}
+{{/slds-control-identity}}

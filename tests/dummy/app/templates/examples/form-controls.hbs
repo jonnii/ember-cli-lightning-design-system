@@ -27,7 +27,7 @@
       {{/slds-control}}
 
       {{#slds-control as |control|}}
-        {{control.checkbox label='Awesome Check'}}
+        {{control.checkbox label='Awesome Check' isChecked=isAwesome checked=(action 'toggle' 'isAwesome')}}
       {{/slds-control}}
 
       {{#slds-control-group isRequired=true legend='Choose your fate' name='fate' as |control|}}
@@ -57,9 +57,11 @@
     <div class="slds-box slds-box--small slds-theme--shade">
 
       <div class="slds-list--horizontal slds-wrap">
+        <div class="slds-item--label slds-text-color--weak slds-truncate" title="isAwesome">Is Awesome</div>
+        <div class="slds-item--detail slds-truncate">{{isAwesome}}</div>
+
         <div class="slds-item--label slds-text-color--weak slds-truncate" title="Fate">Fate</div>
         <div class="slds-item--detail slds-truncate">{{fate}}</div>
-
 
         <div class="slds-item--label slds-text-color--weak slds-truncate" title="Cake">Cake</div>
         <div class="slds-item--detail slds-truncate">{{cake}}</div>

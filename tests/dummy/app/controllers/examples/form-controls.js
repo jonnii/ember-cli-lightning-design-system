@@ -4,6 +4,9 @@ export default Ember.Controller.extend({
   cake: true,
   death: false,
   life: false,
+  isAwesome: false,
+  chess: true,
+  checkers: false,
 
   actions: {
     toggle(value) {

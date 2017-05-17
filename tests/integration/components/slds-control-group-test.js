@@ -57,4 +57,7 @@ test('it renders radio with error', function(assert) {
   `);
 
   assert.equal(this.$('.slds-form-element__help').text().trim(), 'you fell over');
+
+  assert.ok(this.$('input').attr('aria-describedby').length, 'has aria description');
+  assert.equal(this.$('input').attr('aria-describedby'), this.$('.slds-form-element__help').attr('id'));
 });
