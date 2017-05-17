@@ -25,7 +25,8 @@ test('it renders checkbox checked', function(assert) {
     {{/slds-control-group}}
   `);
 
-  assert.ok(this.$('input:checked'));
+  assert.ok(this.$('input:checked').length);
+  assert.ok(this.$('fieldset.slds-form-element .slds-form-element__control .slds-checkbox input').length);
 });
 
 test('it renders checkbox with name', function(assert) {
