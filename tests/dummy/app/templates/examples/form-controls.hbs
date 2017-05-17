@@ -37,6 +37,16 @@
         {{control.checkbox label='Death' isChecked=death checked=(action 'toggle' 'death')}}
         {{control.checkbox label='Life' isDisabled=true isChecked=life checked=(action 'toggle' 'life')}}        
       {{/slds-control-group}}
+
+      {{#slds-control-group isRequired=true legend='Music' name='music' isError=true errorMessage='you forgot to select the doodat' as |control|}}
+        {{control.radio label="Rock" value='rock' selected=(action 'chooseMusic' 'rock')}}
+        {{control.radio label="Not Rock" value='notRock' selected=(action 'chooseMusic' 'notRock')}}
+      {{/slds-control-group}}
+
+      {{#slds-control-group isRequired=true legend='Games' name='games' isError=true errorMessage='you forgot to select the doodat' as |control|}}
+        {{control.checkbox label='Chess' isChecked=chess checked=(action 'toggle' 'chess')}}
+        {{control.checkbox label='Checkers' isChecked=checkers checked=(action 'toggle' 'checkers')}}
+      {{/slds-control-group}}
     </div>
   </div>
   <div class="slds-col slds-p-around--small">

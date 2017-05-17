@@ -47,3 +47,13 @@ test('it renders radio', function(assert) {
 
   assert.equal(this.$('input').attr('name'), 'fates');
 });
+
+test('it renders radio with error', function(assert) {
+  this.render(hbs`
+    {{#slds-control-group name='fates' isError=true errorMessage='you fell over' as |input|}}
+      {{input.radio}}
+    {{/slds-control-group}}
+  `);
+
+  assert.equal(this.$('.slds-form-element__help').text().trim(), 'you fell over');
+});

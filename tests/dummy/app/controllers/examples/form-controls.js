@@ -12,6 +12,10 @@ export default Ember.Controller.extend({
 
     choose(fate) {
       this.set('fate', fate);
+    },
+
+    chooseMusic(music) {
+      this.set('music', music);
     }
   }
 });
