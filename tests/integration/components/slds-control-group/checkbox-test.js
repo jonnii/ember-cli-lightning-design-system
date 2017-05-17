@@ -16,3 +16,9 @@ test('it renders with correct label', function(assert) {
 
   assert.equal(this.$('input').attr('id'), this.$('label').attr('for'));
 });
+
+test('it renders disabled', function(assert) {
+  this.render(hbs`{{slds-control-group/checkbox isDisabled=true label='awesome sauce'}}`);
+
+  assert.ok(this.$('input:disabled'));
+});

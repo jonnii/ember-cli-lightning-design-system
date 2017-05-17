@@ -29,11 +29,13 @@
       {{#slds-control-group isRequired=true legend='Choose your fate' name='fate' as |control|}}
         {{control.radio label="Butter" value='butter' selected=(action 'choose' 'butter')}}
         {{control.radio label="Batter" value='batter' selected=(action 'choose' 'batter')}}
+        {{control.radio isDisabled=true label="Better" value='better' selected=(action 'choose' 'better')}}
       {{/slds-control-group}}
       
       {{#slds-control-group isRequired=true legend='Choose all your fates' name='fates' as |control|}}
         {{control.checkbox label='Cake' isChecked=cake checked=(action 'toggle' 'cake')}}
         {{control.checkbox label='Death' isChecked=death checked=(action 'toggle' 'death')}}
+        {{control.checkbox label='Life' isDisabled=true isChecked=life checked=(action 'toggle' 'life')}}        
       {{/slds-control-group}}
     </div>
   </div>
