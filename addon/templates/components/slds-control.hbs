@@ -6,8 +6,8 @@
 </label>
 
 {{yield (hash 
-  input=(component 'slds-input' formElementId=formElementId errorElementId=errorElementId isRequired=isRequired)
-  textarea=(component 'slds-textarea' formElementId=formElementId errorElementId=errorElementId)
+  input=(component 'slds-control/input' formElementId=formElementId errorElementId=errorElementId isRequired=isRequired)
+  textarea=(component 'slds-control/textarea' formElementId=formElementId errorElementId=errorElementId)
 )}}
 
 {{#if isError}}
