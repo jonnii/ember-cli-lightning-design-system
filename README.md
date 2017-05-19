@@ -31,6 +31,7 @@ to save yourself some time the following components are supported.
  * [Button Group](#button-group)
  * [Button Icon](#button-icon)
  * [Menu](#menu)
+ * [Spinner](#spinner)
 
 #### Avatar
 
@@ -141,7 +142,20 @@ to save yourself some time the following components are supported.
     Menu Item 4
   {{/dropdown.item}}
 {{/slds-menu}}
+```
 
+#### Spinner
+
+ - [Component Documentation](https://www.lightningdesignsystem.com/components/spinners)
+
+```hbs
+{{slds-spinner}}
+{{slds-spinner size='large'}}
+{{slds-spinner color='brand'}}
+
+<div class="slds-spinner_container">
+  {{slds-spinner}}
+</div>
 ```
 
 ## Contributing 
