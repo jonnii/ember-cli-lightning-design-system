@@ -1,0 +1,21 @@
+{{#slds-box}}
+  {{#slds-form as |form|}}
+    {{#form.control label='Text Input' as |control|}}
+      {{control.input placeholder="Placeholder Text"}}
+    {{/form.control}}
+
+    {{#form.control label='Text Input' as |control|}}
+      {{control.textarea placeholder="Placeholder Text"}}
+    {{/form.control}}
+    
+    {{#form.control-group legend='Checkbox Group label' as |control|}}
+      {{control.checkbox label='All opportunities owned by you'}}
+      {{control.checkbox label='All contacts in the account owned by you'}}
+    {{/form.control-group}}
+
+    {{#form.control-group legend='Checkbox Group label' as |control|}}
+      {{control.checkbox label='Lead Generation'}}
+      {{control.checkbox label='Education Leads'}}
+    {{/form.control-group}}
+  {{/slds-form}}  
+{{/slds-box}}
