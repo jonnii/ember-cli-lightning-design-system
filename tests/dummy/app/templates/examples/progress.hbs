@@ -12,10 +12,18 @@
 
 <hr/>
 
+{{#slds-progress value=0 as |progress|}}
+  {{progress.item text='Item 1' clicked=(action 'progress' 'item1') state='active'}}
+  {{progress.item text='Item 2' clicked=(action 'progress' 'item2')}}
+  {{progress.item text='Item 3' clicked=(action 'progress' 'item3')}}
+  {{progress.item text='Item 4' clicked=(action 'progress' 'item4')}}
+  {{progress.item text='Item 5' clicked=(action 'progress' 'item5')}}
+{{/slds-progress}}
+
 {{#slds-progress value=60 as |progress|}}
   {{progress.item text='Item 1' clicked=(action 'progress' 'item1') state='completed'}}
   {{progress.item text='Item 2' clicked=(action 'progress' 'item2') state='active'}}
   {{progress.item text='Item 3' clicked=(action 'progress' 'item3') state='error'}}
-  {{progress.item text='Item 4' clicked=(action 'progress' 'item4') }}
-  {{progress.item text='Item 5' clicked=(action 'progress' 'item5') }}
+  {{progress.item text='Item 4' clicked=(action 'progress' 'item4')}}
+  {{progress.item text='Item 5' clicked=(action 'progress' 'item5')}}
 {{/slds-progress}}
