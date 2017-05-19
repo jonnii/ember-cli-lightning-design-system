@@ -1,0 +1,8 @@
+{{#slds-control-identity as |formElementId|}}
+  <span class="slds-button slds-checkbox_button">
+    <input type="checkbox" id="{{formElementId}}" disabled={{isDisabled}} onclick={{checked}}>
+    <label class="slds-checkbox_button__label" for="{{formElementId}}">
+      <span class="slds-checkbox_faux">{{label}}</span>
+    </label>
+  </span>
+{{/slds-control-identity}}

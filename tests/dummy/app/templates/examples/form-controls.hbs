@@ -67,6 +67,14 @@
           {{control.radio-button label='Horses' isDisabled=true}}
         </div>
       {{/slds-control-group}}
+
+      {{#slds-control-group legend='Least Favorite pet' as |control|}}
+        <div class="slds-checkbox_button-group">  
+          {{control.checkbox-button label='Lizard' checked=(action 'choosePet' 'cats')}}
+          {{control.checkbox-button label='Snake' checked=(action 'choosePet' 'dogs')}}
+          {{control.checkbox-button label='Dragon' isDisabled=true}}
+        </div>
+      {{/slds-control-group}}
     </div>
   </div>
   <div class="slds-col slds-p-around--small">
