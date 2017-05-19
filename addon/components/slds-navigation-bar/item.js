@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import layout from '../templates/components/slds-navigation-bar-item';
+import layout from '../../templates/components/slds-navigation-bar/item';
 
 export default Ember.Component.extend({
   layout,
