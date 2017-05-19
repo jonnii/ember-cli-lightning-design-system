@@ -20,4 +20,10 @@
       )}}
     </ul>
   </nav>
+  {{#if staticText }}
+    <div style="flex-basis: 100%">&nbsp;</div>
+    <div style="justify-content: space-between; vertical-align: center; display: flex; flex-direction: column; justify-content: center; white-space: nowrap; margin-right: 20px">
+        <span>{{staticText}}</span>
+    </div>
+  {{/if}}
 </div>
