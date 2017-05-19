@@ -7,5 +7,15 @@ moduleForComponent('slds-spinner', 'Integration | Component | slds spinner', {
 
 test('it renders', function(assert) {
   this.render(hbs`{{slds-spinner}}`);
-  assert.expect(0);
+  assert.ok(this.$('.slds-spinner.slds-spinner_medium').length);
+});
+
+test('it renders with size', function(assert) {
+  this.render(hbs`{{slds-spinner size='large'}}`);
+  assert.ok(this.$('.slds-spinner.slds-spinner_large').length);
+});
+
+test('it renders with color', function(assert) {
+  this.render(hbs`{{slds-spinner color='brand'}}`);
+  assert.ok(this.$('.slds-spinner.slds-spinner_brand').length);
 });
