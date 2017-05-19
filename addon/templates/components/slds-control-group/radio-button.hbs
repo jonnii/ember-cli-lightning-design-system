@@ -1,6 +1,6 @@
 {{#slds-control-identity as |formElementId|}}
   <span class="slds-button slds-radio_button">
-    <input type="radio" name="radio" id="{{formElementId}}" disabled={{isDisabled}} onclick={{selected}}>
+    <input type="radio" name={{name}} id="{{formElementId}}" disabled={{isDisabled}} onclick={{selected}}>
     <label class="slds-radio_button__label" for="{{formElementId}}">
       <span class="slds-radio_faux">{{label}}</span>
     </label>
