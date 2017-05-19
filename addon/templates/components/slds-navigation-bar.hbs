@@ -12,12 +12,10 @@
       </span>
     </div>
   </div>
-  <nav class="slds-context-bar__secondary" role="navigation">
-    <ul class="slds-grid">
-      {{yield (hash 
-        item=(component 'slds-navigation-bar/item')
-        menu=(component 'slds-navigation-bar/menu')
-      )}}
-    </ul>
-  </nav>
+  {{#component contextBarSecondaryComponent}}
+    {{yield (hash
+      item=(component 'slds-navigation-bar/item')
+      menu=(component 'slds-navigation-bar/menu')
+    )}}
+  {{/component}}
 </div>
