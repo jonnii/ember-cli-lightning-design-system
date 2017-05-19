@@ -45,9 +45,11 @@
       {{/slds-control-group}}
       
       {{#slds-control-group isRequired=true legend='Choose all your fates' name='fates' as |control|}}
-        {{control.checkbox label='Cake' isChecked=cake checked=(action 'toggle' 'cake')}}
-        {{control.checkbox label='Death' isChecked=death checked=(action 'toggle' 'death')}}
-        {{control.checkbox label='Life' isDisabled=true isChecked=life checked=(action 'toggle' 'life')}}        
+        <div class="slds-checkbox_button-group">
+          {{control.checkbox label='Cake' isChecked=cake checked=(action 'toggle' 'cake')}}
+          {{control.checkbox label='Death' isChecked=death checked=(action 'toggle' 'death')}}
+          {{control.checkbox label='Life' isDisabled=true isChecked=life checked=(action 'toggle' 'life')}}        
+        </div>
       {{/slds-control-group}}
 
       {{#slds-control-group isRequired=true legend='Music' name='music' isError=true errorMessage='you forgot to select the doodat' as |control|}}
@@ -56,8 +58,16 @@
       {{/slds-control-group}}
 
       {{#slds-control-group isRequired=true legend='Games' name='games' isError=true errorMessage='you forgot to select the doodat' as |control|}}
-        {{control.checkbox label='Chess' isChecked=chess checked=(action 'toggle' 'chess')}}
-        {{control.checkbox label='Checkers' isChecked=checkers checked=(action 'toggle' 'checkers')}}
+        <div class="slds-checkbox_button-group">
+          {{control.checkbox label='Chess' isChecked=chess checked=(action 'toggle' 'chess')}}
+          {{control.checkbox label='Checkers' isChecked=checkers checked=(action 'toggle' 'checkers')}}
+        </div>
+      {{/slds-control-group}}
+
+      {{#slds-control-group as |control|}}
+        <div class="slds-radio_button-group">  
+          {{control.radio-button label='Cats'}}
+        </div>
       {{/slds-control-group}}
     </div>
   </div>
