@@ -19,6 +19,10 @@ export default Ember.Controller.extend({
 
     chooseMusic(music) {
       this.set('music', music);
+    },
+
+    choosePet(pet) {
+      this.set('pet', pet);
     }
   }
 });
