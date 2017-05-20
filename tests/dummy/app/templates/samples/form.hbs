@@ -1,7 +1,10 @@
+{{validations.attrs.username.isError}}
+{{username}}
 {{#slds-box}}
   {{#slds-form as |form|}}
-    {{#form.control label='Text Input' as |control|}}
-      {{control.input placeholder="Placeholder Text"}}
+    {{#form.control label='Username' isError=(not validations.attrs.username.isValid) errorMessage=validations.attrs.username.messages
+    as |control|}}
+      {{control.input value=username placeholder="Placeholder Text"}}
     {{/form.control}}
 
     {{#form.control label='Text Input' as |control|}}
