@@ -4,6 +4,10 @@ export default Ember.Route.extend({
   flashMessages: Ember.inject.service(),
 
   actions: {
+    closed() {
+      Ember.Logger.info('closed');
+    },
+
     showInfo() {
       Ember.get(this, 'flashMessages').info('Amazing story bro!');
     },
