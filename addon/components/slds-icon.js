@@ -7,6 +7,14 @@ const defaults = {
   doctype: 'unknown'
 };
 
+const colorMap = {
+  none: '',
+  light: ' slds-icon-text-light',
+  error: ' slds-icon-text-error',
+  warning: ' slds-icon-text-warning',
+  default: ' slds-icon-text-default'
+};
+
 export default Ember.Component.extend({
   layout,
 
@@ -15,6 +23,7 @@ export default Ember.Component.extend({
   classNameBindings: ['backgroundClass'],
   attributeBindings: ['description:title'],
 
+  color: 'default',
   sprite: 'standard',
   icon: '',
   description: null,
@@ -36,13 +45,19 @@ export default Ember.Component.extend({
   }),
 
   colorClass: Ember.computed('sprite', function() {
-    const sprite = this.get('sprite');
+    const color = this.get('color');
 
-    if (sprite === 'utility') {
-      return ' slds-icon-text-default';
-    } else {
-      return '';
+    if (color == 'default') {
+      const sprite = this.get('sprite');
+
+      if (sprite === 'utility') {
+        return ' slds-icon-text-default';
+      } else {
+        return '';
+      }
     }
+
+    return colorMap[color];
   }),
 
   sizeClass: Ember.computed('size', function() {
