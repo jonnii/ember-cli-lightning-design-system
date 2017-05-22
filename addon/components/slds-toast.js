@@ -3,7 +3,9 @@ import layout from '../templates/components/slds-toast';
 
 const themeMap = {
   info: 'slds-theme_info',
-  success: 'slds-theme_success'
+  success: 'slds-theme_success',
+  warning: 'slds-theme_warning',
+  error: 'slds-theme_error'
 };
 
 export default Ember.Component.extend({
