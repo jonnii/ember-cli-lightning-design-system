@@ -33,6 +33,7 @@ Router.map(function() {
     this.route('media');
     this.route('spinner');
     this.route('toast');
+    this.route('alert');
   });
   this.route('samples', function() {
     this.route('filter-grid');

@@ -1,19 +1,24 @@
-<div class="slds-notify_container">
-  <div class="slds-notify slds-notify--alert slds-theme--alert-texture" role="alert">
-    {{slds-button-icon 
-      class='slds-notify__close'
-      type='inverse' 
-      title='Close' 
+{{#if closed}}
+  {{slds-button-icon 
+    class='slds-notify__close'
+    type='inverse' 
+    title='Close' 
+    sprite='utility' 
+    icon='close'
+    clicked=closed}}
+{{/if}}
+
+<span class="slds-assistive-text">{{theme}}</span>
+
+{{#if hasBlock}}
+  {{yield (hash
+    icon=(component 'slds-icon' 
       sprite='utility' 
-      icon='close'
-      }}
-    <span class="slds-assistive-text">{{text}}</span>
-    <h2>
-      {{#if hasBlock}}
-        {{yield}}
-      {{else}}
-        {{text}}
-      {{/if}}
-    </h2>
-  </div>
-</div>
+      icon='offline' 
+      size='x-small' 
+      class='slds-m-right_x-small' 
+      color='none')
+  )}}
+{{else}}
+  <h2>{{text}}</h2>
+{{/if}}

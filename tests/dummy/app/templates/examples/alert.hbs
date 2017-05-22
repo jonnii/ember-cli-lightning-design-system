@@ -1,0 +1,11 @@
+{{slds-alert text='Amazing thing'}}
+{{slds-alert text='Amazing thing' theme='warning' closed=(route-action 'closed')}}
+{{slds-alert text='Amazing thing' theme='error'}}
+
+{{#slds-alert theme='offline' as |alert|}}
+  {{alert.icon sprite='utility' icon='offline'}}
+  <h2>
+    You are in offline mode.
+    <a href="javascript:void(0);">More Information</a>
+  </h2>
+{{/slds-alert}}
