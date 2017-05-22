@@ -8,5 +8,4 @@ export default Ember.Component.extend({
   attributeBindings: ['role:role'],
 
   role: 'alert'
-  
 });

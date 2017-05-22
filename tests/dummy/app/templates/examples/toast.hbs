@@ -1,3 +1,10 @@
 {{slds-button type='success' text='show toast' clicked=(route-action 'showToast')}}
 
-{{slds-toast}}
+<div>
+  {{#slds-toast}}
+    <h2 class="slds-text-heading_small">
+      26 potential duplicate leads were found.
+      <a href="javascript:void(0);">Select Leads to Merge</a>
+    </h2>
+  {{/slds-toast}}
+</div>
