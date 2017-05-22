@@ -21,7 +21,7 @@ export default Ember.Route.extend({
     },
 
     showError() {
-      Ember.get(this, 'flashMessages').danger('Amazing story bro!');
+      Ember.get(this, 'flashMessages').error('Amazing story bro!');
     }
   }
 });
