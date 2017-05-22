@@ -9,9 +9,10 @@
   {{yield}}
 </div>
 
-<button class="slds-button slds-button_icon slds-notify__close slds-button_icon-inverse" title="Close">
-  <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
-    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
-  </svg>
-  <span class="slds-assistive-text">Close</span>
-</button>
+{{slds-button-icon 
+  icon='close' 
+  size='large' 
+  type='inverse' 
+  class='slds-notify__close' 
+  title='Close' 
+  clicked=closed}}
