@@ -32,6 +32,7 @@ Router.map(function() {
     this.route('avatar');
     this.route('media');
     this.route('spinner');
+    this.route('toast');
   });
   this.route('samples', function() {
     this.route('filter-grid');
