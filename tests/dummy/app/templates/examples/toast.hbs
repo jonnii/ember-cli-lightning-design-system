@@ -1,7 +1,19 @@
-{{slds-button type='success' text='show toast' clicked=(route-action 'showToast')}}
+{{slds-button type='neutral' text='info toast' clicked=(route-action 'showInfo')}}
+{{slds-button type='brand' text='warn toast' clicked=(route-action 'showWarning')}}
+{{slds-button type='success' text='success toast' clicked=(route-action 'showSuccess')}}
+{{slds-button type='destructive' text='error toast' clicked=(route-action 'showError')}}
 
 <div>
   {{#slds-toast}}
+    <h2 class="slds-text-heading_small">
+      26 potential duplicate leads were found.
+      <a href="javascript:void(0);">Select Leads to Merge</a>
+    </h2>
+  {{/slds-toast}}
+</div>
+
+<div>
+  {{#slds-toast type='success'}}
     <h2 class="slds-text-heading_small">
       26 potential duplicate leads were found.
       <a href="javascript:void(0);">Select Leads to Merge</a>
