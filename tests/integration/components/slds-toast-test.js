@@ -19,3 +19,15 @@ test('it renders success theme', function(assert) {
   assert.ok(this.$('.slds-theme_success').length);
   assert.equal(this.$('.slds-notify > .slds-assistive-text').text().trim(), 'success');
 });
+
+test('it renders warning theme', function(assert) {
+  this.render(hbs`{{slds-toast theme='warning'}}`);
+
+  assert.ok(this.$('.slds-theme_warning').length);
+});
+
+test('it renders error theme', function(assert) {
+  this.render(hbs`{{slds-toast theme='error'}}`);
+
+  assert.ok(this.$('.slds-theme_error').length);
+});
