@@ -57,3 +57,17 @@ test('it renders sizes', function(assert) {
   const icon = this.$('.slds-icon');
   assert.equal(icon.attr('class'), 'slds-icon slds-icon--x-small');
 });
+
+test('it renders utility with color none', function(assert) {
+  this.render(hbs`{{slds-icon sprite='utility' color='none'}}`);
+
+  const icon = this.$('.slds-icon');
+  assert.equal(icon.attr('class').trim(), 'slds-icon');
+});
+
+test('it renders utility with color error', function(assert) {
+  this.render(hbs`{{slds-icon sprite='utility' color='error'}}`);
+
+  const icon = this.$('.slds-icon');
+  assert.equal(icon.attr('class').trim(), 'slds-icon slds-icon-text-error');
+});
