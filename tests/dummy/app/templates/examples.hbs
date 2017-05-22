@@ -4,7 +4,7 @@
   <div class="slds-is-absolute" style="left:0;right:0;width:45rem;margin-left:auto;margin-right:auto">
     {{#each flashMessages.queue as |flash|}}
       <div class="slds-notify_container slds-is-relative">
-        {{#slds-toast}}
+        {{#slds-toast theme=flash.type}}
           {{flash.message}}
         {{/slds-toast}}
       </div>

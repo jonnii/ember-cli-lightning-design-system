@@ -1,12 +1,14 @@
-<span class="slds-assistive-text">info</span>
-<span class="slds-icon_container slds-icon-utility-info slds-m-right_small slds-no-flex slds-align-top" title="Description of icon when needed">
-  <svg class="slds-icon slds-icon_small" aria-hidden="true">
-    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#info"></use>
-  </svg>
-</span>
+<span class="slds-assistive-text">{{theme}}</span>
+
+{{slds-icon 
+  sprite='utility' 
+  icon=theme 
+  class='slds-m-right_small slds-no-flex slds-align-top' size='small'}}
+
 <div class="slds-notify__content">  
   {{yield}}
 </div>
+
 <button class="slds-button slds-button_icon slds-notify__close slds-button_icon-inverse" title="Close">
   <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
     <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
