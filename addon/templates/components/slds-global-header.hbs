@@ -1,90 +1,89 @@
-<header class="slds-global-header_container"><a href="javascript:void(0);" class="slds-assistive-text slds-assistive-text--focus">Skip to Navigation</a><a href="javascript:void(0);" class="slds-assistive-text slds-assistive-text--focus">Skip to Main Content</a>
-  <div class="slds-global-header slds-grid slds-grid--align-spread">
-    <div class="slds-global-header__item">
-      <div class="slds-global-header__logo">
-        <img src="/assets/images/logo-noname.svg" alt="" />
-      </div>
+<a href="javascript:void(0);" class="slds-assistive-text slds-assistive-text--focus">Skip to Navigation</a><a href="javascript:void(0);" class="slds-assistive-text slds-assistive-text--focus">Skip to Main Content</a>
+<div class="slds-global-header slds-grid slds-grid--align-spread">
+  <div class="slds-global-header__item">
+    <div class="slds-global-header__logo">
+      <img src="/assets/images/logo-noname.svg" alt="" />
     </div>
-    <div class="slds-global-header__item slds-global-header__item--search">
-      {{slds-lookup}}
-    </div>
-    <ul class="slds-global-header__item slds-grid slds-grid--vertical-align-center">
-      <li class="slds-grid">
-        <button class="slds-button slds-button--icon slds-button--icon-container slds-button--icon-small slds-global-header__button--icon-favorites" title="Toggle Favorite">
-          <svg class="slds-button__icon slds-global-header__icon" aria-hidden="true">
-            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#favorite"></use>
-          </svg>
-          <span class="slds-assistive-text">Toggle Favorite</span>
-        </button>
-        <span class="slds-dropdown-trigger slds-dropdown-trigger--click">
-          <button class="slds-button slds-button--icon slds-button--icon-container slds-button--icon-small slds-global-header__button--icon slds-m-left--none" aria-haspopup="true" title="View Favorites">
-            <svg class="slds-button__icon" aria-hidden="true">
-              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#chevrondown"></use>
-            </svg>
-            <span class="slds-assistive-text">View Favorites</span>
-          </button>
-        </span>
-      </li>
-
-      {{#slds-menu tagName='li' class='slds-p-horizontal--xxx-small' as |menu|}}
-        {{menu.trigger 
-          icon='add' 
-          containerSize='x-small' 
-          border='default'
-          class='slds-global-header__button--icon-actions slds-m-horizontal--xx-small'}}
-        {{#menu.dropdown position='topRight' nubbin='topRight' as |dropdown|}}
-          {{dropdown.header text="Setup"}}
-          {{#dropdown.item}}
-            Setup Home
-          {{/dropdown.item}}
-        {{/menu.dropdown}}
-      {{/slds-menu}}
-
-      <li class="slds-dropdown-trigger slds-dropdown-trigger--click">
-        <button class="slds-button slds-button--icon slds-button--icon-container slds-button--icon-small slds-global-header__button--icon" aria-haspopup="true" title="Help and Training">
-          <svg class="slds-button__icon slds-global-header__icon" aria-hidden="true">
-            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#question"></use>
-          </svg>
-          <span class="slds-assistive-text">Help and Training</span>
-        </button>
-      </li>
-
-      {{#slds-menu tagName='li' as |menu|}}
-        {{menu.trigger 
-          icon='setup' 
-          border='none'
-          size='small'
-          class='slds-global-header__button--icon slds-global-header__icon'}}
-        {{#menu.dropdown position='topRight' nubbin='topRight' as |dropdown|}}
-          {{dropdown.header text="Create"}}
-          {{#dropdown.item}}
-            {{slds-icon size='small' sprite='standard' icon='note' class='slds-m-right--x-small'}} New Note
-          {{/dropdown.item}}
-        {{/menu.dropdown}}
-      {{/slds-menu}}
-
-
-      <li class="slds-dropdown-trigger slds-dropdown-trigger--click">
-        <button class="slds-button slds-button--icon slds-button--icon-container slds-button--icon-small slds-global-header__button--icon" aria-haspopup="true" title="Setup">
-          <svg class="slds-button__icon slds-global-header__icon" aria-hidden="true">
-            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#setup"></use>
-          </svg>
-          <span class="slds-assistive-text">Setup</span>
-        </button>
-      </li>
-      <li class="slds-dropdown-trigger slds-dropdown-trigger--click">
-        <button class="slds-button slds-button--icon slds-button--icon-container slds-button--icon-small slds-global-header__button--icon" aria-haspopup="true" title="Notifications">
-          <svg class="slds-button__icon slds-global-header__icon" aria-hidden="true">
-            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#notification"></use>
-          </svg>
-          <span class="slds-assistive-text">Notifications</span>
-        </button>
-      </li>
-      <li class="slds-dropdown-trigger slds-dropdown-trigger--click slds-m-left--x-small">
-        {{#slds-avatar type='circle'}}
-          <img src="/assets/images/avatar1.jpg" alt="default avatar" />
-        {{/slds-avatar}}        
-      </li>
-    </ul>
   </div>
-</header>
+  <div class="slds-global-header__item slds-global-header__item--search">
+    {{slds-lookup}}
+  </div>
+  <ul class="slds-global-header__item slds-grid slds-grid--vertical-align-center">
+    <li class="slds-grid">
+      <button class="slds-button slds-button--icon slds-button--icon-container slds-button--icon-small slds-global-header__button--icon-favorites" title="Toggle Favorite">
+        <svg class="slds-button__icon slds-global-header__icon" aria-hidden="true">
+          <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#favorite"></use>
+        </svg>
+        <span class="slds-assistive-text">Toggle Favorite</span>
+      </button>
+      <span class="slds-dropdown-trigger slds-dropdown-trigger--click">
+        <button class="slds-button slds-button--icon slds-button--icon-container slds-button--icon-small slds-global-header__button--icon slds-m-left--none" aria-haspopup="true" title="View Favorites">
+          <svg class="slds-button__icon" aria-hidden="true">
+            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#chevrondown"></use>
+          </svg>
+          <span class="slds-assistive-text">View Favorites</span>
+        </button>
+      </span>
+    </li>
+
+    {{#slds-menu tagName='li' class='slds-p-horizontal--xxx-small' as |menu|}}
+      {{menu.trigger 
+        icon='add' 
+        containerSize='x-small' 
+        border='default'
+        class='slds-global-header__button--icon-actions slds-m-horizontal--xx-small'}}
+      {{#menu.dropdown position='topRight' nubbin='topRight' as |dropdown|}}
+        {{dropdown.header text="Setup"}}
+        {{#dropdown.item}}
+          Setup Home
+        {{/dropdown.item}}
+      {{/menu.dropdown}}
+    {{/slds-menu}}
+
+    <li class="slds-dropdown-trigger slds-dropdown-trigger--click">
+      <button class="slds-button slds-button--icon slds-button--icon-container slds-button--icon-small slds-global-header__button--icon" aria-haspopup="true" title="Help and Training">
+        <svg class="slds-button__icon slds-global-header__icon" aria-hidden="true">
+          <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#question"></use>
+        </svg>
+        <span class="slds-assistive-text">Help and Training</span>
+      </button>
+    </li>
+
+    {{#slds-menu tagName='li' as |menu|}}
+      {{menu.trigger 
+        icon='setup' 
+        border='none'
+        size='small'
+        class='slds-global-header__button--icon slds-global-header__icon'}}
+      {{#menu.dropdown position='topRight' nubbin='topRight' as |dropdown|}}
+        {{dropdown.header text="Create"}}
+        {{#dropdown.item}}
+          {{slds-icon size='small' sprite='standard' icon='note' class='slds-m-right--x-small'}} New Note
+        {{/dropdown.item}}
+      {{/menu.dropdown}}
+    {{/slds-menu}}
+
+
+    <li class="slds-dropdown-trigger slds-dropdown-trigger--click">
+      <button class="slds-button slds-button--icon slds-button--icon-container slds-button--icon-small slds-global-header__button--icon" aria-haspopup="true" title="Setup">
+        <svg class="slds-button__icon slds-global-header__icon" aria-hidden="true">
+          <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#setup"></use>
+        </svg>
+        <span class="slds-assistive-text">Setup</span>
+      </button>
+    </li>
+    <li class="slds-dropdown-trigger slds-dropdown-trigger--click">
+      <button class="slds-button slds-button--icon slds-button--icon-container slds-button--icon-small slds-global-header__button--icon" aria-haspopup="true" title="Notifications">
+        <svg class="slds-button__icon slds-global-header__icon" aria-hidden="true">
+          <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#notification"></use>
+        </svg>
+        <span class="slds-assistive-text">Notifications</span>
+      </button>
+    </li>
+    <li class="slds-dropdown-trigger slds-dropdown-trigger--click slds-m-left--x-small">
+      {{#slds-avatar type='circle'}}
+        <img src="/assets/images/avatar1.jpg" alt="default avatar" />
+      {{/slds-avatar}}        
+    </li>
+  </ul>
+</div>
