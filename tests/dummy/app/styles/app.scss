@@ -1,5 +1,13 @@
 @import 'ember-cli-lightning-design-system/scss/index.scss';
 
+header.is-showing-banner {
+  padding-top: 35px;
+}
+
 main {
   margin-top: 50px;
+}
+
+main.is-showing-banner {
+  padding-top: 35px;  
 }
