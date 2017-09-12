@@ -30,10 +30,7 @@
     "@salesforce-ux/design-system": "^2.3.0",
     "ember-cli-babel": "^6.8.2",
     "ember-cli-htmlbars": "^2.0.1",
-    "ember-cli-sass": "^7.0.0",
-    "eslint": "^4.6.1",
-    "eslint-config-prettier": "^2.4.0",
-    "eslint-plugin-prettier": "^2.2.0"
+    "ember-cli-sass": "^7.0.0"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
