@@ -9,4 +9,5 @@ test('it renders', function(assert) {
   this.render(hbs`{{slds-card}}`);
 
   assert.ok(this.$('header.slds-media.slds-media--center').length);
+  assert.ok(this.$('article.slds-card').length);
 });
