@@ -1,15 +1,15 @@
-
 {{#if hasBlock}}
 
 {{else}}
-  <input 
-    disabled={{isDisabled}}
-    required="{{isRequired}}"
-    aria-describedby={{errorElementId}} 
-    type="{{type}}" 
-    id="{{formElementId}}" 
-    class="slds-input" 
-    placeholder={{placeholder}} />
+  {{input 
+    type=type
+    id=formElementId
+    disabled=isDiabled 
+    required=isRequired 
+    aria-describedby=errorElementId
+    value=value
+    class='slds-input'
+    placeholder=placeholder}}
 {{/if}}
 {{!--
 <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon--left-right">

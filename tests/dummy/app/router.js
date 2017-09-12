@@ -37,6 +37,7 @@ Router.map(function() {
   });
   this.route('samples', function() {
     this.route('filter-grid');
+    this.route('form');
   });
 });
 
