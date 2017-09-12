@@ -1,0 +1,25 @@
+{{#slds-page-header as |header|}}
+  {{#slds-media class='slds-no-space slds-grow' as |m|}}
+    {{#m.figure}}
+      {{slds-icon sprite='standard' icon='user'}}
+    {{/m.figure}}
+    {{#m.body}}
+      <p class="slds-text-title--caps slds-line-height--reset">Record Type</p>
+      {{#header.title class='slds-m-right--small slds-align-middle slds-truncate'}}Record Title{{/header.title}}
+    {{/m.body}}
+  {{/slds-media}}
+{{/slds-page-header}}
+
+<hr/>
+
+{{#slds-page-header as |header|}}
+  {{#slds-media class='slds-no-space slds-grow' as |m|}}
+    {{#m.figure}}
+      {{slds-icon sprite='standard' icon='opportunity'}}
+    {{/m.figure}}
+    {{#m.body}}
+      {{#header.title class='slds-truncate slds-align-middle'}}Rohde Corp - 80,000 Widgets{{/header.title}}
+      <p class="slds-text-body_small slds-line-height_reset">Mark Jaeckal • Unlimited Customer • 11/13/15</p>
+    {{/m.body}}
+  {{/slds-media}}
+{{/slds-page-header}}

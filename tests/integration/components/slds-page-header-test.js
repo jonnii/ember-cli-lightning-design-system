@@ -6,21 +6,11 @@ moduleForComponent('slds-page-header', 'Integration | Component | slds page head
 });
 
 test('it renders', function(assert) {
-  assert.expect(0);
-
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
-  this.render(hbs`{{slds-page-header}}`);
-
-  // assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
   this.render(hbs`
     {{#slds-page-header}}
       template block text
     {{/slds-page-header}}
   `);
 
-  // assert.equal(this.$().text().trim(), 'template block text');
+  assert.ok(this.$('.slds-page-header').length);
 });
