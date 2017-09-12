@@ -85,9 +85,9 @@
   dependencies:
     "@glimmer/util" "^0.25.3"
 
-"@salesforce-ux/design-system@^2.3.0":
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/@salesforce-ux/design-system/-/design-system-2.3.1.tgz#a7f20f52a58214b6e71f7762168524fb34eb2ed5"
+"@salesforce-ux/design-system@2.4.0-rc.3":
+  version "2.4.0-rc.3"
+  resolved "https://registry.yarnpkg.com/@salesforce-ux/design-system/-/design-system-2.4.0-rc.3.tgz#e22afb80428ba11c3d61233cd0dc9c943d5820c2"
 
 abbrev@1:
   version "1.1.0"

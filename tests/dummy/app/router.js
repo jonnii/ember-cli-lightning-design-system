@@ -34,6 +34,7 @@ Router.map(function() {
     this.route('spinner');
     this.route('toast');
     this.route('alert');
+    this.route('page-header');
   });
   this.route('samples', function() {
     this.route('filter-grid');
