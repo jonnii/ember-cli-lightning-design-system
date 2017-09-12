@@ -24,7 +24,12 @@ test('it renders standard with description', function(assert) {
 
   assert.ok(container.length);
   assert.equal(container.attr('title'), 'fancy description');
-  assert.equal(this.$('.slds-assistive-text').text().trim(), 'fancy description');
+  assert.equal(
+    this.$('.slds-assistive-text')
+      .text()
+      .trim(),
+    'fancy description'
+  );
 });
 
 test('it renders utility', function(assert) {

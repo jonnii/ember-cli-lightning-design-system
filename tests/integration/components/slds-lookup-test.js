@@ -11,7 +11,12 @@ test('it renders', function(assert) {
     {{/slds-lookup}}
   `);
 
-  assert.equal(this.$('label').text().trim(), 'Search');
+  assert.equal(
+    this.$('label')
+      .text()
+      .trim(),
+    'Search'
+  );
   assert.equal(this.$('.slds-lookup').attr('class'), 'slds-form-element slds-lookup');
 });
 
@@ -21,7 +26,12 @@ test('it renders with placeholder', function(assert) {
     {{/slds-lookup}}
   `);
 
-  assert.equal(this.$('label').text().trim(), 'Find Product');
+  assert.equal(
+    this.$('label')
+      .text()
+      .trim(),
+    'Find Product'
+  );
 });
 
 test('it renders with when open', function(assert) {

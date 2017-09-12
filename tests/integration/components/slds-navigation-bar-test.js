@@ -8,13 +8,23 @@ moduleForComponent('slds-navigation-bar', 'Integration | Component | slds naviga
 test('it renders', function(assert) {
   this.render(hbs`{{slds-navigation-bar}}`);
 
-  assert.equal(this.$('.slds-context-bar__app-name').text().trim(), 'App Name');
+  assert.equal(
+    this.$('.slds-context-bar__app-name')
+      .text()
+      .trim(),
+    'App Name'
+  );
 });
 
 test('it renders with application name', function(assert) {
   this.render(hbs`{{slds-navigation-bar applicationName='Super App'}}`);
 
-  assert.equal(this.$('.slds-context-bar__app-name').text().trim(), 'Super App');
+  assert.equal(
+    this.$('.slds-context-bar__app-name')
+      .text()
+      .trim(),
+    'Super App'
+  );
 });
 
 test('it renders with item', function(assert) {

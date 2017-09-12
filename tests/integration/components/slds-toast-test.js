@@ -10,14 +10,24 @@ test('it renders', function(assert) {
 
   assert.equal(this.$('.slds-notify').attr('role'), 'alert');
   assert.ok(this.$('.slds-theme_info').length);
-  assert.equal(this.$('.slds-notify > .slds-assistive-text').text().trim(), 'info');
+  assert.equal(
+    this.$('.slds-notify > .slds-assistive-text')
+      .text()
+      .trim(),
+    'info'
+  );
 });
 
 test('it renders success theme', function(assert) {
   this.render(hbs`{{slds-toast theme='success'}}`);
 
   assert.ok(this.$('.slds-theme_success').length);
-  assert.equal(this.$('.slds-notify > .slds-assistive-text').text().trim(), 'success');
+  assert.equal(
+    this.$('.slds-notify > .slds-assistive-text')
+      .text()
+      .trim(),
+    'success'
+  );
 });
 
 test('it renders warning theme', function(assert) {

@@ -9,14 +9,24 @@ test('it renders', function(assert) {
   this.render(hbs`{{slds-pill}}`);
 
   assert.ok(this.$('button.slds-pill__remove.slds-button.slds-button--icon').length);
-  assert.equal(this.$('a').text().trim(), 'Label');
+  assert.equal(
+    this.$('a')
+      .text()
+      .trim(),
+    'Label'
+  );
 });
 
 test('it renders with label', function(assert) {
   this.render(hbs`{{slds-pill label='awesome label'}}`);
 
   assert.ok(this.$('button.slds-pill__remove.slds-button.slds-button--icon').length);
-  assert.equal(this.$('a').text().trim(), 'awesome label');
+  assert.equal(
+    this.$('a')
+      .text()
+      .trim(),
+    'awesome label'
+  );
 });
 
 test('it renders with error', function(assert) {

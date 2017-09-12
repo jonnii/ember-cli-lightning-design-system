@@ -13,8 +13,18 @@ test('it renders', function(assert) {
     {{/slds-media}}
   `);
 
-  assert.equal(this.$('.slds-media__figure').text().trim(), 'figure');
-  assert.equal(this.$('.slds-media__body').text().trim(), 'body');
+  assert.equal(
+    this.$('.slds-media__figure')
+      .text()
+      .trim(),
+    'figure'
+  );
+  assert.equal(
+    this.$('.slds-media__body')
+      .text()
+      .trim(),
+    'body'
+  );
 });
 
 test('it renders centered', function(assert) {

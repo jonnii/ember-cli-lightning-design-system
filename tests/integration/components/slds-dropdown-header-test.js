@@ -8,7 +8,12 @@ moduleForComponent('slds-dropdown-header', 'Integration | Component | slds dropd
 test('it renders', function(assert) {
   this.render(hbs`{{slds-dropdown-header}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(
+    this.$()
+      .text()
+      .trim(),
+    ''
+  );
 
   this.render(hbs`
     {{#slds-dropdown-header}}
@@ -16,5 +21,10 @@ test('it renders', function(assert) {
     {{/slds-dropdown-header}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(
+    this.$()
+      .text()
+      .trim(),
+    'template block text'
+  );
 });

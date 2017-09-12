@@ -8,7 +8,12 @@ moduleForComponent('slds-progress-bar', 'Integration | Component | slds progress
 test('it renders', function(assert) {
   this.render(hbs`{{slds-progress-bar}}`);
 
-  assert.equal(this.$('.slds-assistive-text').text().trim(), 'Progress: 0%');
+  assert.equal(
+    this.$('.slds-assistive-text')
+      .text()
+      .trim(),
+    'Progress: 0%'
+  );
   assert.equal(this.$('.slds-progress-bar').attr('aria-valuemin'), 0);
   assert.equal(this.$('.slds-progress-bar').attr('aria-valuemax'), 100);
   assert.equal(this.$('.slds-progress-bar').attr('aria-valuenow'), 0);
@@ -18,8 +23,18 @@ test('it renders', function(assert) {
 test('it renders with value', function(assert) {
   this.render(hbs`{{slds-progress-bar value=80}}`);
 
-  assert.equal(this.$('.slds-assistive-text').text().trim(), 'Progress: 80%');
-  assert.equal(this.$('.slds-assistive-text').text().trim(), 'Progress: 80%');
+  assert.equal(
+    this.$('.slds-assistive-text')
+      .text()
+      .trim(),
+    'Progress: 80%'
+  );
+  assert.equal(
+    this.$('.slds-assistive-text')
+      .text()
+      .trim(),
+    'Progress: 80%'
+  );
   assert.equal(this.$('.slds-progress-bar').attr('aria-valuenow'), 80);
 });
 

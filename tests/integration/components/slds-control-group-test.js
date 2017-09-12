@@ -8,7 +8,12 @@ moduleForComponent('slds-control-group', 'Integration | Component | slds control
 test('it renders legend', function(assert) {
   this.render(hbs`{{slds-control-group legend='choose your fate'}}`);
 
-  assert.equal(this.$('legend').text().trim(), 'choose your fate');
+  assert.equal(
+    this.$('legend')
+      .text()
+      .trim(),
+    'choose your fate'
+  );
   assert.notOk(this.$('.slds-required').length);
 });
 
@@ -47,7 +52,12 @@ test('it renders checkbox with error', function(assert) {
     {{/slds-control-group}}
   `);
 
-  assert.equal(this.$('.slds-form-element__help').text().trim(), 'you fell over');
+  assert.equal(
+    this.$('.slds-form-element__help')
+      .text()
+      .trim(),
+    'you fell over'
+  );
 
   // assert.ok(this.$('input[aria-describedby]').length, 'has aria description');
   // assert.equal(this.$('input').attr('aria-describedby'), this.$('.slds-form-element__help').attr('id'));
@@ -71,7 +81,12 @@ test('it renders radio with error', function(assert) {
     {{/slds-control-group}}
   `);
 
-  assert.equal(this.$('.slds-form-element__help').text().trim(), 'you fell over');
+  assert.equal(
+    this.$('.slds-form-element__help')
+      .text()
+      .trim(),
+    'you fell over'
+  );
 
   assert.ok(this.$('input[aria-describedby]').length, 'has aria description');
   assert.equal(this.$('input').attr('aria-describedby'), this.$('.slds-form-element__help').attr('id'));

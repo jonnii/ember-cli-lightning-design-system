@@ -7,7 +7,12 @@ moduleForComponent('slds-breadcrumb', 'Integration | Component | slds breadcrumb
 
 test('it renders', function(assert) {
   this.render(hbs`{{slds-breadcrumb}}`);
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(
+    this.$()
+      .text()
+      .trim(),
+    ''
+  );
 });
 
 test('it renders with crumb items', function(assert) {
@@ -17,6 +22,16 @@ test('it renders with crumb items', function(assert) {
       {{#crumb.item}}Parent Record Name{{/crumb.item}}
     {{/slds-breadcrumb}}`);
 
-  assert.equal(this.$('.slds-breadcrumb__item:first').text().trim(), 'Parent Entity');
-  assert.equal(this.$('.slds-breadcrumb__item:last').text().trim(), 'Parent Record Name');
+  assert.equal(
+    this.$('.slds-breadcrumb__item:first')
+      .text()
+      .trim(),
+    'Parent Entity'
+  );
+  assert.equal(
+    this.$('.slds-breadcrumb__item:last')
+      .text()
+      .trim(),
+    'Parent Record Name'
+  );
 });
