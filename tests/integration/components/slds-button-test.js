@@ -8,7 +8,12 @@ moduleForComponent('slds-button', 'Integration | Component | slds button', {
 test('it renders', function(assert) {
   this.render(hbs`{{slds-button}}`);
 
-  assert.equal(this.$().text().trim(), 'Submit');
+  assert.equal(
+    this.$()
+      .text()
+      .trim(),
+    'Submit'
+  );
   assert.ok(this.$('button.slds-button').length);
   assert.notOk(this.$('button').is('[disabled=disabled]'));
   assert.equal(this.$('svg').length, 0);

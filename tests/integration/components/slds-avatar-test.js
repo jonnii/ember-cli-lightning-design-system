@@ -39,7 +39,12 @@ test('it renders with name', function(assert) {
   this.render(hbs`{{slds-avatar name='Bobby Jenkins'}}`);
 
   assert.equal(this.$('abbr').attr('title'), 'Bobby Jenkins');
-  assert.equal(this.$('abbr').text().trim(), 'BJ');
+  assert.equal(
+    this.$('abbr')
+      .text()
+      .trim(),
+    'BJ'
+  );
   assert.equal(this.$('abbr').attr('class'), 'slds-avatar__initials slds-icon-standard-account');
 });
 
@@ -47,14 +52,24 @@ test('it renders with name with middlename', function(assert) {
   this.render(hbs`{{slds-avatar name='Bobby Tom Jenkins'}}`);
 
   assert.equal(this.$('abbr').attr('title'), 'Bobby Tom Jenkins');
-  assert.equal(this.$('abbr').text().trim(), 'BJ');
+  assert.equal(
+    this.$('abbr')
+      .text()
+      .trim(),
+    'BJ'
+  );
 });
 
 test('it renders with company name', function(assert) {
   this.render(hbs`{{slds-avatar name='Megacorp'}}`);
 
   assert.equal(this.$('abbr').attr('title'), 'Megacorp');
-  assert.equal(this.$('abbr').text().trim(), 'Me');
+  assert.equal(
+    this.$('abbr')
+      .text()
+      .trim(),
+    'Me'
+  );
 });
 
 test('it renders with color', function(assert) {

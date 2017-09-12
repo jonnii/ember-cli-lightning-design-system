@@ -11,7 +11,12 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{slds-lookup-action}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(
+    this.$()
+      .text()
+      .trim(),
+    ''
+  );
 
   // // Template block usage:
   // this.render(hbs`

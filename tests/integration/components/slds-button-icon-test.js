@@ -16,8 +16,18 @@ test('it renders with default icon', function(assert) {
 
   assert.equal(this.$('svg').attr('class'), 'slds-button__icon');
   assert.equal(this.$('svg').attr('aria-hidden'), 'true');
-  assert.equal(this.$('use').attr('xlink:href').trim(), '/assets/icons/utility-sprite/svg/symbols.svg#question');
-  assert.equal(this.$('span.slds-assistive-text').text().trim(), 'question');
+  assert.equal(
+    this.$('use')
+      .attr('xlink:href')
+      .trim(),
+    '/assets/icons/utility-sprite/svg/symbols.svg#question'
+  );
+  assert.equal(
+    this.$('span.slds-assistive-text')
+      .text()
+      .trim(),
+    'question'
+  );
 });
 
 test('it renders with custom class', function(assert) {
@@ -29,9 +39,24 @@ test('it renders with custom class', function(assert) {
 test('it renders with icon', function(assert) {
   this.render(hbs`{{slds-button-icon icon='user'}}`);
 
-  assert.equal(this.$('button').attr('title').trim(), 'user');
-  assert.equal(this.$('use').attr('xlink:href').trim(), '/assets/icons/utility-sprite/svg/symbols.svg#user');
-  assert.equal(this.$('span.slds-assistive-text').text().trim(), 'user');
+  assert.equal(
+    this.$('button')
+      .attr('title')
+      .trim(),
+    'user'
+  );
+  assert.equal(
+    this.$('use')
+      .attr('xlink:href')
+      .trim(),
+    '/assets/icons/utility-sprite/svg/symbols.svg#user'
+  );
+  assert.equal(
+    this.$('span.slds-assistive-text')
+      .text()
+      .trim(),
+    'user'
+  );
 });
 
 test('it renders with aria-popup', function(assert) {
@@ -91,8 +116,18 @@ test('it renders when selected', function(assert) {
 test('it renders with title', function(assert) {
   this.render(hbs`{{slds-button-icon title='superman'}}`);
 
-  assert.equal(this.$('button').attr('title').trim(), 'superman');
-  assert.equal(this.$('span.slds-assistive-text').text().trim(), 'superman');
+  assert.equal(
+    this.$('button')
+      .attr('title')
+      .trim(),
+    'superman'
+  );
+  assert.equal(
+    this.$('span.slds-assistive-text')
+      .text()
+      .trim(),
+    'superman'
+  );
 });
 
 test('it calls action when clicked', function(assert) {

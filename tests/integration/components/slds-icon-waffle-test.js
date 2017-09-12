@@ -17,5 +17,10 @@ test('it renders', function(assert) {
   this.render(hbs`{{slds-icon-waffle title='amazing title'}}`);
 
   assert.equal(this.$('button').attr('title'), 'amazing title');
-  assert.equal(this.$('span.slds-assistive-text').text().trim(), 'amazing title');
+  assert.equal(
+    this.$('span.slds-assistive-text')
+      .text()
+      .trim(),
+    'amazing title'
+  );
 });

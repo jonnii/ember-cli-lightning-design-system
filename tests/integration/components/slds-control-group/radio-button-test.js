@@ -8,5 +8,10 @@ moduleForComponent('slds-control-group/radio-button', 'Integration | Component |
 test('it renders', function(assert) {
   this.render(hbs`{{slds-control-group/radio-button label='option'}}`);
 
-  assert.equal(this.$('.slds-radio_faux').text().trim(), 'option');
+  assert.equal(
+    this.$('.slds-radio_faux')
+      .text()
+      .trim(),
+    'option'
+  );
 });
