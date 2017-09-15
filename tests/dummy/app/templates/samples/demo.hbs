@@ -1,0 +1,94 @@
+{{slds-global-header}}
+
+<main>
+  {{#slds-navigation-bar applicationName='Sales' as |bar|}}
+    {{#bar.item path='samples.demo'}}Demo{{/bar.item}}
+    {{#bar.item path='samples.index'}}Samples{{/bar.item}}
+  {{/slds-navigation-bar}}
+</main>
+
+<div class="slds-p-around_medium">
+
+  {{#slds-page-header class="slds-m-bottom_medium" as |page|}}
+    <div class="slds-grid">
+      <div class="slds-col slds-has-flexi-truncate">
+        {{#slds-media alignment='center' tagName='header' class='slds-has-flexi-truncate' as |media|}}
+          {{#media.figure}}
+            {{slds-icon sprite='standard' icon='opportunity'}}        
+          {{/media.figure}}
+          {{#media.body}}
+            <span class="slds-text-color_weak">
+              Opportunities > My Top Deals
+            </span>
+            {{#page.title class='slds-m-right_small slds-align-middle slds-truncate'}}
+              Tesla CloudHub & Anypoint Connectors
+            {{/page.title}}
+          {{/media.body}}
+        {{/slds-media}}
+      </div>
+
+      <div class="slds-col slds-no-flex slds-grid slds-align-top">
+        {{slds-button-stateful}}
+        
+        {{#slds-button-group as |group|}}
+          {{group.button text='Option1' clicked=(route-action 'buttonClicked' 'option1')}}
+          {{group.button text='Option2' clicked=(route-action 'buttonClicked' 'option2')}}
+          {{group.button text='Option3' disabled=true clicked=(route-action 'buttonClicked' 'option3')}}
+          {{#group.menu as |more|}}
+            {{more.item text="Overflow 1" clicked=(route-action 'buttonClicked' 'overflow1')}}
+            {{more.item text="Overflow 2" clicked=(route-action 'buttonClicked' 'overflow2')}}
+            {{more.item text="Overflow 3" clicked=(route-action 'buttonClicked' 'overflow3')}}
+          {{/group.menu}}
+        {{/slds-button-group}}
+      </div>
+    </div>
+
+    <ul class="slds-grid slds-page-header__detail-row">
+      <li class="slds-page-header__detail-block">
+        <p class="slds-text-title slds-truncate slds-m-bottom_xx-small" title="Field 1">Field 1</p>
+        <p class="slds-text-body_regular slds-truncate" title="Description that demonstrates truncation with a long text field">Description that demonstrates truncation with a long text field.</p>
+      </li>
+      <li class="slds-page-header__detail-block">
+        <p class="slds-text-title slds-truncate slds-m-bottom_xx-small" title="Field2 (3)">Field 2 (3)
+          <button class="slds-button slds-button_icon slds-button_icon" aria-haspopup="true" title="More Actions">
+            <svg class="slds-button__icon slds-button__icon_small" aria-hidden="true">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+            </svg>
+            <span class="slds-assistive-text">More Actions</span>
+          </button>
+        </p>
+        <p class="slds-text-body_regular">Multiple Values</p>
+      </li>
+      <li class="slds-page-header__detail-block">
+        <p class="slds-text-title slds-truncate slds-m-bottom_xx-small" title="Field 3">Field 3</p><a href="javascript:void(0);">Hyperlink</a></li>
+      <li class="slds-page-header__detail-block">
+        <p class="slds-text-title slds-truncate slds-m-bottom_xx-small" title="Field 4">Field 4</p>
+        <p title="Description (2-line truncation—must use JS to truncate).">Description (2-line truncati...</p>
+      </li>
+    </ul>
+  {{/slds-page-header}}
+
+  {{#slds-card class='slds-p-top_medium slds-m-bottom_medium 'as |card|}}
+    {{slds-path}}
+  {{/slds-card}}
+
+
+
+  <div class="slds-grid slds-grid_pull-padded-medium">
+    <div class="slds-col slds-p-horizontal_medium">
+      <div class="slds-tabs_card slds-tabs_default slds-p-around_none">
+        <ul class="slds-tabs_default__nav" role="tablist">
+          <li class="slds-tabs_default__item slds-is-active" title="Item One" role="presentation"><a class="slds-tabs_default__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-default-1" id="tab-default-1__item">Item One</a></li>
+          <li class="slds-tabs_default__item" title="Item Two" role="presentation"><a class="slds-tabs_default__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-2" id="tab-default-2__item">Item Two</a></li>
+          <li class="slds-tabs_default__item" title="Item Three" role="presentation"><a class="slds-tabs_default__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-3" id="tab-default-3__item">Item Three</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slds-col slds-p-horizontal_medium">
+
+        {{slds-card}}
+
+    </div>
+  </div>
+
+</div>
