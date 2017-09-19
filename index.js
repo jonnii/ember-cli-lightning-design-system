@@ -8,19 +8,12 @@ const mergeTrees = require('broccoli-merge-trees');
 module.exports = {
   name: 'ember-cli-lightning-design-system',
 
-  // included(app) {
-  //   let nodeModulesPath = this.app.project.nodeModulesPath;
-  //   let stylesPath = path.join(nodeModulesPath, '@salesforce-ux', 'design-system', 'assets', 'styles', 'salesforce-lightning-design-system.css');
-
-  //   app.import(stylesPath);
-  // },
-
   treeForStyles() {
     let nodeModulesPath = this.app.project.nodeModulesPath;
     let stylePath = path.join(nodeModulesPath, '@salesforce-ux', 'design-system', 'assets', 'styles');
 
     return new Funnel(stylePath, {
-      destDir: 'ember-cli-lightning-design-system'
+      destDir: 'assets/styles'
     });
   },
 
