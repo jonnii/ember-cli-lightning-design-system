@@ -1,4 +1,4 @@
-@import 'ember-cli-lightning-design-system/ui/index.scss';
+@import 'ember-cli-lightning-design-system/assets/styles/salesforce-lightning-design-system';
 
 header.is-showing-banner {
   padding-top: 35px;
@@ -7,7 +7,7 @@ header.is-showing-banner {
 html,
 body {
   height: 100%;
-  background-color: #DADFE5;  
+  background-color: #DADFE5;
 }
 
 main {
@@ -15,5 +15,5 @@ main {
 }
 
 main.is-showing-banner {
-  padding-top: 35px;  
+  padding-top: 35px;
 }
