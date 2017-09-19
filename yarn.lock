@@ -85,11 +85,9 @@
   dependencies:
     "@glimmer/util" "^0.25.3"
 
-"@salesforce-ux/design-system@2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@salesforce-ux/design-system/-/design-system-2.4.1.tgz#a4a4d0a06b3d43b9c2b50224ef7c82e08c5a3d26"
-  optionalDependencies:
-    fsevents "*"
+"@salesforce-ux/design-system@2.4.2":
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/@salesforce-ux/design-system/-/design-system-2.4.2.tgz#0f45ae313b884fac0d9f4cd711c1bce738a1ab4f"
 
 abbrev@1:
   version "1.1.0"
@@ -3180,7 +3178,7 @@ fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
 
-fsevents@*, fsevents@^1.0.0:
+fsevents@^1.0.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-1.1.2.tgz#3282b713fb3ad80ede0e9fcf4611b5aa6fc033f4"
   dependencies:
