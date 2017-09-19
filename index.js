@@ -10,11 +10,18 @@ module.exports = {
 
   treeForStyles() {
     let nodeModulesPath = this.app.project.nodeModulesPath;
-    let stylePath = path.join(nodeModulesPath, '@salesforce-ux', 'design-system', 'assets', 'styles');
 
-    return new Funnel(stylePath, {
-      destDir: 'assets/styles'
+    let stylePath = path.join(nodeModulesPath, '@salesforce-ux', 'design-system', 'scss');
+    let styles = new Funnel(stylePath, {
+      destDir: 'ember-cli-lightning-design-system/scss'
     });
+
+    let designTokensPath = path.join(nodeModulesPath, '@salesforce-ux', 'design-system', 'design-tokens', 'dist');
+    let designTokens = new Funnel(designTokensPath, {
+      destDir: 'ember-cli-lightning-design-system/design-tokens/dist'
+    });
+
+    return mergeTrees([styles, designTokens]);
   },
 
   treeForPublic() {
