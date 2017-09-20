@@ -41,3 +41,15 @@ test('it renders with checkbox required', function(assert) {
   assert.equal(this.$('input').attr('type'), 'checkbox');
   assert.equal(this.$('.slds-required').length, 1, 'should show required marker');
 });
+
+test('it renders with checkbox toggle', function(assert) {
+  this.render(hbs`
+    {{#slds-control as |control|}}
+      {{control.checkbox-toggle label='check'}}
+    {{/slds-control}}
+  `);
+
+  assert.equal(this.$('.slds-form-element__label').length, 1, 'should only ahve one label');
+  // assert.ok(this.$('div.slds-form-element .slds-form-element__control .slds-checkbox input').length);
+  // assert.equal(this.$('input').attr('type'), 'checkbox');
+});

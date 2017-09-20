@@ -38,16 +38,20 @@
         {{control.checkbox label='Awesome Check Error' isChecked=isAwesome checked=(action 'toggle' 'isAwesome')}}
       {{/slds-control}}
 
+      {{#slds-control isRequired=true as |control|}}
+        {{control.checkbox-toggle label='Toggler' isChecked=isAwesome checked=(action 'toggle' 'isAwesome')}}
+      {{/slds-control}}
+
       {{#slds-control-group isRequired=true legend='Choose your fate' name='fate' as |control|}}
         {{control.radio label="Butter" value='butter' selected=(action 'choose' 'butter')}}
         {{control.radio label="Batter" value='batter' selected=(action 'choose' 'batter')}}
         {{control.radio isDisabled=true label="Better" value='better' selected=(action 'choose' 'better')}}
       {{/slds-control-group}}
-      
+
       {{#slds-control-group isRequired=true legend='Choose all your fates' name='fates' as |control|}}
         {{control.checkbox label='Cake' isChecked=cake checked=(action 'toggle' 'cake')}}
         {{control.checkbox label='Death' isChecked=death checked=(action 'toggle' 'death')}}
-        {{control.checkbox label='Life' isDisabled=true isChecked=life checked=(action 'toggle' 'life')}}        
+        {{control.checkbox label='Life' isDisabled=true isChecked=life checked=(action 'toggle' 'life')}}
       {{/slds-control-group}}
 
       {{#slds-control-group isRequired=true legend='Music' name='music' isError=true errorMessage='you forgot to select the doodat' as |control|}}
@@ -61,7 +65,7 @@
       {{/slds-control-group}}
 
       {{#slds-control-group legend='Favorite pet' as |control|}}
-        <div class="slds-radio_button-group">  
+        <div class="slds-radio_button-group">
           {{control.radio-button label='Cats' selected=(action 'choosePet' 'cats')}}
           {{control.radio-button label='Dogs' selected=(action 'choosePet' 'dogs')}}
           {{control.radio-button label='Horses' isDisabled=true}}
@@ -69,7 +73,7 @@
       {{/slds-control-group}}
 
       {{#slds-control-group legend='Least Favorite pet' as |control|}}
-        <div class="slds-checkbox_button-group">  
+        <div class="slds-checkbox_button-group">
           {{control.checkbox-button label='Lizard' checked=(action 'choosePet' 'cats')}}
           {{control.checkbox-button label='Snake' checked=(action 'choosePet' 'dogs')}}
           {{control.checkbox-button label='Dragon' isDisabled=true}}
@@ -89,7 +93,7 @@
 
         <div class="slds-item--label slds-text-color--weak slds-truncate" title="Cake">Cake</div>
         <div class="slds-item--detail slds-truncate">{{cake}}</div>
-        
+
         <div class="slds-item--label slds-text-color--weak slds-truncate" title="Death">Death</div>
         <div class="slds-item--detail slds-truncate">{{death}}</div>
 

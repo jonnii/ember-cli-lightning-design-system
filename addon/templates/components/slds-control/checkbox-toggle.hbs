@@ -1,0 +1,16 @@
+{{#if label}}
+  <span class="slds-form-element__label slds-m-bottom_none">{{label}}</span>
+{{/if}}
+<input
+  type="checkbox"
+  name={{name}}
+  aria-describedby="toggle-desc"
+  value="on"
+  disabled={{isDisabled}}
+  checked={{isChecked}}
+  onclick={{checked}} />
+<span id="toggle-desc" class="slds-checkbox_faux_container" aria-live="assertive">
+  <span class="slds-checkbox_faux"></span>
+  <span class="slds-checkbox_on">{{enabledText}}</span>
+  <span class="slds-checkbox_off">{{disabledText}}</span>
+</span>
