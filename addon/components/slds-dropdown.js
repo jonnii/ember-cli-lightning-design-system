@@ -1,4 +1,5 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 import layout from '../templates/components/slds-dropdown';
 
 const positionClassMap = {
@@ -26,7 +27,7 @@ const nubbinClassMap = {
   bottomRight: 'slds-nubbin--bottom-right'
 };
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
 
   classNames: ['slds-dropdown'],
@@ -36,17 +37,17 @@ export default Ember.Component.extend({
   position: 'topLeft',
   nubbin: 'none',
 
-  openClass: Ember.computed('isOpen', function() {
+  openClass: computed('isOpen', function() {
     const isOpen = this.get('isOpen');
     return isOpen ? ' slds-is-open' : '';
   }),
 
-  positionClass: Ember.computed('position', function() {
+  positionClass: computed('position', function() {
     const position = this.get('position');
     return positionClassMap[position];
   }),
 
-  nubbinClass: Ember.computed('nubbin', function() {
+  nubbinClass: computed('nubbin', function() {
     const nubbin = this.get('nubbin');
     return nubbinClassMap[nubbin];
   }),

@@ -1,4 +1,5 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 import layout from '../templates/components/slds-progress-item';
 
 const stateMap = {
@@ -13,7 +14,7 @@ const iconMap = {
   error: 'warning'
 };
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
 
   tagName: 'li',
@@ -22,17 +23,17 @@ export default Ember.Component.extend({
 
   state: 'default',
 
-  stateClass: Ember.computed('state', function() {
+  stateClass: computed('state', function() {
     const state = this.get('state');
     return stateMap[state];
   }),
 
-  hasIcon: Ember.computed('state', function() {
+  hasIcon: computed('state', function() {
     const state = this.get('state');
     return state == 'completed' || state == 'error';
   }),
 
-  icon: Ember.computed('state', function() {
+  icon: computed('state', function() {
     const state = this.get('state');
     return iconMap[state];
   })

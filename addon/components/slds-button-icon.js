@@ -1,4 +1,6 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import { or } from '@ember/object/computed';
+import Component from '@ember/component';
 import layout from '../templates/components/slds-button-icon';
 
 const typeMappings = {
@@ -12,7 +14,7 @@ const borderMappings = {
   filled: 'slds-button--icon-border-filled'
 };
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   tagName: 'button',
   classNames: ['slds-button'],
@@ -25,16 +27,16 @@ export default Ember.Component.extend({
   size: 'default',
   containerSize: 'default',
   border: 'none',
-  titleWithDefault: Ember.computed.or('title', 'icon'),
+  titleWithDefault: or('title', 'icon'),
 
   clicked: null,
 
-  typeClass: Ember.computed('type', function() {
+  typeClass: computed('type', function() {
     const type = this.get('type');
     return typeMappings[type];
   }),
 
-  sizeClass: Ember.computed('size', function() {
+  sizeClass: computed('size', function() {
     const size = this.get('size');
     if (size == 'default') {
       return '';
@@ -43,7 +45,7 @@ export default Ember.Component.extend({
     return ` slds-button__icon--${size}`;
   }),
 
-  containerSizeClass: Ember.computed('containerSize', function() {
+  containerSizeClass: computed('containerSize', function() {
     const containerSize = this.get('containerSize');
     if (containerSize == 'default') {
       return '';
@@ -52,12 +54,12 @@ export default Ember.Component.extend({
     return `slds-button--icon-${containerSize}`;
   }),
 
-  borderClass: Ember.computed('border', function() {
+  borderClass: computed('border', function() {
     const border = this.get('border');
     return border == 'none' ? '' : `${borderMappings[border]}`;
   }),
 
-  selectedClass: Ember.computed('isSelected', function() {
+  selectedClass: computed('isSelected', function() {
     const isSelected = this.get('isSelected');
     return isSelected ? 'slds-is-selected' : '';
   }),

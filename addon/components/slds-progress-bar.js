@@ -1,4 +1,6 @@
-import Ember from 'ember';
+import { htmlSafe } from '@ember/string';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 import layout from '../templates/components/slds-progress-bar';
 
 const heightMap = {
@@ -9,7 +11,7 @@ const heightMap = {
   large: 'slds-progress-bar_large'
 };
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
 
   classNames: ['slds-progress-bar'],
@@ -22,18 +24,18 @@ export default Ember.Component.extend({
   value: 0,
   height: 'default',
 
-  progressStyle: Ember.computed('value', function() {
+  progressStyle: computed('value', function() {
     const value = this.get('value');
     const parsed = parseInt(value, 10);
-    return Ember.String.htmlSafe(`width:${parsed}%;`);
+    return htmlSafe(`width:${parsed}%;`);
   }),
 
-  heightClass: Ember.computed('height', function() {
+  heightClass: computed('height', function() {
     const height = this.get('height');
     return heightMap[height];
   }),
 
-  borderClass: Ember.computed('border', function() {
+  borderClass: computed('border', function() {
     const border = this.get('border');
     if (border == 'circular') {
       return 'slds-progress-bar_circular';

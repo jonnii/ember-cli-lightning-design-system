@@ -1,4 +1,5 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 import layout from '../templates/components/slds-media';
 
 const alignmentMap = {
@@ -6,7 +7,7 @@ const alignmentMap = {
   center: 'slds-media--center'
 };
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
 
   classNames: ['slds-media'],
@@ -14,7 +15,7 @@ export default Ember.Component.extend({
 
   alignment: 'top',
 
-  alignmentClass: Ember.computed('alignment', function() {
+  alignmentClass: computed('alignment', function() {
     return alignmentMap[this.get('alignment')];
   })
 });

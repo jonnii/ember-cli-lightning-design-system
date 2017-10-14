@@ -1,4 +1,5 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 import layout from '../templates/components/slds-toast';
 
 const themeMap = {
@@ -8,7 +9,7 @@ const themeMap = {
   error: 'slds-theme_error'
 };
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
 
   classNames: ['slds-notify', 'slds-notify_toast'],
@@ -18,7 +19,7 @@ export default Ember.Component.extend({
   role: 'alert',
   theme: 'info',
 
-  themeClass: Ember.computed('theme', function() {
+  themeClass: computed('theme', function() {
     const theme = this.get('theme');
     return themeMap[theme];
   })

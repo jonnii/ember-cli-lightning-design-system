@@ -1,7 +1,8 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 import layout from '../templates/components/slds-button-stateful';
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   tagName: '',
   isSelected: false,
@@ -12,7 +13,7 @@ export default Ember.Component.extend({
 
   onChanged: null,
 
-  state: Ember.computed('isSelected', function() {
+  state: computed('isSelected', function() {
     const isSelected = this.get('isSelected');
     return isSelected ? 'is-selected' : 'not-selected';
   }),

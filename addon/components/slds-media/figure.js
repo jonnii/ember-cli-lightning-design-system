@@ -1,4 +1,5 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 import layout from '../../templates/components/slds-media/figure';
 
 const typeMap = {
@@ -6,7 +7,7 @@ const typeMap = {
   reverse: 'slds-media__figure--reverse'
 };
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
 
   classNames: ['slds-media__figure'],
@@ -14,7 +15,7 @@ export default Ember.Component.extend({
 
   type: 'default',
 
-  typeClass: Ember.computed('type', function() {
+  typeClass: computed('type', function() {
     return typeMap[this.get('type')];
   })
 });

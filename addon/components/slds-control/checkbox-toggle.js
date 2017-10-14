@@ -1,7 +1,7 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../../templates/components/slds-control/checkbox-toggle';
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   tagName: 'label',
   classNames: ['slds-checkbox_toggle', 'slds-grid'],
