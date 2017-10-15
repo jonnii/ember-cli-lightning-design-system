@@ -1,4 +1,5 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 import layout from '../templates/components/slds-icon';
 
 const defaults = {
@@ -15,7 +16,7 @@ const colorMap = {
   default: ' slds-icon-text-default'
 };
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
 
   tagName: 'span',
@@ -29,12 +30,12 @@ export default Ember.Component.extend({
   description: null,
   size: 'medium',
 
-  iconWithDefaults: Ember.computed('sprite', 'icon', function() {
+  iconWithDefaults: computed('sprite', 'icon', function() {
     const { sprite, icon } = this.getProperties('sprite', 'icon');
     return icon || defaults[sprite];
   }),
 
-  backgroundClass: Ember.computed('sprite', 'iconWithDefaults', function() {
+  backgroundClass: computed('sprite', 'iconWithDefaults', function() {
     const { sprite, iconWithDefaults } = this.getProperties('sprite', 'iconWithDefaults');
 
     if (sprite === 'utility' || sprite === 'doctype') {
@@ -44,7 +45,7 @@ export default Ember.Component.extend({
     }
   }),
 
-  colorClass: Ember.computed('sprite', function() {
+  colorClass: computed('sprite', function() {
     const color = this.get('color');
 
     if (color == 'default') {
@@ -60,7 +61,7 @@ export default Ember.Component.extend({
     return colorMap[color];
   }),
 
-  sizeClass: Ember.computed('size', function() {
+  sizeClass: computed('size', function() {
     const size = this.get('size');
 
     return size === 'medium' ? '' : ` slds-icon--${size}`;

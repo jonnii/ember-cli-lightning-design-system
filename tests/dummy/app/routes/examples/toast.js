@@ -1,7 +1,10 @@
+import { get } from '@ember/object';
+import { inject as service } from '@ember/service';
+import Route from '@ember/routing/route';
 import Ember from 'ember';
 
-export default Ember.Route.extend({
-  flashMessages: Ember.inject.service(),
+export default Route.extend({
+  flashMessages: service(),
 
   actions: {
     closed() {
@@ -9,19 +12,19 @@ export default Ember.Route.extend({
     },
 
     showInfo() {
-      Ember.get(this, 'flashMessages').info('Amazing story bro!');
+      get(this, 'flashMessages').info('Amazing story bro!');
     },
 
     showSuccess() {
-      Ember.get(this, 'flashMessages').success('Amazing story bro!');
+      get(this, 'flashMessages').success('Amazing story bro!');
     },
 
     showWarning() {
-      Ember.get(this, 'flashMessages').warning('Amazing story bro!');
+      get(this, 'flashMessages').warning('Amazing story bro!');
     },
 
     showError() {
-      Ember.get(this, 'flashMessages').error('Amazing story bro!');
+      get(this, 'flashMessages').error('Amazing story bro!');
     }
   }
 });

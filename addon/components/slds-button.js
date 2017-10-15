@@ -1,4 +1,6 @@
-import Ember from 'ember';
+import { isEmpty } from '@ember/utils';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 import layout from '../templates/components/slds-button';
 
 const typeMap = {
@@ -9,7 +11,7 @@ const typeMap = {
   inverse: 'slds-button--inverse'
 };
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   tagName: 'button',
 
@@ -24,30 +26,30 @@ export default Ember.Component.extend({
   icon: null,
   iconPosition: 'left',
 
-  typeClass: Ember.computed('type', function() {
+  typeClass: computed('type', function() {
     const type = this.get('type');
 
-    if (Ember.isEmpty(type)) {
+    if (isEmpty(type)) {
       return '';
     }
 
     return typeMap[type];
   }),
 
-  shouldRenderLeftIcon: Ember.computed('icon', 'iconPosition', function() {
+  shouldRenderLeftIcon: computed('icon', 'iconPosition', function() {
     const { icon, iconPosition } = this.getProperties('icon', 'iconPosition');
 
-    if (Ember.isEmpty(icon)) {
+    if (isEmpty(icon)) {
       return false;
     }
 
     return iconPosition == 'left';
   }),
 
-  shouldRenderRightIcon: Ember.computed('icon', 'iconPosition', function() {
+  shouldRenderRightIcon: computed('icon', 'iconPosition', function() {
     const { icon, iconPosition } = this.getProperties('icon', 'iconPosition');
 
-    if (Ember.isEmpty(icon)) {
+    if (isEmpty(icon)) {
       return false;
     }
 

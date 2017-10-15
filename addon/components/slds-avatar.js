@@ -1,4 +1,5 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 import layout from '../templates/components/slds-avatar';
 
 const typeMap = {
@@ -6,7 +7,7 @@ const typeMap = {
   circle: 'slds-avatar--circle'
 };
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   tagName: 'span',
 
@@ -18,17 +19,17 @@ export default Ember.Component.extend({
   sprite: 'standard',
   icon: 'account',
 
-  typeClass: Ember.computed('type', function() {
+  typeClass: computed('type', function() {
     const type = this.get('type');
     return typeMap[type];
   }),
 
-  sizeClass: Ember.computed('size', function() {
+  sizeClass: computed('size', function() {
     const size = this.get('size');
     return `slds-avatar--${size}`;
   }),
 
-  shortName: Ember.computed('name', function() {
+  shortName: computed('name', function() {
     const name = this.get('name');
     const bits = name.split(' ');
     if (bits.length >= 2) {

@@ -1,7 +1,8 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 import layout from '../templates/components/slds-menu';
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   classNames: ['slds-dropdown-trigger', 'slds-dropdown-trigger--click'],
   classNameBindings: ['isOpen:slds-is-open'],
@@ -10,7 +11,7 @@ export default Ember.Component.extend({
   isOpen: false,
   position: 'topLeft',
 
-  ariaExpanded: Ember.computed('isOpen', function() {
+  ariaExpanded: computed('isOpen', function() {
     const isOpen = this.get('isOpen');
     return isOpen.toString();
   }),

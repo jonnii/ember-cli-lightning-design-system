@@ -1,6 +1,6 @@
+import { run } from '@ember/runloop';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
-import Ember from 'ember';
 
 moduleForComponent('slds-menu', 'Integration | Component | slds menu', {
   integration: true
@@ -84,6 +84,6 @@ test('it closes when item clicked', function(assert) {
   this.$('button').click();
 
   assert.equal(this.$('div.slds-dropdown-trigger.slds-is-open').length, 1);
-  Ember.run(() => this.$('li.slds-dropdown__item:first a').click());
+  run(() => this.$('li.slds-dropdown__item:first a').click());
   assert.equal(this.$('div.slds-dropdown-trigger.slds-is-open').length, 0);
 });

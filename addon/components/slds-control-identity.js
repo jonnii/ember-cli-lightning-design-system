@@ -1,20 +1,22 @@
-import Ember from 'ember';
+import { guidFor } from '@ember/object/internals';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 import layout from '../templates/components/slds-control-identity';
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   tagName: '',
 
-  componentId: Ember.computed(function() {
-    return Ember.guidFor(this);
+  componentId: computed(function() {
+    return guidFor(this);
   }),
 
-  formElementId: Ember.computed('componentId', function() {
+  formElementId: computed('componentId', function() {
     let componentId = this.get('componentId');
     return `${componentId}-field`;
   }),
 
-  errorElementId: Ember.computed('componentId', function() {
+  errorElementId: computed('componentId', function() {
     let componentId = this.get('componentId');
     return `${componentId}-error`;
   })

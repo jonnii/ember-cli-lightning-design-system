@@ -1,4 +1,5 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 import layout from '../templates/components/slds-form';
 
 const typeMap = {
@@ -6,7 +7,7 @@ const typeMap = {
   horizontal: 'slds-form_horizontal'
 };
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
 
   classNames: ['slds-form'],
@@ -14,7 +15,7 @@ export default Ember.Component.extend({
 
   type: 'stacked',
 
-  typeClass: Ember.computed('type', function() {
+  typeClass: computed('type', function() {
     const type = this.get('type');
     return typeMap[type];
   })

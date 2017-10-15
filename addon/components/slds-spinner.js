@@ -1,4 +1,5 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 import layout from '../templates/components/slds-spinner';
 
 const sizeMap = {
@@ -15,7 +16,7 @@ const colorMap = {
   inverse: 'slds-spinner_inverse'
 };
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
 
   classNames: ['slds-spinner'],
@@ -25,12 +26,12 @@ export default Ember.Component.extend({
   size: 'medium',
   color: 'default',
 
-  sizeClass: Ember.computed('size', function() {
+  sizeClass: computed('size', function() {
     const size = this.get('size');
     return sizeMap[size];
   }),
 
-  colorClass: Ember.computed('color', function() {
+  colorClass: computed('color', function() {
     const color = this.get('color');
     return colorMap[color];
   })
