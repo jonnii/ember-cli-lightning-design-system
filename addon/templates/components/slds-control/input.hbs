@@ -1,26 +1,24 @@
 {{#if hasBlock}}
-
     {{yield (hash
-      icon=(component 'slds-icon' class='slds-input__icon slds-input__icon--left' size='x-small' sprite='utility' icon='search')
+      icon-left=(component 'slds-icon' class='slds-input__icon slds-input__icon--left' size='x-small' sprite='utility' icon='search')
+      icon-right=(component 'slds-icon' class='slds-input__icon slds-input__icon--right' size='x-small' sprite='utility' icon='search')
+      button-right=(component 'slds-button-icon' class='slds-input__icon slds-input__icon--right'  sprite='utility' icon='clear')
+      input=(component 'slds-control/-input'
+          type=type
+          id=formElementId
+          disabled=isDiabled
+          required=isRequired
+          aria-describedby=errorElementId
+          value=value
+          placeholder=placeholder)
     )}}
-
-    <input type="search" id="text-input-01" class="slds-input" placeholder="Placeholder Text" />
-
-    <button class="slds-input__icon slds-input__icon--right slds-button slds-button--icon">
-      <svg class="slds-button__icon" aria-hidden="true">
-        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#clear"></use>
-      </svg>
-      <span class="slds-assistive-text">Clear</span>
-    </button>
-
 {{else}}
-  {{input
+  {{slds-control/-input
     type=type
     id=formElementId
     disabled=isDiabled
     required=isRequired
     aria-describedby=errorElementId
     value=value
-    class='slds-input'
     placeholder=placeholder}}
 {{/if}}
