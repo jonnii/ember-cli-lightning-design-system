@@ -26,6 +26,10 @@
         {{control.textarea placeholder='placeholder text'}}
       {{/slds-control}}
 
+      {{#slds-control label='Combo' as |control|}}
+        {{control.combobox}}
+      {{/slds-control}}
+
       {{#slds-control as |control|}}
         {{control.checkbox label='Awesome Check' isChecked=isAwesome checked=(action 'toggle' 'isAwesome')}}
       {{/slds-control}}
