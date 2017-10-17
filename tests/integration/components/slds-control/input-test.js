@@ -19,6 +19,7 @@ test('it renders with icon (right)', function(assert) {
   this.render(hbs`
     {{#slds-control/input icon='right' as |input|}}
       {{input.icon-left}}
+      {{input.input}}
     {{/slds-control/input}}
   `);
 
