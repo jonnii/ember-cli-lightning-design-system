@@ -3,6 +3,5 @@ import layout from '../../templates/components/slds-control/checkbox';
 
 export default Component.extend({
   layout,
-  tagName: 'span',
-  classNames: 'slds-checkbox'
+  classNames: 'slds-form-element__control'
 });

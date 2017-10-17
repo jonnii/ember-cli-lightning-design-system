@@ -8,14 +8,13 @@
     </label>
   {{/if}}
 
-  <div class="slds-form-element__control">
-    {{yield (hash
-      input=(component 'slds-control/input' formElementId=formElementId errorElementId=errorElementId isRequired=isRequired)
-      checkbox=(component 'slds-control/checkbox' formElementId=formElementId errorElementId=errorElementId isRequired=isRequired)
-      checkbox-toggle=(component 'slds-control/checkbox-toggle' formElementId=formElementId errorElementId=errorElementId)
-      textarea=(component 'slds-control/textarea' formElementId=formElementId errorElementId=errorElementId)
-    )}}
-  </div>
+  {{yield (hash
+    input=(component 'slds-control/input' formElementId=formElementId errorElementId=errorElementId isRequired=isRequired)
+    checkbox=(component 'slds-control/checkbox' formElementId=formElementId errorElementId=errorElementId isRequired=isRequired)
+    checkbox-toggle=(component 'slds-control/checkbox-toggle' formElementId=formElementId errorElementId=errorElementId)
+    textarea=(component 'slds-control/textarea' formElementId=formElementId errorElementId=errorElementId)
+    textarea=(component 'slds-control/combo' formElementId=formElementId errorElementId=errorElementId)
+  )}}
 
   {{#if isError}}
     <div id={{errorElementId}} class="slds-form-element__help">{{errorMessage}}</div>

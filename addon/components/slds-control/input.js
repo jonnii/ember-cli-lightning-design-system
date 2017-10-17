@@ -3,7 +3,7 @@ import layout from '../../templates/components/slds-control/input';
 
 export default Component.extend({
   layout,
-  tagName: '',
+  classNames: 'slds-form-element__control',
 
   type: 'text'
 });

@@ -50,6 +50,6 @@ test('it renders with checkbox toggle', function(assert) {
   `);
 
   assert.equal(this.$('.slds-form-element__label').length, 1, 'should only ahve one label');
-  // assert.ok(this.$('div.slds-form-element .slds-form-element__control .slds-checkbox input').length);
+  assert.ok(this.$('div.slds-form-element .slds-checkbox_toggle').length);
   // assert.equal(this.$('input').attr('type'), 'checkbox');
 });
