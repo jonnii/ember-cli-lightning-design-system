@@ -3,5 +3,5 @@ import layout from '../../templates/components/slds-control/textarea';
 
 export default Component.extend({
   layout,
-  classNames: 'slds-form-element'
+  classNames: 'slds-form-element__control'
 });

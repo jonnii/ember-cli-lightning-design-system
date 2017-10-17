@@ -18,6 +18,16 @@ test('it renders with input', function(assert) {
   );
 });
 
+test('it renders with textarea', function(assert) {
+  this.render(hbs`
+    {{#slds-control label='Required Field' as |control|}}
+      {{control.textarea}}
+    {{/slds-control}}
+  `);
+
+  assert.ok(this.$('div.slds-form-element .slds-form-element__control textarea.slds-textarea').length);
+});
+
 test('it renders with checkbox', function(assert) {
   this.render(hbs`
     {{#slds-control as |control|}}
