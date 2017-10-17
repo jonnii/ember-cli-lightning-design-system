@@ -2,9 +2,20 @@
 {{username}}
 {{#slds-box}}
   {{#slds-form as |form|}}
-    {{#form.control label='Username' isError=(not validations.attrs.username.isValid) errorMessage=validations.attrs.username.messages
-    as |control|}}
+    {{#form.control label='Username' 
+      isError=(not validations.attrs.username.isValid) 
+      errorMessage=validations.attrs.username.messages as |control|}}
       {{control.input value=username placeholder="Placeholder Text"}}
+    {{/form.control}}
+
+    {{#form.control label='Search' as |control|}}
+      {{#control.input value=search placeholder="Search..." as |input|}}
+        {{input.input}}
+      {{/control.input}}
+    {{/form.control}}
+
+    {{#form.control label='Search' as |control|}}
+      {{control.combo value=search placeholder="Search..."}}
     {{/form.control}}
 
     {{#form.control label='Text Input' as |control|}}

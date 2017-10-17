@@ -35,6 +35,7 @@ Router.map(function() {
     this.route('toast');
     this.route('alert');
     this.route('page-header');
+    this.route('combobox');
   });
   this.route('samples', function() {
     this.route('filter-grid');

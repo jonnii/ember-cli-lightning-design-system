@@ -1,0 +1,44 @@
+<div class="slds-combobox_container slds-has-inline-listbox slds-has-input-focus">
+  <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open" aria-expanded="true" aria-haspopup="listbox" role="combobox">
+
+    <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+      <input type="text" class="slds-input slds-combobox__input" id="combobox-unique-id" aria-autocomplete="list" aria-controls="listbox-unique-id" autocomplete="off" role="textbox" placeholder="Search Salesforce" />
+      <span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
+        <svg class="slds-icon slds-icon slds-icon_x-small slds-icon-text-default" aria-hidden="true">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+        </svg>
+      </span>
+    </div>
+
+    <div id="listbox-unique-id" role="listbox">
+      <ul class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid" role="presentation">
+        <li role="presentation" class="slds-listbox__item">
+          <span id="listbox-option-unique-id-01" class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta" role="option">
+            {{#slds-media alignment='center' as |media|}}
+              {{#media.figure}}
+                {{slds-icon size='small' icon='account'}}
+              {{/media.figure}}
+              {{#media.body}}
+                <span class="slds-listbox__option-text slds-listbox__option-text_entity">Acme</span>
+                <span class="slds-listbox__option-meta slds-listbox__option-meta_entity">Account • San Francisco</span>
+              {{/media.body}}
+            {{/slds-media}}
+          </span>
+        </li>
+        <li role="presentation" class="slds-listbox__item">
+          <span id="listbox-option-unique-id-02" class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta" role="option">
+            {{#slds-media alignment='center' as |media|}}
+              {{#media.figure}}
+                {{slds-icon size='small' icon='account'}}
+              {{/media.figure}}
+              {{#media.body}}
+                <span class="slds-listbox__option-text slds-listbox__option-text_entity">Salesforce.com, Inc.</span>
+                <span class="slds-listbox__option-meta slds-listbox__option-meta_entity">Account • San Francisco</span>
+              {{/media.body}}
+            {{/slds-media}}
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

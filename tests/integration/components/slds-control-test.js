@@ -18,6 +18,16 @@ test('it renders with input', function(assert) {
   );
 });
 
+test('it renders with textarea', function(assert) {
+  this.render(hbs`
+    {{#slds-control label='Required Field' as |control|}}
+      {{control.textarea}}
+    {{/slds-control}}
+  `);
+
+  assert.ok(this.$('div.slds-form-element .slds-form-element__control textarea.slds-textarea').length);
+});
+
 test('it renders with checkbox', function(assert) {
   this.render(hbs`
     {{#slds-control as |control|}}
@@ -25,7 +35,7 @@ test('it renders with checkbox', function(assert) {
     {{/slds-control}}
   `);
 
-  assert.equal(this.$('.slds-form-element__label').length, 1, 'should only ahve one label');
+  assert.equal(this.$('.slds-form-element__label').length, 1, 'should only have one label');
   assert.ok(this.$('div.slds-form-element .slds-form-element__control .slds-checkbox input').length);
   assert.equal(this.$('input').attr('type'), 'checkbox');
 });
@@ -49,7 +59,17 @@ test('it renders with checkbox toggle', function(assert) {
     {{/slds-control}}
   `);
 
-  assert.equal(this.$('.slds-form-element__label').length, 1, 'should only ahve one label');
-  // assert.ok(this.$('div.slds-form-element .slds-form-element__control .slds-checkbox input').length);
-  // assert.equal(this.$('input').attr('type'), 'checkbox');
+  assert.equal(this.$('.slds-form-element__label').length, 1, 'should only have one label');
+  assert.ok(this.$('div.slds-form-element .slds-checkbox_toggle').length);
+});
+
+test('it renders with combobox', function(assert) {
+  this.render(hbs`
+    {{#slds-control label='label' as |control|}}
+      {{control.combobox}}
+    {{/slds-control}}
+  `);
+
+  assert.equal(this.$('.slds-form-element__label').length, 1, 'should only have one label');
+  assert.ok(this.$('div.slds-form-element .slds-form-element__control .slds-combobox_container').length);
 });

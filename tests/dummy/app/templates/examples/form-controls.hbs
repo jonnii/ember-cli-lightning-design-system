@@ -1,7 +1,8 @@
 <div class="slds-grid slds-grid--pull-padded-medium slds-m-horizontal--x-small">
   <div class="slds-col slds-p-around--small">
     <div class="slds-box slds-box--small slds-theme--shade">
-      <div class="slds-text-heading--large">Basic Inputs</div>
+      <div class="slds-text-heading--large">Inputs</div>
+
       {{#slds-control label='Required Field' isRequired=true as |control|}}
         {{control.input placeholder='placeholder text'}}
       {{/slds-control}}
@@ -14,17 +15,33 @@
         {{control.input placeholder='placeholder text' isDisabled=true}}
       {{/slds-control}}
 
-      {{#slds-control label='Disabled Field' as |control|}}
-        {{#control.input placeholder='placeholder text' as |input|}}
-          {{input.icon}}
-          {{input.input}}
-          {{input.button}}
-        {{/control.input}}
-      {{/slds-control}}
-
       {{#slds-control label='Text Area' as |control|}}
         {{control.textarea placeholder='placeholder text'}}
       {{/slds-control}}
+
+      {{#slds-control label='Input with left icon' as |control|}}
+        {{#control.input placeholder='placeholder text' icon='left' as |input|}}
+          {{input.icon-left icon='user'}}
+          {{input.textbox}}
+        {{/control.input}}
+      {{/slds-control}}
+
+      {{#slds-control label='Input with left icon' as |control|}}
+        {{#control.input placeholder='placeholder text' icon='right' as |input|}}
+          {{input.textbox}}
+          {{input.icon-right icon='search'}}
+        {{/control.input}}
+      {{/slds-control}}
+
+      {{#slds-control label='Input with icons and buttons' as |control|}}
+        {{#control.input placeholder='placeholder text' icon='leftRight' as |input|}}
+          {{input.icon-left}}
+          {{input.textbox}}
+          {{input.button-right}}
+        {{/control.input}}
+      {{/slds-control}}
+
+      <div class="slds-text-heading--large">Other Controls</div>
 
       {{#slds-control as |control|}}
         {{control.checkbox label='Awesome Check' isChecked=isAwesome checked=(action 'toggle' 'isAwesome')}}
