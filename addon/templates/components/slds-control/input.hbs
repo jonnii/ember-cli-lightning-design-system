@@ -1,9 +1,11 @@
 {{#if hasBlock}}
-    
-    <svg class="slds-input__icon slds-input__icon--left slds-icon-text-default" aria-hidden="true">
-      <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#search"></use>
-    </svg>
+
+    {{yield (hash
+      icon=(component 'slds-icon' class='slds-input__icon slds-input__icon--left' size='x-small' sprite='utility' icon='search')
+    )}}
+
     <input type="search" id="text-input-01" class="slds-input" placeholder="Placeholder Text" />
+
     <button class="slds-input__icon slds-input__icon--right slds-button slds-button--icon">
       <svg class="slds-button__icon" aria-hidden="true">
         <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#clear"></use>
@@ -12,11 +14,11 @@
     </button>
 
 {{else}}
-  {{input 
+  {{input
     type=type
     id=formElementId
-    disabled=isDiabled 
-    required=isRequired 
+    disabled=isDiabled
+    required=isRequired
     aria-describedby=errorElementId
     value=value
     class='slds-input'

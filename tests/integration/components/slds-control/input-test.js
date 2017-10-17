@@ -16,6 +16,12 @@ test('it renders with icon (left)', function(assert) {
 });
 
 test('it renders with icon (right)', function(assert) {
-  this.render(hbs`{{slds-control/input icon='right'}}`);
+  this.render(hbs`
+    {{#slds-control/input icon='right' as |input|}}
+      {{input.icon}}
+    {{/slds-control/input}}
+  `);
+
   assert.ok(this.$('.slds-form-element__control.slds-input-has-icon.slds-input-has-icon_right input'));
+  assert.ok(this.$('.slds-form-element__control.slds-input-has-icon slds-input__icon.slds-input__icon--left'));
 });
