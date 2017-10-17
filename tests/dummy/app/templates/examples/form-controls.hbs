@@ -36,16 +36,12 @@
       {{#slds-control label='Input with icons and buttons' as |control|}}
         {{#control.input placeholder='placeholder text' icon='leftRight' as |input|}}
           {{input.icon-left}}
-          {{input.input}}
+          {{input.textbox}}
           {{input.button-right}}
         {{/control.input}}
       {{/slds-control}}
 
       <div class="slds-text-heading--large">Other Controls</div>
-
-      {{#slds-control label='Combo' as |control|}}
-        {{control.combobox}}
-      {{/slds-control}}
 
       {{#slds-control as |control|}}
         {{control.checkbox label='Awesome Check' isChecked=isAwesome checked=(action 'toggle' 'isAwesome')}}
