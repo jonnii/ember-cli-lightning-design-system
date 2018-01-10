@@ -65,7 +65,10 @@ export default Component.extend({
   }),
 
   click() {
-    this.sendAction('clicked', this.get('clicked'));
+    const callback = this.get('clicked');
+    if (callback != null) {
+      callback();
+    }
   },
 
   actions: {
