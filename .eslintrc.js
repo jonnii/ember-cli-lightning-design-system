@@ -22,7 +22,7 @@ module.exports = {
     // node files
     {
       files: ['index.js', 'testem.js', 'ember-cli-build.js', 'config/**/*.js', 'tests/dummy/config/**/*.js'],
-      excludedFiles: ['app/**', 'addon/**'],
+      excludedFiles: ['app/**', 'addon/**', 'tests/dummy/app/**/*.js'],
       parserOptions: {
         sourceType: 'script',
         ecmaVersion: 2015
