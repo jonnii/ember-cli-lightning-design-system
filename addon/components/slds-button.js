@@ -57,7 +57,11 @@ export default Component.extend({
   }),
 
   click() {
-    this.sendAction('clicked');
+    const callback = this.get('clicked');
+
+    if (callback) {
+      callback();
+    }
   },
 
   actions: {
