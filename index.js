@@ -1,8 +1,8 @@
 'use strict';
 
 const path = require('path');
-const Funnel = require('broccoli-funnel');
-const mergeTrees = require('broccoli-merge-trees');
+const Funnel = require('broccoli-funnel'); // eslint-disable-line node/no-extraneous-require
+const mergeTrees = require('broccoli-merge-trees'); // eslint-disable-line node/no-extraneous-require
 
 module.exports = {
   name: 'ember-cli-lightning-design-system',

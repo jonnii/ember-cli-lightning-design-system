@@ -23,8 +23,8 @@
     "start": "ember server",
     "test": "ember try:each",
     "deploy": "ember github-pages:commit --message \"Deploy gh-pages from commit $(git rev-parse HEAD)\"; git push; git checkout -",
-    "lint": "eslint app/ addon/ tests/",
-    "lint:fix": "eslint --fix app/ addon/ tests/"
+    "lint:fix": "eslint --fix ./*.js addon addon-test-support app config lib server test-support tests",
+    "lint:js": "eslint ./*.js addon addon-test-support app config lib server test-support tests"
   },
   "dependencies": {
     "@salesforce-ux/design-system": "^2.5.0",
