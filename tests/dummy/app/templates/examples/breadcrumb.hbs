@@ -1,5 +1,8 @@
 {{#slds-breadcrumb as |crumb|}}
-  {{#crumb.item}}Parent Entity{{/crumb.item}}
-  {{#crumb.item}}Parent Record Name{{/crumb.item}}
+  {{#crumb.item}}
+    {{link-to 'Somewhere' 'examples.breadcrumb'}}
+  {{/crumb.item}}
+  {{#crumb.item}}
+    {{link-to 'Parent Record Name' 'examples.breadcrumb'}}
+  {{/crumb.item}}
 {{/slds-breadcrumb}}
-
