@@ -25,12 +25,19 @@ test('it renders with text attribute', function(assert) {
   );
 });
 
+test('it renders with color', function(assert) {
+  this.render(hbs`{{slds-badge text='textytext' color='inverse'}}`);
+  assert.ok(this.$('span.slds-badge_inverse').length);
+});
+
 test('it renders with block', function(assert) {
   this.render(hbs`
     {{#slds-badge}}
       i love blocks
     {{/slds-badge}}
   `);
+
+  assert.ok(this.$('span.slds-badge').length);
 
   assert.equal(
     this.$()
