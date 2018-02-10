@@ -37,6 +37,10 @@
       {{dropdown.item text='Avatars' clicked=(route-action 'navigateTo' 'examples.avatar')}}
       {{dropdown.item text='Media' clicked=(route-action 'navigateTo' 'examples.media')}}
       {{dropdown.item text='Spinners' clicked=(route-action 'navigateTo' 'examples.spinner')}}
+
+      {{dropdown.separator}}
+      {{dropdown.header text="Other"}}
+      {{dropdown.item text='Badges' clicked=(route-action 'navigateTo' 'examples.badge')}}
     {{/bar.menu}}
 
     {{#bar.menu text='Navigation' as |dropdown|}}
