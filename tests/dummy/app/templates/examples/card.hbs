@@ -11,23 +11,19 @@
 {{/slds-card}}
 
 {{#slds-card as |card|}}
-  {{#card.header class="slds-grid"}}  
-    <header class="slds-media slds-media_center slds-has-flexi-truncate">
-      <div class="slds-media__figure">
-        <span class="slds-icon_container slds-icon-standard-contact" title="description of icon when needed">
-          <svg class="slds-icon slds-icon_small" aria-hidden="true">
-            <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#contact" xmlns:xlink="http://www.w3.org/1999/xlink" />
-          </svg>
-        </span>
-      </div>
-      <div class="slds-media__body">
+  {{#card.header class="slds-grid"}}
+    {{#slds-media tagName='header' alignment='center' class="slds-has-flexi-truncate" as |media|}}
+      {{#media.figure}}
+        {{slds-icon icon='contact'}}
+      {{/media.figure}}
+      {{#media.body}}
         <h2>
           <a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="[object Object]">
             <span class="slds-text-heading_small">Card Header</span>
           </a>
         </h2>
-      </div>
-    </header>
+      {{/media.body}}      
+    {{/slds-media}}
     <div class="slds-no-flex">
       <button class="slds-button slds-button_neutral">New</button>
     </div>
