@@ -6,29 +6,15 @@ moduleForComponent('slds-tabs/item', 'Integration | Component | slds tabs/item',
 });
 
 test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  this.render(hbs`{{slds-tabs/item text='Tab Text'}}`);
 
-  this.render(hbs`{{slds-tabs/item}}`);
-
+  assert.ok(this.$('li.slds-tabs_default__item').length, 'Tab Text');
+  assert.ok(this.$('li.slds-tabs_default__item[role=presentation]').length, 'has role');
+  assert.ok(this.$("li.slds-tabs_default__item[title='Tab Text']").length, 'has title');
   assert.equal(
-    this.$()
+    this.$('li.slds-tabs_default__item a.slds-tabs_default__link')
       .text()
       .trim(),
-    ''
-  );
-
-  // Template block usage:
-  this.render(hbs`
-    {{#slds-tabs/item}}
-      template block text
-    {{/slds-tabs/item}}
-  `);
-
-  assert.equal(
-    this.$()
-      .text()
-      .trim(),
-    'template block text'
+    'Tab Text'
   );
 });
