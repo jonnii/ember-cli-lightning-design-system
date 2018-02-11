@@ -1,17 +1,19 @@
 {{#slds-tabs as |tabs|}}
   {{#tabs.nav as |nav|}}
-    {{nav.item text='Item One' isActive=true}}
-    {{nav.item text='Item Two'}}
-    {{nav.item text='Item Three'}}
+    {{nav.item text='Item One' isActive=(eq tab 'tab1') clicked=(action 'changeTab' 'tab1')}}
+    {{nav.item text='Item Two' isActive=(eq tab 'tab2') clicked=(action 'changeTab' 'tab2')}}
+    {{nav.item text='Item Three' isActive=(eq tab 'Item Three') clicked=(action 'changeTab')}}
   {{/tabs.nav}}
 
-  {{#tabs.content isActive=true}}
+  {{#tabs.content isActive=(eq tab 'tab1')}}
     Item One Content
   {{/tabs.content}}
-  {{#tabs.content}}
+
+  {{#tabs.content isActive=(eq tab 'tab2')}}
     Item Two Content
   {{/tabs.content}}
-  {{#tabs.content}}
+  
+  {{#tabs.content isActive=(eq tab 'Item Three')}}
     Item Three Content
   {{/tabs.content}}
 {{/slds-tabs}}
