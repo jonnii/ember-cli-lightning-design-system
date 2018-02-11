@@ -1,12 +1,16 @@
 {{#slds-tabs as |tabs|}}
   {{#tabs.nav as |nav|}}
-    {{nav.item text='Item One'}}
+    {{nav.item text='Item One' isActive=true}}
     {{nav.item text='Item Two'}}
     {{nav.item text='Item Three'}}
   {{/tabs.nav}}
 
-  {{tabs.content text='Item One Content'}}
-  {{tabs.content text='Item Two Content'}}
+  {{#tabs.content isActive=true}}
+    Item One Content
+  {{/tabs.content}}
+  {{#tabs.content}}
+    Item Two Content
+  {{/tabs.content}}
   {{#tabs.content}}
     Item Three Content
   {{/tabs.content}}

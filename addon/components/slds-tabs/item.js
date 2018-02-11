@@ -3,10 +3,11 @@ import Component from '@ember/component';
 import layout from '../../templates/components/slds-tabs/item';
 
 export default Component.extend({
-  //<li class="slds-tabs_default__item slds-is-active" title={{text}} role="presentation">
   layout,
   tagName: 'li',
+  isActive: false,
   classNames: 'slds-tabs_default__item',
+  classNameBindings: ['isActive:slds-is-active'],
   attributeBindings: ['role', 'title'],
 
   role: 'presentation',
