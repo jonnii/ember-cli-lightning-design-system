@@ -1,3 +1,11 @@
-{{#slds-tabs}}
+{{#slds-tabs as |tabs|}}
+  {{#tabs.nav as |nav|}}
+    {{nav.item}}
+  {{/tabs.nav}}
 
+  {{tabs.content text='Item One Content'}}
+  {{tabs.content text='Item Two Content'}}
+  {{#tabs.content}}
+    Item Three Content
+  {{/tabs.content}}
 {{/slds-tabs}}

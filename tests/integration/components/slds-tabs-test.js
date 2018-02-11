@@ -6,29 +6,16 @@ moduleForComponent('slds-tabs', 'Integration | Component | slds tabs', {
 });
 
 test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
-  this.render(hbs`{{slds-tabs}}`);
-
-  assert.equal(
-    this.$()
-      .text()
-      .trim(),
-    ''
-  );
-
-  // Template block usage:
   this.render(hbs`
-    {{#slds-tabs}}
-      template block text
-    {{/slds-tabs}}
+  {{#slds-tabs as |tabs|}}
+    {{#tabs.nav as |nav|}}
+      {{nav.item}}
+    {{/tabs.nav}}
+    {{tabs.content}}
+  {{/slds-tabs}}
   `);
 
-  assert.equal(
-    this.$()
-      .text()
-      .trim(),
-    'template block text'
-  );
+  assert.ok(this.$('div.slds-tabs_default').length, 'has container');
+  assert.ok(this.$('div.slds-tabs_default ul.slds-tabs_default__nav').length, 'has nav');
+  assert.ok(this.$('div.slds-tabs_default ul.slds-tabs_default__nav[role=tablist]').length, 'has role tablist');
 });
