@@ -37,6 +37,7 @@ Router.map(function() {
     this.route('page-header');
     this.route('combobox');
     this.route('badge');
+    this.route('data-table');
   });
   this.route('samples', function() {
     this.route('filter-grid');
