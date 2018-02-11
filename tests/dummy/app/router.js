@@ -38,6 +38,7 @@ Router.map(function() {
     this.route('combobox');
     this.route('badge');
     this.route('data-table');
+    this.route('tab');
   });
   this.route('samples', function() {
     this.route('filter-grid');
