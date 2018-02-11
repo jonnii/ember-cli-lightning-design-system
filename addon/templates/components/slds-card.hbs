@@ -1,26 +1,5 @@
-{{#if hasBlock}}
-  {{yield (hash
-    header=(component 'slds-card/header')
-    body=(component 'slds-card/body')
-  )}}
-{{else}}
-  <div class="slds-card__header slds-grid">
-    {{#slds-media alignment='center' tagName='header' class='slds-has-flexi-truncate' as |media|}}
-      {{#media.figure}}
-        {{slds-icon sprite='standard' icon='contact' size='small'}}        
-      {{/media.figure}}
-      {{#media.body}}
-        <h2>
-          <a href="javascript:void(0);" class="slds-card__header-link slds-truncate">
-            <span class="slds-text-heading--small">Card Header</span>
-          </a>
-        </h2>
-      {{/media.body}}
-    {{/slds-media}}
-    <div>
-      {{slds-button text='New' type='neutral'}}
-    </div>
-  </div>
-  <div class="slds-card__body"></div>
-  <div class="slds-card__footer"></div>
-{{/if}}
+{{yield (hash
+  header=(component 'slds-card/header')
+  body=(component 'slds-card/body')
+  footer=(component 'slds-card/footer')
+)}}

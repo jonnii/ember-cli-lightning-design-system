@@ -1,1 +1,37 @@
-{{slds-card}}
+{{#slds-card as |card|}}
+  {{#card.header}}
+    header
+  {{/card.header}}
+  {{#card.body}}
+    body
+  {{/card.body}}
+  {{#card.footer}}
+    footer
+  {{/card.footer}}
+{{/slds-card}}
+
+{{#slds-card as |card|}}
+  {{#card.header class="slds-grid"}}
+    {{#slds-media tagName='header' alignment='center' class="slds-has-flexi-truncate" as |media|}}
+      {{#media.figure}}
+        {{slds-icon icon='contact'}}
+      {{/media.figure}}
+      {{#media.body}}
+        <h2>
+          <a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="[object Object]">
+            <span class="slds-text-heading_small">Card Header</span>
+          </a>
+        </h2>
+      {{/media.body}}      
+    {{/slds-media}}
+    <div class="slds-no-flex">
+      <button class="slds-button slds-button_neutral">New</button>
+    </div>
+  {{/card.header}}
+  {{#card.body}}
+    Card Body (custom goes in here)
+  {{/card.body}}
+  {{#card.footer}}
+    Card Footer
+  {{/card.footer}}
+{{/slds-card}}
