@@ -44,6 +44,7 @@ Router.map(function() {
     this.route('filter-grid');
     this.route('form');
     this.route('demo');
+    this.route('search-results');
   });
 });
 
