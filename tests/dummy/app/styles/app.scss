@@ -7,7 +7,6 @@ header.is-showing-banner {
 html,
 body {
   height: 100%;
-  background-color: #DADFE5;
 }
 
 main {
@@ -16,4 +15,8 @@ main {
 
 main.is-showing-banner {
   padding-top: 35px;
+}
+
+#container-examples {
+  background: url(/assets/images/themes/oneSalesforce/banner-brand-default.png), linear-gradient(to top, rgba(221, 219, 218, 0) 0, #e8e8e8);
 }
