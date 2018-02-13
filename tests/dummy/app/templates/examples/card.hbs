@@ -11,18 +11,15 @@
 {{/slds-card}}
 
 {{#slds-card as |card|}}
-  {{#card.header class="slds-grid"}}
+  {{#card.header class="slds-grid" as |header|}}
     {{#slds-media tagName='header' alignment='center' class="slds-has-flexi-truncate" as |media|}}
-      {{#media.figure}}
-        {{slds-icon icon='contact'}}
-      {{/media.figure}}
-      {{#media.body}}
+      {{#media.icon icon='contact'}}
         <h2>
-          <a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="[object Object]">
+          <a href="javascript:void(0);" class="slds-card__header-link slds-truncate">
             <span class="slds-text-heading_small">Card Header</span>
           </a>
         </h2>
-      {{/media.body}}      
+      {{/media.icon}}
     {{/slds-media}}
     <div class="slds-no-flex">
       <button class="slds-button slds-button_neutral">New</button>
