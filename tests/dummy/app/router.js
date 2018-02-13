@@ -39,6 +39,7 @@ Router.map(function() {
     this.route('badge');
     this.route('data-table');
     this.route('tab');
+    this.route('box');
   });
   this.route('samples', function() {
     this.route('filter-grid');
