@@ -7,7 +7,8 @@ moduleForComponent('slds-control/input', 'Integration | Component | slds control
 
 test('it renders', function(assert) {
   this.render(hbs`{{slds-control/input}}`);
-  assert.ok(this.$('.slds-form-element__control input').length);
+  assert.ok(this.$('.slds-form-element__control').length, 'renders control element');
+  assert.ok(this.$('.slds-form-element__control input').length, 'renders input');
 });
 
 test('it renders with icon (left)', function(assert) {
