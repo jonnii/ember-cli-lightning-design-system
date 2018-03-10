@@ -1,21 +1,25 @@
 'use strict';
 
 const path = require('path');
-const Funnel = require('broccoli-funnel'); // eslint-disable-line node/no-extraneous-require
-const mergeTrees = require('broccoli-merge-trees'); // eslint-disable-line node/no-extraneous-require
+const Funnel = require('broccoli-funnel');
+const mergeTrees = require('broccoli-merge-trees');
+const resolve = require('resolve');
 
 module.exports = {
   name: 'ember-cli-lightning-design-system',
 
   treeForStyles() {
-    let root = this.app.project.root;
+    let packagePath = resolve.sync('@salesforce-ux/design-system/package.json', {
+      basedir: this.app.project.root
+    });
+    let root = path.dirname(packagePath);
 
-    let stylePath = path.join(root, 'node_modules', '@salesforce-ux', 'design-system', 'scss');
+    let stylePath = path.join(root, 'scss');
     let styles = new Funnel(stylePath, {
       destDir: 'ember-cli-lightning-design-system/scss'
     });
 
-    let designTokensPath = path.join(root, 'node_modules', '@salesforce-ux', 'design-system', 'design-tokens', 'dist');
+    let designTokensPath = path.join(root, 'design-tokens', 'dist');
     let designTokens = new Funnel(designTokensPath, {
       destDir: 'ember-cli-lightning-design-system/design-tokens/dist'
     });
@@ -24,19 +28,22 @@ module.exports = {
   },
 
   treeForPublic() {
-    let root = this.app.project.root;
+    let packagePath = resolve.sync('@salesforce-ux/design-system/package.json', {
+      basedir: this.app.project.root
+    });
+    let root = path.dirname(packagePath);
 
-    let iconsPath = path.join(root, 'node_modules', '@salesforce-ux', 'design-system', 'assets', 'icons');
+    let iconsPath = path.join(root, 'assets', 'icons');
     let icons = new Funnel(iconsPath, {
       destDir: 'assets/icons'
     });
 
-    let fontsPath = path.join(root, 'node_modules', '@salesforce-ux', 'design-system', 'assets', 'fonts');
+    let fontsPath = path.join(root, 'assets', 'fonts');
     let fonts = new Funnel(fontsPath, {
       destDir: 'fonts'
     });
 
-    let imagesPath = path.join(root, 'node_modules', '@salesforce-ux', 'design-system', 'assets', 'images');
+    let imagesPath = path.join(root, 'assets', 'images');
     let images = new Funnel(imagesPath, {
       destDir: 'assets/images'
     });
