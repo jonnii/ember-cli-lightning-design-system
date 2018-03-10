@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-lightning-design-system",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "Easy installation and reusable components for the salesforce lightning design system.",
   "keywords": [
     "ember-addon",
