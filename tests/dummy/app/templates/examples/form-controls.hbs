@@ -81,7 +81,7 @@
         {{control.checkbox label='Checkers' isChecked=checkers checked=(action 'toggle' 'checkers')}}
       {{/slds-control-group}}
 
-      {{#slds-control-group legend='Favorite pet' as |control|}}
+      {{#slds-control-group legend='Favorite pet' name='pets' as |control|}}
         <div class="slds-radio_button-group">
           {{control.radio-button label='Cats' selected=(action 'choosePet' 'cats')}}
           {{control.radio-button label='Dogs' selected=(action 'choosePet' 'dogs')}}
