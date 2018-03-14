@@ -1,3 +1,4 @@
+import { find } from 'ember-native-dom-helpers';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -8,12 +9,7 @@ moduleForComponent('slds-dropdown-item', 'Integration | Component | slds dropdow
 test('it renders', function(assert) {
   this.render(hbs`{{slds-dropdown-item text='bob'}}`);
 
-  assert.equal(
-    this.$()
-      .text()
-      .trim(),
-    'bob'
-  );
+  assert.equal(find('*').textContent.trim(), 'bob');
 
   this.render(hbs`
     {{#slds-dropdown-item}}
@@ -21,10 +17,5 @@ test('it renders', function(assert) {
     {{/slds-dropdown-item}}
   `);
 
-  assert.equal(
-    this.$()
-      .text()
-      .trim(),
-    'template block text'
-  );
+  assert.equal(find('*').textContent.trim(), 'template block text');
 });

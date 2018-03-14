@@ -1,3 +1,4 @@
+import { findAll } from 'ember-native-dom-helpers';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -8,5 +9,5 @@ moduleForComponent('slds-path', 'Integration | Component | slds path', {
 test('it renders', function(assert) {
   this.render(hbs`{{slds-path}}`);
 
-  assert.ok(this.$('.slds-path').length);
+  assert.ok(findAll('.slds-path').length);
 });

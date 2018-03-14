@@ -1,3 +1,4 @@
+import { findAll, find } from 'ember-native-dom-helpers';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -13,18 +14,8 @@ test('it renders', function(assert) {
     {{/slds-media}}
   `);
 
-  assert.equal(
-    this.$('.slds-media__figure')
-      .text()
-      .trim(),
-    'figure'
-  );
-  assert.equal(
-    this.$('.slds-media__body')
-      .text()
-      .trim(),
-    'body'
-  );
+  assert.equal(find('.slds-media__figure').textContent.trim(), 'figure');
+  assert.equal(find('.slds-media__body').textContent.trim(), 'body');
 });
 
 test('it renders centered', function(assert) {
@@ -35,5 +26,5 @@ test('it renders centered', function(assert) {
     {{/slds-media}}
   `);
 
-  assert.ok(this.$('.slds-media.slds-media--center').length);
+  assert.ok(findAll('.slds-media.slds-media--center').length);
 });

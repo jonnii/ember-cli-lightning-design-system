@@ -1,3 +1,4 @@
+import { findAll } from 'ember-native-dom-helpers';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -12,7 +13,7 @@ test('it renders', function(assert) {
     {{/slds-data-table}}
   `);
 
-  assert.ok(this.$('table.slds-table').length, 'template block text');
+  assert.ok(findAll('table.slds-table').length, 'template block text');
 });
 
 test('it renders with properties', function(assert) {
@@ -23,7 +24,7 @@ test('it renders with properties', function(assert) {
   `);
 
   assert.ok(
-    this.$('table.slds-table.slds-table_bordered.slds-table_cell-buffer.slds-table_striped').length,
+    findAll('table.slds-table.slds-table_bordered.slds-table_cell-buffer.slds-table_striped').length,
     'template block text'
   );
 });

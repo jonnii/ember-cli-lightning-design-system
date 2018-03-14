@@ -1,3 +1,4 @@
+import { findAll } from 'ember-native-dom-helpers';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -12,5 +13,5 @@ test('it renders', function(assert) {
     {{/slds-page-header}}
   `);
 
-  assert.ok(this.$('.slds-page-header').length);
+  assert.ok(findAll('.slds-page-header').length);
 });

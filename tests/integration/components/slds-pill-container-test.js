@@ -1,3 +1,4 @@
+import { findAll } from 'ember-native-dom-helpers';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -14,5 +15,5 @@ test('it renders with pills', function(assert) {
     {{/slds-pill-container}}
   `);
 
-  assert.equal(this.$('.slds-pill').length, 3);
+  assert.equal(findAll('.slds-pill').length, 3);
 });

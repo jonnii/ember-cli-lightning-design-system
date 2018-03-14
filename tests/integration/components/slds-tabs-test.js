@@ -1,3 +1,4 @@
+import { findAll } from 'ember-native-dom-helpers';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -15,7 +16,7 @@ test('it renders', function(assert) {
   {{/slds-tabs}}
   `);
 
-  assert.ok(this.$('div.slds-tabs_default').length, 'has container');
-  assert.ok(this.$('div.slds-tabs_default ul.slds-tabs_default__nav').length, 'has nav');
-  assert.ok(this.$('div.slds-tabs_default ul.slds-tabs_default__nav[role=tablist]').length, 'has role tablist');
+  assert.ok(findAll('div.slds-tabs_default').length, 'has container');
+  assert.ok(findAll('div.slds-tabs_default ul.slds-tabs_default__nav').length, 'has nav');
+  assert.ok(findAll('div.slds-tabs_default ul.slds-tabs_default__nav[role=tablist]').length, 'has role tablist');
 });

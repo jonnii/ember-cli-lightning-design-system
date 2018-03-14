@@ -1,3 +1,4 @@
+import { find } from 'ember-native-dom-helpers';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -7,12 +8,7 @@ moduleForComponent('slds-breadcrumb', 'Integration | Component | slds breadcrumb
 
 test('it renders', function(assert) {
   this.render(hbs`{{slds-breadcrumb}}`);
-  assert.equal(
-    this.$()
-      .text()
-      .trim(),
-    ''
-  );
+  assert.equal(find('*').textContent.trim(), '');
 });
 
 test('it renders with crumb items', function(assert) {

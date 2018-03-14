@@ -1,3 +1,4 @@
+import { find } from 'ember-native-dom-helpers';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -11,13 +12,8 @@ test('it renders', function(assert) {
     {{/slds-lookup}}
   `);
 
-  assert.equal(
-    this.$('label')
-      .text()
-      .trim(),
-    'Search'
-  );
-  assert.equal(this.$('.slds-lookup').attr('class'), 'slds-form-element slds-lookup');
+  assert.equal(find('label').textContent.trim(), 'Search');
+  assert.equal(find('.slds-lookup').getAttribute('class'), 'slds-form-element slds-lookup');
 });
 
 test('it renders with placeholder', function(assert) {
@@ -26,12 +22,7 @@ test('it renders with placeholder', function(assert) {
     {{/slds-lookup}}
   `);
 
-  assert.equal(
-    this.$('label')
-      .text()
-      .trim(),
-    'Find Product'
-  );
+  assert.equal(find('label').textContent.trim(), 'Find Product');
 });
 
 test('it renders with when open', function(assert) {
@@ -40,5 +31,5 @@ test('it renders with when open', function(assert) {
     {{/slds-lookup}}
   `);
 
-  assert.equal(this.$('.slds-lookup').attr('class'), 'slds-form-element slds-lookup slds-is-open');
+  assert.equal(find('.slds-lookup').getAttribute('class'), 'slds-form-element slds-lookup slds-is-open');
 });

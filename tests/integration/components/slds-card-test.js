@@ -1,3 +1,4 @@
+import { findAll } from 'ember-native-dom-helpers';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -20,8 +21,8 @@ test('it renders', function(assert) {
     {{/slds-card}}
   `);
 
-  assert.ok(this.$('article.slds-card').length);
-  assert.ok(this.$('article.slds-card .slds-card__header').length, 'has header');
-  assert.ok(this.$('article.slds-card .slds-card__body.slds-card__body_inner').length, 'has body');
-  assert.ok(this.$('article.slds-card footer.slds-card__footer').length, 'has footer');
+  assert.ok(findAll('article.slds-card').length);
+  assert.ok(findAll('article.slds-card .slds-card__header').length, 'has header');
+  assert.ok(findAll('article.slds-card .slds-card__body.slds-card__body_inner').length, 'has body');
+  assert.ok(findAll('article.slds-card footer.slds-card__footer').length, 'has footer');
 });
