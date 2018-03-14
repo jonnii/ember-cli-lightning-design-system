@@ -1,0 +1,10 @@
+<div class="slds-m-around_xx-large">
+  {{#slds-lookup as |control|}}
+    {{control.header}}
+
+    {{#control.list as |list|}}
+      {{list.item text="The Boston Consulting Group" meta="Account • Boston"}}
+      {{list.item text="The New York Consulting Group" meta="Account • New York"}}
+    {{/control.list}}
+  {{/slds-lookup}}
+</div>

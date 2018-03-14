@@ -46,6 +46,7 @@ Router.map(function() {
     this.route('form');
     this.route('demo');
     this.route('search-results');
+    this.route('lookup');
   });
 });
 

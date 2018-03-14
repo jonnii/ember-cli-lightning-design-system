@@ -1,9 +1,10 @@
 <div class="slds-form-element slds-lookup{{openClass}}">
   <label class="slds-assistive-text" for="{{lookupElementId}}">{{placeholder}}</label>
-  <div class="slds-form-element__control lookup__search-control slds-input-has-icon slds-input-has-icon--left">
+  <div class="slds-form-element__control lookup__search-control slds-input-has-icon slds-input-has-icon_left-right">
     <svg class="slds-input__icon" aria-hidden="true">
       <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#search"></use>
     </svg>
+    
     {{input
       type="search"
       id=lookupElementId
@@ -14,11 +15,11 @@
       value=query}}
 
       <button class="slds-input__icon slds-input__icon_right slds-button slds-button_icon">
-              <svg class="slds-button__icon" aria-hidden="true">
-                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#clear" xmlns:xlink="http://www.w3.org/1999/xlink" />
-              </svg>
-              <span class="slds-assistive-text">Clear the current search term</span>
-            </button>
+        <svg class="slds-button__icon" aria-hidden="true">
+          <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#clear" xmlns:xlink="http://www.w3.org/1999/xlink" />
+        </svg>
+        <span class="slds-assistive-text">Clear the current search term</span>
+      </button>
   </div>
 
   <div class="slds-lookup__menu" id="lookup-65">
