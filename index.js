@@ -8,6 +8,13 @@ const resolve = require('resolve');
 module.exports = {
   name: 'ember-cli-lightning-design-system',
 
+  included() {
+    this._super.included.apply(this, arguments);
+
+    let app = this._findHost.call(this);
+    this.app = app;
+  },
+
   treeForStyles() {
     let packagePath = resolve.sync('@salesforce-ux/design-system/package.json', {
       basedir: this.app.project.root
