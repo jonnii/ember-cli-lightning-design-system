@@ -1,3 +1,4 @@
+import { findAll, find } from 'ember-native-dom-helpers';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -7,27 +8,17 @@ moduleForComponent('slds-badge', 'Integration | Component | slds badge', {
 
 test('it renders without text', function(assert) {
   this.render(hbs`{{slds-badge}}`);
-  assert.equal(
-    this.$()
-      .text()
-      .trim(),
-    'badge'
-  );
+  assert.equal(find('*').textContent.trim(), 'badge');
 });
 
 test('it renders with text attribute', function(assert) {
   this.render(hbs`{{slds-badge text='textytext'}}`);
-  assert.equal(
-    this.$()
-      .text()
-      .trim(),
-    'textytext'
-  );
+  assert.equal(find('*').textContent.trim(), 'textytext');
 });
 
 test('it renders with color', function(assert) {
   this.render(hbs`{{slds-badge text='textytext' color='inverse'}}`);
-  assert.ok(this.$('span.slds-badge_inverse').length);
+  assert.ok(findAll('span.slds-badge_inverse').length);
 });
 
 test('it renders with block', function(assert) {
@@ -37,12 +28,7 @@ test('it renders with block', function(assert) {
     {{/slds-badge}}
   `);
 
-  assert.ok(this.$('span.slds-badge').length);
+  assert.ok(findAll('span.slds-badge').length);
 
-  assert.equal(
-    this.$()
-      .text()
-      .trim(),
-    'i love blocks'
-  );
+  assert.equal(find('*').textContent.trim(), 'i love blocks');
 });

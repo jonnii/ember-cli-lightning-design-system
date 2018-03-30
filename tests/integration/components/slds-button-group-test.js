@@ -1,3 +1,4 @@
+import { findAll } from 'ember-native-dom-helpers';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -14,7 +15,7 @@ test('it renders with button group options', function(assert) {
     {{/slds-button-group}}
   `);
 
-  assert.equal(this.$('button').length, 3);
+  assert.equal(findAll('button').length, 3);
 });
 
 test('it renders with menu', function(assert) {
@@ -31,7 +32,7 @@ test('it renders with menu', function(assert) {
     {{/slds-button-group}}
   `);
 
-  assert.equal(this.$('.slds-dropdown-trigger').length, 1);
-  assert.ok(this.$('.slds-button--last.slds-dropdown-trigger.slds-dropdown-trigger--click').length);
-  assert.ok(this.$('.slds-dropdown.slds-dropdown--right').length);
+  assert.equal(findAll('.slds-dropdown-trigger').length, 1);
+  assert.ok(findAll('.slds-button--last.slds-dropdown-trigger.slds-dropdown-trigger--click').length);
+  assert.ok(findAll('.slds-dropdown.slds-dropdown--right').length);
 });

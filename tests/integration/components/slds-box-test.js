@@ -1,3 +1,4 @@
+import { find } from 'ember-native-dom-helpers';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -8,12 +9,7 @@ moduleForComponent('slds-box', 'Integration | Component | slds box', {
 test('it renders', function(assert) {
   this.render(hbs`{{slds-box}}`);
 
-  assert.equal(
-    this.$()
-      .text()
-      .trim(),
-    ''
-  );
+  assert.equal(find('*').textContent.trim(), '');
 
   this.render(hbs`
     {{#slds-box}}
@@ -21,10 +17,5 @@ test('it renders', function(assert) {
     {{/slds-box}}
   `);
 
-  assert.equal(
-    this.$()
-      .text()
-      .trim(),
-    'template block text'
-  );
+  assert.equal(find('*').textContent.trim(), 'template block text');
 });

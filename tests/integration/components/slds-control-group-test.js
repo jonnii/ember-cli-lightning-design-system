@@ -1,3 +1,4 @@
+import { find, findAll } from 'ember-native-dom-helpers';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -8,19 +9,14 @@ moduleForComponent('slds-control-group', 'Integration | Component | slds control
 test('it renders legend', function(assert) {
   this.render(hbs`{{slds-control-group legend='choose your fate'}}`);
 
-  assert.equal(
-    this.$('legend')
-      .text()
-      .trim(),
-    'choose your fate'
-  );
-  assert.notOk(this.$('.slds-required').length);
+  assert.equal(find('legend').textContent.trim(), 'choose your fate');
+  assert.notOk(findAll('.slds-required').length);
 });
 
 test('it renders required', function(assert) {
   this.render(hbs`{{slds-control-group isRequired=true}}`);
 
-  assert.ok(this.$('.slds-required').length);
+  assert.ok(findAll('.slds-required').length);
 });
 
 test('it renders checkbox checked', function(assert) {
@@ -30,9 +26,9 @@ test('it renders checkbox checked', function(assert) {
     {{/slds-control-group}}
   `);
 
-  assert.ok(this.$('input:checked').length);
-  assert.ok(this.$('fieldset.slds-form-element .slds-form-element__control .slds-checkbox input').length);
-  assert.ok(this.$('input:not([aria-describedby])').length, 'should not have aria description');
+  assert.ok(findAll('input:checked').length);
+  assert.ok(findAll('fieldset.slds-form-element .slds-form-element__control .slds-checkbox input').length);
+  assert.ok(findAll('input:not([aria-describedby])').length, 'should not have aria description');
 });
 
 test('it renders checkbox with name', function(assert) {
@@ -42,7 +38,7 @@ test('it renders checkbox with name', function(assert) {
     {{/slds-control-group}}
   `);
 
-  assert.equal(this.$('input').attr('name'), 'fates');
+  assert.equal(find('input').getAttribute('name'), 'fates');
 });
 
 test('it renders checkbox with error', function(assert) {
@@ -52,12 +48,7 @@ test('it renders checkbox with error', function(assert) {
     {{/slds-control-group}}
   `);
 
-  assert.equal(
-    this.$('.slds-form-element__help')
-      .text()
-      .trim(),
-    'you fell over'
-  );
+  assert.equal(find('.slds-form-element__help').textContent.trim(), 'you fell over');
 
   // assert.ok(this.$('input[aria-describedby]').length, 'has aria description');
   // assert.equal(this.$('input').attr('aria-describedby'), this.$('.slds-form-element__help').attr('id'));
@@ -70,8 +61,8 @@ test('it renders radio', function(assert) {
     {{/slds-control-group}}
   `);
 
-  assert.ok(this.$('input:not([aria-describedby])').length, 'should not have aria description');
-  assert.equal(this.$('input').attr('name'), 'fates');
+  assert.ok(findAll('input:not([aria-describedby])').length, 'should not have aria description');
+  assert.equal(find('input').getAttribute('name'), 'fates');
 });
 
 test('it renders radio with error', function(assert) {
@@ -81,13 +72,8 @@ test('it renders radio with error', function(assert) {
     {{/slds-control-group}}
   `);
 
-  assert.equal(
-    this.$('.slds-form-element__help')
-      .text()
-      .trim(),
-    'you fell over'
-  );
+  assert.equal(find('.slds-form-element__help').textContent.trim(), 'you fell over');
 
-  assert.ok(this.$('input[aria-describedby]').length, 'has aria description');
-  assert.equal(this.$('input').attr('aria-describedby'), this.$('.slds-form-element__help').attr('id'));
+  assert.ok(findAll('input[aria-describedby]').length, 'has aria description');
+  assert.equal(find('input').getAttribute('aria-describedby'), find('.slds-form-element__help').id);
 });

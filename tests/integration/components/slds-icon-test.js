@@ -1,3 +1,4 @@
+import { find, findAll } from 'ember-native-dom-helpers';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -11,11 +12,11 @@ test('it renders default standard', function(assert) {
   const container = this.$('span.slds-icon_container.slds-icon-standard-default');
   assert.ok(container.length);
   assert.notOk(container.attr('title'));
-  assert.equal(this.$('span.slds-assistive-text').length, 0);
+  assert.equal(findAll('span.slds-assistive-text').length, 0);
 
   const icon = this.$('.slds-icon');
   assert.equal(icon.attr('class').trim(), 'slds-icon');
-  assert.equal(this.$('use').attr('xlink:href'), '/assets/icons/standard-sprite/svg/symbols.svg#default');
+  assert.equal(find('use').getAttribute('xlink:href'), '/assets/icons/standard-sprite/svg/symbols.svg#default');
 });
 
 test('it renders standard with description', function(assert) {
@@ -24,12 +25,7 @@ test('it renders standard with description', function(assert) {
 
   assert.ok(container.length);
   assert.equal(container.attr('title'), 'fancy description');
-  assert.equal(
-    this.$('.slds-assistive-text')
-      .text()
-      .trim(),
-    'fancy description'
-  );
+  assert.equal(find('.slds-assistive-text').textContent.trim(), 'fancy description');
 });
 
 test('it renders utility', function(assert) {
@@ -41,7 +37,7 @@ test('it renders utility', function(assert) {
   const icon = this.$('.slds-icon');
   assert.equal(icon.attr('class').trim(), 'slds-icon slds-icon-text-default');
 
-  assert.equal(this.$('use').attr('xlink:href'), '/assets/icons/utility-sprite/svg/symbols.svg#question');
+  assert.equal(find('use').getAttribute('xlink:href'), '/assets/icons/utility-sprite/svg/symbols.svg#question');
 });
 
 test('it renders doctype', function(assert) {
@@ -53,7 +49,7 @@ test('it renders doctype', function(assert) {
   const icon = this.$('.slds-icon');
   assert.equal(icon.attr('class').trim(), 'slds-icon');
 
-  assert.equal(this.$('use').attr('xlink:href'), '/assets/icons/doctype-sprite/svg/symbols.svg#unknown');
+  assert.equal(find('use').getAttribute('xlink:href'), '/assets/icons/doctype-sprite/svg/symbols.svg#unknown');
 });
 
 test('it renders sizes', function(assert) {
