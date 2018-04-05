@@ -1,6 +1,6 @@
 <div class="slds-modal__container">
   {{yield (hash
-    header=(component 'slds-modal-header')
+    header=(component 'slds-modal-header' close=close)
     content=(component 'slds-modal-content')
     footer=(component 'slds-modal-footer')
   )}}

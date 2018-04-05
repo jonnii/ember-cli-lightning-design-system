@@ -1,5 +1,13 @@
 <button {{action (toggle "isExpanded" this)}}>Toggle Modal</button>
 
-<div hidden={{not isExpanded}}>
-  {{slds-app-launcher}}
-</div>
+{{#if isExpanded}}
+  {{#slds-app-launcher close=(action (toggle "isExpanded" this)) as |modal|}}
+    {{#modal-dialog onClose=modal.close targetAttachment="center"}}
+      {{#modal.container as |container|}}
+        {{container.header title='Awesome Header'}}
+        {{container.content}}
+        {{container.footer}}
+      {{/modal.container}}      
+    {{/modal-dialog}}
+  {{/slds-app-launcher}}
+{{/if}}
