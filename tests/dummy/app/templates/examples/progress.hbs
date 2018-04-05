@@ -12,6 +12,10 @@
 
 <hr/>
 
+{{slds-progress-bar value=100 height='large' border='circular' isSuccess=true}}
+
+<hr/>
+
 {{#slds-progress value=0 as |progress|}}
   {{progress.item text='Item 1' clicked=(action 'progress' 'item1') state='active'}}
   {{progress.item text='Item 2' clicked=(action 'progress' 'item2')}}

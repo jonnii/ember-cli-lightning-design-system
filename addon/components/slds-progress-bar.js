@@ -23,6 +23,7 @@ export default Component.extend({
   maxValue: 100,
   value: 0,
   height: 'default',
+  isSuccess: false,
 
   progressStyle: computed('value', function() {
     const value = this.get('value');
