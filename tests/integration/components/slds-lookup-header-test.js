@@ -1,25 +1,27 @@
 import { find } from 'ember-native-dom-helpers';
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('slds-lookup-header', 'Integration | Component | slds lookup header', {
-  integration: true
-});
+module('Integration | Component | slds lookup header', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  test('it renders', async function(assert) {
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{slds-lookup-header}}`);
+    await render(hbs`{{slds-lookup-header}}`);
 
-  assert.equal(find('*').textContent.trim(), '');
+    assert.equal(find('.slds-lookup__item--label').textContent.trim(), '');
 
-  // Template block usage:
-  this.render(hbs`
-    {{#slds-lookup-header}}
-      template block text
-    {{/slds-lookup-header}}
-  `);
+    // Template block usage:
+    await render(hbs`
+      {{#slds-lookup-header}}
+        template block text
+      {{/slds-lookup-header}}
+    `);
 
-  assert.equal(find('*').textContent.trim(), 'template block text');
+    assert.equal(find('.slds-lookup__item--label').textContent.trim(), 'template block text');
+  });
 });

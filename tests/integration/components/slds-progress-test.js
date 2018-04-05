@@ -1,19 +1,21 @@
 import { find } from 'ember-native-dom-helpers';
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('slds-progress', 'Integration | Component | slds progress', {
-  integration: true
-});
+module('Integration | Component | slds progress', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  this.render(hbs`{{slds-progress}}`);
+  test('it renders', async function(assert) {
+    await render(hbs`{{slds-progress}}`);
 
-  assert.equal(find('.slds-progress-bar .slds-assistive-text').textContent.trim(), 'Progress: 0%');
-});
+    assert.equal(find('.slds-progress-bar .slds-assistive-text').textContent.trim(), 'Progress: 0%');
+  });
 
-test('it renders with progress', function(assert) {
-  this.render(hbs`{{slds-progress value=80}}`);
+  test('it renders with progress', async function(assert) {
+    await render(hbs`{{slds-progress value=80}}`);
 
-  assert.equal(find('.slds-progress-bar .slds-assistive-text').textContent.trim(), 'Progress: 80%');
+    assert.equal(find('.slds-progress-bar .slds-assistive-text').textContent.trim(), 'Progress: 80%');
+  });
 });

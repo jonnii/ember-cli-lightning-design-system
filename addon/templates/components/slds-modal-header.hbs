@@ -1,9 +1,13 @@
-<div class="slds-modal__header">
-  <button {{action 'closed' close}} class="slds-button slds-modal__close slds-button--icon-inverse" title="Close">
-    <svg class="slds-button__icon slds-button__icon--large" aria-hidden="true">
-      <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
-    </svg>
-    <span class="slds-assistive-text">Close</span>
-  </button>
-  <h2 id="header43" class="slds-text-heading--medium">{{title}}</h2>
-</div>
+<button {{action 'modalClosed' close}} class="slds-button slds-modal__close slds-button--icon-inverse" title="Close">
+  <svg class="slds-button__icon slds-button__icon--large" aria-hidden="true">
+    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+  </svg>
+  <span class="slds-assistive-text">Close</span>
+</button>
+<h2 id="header43" class="slds-text-heading--medium">
+  {{#if hasBlock}}
+    {{yield}}
+  {{else}}
+    {{title}}
+  {{/if}}
+</h2>

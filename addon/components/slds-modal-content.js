@@ -3,5 +3,5 @@ import layout from '../templates/components/slds-modal-content';
 
 export default Component.extend({
   layout,
-  tagName: ''
+  classNames: ['slds-modal__content', 'slds-p-around--medium']
 });

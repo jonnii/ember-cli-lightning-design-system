@@ -1,12 +1,14 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('slds-control-identity', 'Integration | Component | slds control identity', {
-  integration: true
-});
+module('Integration | Component | slds control identity', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  this.render(hbs`{{slds-control-identity}}`);
+  test('it renders', async function(assert) {
+    await render(hbs`{{slds-control-identity}}`);
 
-  assert.expect(0);
+    assert.expect(0);
+  });
 });

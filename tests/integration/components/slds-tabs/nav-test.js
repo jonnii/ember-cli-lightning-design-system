@@ -1,22 +1,24 @@
 import { find } from 'ember-native-dom-helpers';
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('slds-tabs/nav', 'Integration | Component | slds tabs/nav', {
-  integration: true
-});
+module('Integration | Component | slds tabs/nav', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  this.render(hbs`{{slds-tabs/nav}}`);
+  test('it renders', async function(assert) {
+    await render(hbs`{{slds-tabs/nav}}`);
 
-  assert.equal(find('*').textContent.trim(), '');
+    assert.equal(find('.slds-tabs_default__nav').textContent.trim(), '');
 
-  // Template block usage:
-  this.render(hbs`
-    {{#slds-tabs/nav}}
-      template block text
-    {{/slds-tabs/nav}}
-  `);
+    // Template block usage:
+    await render(hbs`
+      {{#slds-tabs/nav}}
+        template block text
+      {{/slds-tabs/nav}}
+    `);
 
-  assert.equal(find('*').textContent.trim(), 'template block text');
+    assert.equal(find('.slds-tabs_default__nav').textContent.trim(), 'template block text');
+  });
 });

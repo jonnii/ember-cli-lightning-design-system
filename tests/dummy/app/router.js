@@ -40,6 +40,7 @@ Router.map(function() {
     this.route('data-table');
     this.route('tab');
     this.route('box');
+    this.route('app-launcher');
   });
   this.route('samples', function() {
     this.route('filter-grid');

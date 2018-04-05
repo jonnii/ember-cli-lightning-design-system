@@ -1,19 +1,21 @@
 import { findAll } from 'ember-native-dom-helpers';
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('slds-form', 'Integration | Component | slds form', {
-  integration: true
-});
+module('Integration | Component | slds form', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders stacked', function(assert) {
-  this.render(hbs`{{slds-form}}`);
+  test('it renders stacked', async function(assert) {
+    await render(hbs`{{slds-form}}`);
 
-  assert.ok(findAll('.slds-form.slds-form_stacked').length);
-});
+    assert.ok(findAll('.slds-form.slds-form_stacked').length);
+  });
 
-test('it renders horizontal', function(assert) {
-  this.render(hbs`{{slds-form type='horizontal'}}`);
+  test('it renders horizontal', async function(assert) {
+    await render(hbs`{{slds-form type='horizontal'}}`);
 
-  assert.ok(findAll('.slds-form.slds-form_horizontal').length);
+    assert.ok(findAll('.slds-form.slds-form_horizontal').length);
+  });
 });

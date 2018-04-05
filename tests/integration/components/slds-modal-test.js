@@ -1,11 +1,13 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('slds-modal', 'Integration | Component | slds modal', {
-  integration: true
-});
+module('Integration | Component | slds modal', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  this.render(hbs`{{slds-modal}}`);
-  assert.expect(0);
+  test('it renders', async function(assert) {
+    await render(hbs`{{slds-modal}}`);
+    assert.expect(0);
+  });
 });
