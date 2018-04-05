@@ -12,7 +12,7 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{slds-breadcrumb/item}}`);
 
-  assert.equal(find('*').textContent.trim(), '');
+  assert.equal(find('.slds-breadcrumb__item').textContent.trim(), '');
 
   // Template block usage:
   this.render(hbs`
@@ -21,5 +21,5 @@ test('it renders', function(assert) {
     {{/slds-breadcrumb/item}}
   `);
 
-  assert.equal(find('*').textContent.trim(), 'template block text');
+  assert.equal(find('.slds-breadcrumb__item').textContent.trim(), 'template block text');
 });

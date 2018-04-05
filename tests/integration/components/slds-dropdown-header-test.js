@@ -9,7 +9,7 @@ moduleForComponent('slds-dropdown-header', 'Integration | Component | slds dropd
 test('it renders', function(assert) {
   this.render(hbs`{{slds-dropdown-header}}`);
 
-  assert.equal(find('*').textContent.trim(), '');
+  assert.equal(find('.slds-dropdown__header').textContent.trim(), '');
 
   this.render(hbs`
     {{#slds-dropdown-header}}
@@ -17,5 +17,5 @@ test('it renders', function(assert) {
     {{/slds-dropdown-header}}
   `);
 
-  assert.equal(find('*').textContent.trim(), 'template block text');
+  assert.equal(find('.slds-dropdown__header').textContent.trim(), 'template block text');
 });

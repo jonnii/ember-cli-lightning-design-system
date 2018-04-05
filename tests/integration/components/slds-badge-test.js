@@ -8,12 +8,12 @@ moduleForComponent('slds-badge', 'Integration | Component | slds badge', {
 
 test('it renders without text', function(assert) {
   this.render(hbs`{{slds-badge}}`);
-  assert.equal(find('*').textContent.trim(), 'badge');
+  assert.equal(find('span').textContent.trim(), 'badge');
 });
 
 test('it renders with text attribute', function(assert) {
   this.render(hbs`{{slds-badge text='textytext'}}`);
-  assert.equal(find('*').textContent.trim(), 'textytext');
+  assert.equal(find('.slds-badge').textContent.trim(), 'textytext');
 });
 
 test('it renders with color', function(assert) {
@@ -30,5 +30,5 @@ test('it renders with block', function(assert) {
 
   assert.ok(findAll('span.slds-badge').length);
 
-  assert.equal(find('*').textContent.trim(), 'i love blocks');
+  assert.equal(find('.slds-badge').textContent.trim(), 'i love blocks');
 });

@@ -12,7 +12,7 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{slds-card/body}}`);
 
-  assert.equal(find('*').textContent.trim(), '');
+  assert.equal(find('.slds-card__body').textContent.trim(), '');
 
   // Template block usage:
   this.render(hbs`
@@ -21,5 +21,5 @@ test('it renders', function(assert) {
     {{/slds-card/body}}
   `);
 
-  assert.equal(find('*').textContent.trim(), 'template block text');
+  assert.equal(find('.slds-card__body').textContent.trim(), 'template block text');
 });

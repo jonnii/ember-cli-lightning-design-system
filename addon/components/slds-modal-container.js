@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import { later } from '@ember/runloop';
+import { next } from '@ember/runloop';
 import layout from '../templates/components/slds-modal-container';
 
 export default Component.extend({
@@ -13,7 +13,7 @@ export default Component.extend({
   isShowing: false,
 
   didInsertElement() {
-    later(() => {
+    next(() => {
       this.set('isShowing', true);
     });
   },

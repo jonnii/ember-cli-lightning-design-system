@@ -9,7 +9,7 @@ moduleForComponent('slds-button', 'Integration | Component | slds button', {
 test('it renders', function(assert) {
   this.render(hbs`{{slds-button}}`);
 
-  assert.equal(find('*').textContent.trim(), 'Submit');
+  assert.equal(find('button').textContent.trim(), 'Submit');
   assert.ok(findAll('button.slds-button').length);
   assert.notOk(this.$('button').is('[disabled=disabled]'));
   assert.equal(findAll('svg').length, 0);

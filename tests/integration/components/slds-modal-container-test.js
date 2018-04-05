@@ -1,16 +1,14 @@
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
+import hbs from 'htmlbars-inline-precompile';
 import { findAll } from 'ember-native-dom-helpers';
 
-import { moduleForComponent, test } from 'ember-qunit';
-import hbs from 'htmlbars-inline-precompile';
+module('Integration | Component | slds-modal-container', function(hooks) {
+  setupRenderingTest(hooks);
 
-moduleForComponent('slds-modal-container', 'Integration | Component | slds modal container', {
-  integration: true
-});
-
-test('it renders', function(assert) {
-  this.render(hbs`{{slds-modal-container}}`);
-
-  assert.equal(findAll('.slds-modal[role=dialog]').length, 1);
-
-  // assert.expect(0);
+  test('it renders', async function(assert) {
+    await render(hbs`{{slds-modal-container}}`);
+    assert.equal(findAll('.slds-modal[role=dialog]').length, 1);
+  });
 });

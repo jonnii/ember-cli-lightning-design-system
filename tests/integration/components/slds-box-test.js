@@ -9,7 +9,7 @@ moduleForComponent('slds-box', 'Integration | Component | slds box', {
 test('it renders', function(assert) {
   this.render(hbs`{{slds-box}}`);
 
-  assert.equal(find('*').textContent.trim(), '');
+  assert.equal(find('.slds-box').textContent.trim(), '');
 
   this.render(hbs`
     {{#slds-box}}
@@ -17,5 +17,5 @@ test('it renders', function(assert) {
     {{/slds-box}}
   `);
 
-  assert.equal(find('*').textContent.trim(), 'template block text');
+  assert.equal(find('.slds-box').textContent.trim(), 'template block text');
 });
