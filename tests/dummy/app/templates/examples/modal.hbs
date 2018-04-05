@@ -2,7 +2,7 @@
 
 {{#if isExpanded}}
   {{#slds-modal close=(action (toggle "isExpanded" this)) as |modal|}}
-    {{#modal-dialog close=modal.close targetAttachment="center"}}
+    {{#modal-dialog onClose=modal.close targetAttachment="center"}}
       {{#modal.container as |container|}}
         {{container.header title='Awesome Header'}}
         {{container.content}}

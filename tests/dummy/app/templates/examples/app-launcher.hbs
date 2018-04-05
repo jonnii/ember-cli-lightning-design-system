@@ -1,0 +1,5 @@
+<button {{action (toggle "isExpanded" this)}}>Toggle Modal</button>
+
+<div hidden={{not isExpanded}}>
+  {{slds-app-launcher}}
+</div>
