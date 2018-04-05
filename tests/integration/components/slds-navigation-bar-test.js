@@ -1,4 +1,4 @@
-import { findAll, find } from 'ember-native-dom-helpers';
+import { findAll, find, click } from 'ember-native-dom-helpers';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -40,4 +40,15 @@ test('it renders with menu', function(assert) {
   `);
 
   assert.equal(findAll('li.slds-context-bar__dropdown-trigger').length, 1);
+});
+
+test('it has clickable button', async function(assert) {
+  assert.expect(1);
+
+  this.set('externalAction', message => {
+    assert.equal(message, 'pressed');
+  });
+
+  this.render(hbs`{{slds-navigation-bar clicked=(action externalAction 'pressed')}}`);
+  await click('.slds-context-bar__button');
 });
