@@ -42,3 +42,9 @@ test('it renders with border', function(assert) {
 
   assert.ok(findAll('.slds-progress-bar.slds-progress-bar_circular').length);
 });
+
+test('it renders with success', function(assert) {
+  this.render(hbs`{{slds-progress-bar isSuccess=true}}`);
+
+  assert.ok(findAll('.slds-progress-bar .slds-progress-bar__value_success').length);
+});
