@@ -1,4 +1,4 @@
-import { find } from 'ember-native-dom-helpers';
+import { findAll } from 'ember-native-dom-helpers';
 
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';

@@ -1,9 +1,7 @@
-<div role="dialog" tabindex="-1" aria-labelledby="header43" style={{style}} class="slds-modal slds-fade-in-open">
-  <div class="slds-modal__container">
-    {{yield (hash
-      header=(component 'slds-modal-header')
-      content=(component 'slds-modal-content')
-      footer=(component 'slds-modal-footer')
-    )}}
-  </div>
+<div class="slds-modal__container">
+  {{yield (hash
+    header=(component 'slds-modal-header')
+    content=(component 'slds-modal-content')
+    footer=(component 'slds-modal-footer')
+  )}}
 </div>
