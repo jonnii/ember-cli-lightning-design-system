@@ -13,7 +13,7 @@ module('Integration | Component | slds navigation section', function(hooks) {
 
     await render(hbs`{{slds-navigation-section}}`);
 
-    assert.equal(find('*').textContent.trim(), '');
+    assert.equal(find('ul').textContent.trim(), '');
 
     // Template block usage:
     await render(hbs`
@@ -22,6 +22,6 @@ module('Integration | Component | slds navigation section', function(hooks) {
       {{/slds-navigation-section}}
     `);
 
-    assert.equal(find('*').textContent.trim(), 'template block text');
+    assert.equal(find('ul').textContent.trim(), 'template block text');
   });
 });

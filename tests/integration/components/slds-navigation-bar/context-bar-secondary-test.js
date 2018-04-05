@@ -13,7 +13,7 @@ module('Integration | Component | slds navigation bar/context bar secondary', fu
 
     await render(hbs`{{slds-navigation-bar/context-bar-secondary}}`);
 
-    assert.equal(find('*').textContent.trim(), '');
+    assert.equal(find('.slds-context-bar__secondary').textContent.trim(), '');
 
     // Template block usage:
     await render(hbs`
@@ -22,6 +22,6 @@ module('Integration | Component | slds navigation bar/context bar secondary', fu
       {{/slds-navigation-bar/context-bar-secondary}}
     `);
 
-    assert.equal(find('*').textContent.trim(), 'template block text');
+    assert.equal(find('.slds-context-bar__secondary').textContent.trim(), 'template block text');
   });
 });

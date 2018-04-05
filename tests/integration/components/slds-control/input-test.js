@@ -27,6 +27,8 @@ module('Integration | Component | slds control/input', function(hooks) {
     `);
 
     assert.ok(findAll('.slds-form-element__control.slds-input-has-icon.slds-input-has-icon_right input').length);
-    assert.ok(findAll('.slds-form-element__control.slds-input-has-icon .slds-input__icon.slds-input__icon--left').length);
+    assert.ok(
+      findAll('.slds-form-element__control.slds-input-has-icon .slds-input__icon.slds-input__icon--left').length
+    );
   });
 });
