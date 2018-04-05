@@ -1,5 +1,9 @@
-{{#slds-navigation-bar applicationName='My Application' as |bar|}}
+{{#slds-navigation-bar applicationName='My Application' clicked=(action 'clicked') as |bar|}}
   {{bar.item text='Home' path='examples.navigation-bar'}}
   {{bar.item text='Events'}}
   {{bar.item text='Properties'}}
 {{/slds-navigation-bar}}
+
+<hr/>
+
+Times Clicked: {{numTimesClicked}}

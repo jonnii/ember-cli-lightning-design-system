@@ -2,13 +2,13 @@
   <div class="slds-context-bar__primary slds-context-bar__item--divider-right">
     <div class="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger--click slds-no-hover">
       <div class="slds-context-bar__icon-action">
-        <a href="javascript:void(0);" class="slds-icon-waffle_container slds-context-bar__button">
+        <a {{action 'contextBarButtonClicked'}} class="slds-icon-waffle_container slds-context-bar__button">
           {{slds-icon-waffle}}
           <span class="slds-assistive-text">Open App Launcher</span>
         </a>
       </div>
       <span class="slds-context-bar__label-action slds-context-bar__app-name">
-        <span class="slds-truncate" title="{ props.appName || &#x27;{{applicationName}}&#x27; }">{{applicationName}}</span>
+        <span class="slds-truncate" title="{{applicationName}}">{{applicationName}}</span>
       </span>
     </div>
   </div>
