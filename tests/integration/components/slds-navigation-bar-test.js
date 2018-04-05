@@ -1,5 +1,6 @@
-import { findAll, find, click } from 'ember-native-dom-helpers';
+import { findAll, find } from 'ember-native-dom-helpers';
 import { module, test } from 'qunit';
+import { click } from '@ember/test-helpers';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
