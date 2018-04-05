@@ -1,35 +1,37 @@
 import { find } from 'ember-native-dom-helpers';
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('slds-lookup', 'Integration | Component | slds lookup', {
-  integration: true
-});
+module('Integration | Component | slds lookup', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  this.render(hbs`
-    {{#slds-lookup}}
-    {{/slds-lookup}}
-  `);
+  test('it renders', async function(assert) {
+    await render(hbs`
+      {{#slds-lookup}}
+      {{/slds-lookup}}
+    `);
 
-  assert.equal(find('label').textContent.trim(), 'Search');
-  assert.equal(find('.slds-lookup').getAttribute('class'), 'slds-form-element slds-lookup');
-});
+    assert.equal(find('label').textContent.trim(), 'Search');
+    assert.equal(find('.slds-lookup').getAttribute('class'), 'slds-form-element slds-lookup');
+  });
 
-test('it renders with placeholder', function(assert) {
-  this.render(hbs`
-    {{#slds-lookup placeholder='Find Product'}}
-    {{/slds-lookup}}
-  `);
+  test('it renders with placeholder', async function(assert) {
+    await render(hbs`
+      {{#slds-lookup placeholder='Find Product'}}
+      {{/slds-lookup}}
+    `);
 
-  assert.equal(find('label').textContent.trim(), 'Find Product');
-});
+    assert.equal(find('label').textContent.trim(), 'Find Product');
+  });
 
-test('it renders with when open', function(assert) {
-  this.render(hbs`
-    {{#slds-lookup isOpen=true}}
-    {{/slds-lookup}}
-  `);
+  test('it renders with when open', async function(assert) {
+    await render(hbs`
+      {{#slds-lookup isOpen=true}}
+      {{/slds-lookup}}
+    `);
 
-  assert.equal(find('.slds-lookup').getAttribute('class'), 'slds-form-element slds-lookup slds-is-open');
+    assert.equal(find('.slds-lookup').getAttribute('class'), 'slds-form-element slds-lookup slds-is-open');
+  });
 });

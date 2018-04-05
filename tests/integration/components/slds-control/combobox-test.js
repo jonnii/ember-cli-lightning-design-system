@@ -1,11 +1,13 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('slds-control/combobox', 'Integration | Component | slds control/combobox', {
-  integration: true
-});
+module('Integration | Component | slds control/combobox', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  this.render(hbs`{{slds-control/combobox}}`);
-  assert.expect(0);
+  test('it renders', async function(assert) {
+    await render(hbs`{{slds-control/combobox}}`);
+    assert.expect(0);
+  });
 });

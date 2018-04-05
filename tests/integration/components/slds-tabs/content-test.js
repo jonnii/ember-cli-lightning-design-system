@@ -1,29 +1,31 @@
 import { findAll, find } from 'ember-native-dom-helpers';
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('slds-tabs/content', 'Integration | Component | slds tabs/content', {
-  integration: true
-});
+module('Integration | Component | slds tabs/content', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  this.render(hbs`{{slds-tabs/content}}`);
+  test('it renders', async function(assert) {
+    await render(hbs`{{slds-tabs/content}}`);
 
-  assert.ok(findAll('div.slds-tabs_default__content').length, 'has content');
-  assert.ok(findAll('div.slds-tabs_default__content.slds-hide').length, 'is hidden');
-  assert.ok(findAll('div.slds-tabs_default__content[role=tabpanel]').length, 'has role');
+    assert.ok(findAll('div.slds-tabs_default__content').length, 'has content');
+    assert.ok(findAll('div.slds-tabs_default__content.slds-hide').length, 'is hidden');
+    assert.ok(findAll('div.slds-tabs_default__content[role=tabpanel]').length, 'has role');
 
-  this.render(hbs`
-    {{#slds-tabs/content}}
-      template block text
-    {{/slds-tabs/content}}
-  `);
+    await render(hbs`
+      {{#slds-tabs/content}}
+        template block text
+      {{/slds-tabs/content}}
+    `);
 
-  assert.equal(find('*').textContent.trim(), 'template block text');
-});
+    assert.equal(find('*').textContent.trim(), 'template block text');
+  });
 
-test('it active', function(assert) {
-  this.render(hbs`{{slds-tabs/content isActive=true}}`);
+  test('it active', async function(assert) {
+    await render(hbs`{{slds-tabs/content isActive=true}}`);
 
-  assert.ok(findAll('div.slds-tabs_default__content.slds-show').length, 'is shown');
+    assert.ok(findAll('div.slds-tabs_default__content.slds-show').length, 'is shown');
+  });
 });

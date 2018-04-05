@@ -1,11 +1,13 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('slds-navigation-bar/menu', 'Integration | Component | slds navigation bar/menu', {
-  integration: true
-});
+module('Integration | Component | slds navigation bar/menu', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  assert.expect(0);
-  this.render(hbs`{{slds-navigation-bar/menu}}`);
+  test('it renders', async function(assert) {
+    assert.expect(0);
+    await render(hbs`{{slds-navigation-bar/menu}}`);
+  });
 });

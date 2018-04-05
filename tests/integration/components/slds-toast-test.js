@@ -1,34 +1,36 @@
 import { find, findAll } from 'ember-native-dom-helpers';
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('slds-toast', 'Integration | Component | slds toast', {
-  integration: true
-});
+module('Integration | Component | slds toast', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  this.render(hbs`{{slds-toast}}`);
+  test('it renders', async function(assert) {
+    await render(hbs`{{slds-toast}}`);
 
-  assert.equal(find('.slds-notify').getAttribute('role'), 'alert');
-  assert.ok(findAll('.slds-theme_info').length);
-  assert.equal(find('.slds-notify > .slds-assistive-text').textContent.trim(), 'info');
-});
+    assert.equal(find('.slds-notify').getAttribute('role'), 'alert');
+    assert.ok(findAll('.slds-theme_info').length);
+    assert.equal(find('.slds-notify > .slds-assistive-text').textContent.trim(), 'info');
+  });
 
-test('it renders success theme', function(assert) {
-  this.render(hbs`{{slds-toast theme='success'}}`);
+  test('it renders success theme', async function(assert) {
+    await render(hbs`{{slds-toast theme='success'}}`);
 
-  assert.ok(findAll('.slds-theme_success').length);
-  assert.equal(find('.slds-notify > .slds-assistive-text').textContent.trim(), 'success');
-});
+    assert.ok(findAll('.slds-theme_success').length);
+    assert.equal(find('.slds-notify > .slds-assistive-text').textContent.trim(), 'success');
+  });
 
-test('it renders warning theme', function(assert) {
-  this.render(hbs`{{slds-toast theme='warning'}}`);
+  test('it renders warning theme', async function(assert) {
+    await render(hbs`{{slds-toast theme='warning'}}`);
 
-  assert.ok(findAll('.slds-theme_warning').length);
-});
+    assert.ok(findAll('.slds-theme_warning').length);
+  });
 
-test('it renders error theme', function(assert) {
-  this.render(hbs`{{slds-toast theme='error'}}`);
+  test('it renders error theme', async function(assert) {
+    await render(hbs`{{slds-toast theme='error'}}`);
 
-  assert.ok(findAll('.slds-theme_error').length);
+    assert.ok(findAll('.slds-theme_error').length);
+  });
 });

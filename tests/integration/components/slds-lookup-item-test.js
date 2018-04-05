@@ -1,25 +1,27 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('slds-lookup-item', 'Integration | Component | slds lookup item', {
-  integration: true
-});
+module('Integration | Component | slds lookup item', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  assert.expect(0);
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  test('it renders', async function(assert) {
+    assert.expect(0);
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
 
-  // this.render(hbs`{{slds-lookup-item}}`);
+    // this.render(hbs`{{slds-lookup-item}}`);
 
-  //assert.equal(this.$().text().trim(), '');
+    //assert.equal(this.$().text().trim(), '');
 
-  // Template block usage:
-  this.render(hbs`
-    {{#slds-lookup-item}}
-      template block text
-    {{/slds-lookup-item}}
-  `);
+    // Template block usage:
+    await render(hbs`
+      {{#slds-lookup-item}}
+        template block text
+      {{/slds-lookup-item}}
+    `);
 
-  //assert.equal(this.$().text().trim(), 'template block text');
+    //assert.equal(this.$().text().trim(), 'template block text');
+  });
 });

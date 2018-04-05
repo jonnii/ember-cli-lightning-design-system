@@ -1,25 +1,27 @@
 import { find } from 'ember-native-dom-helpers';
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('slds-card/body', 'Integration | Component | slds card/body', {
-  integration: true
-});
+module('Integration | Component | slds card/body', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  test('it renders', async function(assert) {
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{slds-card/body}}`);
+    await render(hbs`{{slds-card/body}}`);
 
-  assert.equal(find('.slds-card__body').textContent.trim(), '');
+    assert.equal(find('.slds-card__body').textContent.trim(), '');
 
-  // Template block usage:
-  this.render(hbs`
-    {{#slds-card/body}}
-      template block text
-    {{/slds-card/body}}
-  `);
+    // Template block usage:
+    await render(hbs`
+      {{#slds-card/body}}
+        template block text
+      {{/slds-card/body}}
+    `);
 
-  assert.equal(find('.slds-card__body').textContent.trim(), 'template block text');
+    assert.equal(find('.slds-card__body').textContent.trim(), 'template block text');
+  });
 });

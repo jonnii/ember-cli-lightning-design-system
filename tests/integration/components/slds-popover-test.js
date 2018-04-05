@@ -1,11 +1,13 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('slds-popover', 'Integration | Component | slds popover', {
-  integration: true
-});
+module('Integration | Component | slds popover', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  assert.expect(0);
-  this.render(hbs`{{slds-popover}}`);
+  test('it renders', async function(assert) {
+    assert.expect(0);
+    await render(hbs`{{slds-popover}}`);
+  });
 });
