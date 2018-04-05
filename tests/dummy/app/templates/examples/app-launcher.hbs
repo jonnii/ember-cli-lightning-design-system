@@ -4,7 +4,22 @@
   {{#slds-app-launcher close=(action (toggle "isExpanded" this)) as |modal|}}
     {{#modal-dialog onClose=modal.close targetAttachment="center"}}
       {{#modal.container as |container|}}
-        {{container.header title='Awesome Header'}}
+        {{#container.header class='slds-app-launcher__header slds-grid slds-grid_align-spread slds-grid_vertical-align-center'}}
+
+          <h2 id="header43" class="slds-text-heading_medium">App Launcher</h2>
+          <div class="slds-app-launcher__header-search">
+            <div class="slds-form-element">
+              <label for="app-launcher-search" class="slds-form-element__label slds-assistive-text">Find an app</label>
+              <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                <svg class="slds-input__icon" aria-hidden="true">
+                  <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#search" xmlns:xlink="http://www.w3.org/1999/xlink" />
+                </svg>
+                <input type="search" class="slds-input" id="app-launcher-search" placeholder="Find an app" />
+              </div>
+            </div>
+          </div>
+          <button class="slds-button slds-button_neutral">App Exchange</button>
+        {{/container.header}}
         {{container.content}}
         {{container.footer}}
       {{/modal.container}}      
