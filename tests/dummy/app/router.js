@@ -41,6 +41,7 @@ Router.map(function() {
     this.route('tab');
     this.route('box');
     this.route('app-launcher');
+    this.route('illustration');
   });
   this.route('samples', function() {
     this.route('filter-grid');
