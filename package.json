@@ -27,7 +27,7 @@
     "lint:js": "eslint ./*.js addon addon-test-support app config lib server test-support tests"
   },
   "dependencies": {
-    "@salesforce-ux/design-system": "^2.6.0",
+    "@salesforce-ux/design-system": "^2.6.1",
     "broccoli-funnel": "^2.0.1",
     "broccoli-merge-trees": "^3.0.0",
     "ember-cli-babel": "^6.11.0",

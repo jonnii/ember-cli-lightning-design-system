@@ -20,7 +20,7 @@
   dependencies:
     "@glimmer/di" "^0.2.0"
 
-"@salesforce-ux/design-system@^2.6.0":
+"@salesforce-ux/design-system@^2.6.1":
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/@salesforce-ux/design-system/-/design-system-2.6.1.tgz#d8d7a2169ae077d2a7656c048878b9685839a55c"
 
