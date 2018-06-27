@@ -1,6 +1,6 @@
 import { computed } from '@ember/object';
 import Component from '@ember/component';
-import layout from '../templates/components/slds-navigation';
+import layout from '../templates/components/slds-vertical-navigation';
 
 export default Component.extend({
   layout,
