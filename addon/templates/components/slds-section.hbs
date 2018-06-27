@@ -1,0 +1,15 @@
+<h3 class="slds-section__title">
+  {{#if isCollapsable}}
+    <button aria-controls={{sectionId}} aria-expanded={{isOpen}} class="slds-button slds-section__title-action">
+      <svg class="slds-section__title-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#switch" />
+      </svg>
+      <span class="slds-truncate" title={{title}}>{{title}}</span>
+    </button>
+  {{else}}
+    <span class="slds-truncate slds-p-horizontal_small" title="Section Title">Section Title</span>
+  {{/if}}
+</h3>
+<div aria-hidden={{isHidden}} class="slds-section__content" id={{sectionId}}>
+  {{yield}}
+</div>
