@@ -14,7 +14,7 @@ module('Integration | Component | slds vertical navigation', function(hooks) {
   });
 
   test('it renders (shaded)', async function(assert) {
-    await render(hbs`{{slds-vertical-navigation type='inverse'}}`);
+    await render(hbs`{{slds-vertical-navigation isShaded=true}}`);
 
     assert.ok(findAll('nav.slds-nav-vertical.slds-nav-vertical_shade').length);
   });
