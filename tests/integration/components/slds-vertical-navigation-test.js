@@ -10,7 +10,19 @@ module('Integration | Component | slds vertical navigation', function(hooks) {
   test('it renders', async function(assert) {
     await render(hbs`{{slds-vertical-navigation}}`);
 
-    assert.ok(findAll('.slds-grid.slds-grid--vertical.slds-navigation-list--vertical').length);
+    assert.ok(findAll('nav.slds-nav-vertical').length);
+  });
+
+  test('it renders (shaded)', async function(assert) {
+    await render(hbs`{{slds-vertical-navigation type='inverse'}}`);
+
+    assert.ok(findAll('nav.slds-nav-vertical.slds-nav-vertical_shade').length);
+  });
+
+  test('it renders (compact)', async function(assert) {
+    await render(hbs`{{slds-vertical-navigation isCompact=true}}`);
+
+    assert.ok(findAll('nav.slds-nav-vertical.slds-nav-vertical_compact').length);
   });
 
   test('it renders with section and actions', async function(assert) {
@@ -26,15 +38,6 @@ module('Integration | Component | slds vertical navigation', function(hooks) {
       {{/nav.section}}
     {{/slds-vertical-navigation}}`);
 
-    assert.ok(findAll('.slds-grid.slds-grid--vertical.slds-navigation-list--vertical').length);
-  });
-
-  test('it renders inverse', async function(assert) {
-    await render(hbs`{{slds-vertical-navigation type='inverse'}}`);
-
-    assert.ok(
-      findAll('.slds-grid.slds-grid--vertical.slds-navigation-list--vertical.slds-navigation-list--vertical-inverse')
-        .length
-    );
+    assert.ok(findAll('.slds-nav-vertical').length);
   });
 });

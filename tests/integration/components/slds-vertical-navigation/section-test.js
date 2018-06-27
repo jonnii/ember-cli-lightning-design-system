@@ -1,3 +1,4 @@
+import { findAll } from 'ember-native-dom-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
@@ -16,11 +17,12 @@ module('Integration | Component | slds-vertical-navigation/section', function(ho
 
     // Template block usage:
     await render(hbs`
-      {{#slds-verical-navigation/section}}
+      {{#slds-vertical-navigation/section}}
         template block text
-      {{/slds-verical-navigation/section}}
+      {{/slds-vertical-navigation/section}}
     `);
 
+    assert.ok(findAll('.slds-nav-vertical__section').length);
     assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });

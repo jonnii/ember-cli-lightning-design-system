@@ -5,7 +5,7 @@ import layout from '../../templates/components/slds-vertical-navigation/section'
 
 export default Component.extend({
   layout,
-  tagName: '',
+  classNames: ['slds-nav-vertical__section'],
 
   headerId: computed(function() {
     return guidFor(this);
