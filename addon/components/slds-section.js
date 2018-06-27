@@ -16,5 +16,13 @@ export default Component.extend({
 
   isHidden: computed('isOpen', function() {
     return this.isCollapsable && !this.isOpen;
-  })
+  }),
+
+  actions: {
+    clicked() {
+      if (this.clicked) {
+        this.clicked();
+      }
+    }
+  }
 });

@@ -1,6 +1,6 @@
 <h3 class="slds-section__title">
   {{#if isCollapsable}}
-    <button aria-controls={{sectionId}} aria-expanded={{isOpen}} class="slds-button slds-section__title-action">
+    <button {{action 'clicked'}} aria-controls={{sectionId}} aria-expanded={{isOpen}} class="slds-button slds-section__title-action">
       <svg class="slds-section__title-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#switch" />
       </svg>
