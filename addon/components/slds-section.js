@@ -15,6 +15,6 @@ export default Component.extend({
   }),
 
   isHidden: computed('isOpen', function() {
-    return !this.isOpen;
+    return this.isCollapsable && !this.isOpen;
   })
 });
