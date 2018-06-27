@@ -2,7 +2,7 @@
   {{#nav.section title="Reports" as |section|}}
     {{#section.link path='examples.navigation'}}Recent{{/section.link}}
     {{#section.item clicked=(action 'spamMessage')}}Created by Me{{/section.item}}
-    {{#section.item}}Private Reports{{/section.item}}
+    {{#section.item isActive=isActive}}Private Reports{{/section.item}}
     {{#section.item}}Public Reports{{/section.item}}
     {{#section.item}}All Reports{{/section.item}}
   {{/nav.section}}
@@ -17,7 +17,7 @@
 {{#slds-vertical-navigation type='inverse' as |nav|}}
   {{#nav.section title="Reports" as |section|}}
     {{#section.item path='examples.navigation'}}Recent{{/section.item}}
-    {{#section.item}}Created by Me{{/section.item}} 
+    {{#section.item}}Created by Me{{/section.item}}
     {{#section.item}}Private Reports{{/section.item}}
     {{#section.item}}Public Reports{{/section.item}}
     {{#section.item}}All Reports{{/section.item}}

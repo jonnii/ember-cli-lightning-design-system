@@ -9,7 +9,9 @@ export default Component.extend({
 
   actions: {
     clicked() {
-      this.clicked();
+      if (this.clicked) {
+        this.clicked();
+      }
     }
   }
 });
