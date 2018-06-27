@@ -1,31 +1,31 @@
-{{#slds-navigation as |nav|}}
+{{#slds-vertical-navigation as |nav|}}
   {{#nav.section title="Reports" as |section|}}
-    {{#section.action path='examples.navigation'}}Recent{{/section.action}}
-    {{#section.action}}Created by Me{{/section.action}}
-    {{#section.action}}Private Reports{{/section.action}}
-    {{#section.action}}Public Reports{{/section.action}}
-    {{#section.action}}All Reports{{/section.action}}
+    {{#section.link path='examples.navigation'}}Recent{{/section.link}}
+    {{#section.item clicked=(action 'spamMessage')}}Created by Me{{/section.item}}
+    {{#section.item isActive=isActive}}Private Reports{{/section.item}}
+    {{#section.item}}Public Reports{{/section.item}}
+    {{#section.item}}All Reports{{/section.item}}
   {{/nav.section}}
 
   {{#nav.section title="Folders" as |section|}}
-    {{#section.action}}Created by Me{{/section.action}}
-    {{#section.action}}Shared with Me{{/section.action}}
-    {{#section.action}}All Folders{{/section.action}}
+    {{#section.item}}Created by Me{{/section.item}}
+    {{#section.item}}Shared with Me{{/section.item}}
+    {{#section.item}}All Folders{{/section.item}}
   {{/nav.section}}
-{{/slds-navigation}}
+{{/slds-vertical-navigation}}
 
-{{#slds-navigation type='inverse' as |nav|}}
+{{#slds-vertical-navigation type='inverse' as |nav|}}
   {{#nav.section title="Reports" as |section|}}
-    {{#section.action path='examples.navigation'}}Recent{{/section.action}}
-    {{#section.action}}Created by Me{{/section.action}}
-    {{#section.action}}Private Reports{{/section.action}}
-    {{#section.action}}Public Reports{{/section.action}}
-    {{#section.action}}All Reports{{/section.action}}
+    {{#section.item path='examples.navigation'}}Recent{{/section.item}}
+    {{#section.item}}Created by Me{{/section.item}}
+    {{#section.item}}Private Reports{{/section.item}}
+    {{#section.item}}Public Reports{{/section.item}}
+    {{#section.item}}All Reports{{/section.item}}
   {{/nav.section}}
 
   {{#nav.section title="Folders" as |section|}}
-    {{#section.action}}Created by Me{{/section.action}}
-    {{#section.action}}Shared with Me{{/section.action}}
-    {{#section.action}}All Folders{{/section.action}}
+    {{#section.item}}Created by Me{{/section.item}}
+    {{#section.item}}Shared with Me{{/section.item}}
+    {{#section.item}}All Folders{{/section.item}}
   {{/nav.section}}
-{{/slds-navigation}}
+{{/slds-vertical-navigation}}
