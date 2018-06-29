@@ -3,8 +3,8 @@ import layout from '../../templates/components/slds-tabs/content';
 
 export default Component.extend({
   layout,
-  classNames: 'slds-tabs_default__content',
-  classNameBindings: ['isActive:slds-show:slds-hide'],
+  isScoped: false,
+  classNameBindings: ['isScoped:slds-tabs_scoped__content:slds-tabs_default__content', 'isActive:slds-show:slds-hide'],
   attributeBindings: 'role',
   role: 'tabpanel'
 });

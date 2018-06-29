@@ -1,0 +1,32 @@
+{{#slds-tabs isScoped=true as |tabs|}}
+  {{#tabs.nav as |nav|}}
+    {{nav.item text='Item One' isActive=(eq tab 'tab1') clicked=(action 'changeTab' 'tab1')}}
+    {{nav.item text='Item Two' isActive=(eq tab 'tab2') clicked=(action 'changeTab' 'tab2')}}
+    {{nav.item text='Item Three' isActive=(eq tab 'Item Three') clicked=(action 'changeTab')}}
+  {{/tabs.nav}}
+
+  {{#tabs.content isActive=(eq tab 'tab1')}}
+    Item One Content
+  {{/tabs.content}}
+
+  {{#tabs.content isActive=(eq tab 'tab2')}}
+    Item Two Content
+  {{/tabs.content}}
+
+  {{#tabs.content isActive=(eq tab 'Item Three')}}
+    Item Three Content
+  {{/tabs.content}}
+{{/slds-tabs}}
+
+{{!--
+
+<div class="slds-tabs_scoped">
+  <ul class="slds-tabs_scoped__nav" role="tablist">
+    <li class="slds-tabs_scoped__item slds-is-active" title="Item One" role="presentation"><a class="slds-tabs_scoped__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-scoped-1" id="tab-scoped-1__item">Item One</a></li>
+    <li class="slds-tabs_scoped__item" title="Item Two" role="presentation"><a class="slds-tabs_scoped__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-scoped-2" id="tab-scoped-2__item">Item Two</a></li>
+    <li class="slds-tabs_scoped__item" title="Item Three" role="presentation"><a class="slds-tabs_scoped__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-scoped-3" id="tab-scoped-3__item">Item Three</a></li>
+  </ul>
+  <div id="tab-scoped-1" class="slds-tabs_scoped__content slds-show" role="tabpanel" aria-labelledby="tab-scoped-1__item">Item One Content</div>
+  <div id="tab-scoped-2" class="slds-tabs_scoped__content slds-hide" role="tabpanel" aria-labelledby="tab-scoped-2__item">Item Two Content</div>
+  <div id="tab-scoped-3" class="slds-tabs_scoped__content slds-hide" role="tabpanel" aria-labelledby="tab-scoped-3__item">Item Three Content</div>
+</div> --}}
