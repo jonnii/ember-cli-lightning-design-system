@@ -43,12 +43,15 @@
       {{dropdown.item text='Badges' clicked=(route-action 'navigateTo' 'examples.badge')}}
       {{dropdown.item text='Boxes' clicked=(route-action 'navigateTo' 'examples.box')}}
       {{dropdown.item text='Illustrations' clicked=(route-action 'navigateTo' 'examples.illustration')}}
+      {{dropdown.item text='Sections' clicked=(route-action 'navigateTo' 'examples.section')}}
     {{/bar.menu}}
 
     {{#bar.menu text='Navigation' as |dropdown|}}
       {{dropdown.item text='Global Header' clicked=(route-action 'navigateTo' 'examples.global-header')}}
       {{dropdown.item text='Navigation Bar' clicked=(route-action 'navigateTo' 'examples.navigation-bar')}}
       {{dropdown.item text='Navigation' clicked=(route-action 'navigateTo' 'examples.navigation')}}
+      {{dropdown.item text='Tabs' clicked=(route-action 'navigateTo' 'examples.tab')}}
+      {{dropdown.item text='Scoped Tabs' clicked=(route-action 'navigateTo' 'examples.scoped-tab')}}
     {{/bar.menu}}
 
     {{#bar.menu text='Forms' as |dropdown|}}
@@ -67,7 +70,6 @@
     {{#bar.item path='examples.page-header'}}Page Header{{/bar.item}}
     {{#bar.item path='examples.card'}}Cards{{/bar.item}}
     {{#bar.item path='examples.data-table'}}Data Tables{{/bar.item}}
-    {{#bar.item path='examples.tab'}}Tabs{{/bar.item}}
     {{#bar.item path='examples.app-launcher'}}App Launcher{{/bar.item}}
   {{/slds-navigation-bar}}
 

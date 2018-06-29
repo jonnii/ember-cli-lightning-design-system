@@ -3,5 +3,6 @@ import layout from '../templates/components/slds-tabs';
 
 export default Component.extend({
   layout,
-  classNames: 'slds-tabs_default'
+  classNameBindings: ['isScoped:slds-tabs_scoped:slds-tabs_default'],
+  isScoped: false
 });

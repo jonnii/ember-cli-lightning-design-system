@@ -7,8 +7,8 @@ export default Component.extend({
   layout,
   tagName: 'li',
   isActive: false,
-  classNames: 'slds-tabs_default__item',
-  classNameBindings: ['isActive:slds-is-active'],
+  isScoped: false,
+  classNameBindings: ['isScoped:slds-tabs_scoped__item:slds-tabs_default__item', 'isActive:slds-is-active'],
   attributeBindings: ['role', 'title'],
 
   role: 'presentation',

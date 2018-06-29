@@ -39,6 +39,7 @@ Router.map(function() {
     this.route('badge');
     this.route('data-table');
     this.route('tab');
+    this.route('scoped-tab');
     this.route('box');
     this.route('app-launcher');
     this.route('illustration');

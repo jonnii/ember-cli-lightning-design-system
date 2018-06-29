@@ -4,7 +4,8 @@ import layout from '../../templates/components/slds-tabs/nav';
 export default Component.extend({
   layout,
   tagName: 'ul',
-  classNames: 'slds-tabs_default__nav',
+  classNameBindings: ['isScoped:slds-tabs_scoped__nav:slds-tabs_default__nav'],
   attributeBindings: ['role'],
-  role: 'tablist'
+  role: 'tablist',
+  isScoped: false
 });
