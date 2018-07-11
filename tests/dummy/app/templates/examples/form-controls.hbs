@@ -43,6 +43,13 @@
 
       <div class="slds-text-heading--large">Other Controls</div>
 
+      {{#slds-control label='Awesome select' as |control|}}
+        {{control.select
+          options=(array 'hello' 'goodbye')
+          isChecked=isAwesome
+          checked=(action 'toggle' 'isAwesome')}}
+      {{/slds-control}}
+
       {{#slds-control as |control|}}
         {{control.checkbox label='Awesome Check' isChecked=isAwesome checked=(action 'toggle' 'isAwesome')}}
       {{/slds-control}}
