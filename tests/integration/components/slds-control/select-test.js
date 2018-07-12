@@ -39,6 +39,18 @@ module('Integration | Component | slds-control/select', function(hooks) {
     assert.equal(find('option:checked').textContent.trim(), 'bob');
   });
 
+  test('it renders disabled', async function(assert) {
+    this.set('names', ['alice', 'bob', 'jeff']);
+
+    await render(hbs`{{slds-control/select
+      options=names
+      selected='bob'
+      isDisabled=true
+    }}`);
+
+    assert.ok(find('select:disabled'));
+  });
+
   test('it reacts to selecting an item', async function(assert) {
     assert.expect(1);
 

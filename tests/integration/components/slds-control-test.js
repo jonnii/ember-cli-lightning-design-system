@@ -75,4 +75,17 @@ module('Integration | Component | slds control', function(hooks) {
     assert.equal(findAll('.slds-form-element__label').length, 1, 'should only have one label');
     assert.ok(findAll('div.slds-form-element .slds-form-element__control .slds-combobox_container').length);
   });
+
+  test('it renders with select required and errored', async function(assert) {
+    await render(hbs`
+      {{#slds-control label='Awesome select (required)' isRequired=true isError=true errorMessage='select a friend' as |control|}}
+        {{control.select
+          options=(array 'bob' 'jeff' 'tim')
+          selected='tim'
+        }}
+      {{/slds-control}}
+    `);
+
+    assert.ok(find('.slds-form-element.slds-has-error'), 'has errored element');
+  });
 });

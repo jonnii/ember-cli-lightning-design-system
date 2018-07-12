@@ -113,6 +113,21 @@
           selected='tim'
         }}
       {{/slds-control}}
+
+      {{#slds-control label='Awesome select (required)' isRequired=true isError=true errorMessage='select a friend' as |control|}}
+        {{control.select
+          options=(array 'bob' 'jeff' 'tim')
+          selected='tim'
+        }}
+      {{/slds-control}}
+
+      {{#slds-control label='Awesome select (disabled)' as |control|}}
+        {{control.select
+          options=(array 'bob' 'jeff' 'tim')
+          selected='tim'
+          isDisabled=true
+        }}
+      {{/slds-control}}
     </div>
   </div>
   <div class="slds-col slds-p-around--small">

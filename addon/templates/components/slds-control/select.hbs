@@ -1,7 +1,9 @@
-<select onchange={{action 'selectedOptionChanged' value="target.value"}} class="slds-select" id={{formElementId}}>
+<select
+  id={{formElementId}}
+  class="slds-select"
+  disabled={{isDisabled}}
+  onchange={{action 'selectedOptionChanged' value="target.value"}}>
   <option value="">{{prompt}}</option>
-
-  {{!-- selected={{eq vehicle vehicleChoice}} --}}
 
   {{#each selectableOptions as |option|}}
     <option value={{option.value}} selected={{option.isSelected}}>
