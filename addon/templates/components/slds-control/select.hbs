@@ -1,0 +1,13 @@
+<select
+  id={{formElementId}}
+  class="slds-select"
+  disabled={{isDisabled}}
+  onchange={{action 'selectedOptionChanged' value="target.value"}}>
+  <option value="">{{prompt}}</option>
+
+  {{#each selectableOptions as |option|}}
+    <option value={{option.value}} selected={{option.isSelected}}>
+      {{option.name}}
+    </option>
+  {{/each}}
+</select>
