@@ -1,11 +1,11 @@
-<div class="slds-select_container">
-  <select onchange={{action onSelected value="target.value"}} class="slds-select" id={{formElementId}}>
-    <option value="">Please select</option>
+<select onchange={{action 'selectedOptionChanged' value="target.value"}} class="slds-select" id={{formElementId}}>
+  <option value="">{{prompt}}</option>
 
-    {{#if options}}
-      {{#each options as |option|}}
-        <option value={{option}} selected={{eq vehicle vehicleChoice}}>{{option}}</option>
-      {{/each}}
-    {{/if}}
-  </select>
-</div>
+  {{!-- selected={{eq vehicle vehicleChoice}} --}}
+
+  {{#each selectableOptions as |option|}}
+    <option value={{option.value}}>
+      {{option.name}}
+    </option>
+  {{/each}}
+</select>

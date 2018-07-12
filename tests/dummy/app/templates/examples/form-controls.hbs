@@ -43,13 +43,6 @@
 
       <div class="slds-text-heading--large">Other Controls</div>
 
-      {{#slds-control label='Awesome select' as |control|}}
-        {{control.select
-          options=(array 'hello' 'goodbye')
-          isChecked=isAwesome
-          checked=(action 'toggle' 'isAwesome')}}
-      {{/slds-control}}
-
       {{#slds-control as |control|}}
         {{control.checkbox label='Awesome Check' isChecked=isAwesome checked=(action 'toggle' 'isAwesome')}}
       {{/slds-control}}
@@ -103,6 +96,15 @@
           {{control.checkbox-button label='Dragon' isDisabled=true}}
         </div>
       {{/slds-control-group}}
+
+      <div class="slds-text-heading--large">Selects</div>
+
+      {{#slds-control label='Awesome select' as |control|}}
+        {{control.select
+          options=(hash 3='bob' 4='jeff' 5='tim')
+          selected='goodbye'
+        }}
+      {{/slds-control}}
     </div>
   </div>
   <div class="slds-col slds-p-around--small">

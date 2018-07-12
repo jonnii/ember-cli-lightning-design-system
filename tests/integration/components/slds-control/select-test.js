@@ -1,3 +1,4 @@
+import { findAll, find } from 'ember-native-dom-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
@@ -6,21 +7,30 @@ import hbs from 'htmlbars-inline-precompile';
 module('Integration | Component | slds-control/select', function(hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function(assert) {
+  test('it renders with options array', async function(assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`{{slds-control/select}}`);
+    this.set('names', ['bob', 'jeff']);
 
-    assert.equal(this.element.textContent.trim(), '');
+    await render(hbs`{{slds-control/select
+      options=names
+    }}`);
 
-    // Template block usage:
-    await render(hbs`
-      {{#slds-control/select}}
-        template block text
-      {{/slds-control/select}}
-    `);
+    assert.ok(find('.slds-select_container'));
+    assert.equal(findAll('select option').length, 3);
+    assert.equal(find('select option[value=bob]').textContent.trim(), 'bob');
+  });
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+  test('it renders with options hash', async function(assert) {
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.set('myAction', function(val) { ... });
+
+    await render(hbs`{{slds-control/select
+      options=(hash 3='bob' 4='jeff' 5='tim')
+    }}`);
+
+    assert.equal(findAll('select option').length, 4);
+    assert.equal(find("select option[value='5']").textContent.trim(), 'tim');
   });
 });
