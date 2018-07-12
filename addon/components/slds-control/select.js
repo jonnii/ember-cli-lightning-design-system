@@ -10,14 +10,15 @@ export default Component.extend({
 
   prompt: 'Please select',
 
-  selectableOptions: computed('options', function() {
+  selectableOptions: computed('selected', 'options', function() {
     var optionsWithDefault = this.options || A();
 
     if (Array.isArray(optionsWithDefault)) {
       return optionsWithDefault.map(option =>
         EmberObject.create({
           value: option,
-          name: option
+          name: option,
+          isSelected: option === this.selected
         })
       );
     }
@@ -26,7 +27,8 @@ export default Component.extend({
       return Object.keys(optionsWithDefault).map(key =>
         EmberObject.create({
           value: key,
-          name: optionsWithDefault[key]
+          name: optionsWithDefault[key],
+          isSelected: key === this.selected
         })
       );
     }

@@ -4,7 +4,7 @@
   {{!-- selected={{eq vehicle vehicleChoice}} --}}
 
   {{#each selectableOptions as |option|}}
-    <option value={{option.value}}>
+    <option value={{option.value}} selected={{option.isSelected}}>
       {{option.name}}
     </option>
   {{/each}}

@@ -101,8 +101,16 @@
 
       {{#slds-control label='Awesome select' as |control|}}
         {{control.select
-          options=(hash 3='bob' 4='jeff' 5='tim')
+          options=(array 'bob' 'jeff' 'tim')
+          onSelected=(action (mut bestFriend))
           selected='goodbye'
+        }}
+      {{/slds-control}}
+
+      {{#slds-control label='Awesome select (defaulted)' as |control|}}
+        {{control.select
+          options=(array 'bob' 'jeff' 'tim')
+          selected='tim'
         }}
       {{/slds-control}}
     </div>
@@ -125,6 +133,9 @@
 
         <div class="slds-item--label slds-text-color--weak slds-truncate" title="Pet">Pet</div>
         <div class="slds-item--detail slds-truncate">{{pet}}</div>
+
+        <div class="slds-item--label slds-text-color--weak slds-truncate" title="BestFriend">Best Friend</div>
+        <div class="slds-item--detail slds-truncate">{{bestFriend}}</div>
       </div>
     </div>
   </div>
