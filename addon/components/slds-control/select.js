@@ -14,6 +14,25 @@ export default Component.extend({
     var optionsWithDefault = this.options || A();
 
     if (Array.isArray(optionsWithDefault)) {
+      if (optionsWithDefault.length == 0) {
+        return [];
+      }
+
+      let firstItem = optionsWithDefault[0];
+
+      if (firstItem instanceof EmberObject) {
+        let valuePath = this.valuePath || 'id';
+        let namePath = this.namePath || 'name';
+
+        return optionsWithDefault.map(option =>
+          EmberObject.create({
+            value: option.get(valuePath),
+            name: option.get(namePath),
+            isSelected: option === this.selected
+          })
+        );
+      }
+
       return optionsWithDefault.map(option =>
         EmberObject.create({
           value: option,

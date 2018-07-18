@@ -3,6 +3,7 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
+import EmberObject from '@ember/object';
 
 module('Integration | Component | slds-control/select', function(hooks) {
   setupRenderingTest(hooks);
@@ -26,6 +27,33 @@ module('Integration | Component | slds-control/select', function(hooks) {
 
     assert.equal(findAll('select option').length, 4);
     assert.equal(find("select option[value='5']").textContent.trim(), 'tim');
+  });
+
+  test('it renders with models', async function(assert) {
+    this.set('models', [EmberObject.create({ id: 3, name: 'bob' }), EmberObject.create({ id: 4, name: 'bob' })]);
+
+    await render(hbs`{{slds-control/select
+      options=models
+    }}`);
+
+    assert.equal(findAll('select option').length, 3);
+    assert.equal(find("select option[value='4']").textContent.trim(), 'bob');
+  });
+
+  test('it renders with models (custom name/value paths)', async function(assert) {
+    this.set('models', [
+      EmberObject.create({ key: 3, firstName: 'bob' }),
+      EmberObject.create({ key: 4, firstName: 'bob' })
+    ]);
+
+    await render(hbs`{{slds-control/select
+      options=models
+      valuePath='key'
+      namePath='firstName'
+    }}`);
+
+    assert.equal(findAll('select option').length, 3);
+    assert.equal(find("select option[value='4']").textContent.trim(), 'bob');
   });
 
   test('it renders with selected item', async function(assert) {
