@@ -1,0 +1,7 @@
+<a onclick={{action 'onTabClicked'}} class="slds-vertical-tabs__link" role="tab" aria-selected="{{isActive}}">
+  {{#if hasBlock}}
+    {{yield}}
+  {{else}}
+    {{text}}
+  {{/if}}
+</a>
