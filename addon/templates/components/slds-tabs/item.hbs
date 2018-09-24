@@ -1,4 +1,4 @@
-<a onclick={{action 'onTabClicked'}} class={{if isScoped 'slds-tabs_scoped__link' 'slds-tabs_default__link'}} role="tab" aria-selected={{isActive}}>
+<a onclick={{action 'onTabClicked'}} class={{if isScoped 'slds-tabs_scoped__link' 'slds-tabs_default__link'}} role="tab" aria-selected={{ariaSelected}}>
   {{#if hasBlock}}
     {{yield}}
   {{else}}

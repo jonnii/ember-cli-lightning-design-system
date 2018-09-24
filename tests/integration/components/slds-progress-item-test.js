@@ -25,7 +25,7 @@ module('Integration | Component | slds progress item', function(hooks) {
 
     assert.ok(findAll('li.slds-progress__item.slds-is-completed').length);
     assert.equal(find('.slds-assistive-text').textContent.trim(), 'item 3');
-    assert.ok(this.$('.slds-button__icon'));
+    assert.ok(find('.slds-button__icon'));
     assert.equal(find('use').getAttribute('xlink:href'), '/assets/icons/utility-sprite/svg/symbols.svg#success');
   });
 
@@ -34,7 +34,7 @@ module('Integration | Component | slds progress item', function(hooks) {
 
     assert.ok(findAll('li.slds-progress__item.slds-has-error').length);
     assert.equal(find('.slds-assistive-text').textContent.trim(), 'item 3');
-    assert.ok(this.$('.slds-button__icon'));
+    assert.ok(find('.slds-button__icon'));
     assert.equal(find('use').getAttribute('xlink:href'), '/assets/icons/utility-sprite/svg/symbols.svg#warning');
   });
 });

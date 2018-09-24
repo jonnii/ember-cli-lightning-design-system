@@ -27,6 +27,8 @@ module('Integration | Component | slds control/checkbox toggle', function(hooks)
   test('it renders with disabled', async function(assert) {
     await render(hbs`{{slds-control/checkbox-toggle isDisabled=true}}`);
 
-    assert.ok(this.$('input:disabled'));
+    var input = find('input');
+    assert.ok(input, 'could not find input');
+    assert.ok(input.hasAttribute('disabled'), 'input was not disabled');
   });
 });
