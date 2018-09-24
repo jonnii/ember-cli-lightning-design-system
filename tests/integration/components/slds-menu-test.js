@@ -1,6 +1,5 @@
 import { find, findAll } from 'ember-native-dom-helpers';
 import { click } from '@ember/test-helpers';
-import { run } from '@ember/runloop';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
@@ -78,8 +77,6 @@ module('Integration | Component | slds menu', function(hooks) {
         {{menu.trigger}}
         {{#menu.dropdown as |dropdown|}}
           {{dropdown.item text="Overflow 1" clicked=(action clicked 'overflow1')}}
-          {{dropdown.item text="Overflow 2" clicked=(action clicked 'overflow2')}}
-          {{dropdown.item text="Overflow 3" clicked=(action clicked 'overflow3')}}
         {{/menu.dropdown}}
       {{/slds-menu}}
     `);
@@ -87,7 +84,7 @@ module('Integration | Component | slds menu', function(hooks) {
     await click('button');
 
     assert.equal(findAll('div.slds-dropdown-trigger.slds-is-open').length, 1);
-    run(() => this.$('li.slds-dropdown__item:first a').click());
+    await click('li.slds-dropdown__item a');
     assert.equal(findAll('div.slds-dropdown-trigger.slds-is-open').length, 0);
   });
 });

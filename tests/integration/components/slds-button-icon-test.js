@@ -11,11 +11,10 @@ module('Integration | Component | slds button icon', function(hooks) {
   test('it renders with default icon', async function(assert) {
     await render(hbs`{{slds-button-icon}}`);
 
-    const button = this.$('button.slds-button.slds-button--icon');
+    const button = find('button.slds-button.slds-button--icon');
 
-    assert.ok(button.length);
-    assert.equal(button.attr('title').trim(), 'question');
-    assert.notOk(button.attr('aria-haspopup'));
+    assert.equal(button.getAttribute('title').trim(), 'question');
+    assert.notOk(button.getAttribute('aria-haspopup'));
 
     assert.equal(find('svg').getAttribute('class'), 'slds-button__icon');
     assert.equal(find('svg').getAttribute('aria-hidden'), 'true');

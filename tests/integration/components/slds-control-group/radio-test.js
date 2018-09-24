@@ -21,7 +21,8 @@ module('Integration | Component | slds control group/radio', function(hooks) {
 
   test('it renders disabled', async function(assert) {
     await render(hbs`{{slds-control-group/radio isDisabled=true label='awesome sauce'}}`);
-
-    assert.ok(this.$('input:disabled'));
+    var input = find('input');
+    assert.ok(input, 'could not find input');
+    assert.ok(input.hasAttribute('disabled'), 'input was not disabled');
   });
 });

@@ -13,7 +13,8 @@ module('Integration | Component | slds button', function(hooks) {
 
     assert.equal(find('button').textContent.trim(), 'Submit');
     assert.ok(findAll('button.slds-button').length);
-    assert.notOk(this.$('button').is('[disabled=disabled]'));
+    var button = find('button');
+    assert.notOk(button.hasAttribute('disabled'), 'input was disabled');
     assert.equal(findAll('svg').length, 0);
   });
 

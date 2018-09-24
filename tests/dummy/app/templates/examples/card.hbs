@@ -11,7 +11,7 @@
 {{/slds-card}}
 
 {{#slds-card as |card|}}
-  {{#card.header class="slds-grid" as |header|}}
+  {{#card.header class="slds-grid"}}
     {{#slds-media tagName='header' alignment='center' class="slds-has-flexi-truncate" as |media|}}
       {{#media.icon icon='contact'}}
         <h2>
@@ -45,10 +45,10 @@
             <span class="slds-text-heading_small">Card Header</span>
           </a>
         </h2>
-      {{/media.body}}      
+      {{/media.body}}
     {{/slds-media}}
   {{/card.header}}
-  {{#card.table as |table|}}
+  {{#card.table}}
     <thead>
       <tr class="slds-text-title_caps">
         <th scope="col">

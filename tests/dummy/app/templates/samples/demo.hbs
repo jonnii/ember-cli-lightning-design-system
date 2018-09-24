@@ -14,7 +14,7 @@
       <div class="slds-col slds-has-flexi-truncate">
         {{#slds-media alignment='center' tagName='header' class='slds-has-flexi-truncate' as |media|}}
           {{#media.figure}}
-            {{slds-icon sprite='standard' icon='opportunity'}}        
+            {{slds-icon sprite='standard' icon='opportunity'}}
           {{/media.figure}}
           {{#media.body}}
             <span class="slds-text-color_weak">
@@ -29,7 +29,7 @@
 
       <div class="slds-col slds-no-flex slds-grid slds-align-top">
         {{slds-button-stateful}}
-        
+
         {{#slds-button-group as |group|}}
           {{group.button text='Option1' clicked=(route-action 'buttonClicked' 'option1')}}
           {{group.button text='Option2' clicked=(route-action 'buttonClicked' 'option2')}}
@@ -49,7 +49,8 @@
         <p class="slds-text-body_regular slds-truncate" title="Description that demonstrates truncation with a long text field">Description that demonstrates truncation with a long text field.</p>
       </li>
       <li class="slds-page-header__detail-block">
-        <p class="slds-text-title slds-truncate slds-m-bottom_xx-small" title="Field2 (3)">Field 2 (3)
+        <p class="slds-text-title slds-truncate slds-m-bottom_xx-small" title="Field2 (3)">
+          Field 2 (3)
           <button class="slds-button slds-button_icon slds-button_icon" aria-haspopup="true" title="More Actions">
             <svg class="slds-button__icon slds-button__icon_small" aria-hidden="true">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down" />
@@ -60,7 +61,8 @@
         <p class="slds-text-body_regular">Multiple Values</p>
       </li>
       <li class="slds-page-header__detail-block">
-        <p class="slds-text-title slds-truncate slds-m-bottom_xx-small" title="Field 3">Field 3</p><a href="javascript:void(0);">Hyperlink</a></li>
+        <p class="slds-text-title slds-truncate slds-m-bottom_xx-small" title="Field 3">Field 3</p><a href="javascript:void(0);">Hyperlink</a>
+      </li>
       <li class="slds-page-header__detail-block">
         <p class="slds-text-title slds-truncate slds-m-bottom_xx-small" title="Field 4">Field 4</p>
         <p title="Description (2-line truncation—must use JS to truncate).">Description (2-line truncati...</p>
@@ -68,7 +70,7 @@
     </ul>
   {{/slds-page-header}}
 
-  {{#slds-card class='slds-p-top_medium slds-m-bottom_medium 'as |card|}}
+  {{#slds-card class='slds-p-top_medium slds-m-bottom_medium'}}
     {{slds-path}}
   {{/slds-card}}
 
@@ -85,9 +87,7 @@
       </div>
     </div>
     <div class="slds-col slds-p-horizontal_medium">
-
-        {{slds-card}}
-
+      {{slds-card}}
     </div>
   </div>
 

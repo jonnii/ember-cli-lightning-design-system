@@ -1,4 +1,4 @@
-import { get } from '@ember/object';
+import { computed, get } from '@ember/object';
 import { readOnly } from '@ember/object/computed';
 import Component from '@ember/component';
 import layout from '../../templates/components/slds-tabs/item';
@@ -13,6 +13,10 @@ export default Component.extend({
 
   role: 'presentation',
   title: readOnly('text'),
+
+  ariaSelected: computed('isActive', function() {
+    return '' + this.isActive;
+  }),
 
   actions: {
     onTabClicked() {
