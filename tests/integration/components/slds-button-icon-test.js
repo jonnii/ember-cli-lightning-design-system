@@ -11,7 +11,7 @@ module('Integration | Component | slds button icon', function(hooks) {
   test('it renders with default icon', async function(assert) {
     await render(hbs`{{slds-button-icon}}`);
 
-    const button = this.$('button.slds-button.slds-button--icon');
+    const button = find('button.slds-button.slds-button--icon');
 
     assert.ok(button.length);
     assert.equal(button.attr('title').trim(), 'question');

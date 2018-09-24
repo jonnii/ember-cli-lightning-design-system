@@ -1,17 +1,17 @@
 {{#if hasBlock}}
-    {{yield (hash
-      icon-left=(component 'slds-icon' class='slds-input__icon slds-input__icon--left' size='x-small' sprite='utility' icon='search')
-      icon-right=(component 'slds-icon' class='slds-input__icon slds-input__icon--right' size='x-small' sprite='utility' icon='search')
-      button-right=(component 'slds-button-icon' class='slds-input__icon slds-input__icon--right'  sprite='utility' icon='clear')
-      textbox=(component 'slds-control/-input'
-          type=type
-          id=formElementId
-          disabled=isDiabled
-          required=isRequired
-          aria-describedby=errorElementId
-          value=value
-          placeholder=placeholder)
-    )}}
+  {{yield (hash
+    icon-left=(component 'slds-icon' class='slds-input__icon slds-input__icon--left' size='x-small' sprite='utility' icon='search')
+    icon-right=(component 'slds-icon' class='slds-input__icon slds-input__icon--right' size='x-small' sprite='utility' icon='search')
+    button-right=(component 'slds-button-icon' class='slds-input__icon slds-input__icon--right'  sprite='utility' icon='clear')
+    textbox=(component 'slds-control/-input'
+        type=type
+        id=formElementId
+        disabled=isDiabled
+        required=isRequired
+        aria-describedby=errorElementId
+        value=value
+        placeholder=placeholder)
+  )}}
 {{else}}
   {{slds-control/-input
     type=type

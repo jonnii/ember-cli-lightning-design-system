@@ -6,7 +6,7 @@
 
 {{slds-global-header class=(if showBanner 'is-showing-banner')}}
 
-<main class="{{if showBanner 'is-showing-banner'}}">
+<main class={{if showBanner 'is-showing-banner'}}>
   <div class="slds-is-absolute" style="left:0;right:0;width:45rem;margin-left:auto;margin-right:auto">
     {{#each flashMessages.queue as |flash|}}
       {{#flash-message flash=flash as |component flash|}}
