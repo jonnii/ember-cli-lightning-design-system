@@ -20,7 +20,7 @@ module('Integration | Component | slds tabs/content', function(hooks) {
       {{/slds-tabs/content}}
     `);
 
-    assert.equal(find('.slds-tabs_default__content').textContent.trim(), 'template block text');
+    assert.dom('.slds-tabs_default__content').hasText('template block text');
   });
 
   test('it active', async function(assert) {

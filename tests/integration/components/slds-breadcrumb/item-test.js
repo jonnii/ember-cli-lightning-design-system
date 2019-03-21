@@ -13,7 +13,7 @@ module('Integration | Component | slds breadcrumb/item', function(hooks) {
 
     await render(hbs`{{slds-breadcrumb/item}}`);
 
-    assert.equal(find('.slds-breadcrumb__item').textContent.trim(), '');
+    assert.dom('.slds-breadcrumb__item').hasText('');
 
     // Template block usage:
     await render(hbs`
@@ -22,6 +22,6 @@ module('Integration | Component | slds breadcrumb/item', function(hooks) {
       {{/slds-breadcrumb/item}}
     `);
 
-    assert.equal(find('.slds-breadcrumb__item').textContent.trim(), 'template block text');
+    assert.dom('.slds-breadcrumb__item').hasText('template block text');
   });
 });

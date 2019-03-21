@@ -13,8 +13,8 @@ module('Integration | Component | slds lookup', function(hooks) {
       {{/slds-lookup}}
     `);
 
-    assert.equal(find('label').textContent.trim(), 'Search');
-    assert.equal(find('.slds-lookup').getAttribute('class'), 'slds-form-element slds-lookup');
+    assert.dom('label').hasText('Search');
+    assert.dom('.slds-lookup').hasAttribute('class', 'slds-form-element slds-lookup');
   });
 
   test('it renders with placeholder', async function(assert) {
@@ -23,7 +23,7 @@ module('Integration | Component | slds lookup', function(hooks) {
       {{/slds-lookup}}
     `);
 
-    assert.equal(find('label').textContent.trim(), 'Find Product');
+    assert.dom('label').hasText('Find Product');
   });
 
   test('it renders with when open', async function(assert) {
@@ -32,6 +32,6 @@ module('Integration | Component | slds lookup', function(hooks) {
       {{/slds-lookup}}
     `);
 
-    assert.equal(find('.slds-lookup').getAttribute('class'), 'slds-form-element slds-lookup slds-is-open');
+    assert.dom('.slds-lookup').hasAttribute('class', 'slds-form-element slds-lookup slds-is-open');
   });
 });

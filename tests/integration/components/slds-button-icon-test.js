@@ -16,15 +16,15 @@ module('Integration | Component | slds button icon', function(hooks) {
     assert.equal(button.getAttribute('title').trim(), 'question');
     assert.notOk(button.getAttribute('aria-haspopup'));
 
-    assert.equal(find('svg').getAttribute('class'), 'slds-button__icon');
-    assert.equal(find('svg').getAttribute('aria-hidden'), 'true');
+    assert.dom('svg').hasAttribute('class', 'slds-button__icon');
+    assert.dom('svg').hasAttribute('aria-hidden', 'true');
     assert.equal(
       find('use')
         .getAttribute('xlink:href')
         .trim(),
       '/assets/icons/utility-sprite/svg/symbols.svg#question'
     );
-    assert.equal(find('span.slds-assistive-text').textContent.trim(), 'question');
+    assert.dom('span.slds-assistive-text').hasText('question');
   });
 
   test('it renders with custom class', async function(assert) {
@@ -48,13 +48,13 @@ module('Integration | Component | slds button icon', function(hooks) {
         .trim(),
       '/assets/icons/utility-sprite/svg/symbols.svg#user'
     );
-    assert.equal(find('span.slds-assistive-text').textContent.trim(), 'user');
+    assert.dom('span.slds-assistive-text').hasText('user');
   });
 
   test('it renders with aria-popup', async function(assert) {
     await render(hbs`{{slds-button-icon ariaHaspopup='true'}}`);
 
-    assert.equal(find('button').getAttribute('aria-haspopup'), 'true');
+    assert.dom('button').hasAttribute('aria-haspopup', 'true');
   });
 
   test('it renders warning', async function(assert) {
@@ -66,19 +66,19 @@ module('Integration | Component | slds button icon', function(hooks) {
   test('it renders disabled', async function(assert) {
     await render(hbs`{{slds-button-icon disabled=true}}`);
 
-    assert.equal(findAll('button:disabled').length, 1);
+    assert.dom('button').isDisabled();
   });
 
   test('it renders with size large', async function(assert) {
     await render(hbs`{{slds-button-icon size='large'}}`);
 
-    assert.equal(find('svg').getAttribute('class'), 'slds-button__icon slds-button__icon--large');
+    assert.dom('svg').hasAttribute('class', 'slds-button__icon slds-button__icon--large');
   });
 
   test('it renders with size x-small', async function(assert) {
     await render(hbs`{{slds-button-icon size='x-small'}}`);
 
-    assert.equal(find('svg').getAttribute('class'), 'slds-button__icon slds-button__icon--x-small');
+    assert.dom('svg').hasAttribute('class', 'slds-button__icon slds-button__icon--x-small');
   });
 
   test('it renders with container size', async function(assert) {
@@ -114,7 +114,7 @@ module('Integration | Component | slds button icon', function(hooks) {
         .trim(),
       'superman'
     );
-    assert.equal(find('span.slds-assistive-text').textContent.trim(), 'superman');
+    assert.dom('span.slds-assistive-text').hasText('superman');
   });
 
   test('it calls action when clicked', async function(assert) {

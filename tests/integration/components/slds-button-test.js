@@ -11,11 +11,11 @@ module('Integration | Component | slds button', function(hooks) {
   test('it renders', async function(assert) {
     await render(hbs`{{slds-button}}`);
 
-    assert.equal(find('button').textContent.trim(), 'Submit');
+    assert.dom('button').hasText('Submit');
     assert.ok(findAll('button.slds-button').length);
     var button = find('button');
     assert.notOk(button.hasAttribute('disabled'), 'input was disabled');
-    assert.equal(findAll('svg').length, 0);
+    assert.dom('svg').doesNotExist();
   });
 
   test('it renders with type brand', async function(assert) {
@@ -27,7 +27,7 @@ module('Integration | Component | slds button', function(hooks) {
   test('it renders disabled', async function(assert) {
     await render(hbs`{{slds-button type='brand' disabled=true}}`);
 
-    assert.equal(findAll('button:disabled').length, 1);
+    assert.dom('button').isDisabled();
   });
 
   test('it is clickable', async function(assert) {
@@ -43,13 +43,13 @@ module('Integration | Component | slds button', function(hooks) {
 
   test('it renders with icon', async function(assert) {
     await render(hbs`{{slds-button type='brand' icon='user'}}`);
-    assert.equal(find('svg').getAttribute('class'), 'slds-button__icon slds-button__icon--left');
-    assert.equal(find('use').getAttribute('xlink:href'), '/assets/icons/utility-sprite/svg/symbols.svg#user');
+    assert.dom('svg').hasAttribute('class', 'slds-button__icon slds-button__icon--left');
+    assert.dom('use').hasAttribute('xlink:href', '/assets/icons/utility-sprite/svg/symbols.svg#user');
   });
 
   test('it renders with icon (right)', async function(assert) {
     await render(hbs`{{slds-button type='brand' icon='down' iconPosition='right'}}`);
-    assert.equal(find('svg').getAttribute('class'), 'slds-button__icon slds-button__icon--right');
-    assert.equal(find('use').getAttribute('xlink:href'), '/assets/icons/utility-sprite/svg/symbols.svg#down');
+    assert.dom('svg').hasAttribute('class', 'slds-button__icon slds-button__icon--right');
+    assert.dom('use').hasAttribute('xlink:href', '/assets/icons/utility-sprite/svg/symbols.svg#down');
   });
 });

@@ -11,8 +11,8 @@ module('Integration | Component | slds avatar', function(hooks) {
     await render(hbs`{{slds-avatar}}`);
 
     assert.ok(findAll('span.slds-avatar.slds-avatar--medium').length);
-    assert.equal(find('img').getAttribute('src'), '/assets/images/avatar2.jpg');
-    assert.equal(find('img').getAttribute('alt'), 'default avatar');
+    assert.dom('img').hasAttribute('src', '/assets/images/avatar2.jpg');
+    assert.dom('img').hasAttribute('alt', 'default avatar');
   });
 
   test('it renders with type', async function(assert) {
@@ -34,34 +34,34 @@ module('Integration | Component | slds avatar', function(hooks) {
       {{/slds-avatar}}
     `);
 
-    assert.equal(find('img').getAttribute('src'), 'bob');
+    assert.dom('img').hasAttribute('src', 'bob');
   });
 
   test('it renders with name', async function(assert) {
     await render(hbs`{{slds-avatar name='Bobby Jenkins'}}`);
 
-    assert.equal(find('abbr').getAttribute('title'), 'Bobby Jenkins');
-    assert.equal(find('abbr').textContent.trim(), 'BJ');
-    assert.equal(find('abbr').getAttribute('class'), 'slds-avatar__initials slds-icon-standard-account');
+    assert.dom('abbr').hasAttribute('title', 'Bobby Jenkins');
+    assert.dom('abbr').hasText('BJ');
+    assert.dom('abbr').hasAttribute('class', 'slds-avatar__initials slds-icon-standard-account');
   });
 
   test('it renders with name with middlename', async function(assert) {
     await render(hbs`{{slds-avatar name='Bobby Tom Jenkins'}}`);
 
-    assert.equal(find('abbr').getAttribute('title'), 'Bobby Tom Jenkins');
-    assert.equal(find('abbr').textContent.trim(), 'BJ');
+    assert.dom('abbr').hasAttribute('title', 'Bobby Tom Jenkins');
+    assert.dom('abbr').hasText('BJ');
   });
 
   test('it renders with company name', async function(assert) {
     await render(hbs`{{slds-avatar name='Megacorp'}}`);
 
-    assert.equal(find('abbr').getAttribute('title'), 'Megacorp');
-    assert.equal(find('abbr').textContent.trim(), 'Me');
+    assert.dom('abbr').hasAttribute('title', 'Megacorp');
+    assert.dom('abbr').hasText('Me');
   });
 
   test('it renders with color', async function(assert) {
     await render(hbs`{{slds-avatar name='Bobby Jenkins' sprite='utility' icon='refresh'}}`);
 
-    assert.equal(find('abbr').getAttribute('class'), 'slds-avatar__initials slds-icon-utility-refresh');
+    assert.dom('abbr').hasAttribute('class', 'slds-avatar__initials slds-icon-utility-refresh');
   });
 });

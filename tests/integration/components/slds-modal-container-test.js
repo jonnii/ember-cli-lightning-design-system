@@ -9,6 +9,6 @@ module('Integration | Component | slds-modal-container', function(hooks) {
 
   test('it renders', async function(assert) {
     await render(hbs`{{slds-modal-container}}`);
-    assert.equal(findAll('.slds-modal[role=dialog]').length, 1);
+    assert.dom('.slds-modal[role=dialog]').exists({ count: 1 });
   });
 });

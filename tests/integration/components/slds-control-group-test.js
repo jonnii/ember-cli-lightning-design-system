@@ -10,7 +10,7 @@ module('Integration | Component | slds control group', function(hooks) {
   test('it renders legend', async function(assert) {
     await render(hbs`{{slds-control-group legend='choose your fate'}}`);
 
-    assert.equal(find('legend').textContent.trim(), 'choose your fate');
+    assert.dom('legend').hasText('choose your fate');
     assert.notOk(findAll('.slds-required').length);
   });
 
@@ -39,7 +39,7 @@ module('Integration | Component | slds control group', function(hooks) {
       {{/slds-control-group}}
     `);
 
-    assert.equal(find('input').getAttribute('name'), 'fates');
+    assert.dom('input').hasAttribute('name', 'fates');
   });
 
   test('it renders checkbox with error', async function(assert) {
@@ -49,7 +49,7 @@ module('Integration | Component | slds control group', function(hooks) {
       {{/slds-control-group}}
     `);
 
-    assert.equal(find('.slds-form-element__help').textContent.trim(), 'you fell over');
+    assert.dom('.slds-form-element__help').hasText('you fell over');
 
     // assert.ok(this.$('input[aria-describedby]').length, 'has aria description');
     // assert.equal(this.$('input').attr('aria-describedby'), this.$('.slds-form-element__help').attr('id'));
@@ -63,7 +63,7 @@ module('Integration | Component | slds control group', function(hooks) {
     `);
 
     assert.ok(findAll('input:not([aria-describedby])').length, 'should not have aria description');
-    assert.equal(find('input').getAttribute('name'), 'fates');
+    assert.dom('input').hasAttribute('name', 'fates');
   });
 
   test('it renders radio with error', async function(assert) {
@@ -73,9 +73,9 @@ module('Integration | Component | slds control group', function(hooks) {
       {{/slds-control-group}}
     `);
 
-    assert.equal(find('.slds-form-element__help').textContent.trim(), 'you fell over');
+    assert.dom('.slds-form-element__help').hasText('you fell over');
 
     assert.ok(findAll('input[aria-describedby]').length, 'has aria description');
-    assert.equal(find('input').getAttribute('aria-describedby'), find('.slds-form-element__help').id);
+    assert.dom('input').hasAttribute('aria-describedby', find('.slds-form-element__help').id);
   });
 });

@@ -14,7 +14,7 @@ module('Integration | Component | slds media/figure', function(hooks) {
       {{/slds-media/figure}}
     `);
 
-    assert.equal(find('.slds-media__figure').textContent.trim(), 'template block text');
+    assert.dom('.slds-media__figure').hasText('template block text');
   });
 
   test('it renders reverse', async function(assert) {

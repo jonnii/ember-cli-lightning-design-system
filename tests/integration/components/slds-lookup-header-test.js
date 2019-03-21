@@ -13,7 +13,7 @@ module('Integration | Component | slds lookup header', function(hooks) {
 
     await render(hbs`{{slds-lookup-header}}`);
 
-    assert.equal(find('.slds-lookup__item--label').textContent.trim(), '');
+    assert.dom('.slds-lookup__item--label').hasText('');
 
     // Template block usage:
     await render(hbs`
@@ -22,6 +22,6 @@ module('Integration | Component | slds lookup header', function(hooks) {
       {{/slds-lookup-header}}
     `);
 
-    assert.equal(find('.slds-lookup__item--label').textContent.trim(), 'template block text');
+    assert.dom('.slds-lookup__item--label').hasText('template block text');
   });
 });

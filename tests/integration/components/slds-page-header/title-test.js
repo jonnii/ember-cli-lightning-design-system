@@ -14,6 +14,6 @@ module('Integration | Component | slds page header/title', function(hooks) {
       {{/slds-page-header/title}}
     `);
 
-    assert.equal(find('h1.slds-page-header__title').textContent.trim(), 'template block text');
+    assert.dom('h1.slds-page-header__title').hasText('template block text');
   });
 });

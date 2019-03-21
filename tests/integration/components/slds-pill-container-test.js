@@ -16,6 +16,6 @@ module('Integration | Component | slds pill container', function(hooks) {
       {{/slds-pill-container}}
     `);
 
-    assert.equal(findAll('.slds-pill').length, 3);
+    assert.dom('.slds-pill').exists({ count: 3 });
   });
 });

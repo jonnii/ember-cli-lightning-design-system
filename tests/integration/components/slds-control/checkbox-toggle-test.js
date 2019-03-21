@@ -11,17 +11,17 @@ module('Integration | Component | slds control/checkbox toggle', function(hooks)
     await render(hbs`{{slds-control/checkbox-toggle}}`);
 
     assert.ok(findAll('label.slds-checkbox_toggle.slds-grid').length);
-    assert.equal(find('.slds-checkbox_on').textContent.trim(), 'Enabled');
+    assert.dom('.slds-checkbox_on').hasText('Enabled');
 
-    assert.equal(find('.slds-checkbox_off').textContent.trim(), 'Disabled');
+    assert.dom('.slds-checkbox_off').hasText('Disabled');
   });
 
   test('it renders with custom option labels', async function(assert) {
     await render(hbs`{{slds-control/checkbox-toggle enabledText='Yes' disabledText='No'}}`);
 
-    assert.equal(find('.slds-checkbox_on').textContent.trim(), 'Yes');
+    assert.dom('.slds-checkbox_on').hasText('Yes');
 
-    assert.equal(find('.slds-checkbox_off').textContent.trim(), 'No');
+    assert.dom('.slds-checkbox_off').hasText('No');
   });
 
   test('it renders with disabled', async function(assert) {

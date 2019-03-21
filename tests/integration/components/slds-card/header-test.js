@@ -13,7 +13,7 @@ module('Integration | Component | slds card/header', function(hooks) {
 
     await render(hbs`{{slds-card/header}}`);
 
-    assert.equal(find('.slds-card__header').textContent.trim(), '');
+    assert.dom('.slds-card__header').hasText('');
 
     // Template block usage:
     await render(hbs`
@@ -22,6 +22,6 @@ module('Integration | Component | slds card/header', function(hooks) {
       {{/slds-card/header}}
     `);
 
-    assert.equal(find('.slds-card__header').textContent.trim(), 'template block text');
+    assert.dom('.slds-card__header').hasText('template block text');
   });
 });

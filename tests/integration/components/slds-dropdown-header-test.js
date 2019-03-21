@@ -10,7 +10,7 @@ module('Integration | Component | slds dropdown header', function(hooks) {
   test('it renders', async function(assert) {
     await render(hbs`{{slds-dropdown-header}}`);
 
-    assert.equal(find('.slds-dropdown__header').textContent.trim(), '');
+    assert.dom('.slds-dropdown__header').hasText('');
 
     await render(hbs`
       {{#slds-dropdown-header}}
@@ -18,6 +18,6 @@ module('Integration | Component | slds dropdown header', function(hooks) {
       {{/slds-dropdown-header}}
     `);
 
-    assert.equal(find('.slds-dropdown__header').textContent.trim(), 'template block text');
+    assert.dom('.slds-dropdown__header').hasText('template block text');
   });
 });

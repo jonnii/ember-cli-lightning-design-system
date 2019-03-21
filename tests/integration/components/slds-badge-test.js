@@ -9,12 +9,12 @@ module('Integration | Component | slds badge', function(hooks) {
 
   test('it renders without text', async function(assert) {
     await render(hbs`{{slds-badge}}`);
-    assert.equal(find('span').textContent.trim(), 'badge');
+    assert.dom('span').hasText('badge');
   });
 
   test('it renders with text attribute', async function(assert) {
     await render(hbs`{{slds-badge text='textytext'}}`);
-    assert.equal(find('.slds-badge').textContent.trim(), 'textytext');
+    assert.dom('.slds-badge').hasText('textytext');
   });
 
   test('it renders with color', async function(assert) {
@@ -31,6 +31,6 @@ module('Integration | Component | slds badge', function(hooks) {
 
     assert.ok(findAll('span.slds-badge').length);
 
-    assert.equal(find('.slds-badge').textContent.trim(), 'i love blocks');
+    assert.dom('.slds-badge').hasText('i love blocks');
   });
 });

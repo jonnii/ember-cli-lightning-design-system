@@ -10,6 +10,6 @@ module('Integration | Component | slds control/ input', function(hooks) {
   test('it renders', async function(assert) {
     await render(hbs`{{slds-control/-input}}`);
 
-    assert.equal(find('*').textContent.trim(), '');
+    assert.dom('*').hasText('');
   });
 });

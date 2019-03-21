@@ -10,7 +10,7 @@ module('Integration | Component | slds icon waffle', function(hooks) {
   test('it renders', async function(assert) {
     await render(hbs`{{slds-icon-waffle}}`);
 
-    assert.equal(findAll('.slds-icon-waffle').length, 1);
+    assert.dom('.slds-icon-waffle').exists({ count: 1 });
     assert.notOk(find('button').getAttribute('title'), 'should not have title');
     assert.notOk(findAll('span.slds-assistive-text').length, 'should not have assistive text');
   });
@@ -18,7 +18,7 @@ module('Integration | Component | slds icon waffle', function(hooks) {
   test('it renders', async function(assert) {
     await render(hbs`{{slds-icon-waffle title='amazing title'}}`);
 
-    assert.equal(find('button').getAttribute('title'), 'amazing title');
-    assert.equal(find('span.slds-assistive-text').textContent.trim(), 'amazing title');
+    assert.dom('button').hasAttribute('title', 'amazing title');
+    assert.dom('span.slds-assistive-text').hasText('amazing title');
   });
 });

@@ -10,6 +10,6 @@ module('Integration | Component | slds dropdown separator', function(hooks) {
   test('it renders', async function(assert) {
     await render(hbs`{{slds-dropdown-separator}}`);
 
-    assert.equal(find('.slds-has-divider--top-space').textContent.trim(), '');
+    assert.dom('.slds-has-divider--top-space').hasText('');
   });
 });

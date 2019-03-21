@@ -10,16 +10,16 @@ module('Integration | Component | slds alert', function(hooks) {
   test('it renders with text', async function(assert) {
     await render(hbs`{{slds-alert text='sorry not sorry'}}`);
 
-    assert.equal(find('h2').textContent.trim(), 'sorry not sorry');
-    assert.equal(find('.slds-notify').getAttribute('role'), 'alert');
+    assert.dom('h2').hasText('sorry not sorry');
+    assert.dom('.slds-notify').hasAttribute('role', 'alert');
     assert.ok(findAll('.slds-theme_info').length);
-    assert.equal(find('.slds-notify > .slds-assistive-text').textContent.trim(), 'info');
+    assert.dom('.slds-notify > .slds-assistive-text').hasText('info');
   });
 
   test('it renders with block', async function(assert) {
     await render(hbs`{{slds-alert text='sorry not sorry'}}`);
 
-    assert.equal(find('h2').textContent.trim(), 'sorry not sorry');
+    assert.dom('h2').hasText('sorry not sorry');
   });
 
   test('it renders with theme error', async function(assert) {

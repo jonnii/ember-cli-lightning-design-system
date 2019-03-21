@@ -15,8 +15,8 @@ module('Integration | Component | slds media', function(hooks) {
       {{/slds-media}}
     `);
 
-    assert.equal(find('.slds-media__figure').textContent.trim(), 'figure');
-    assert.equal(find('.slds-media__body').textContent.trim(), 'body');
+    assert.dom('.slds-media__figure').hasText('figure');
+    assert.dom('.slds-media__body').hasText('body');
   });
 
   test('it renders centered', async function(assert) {

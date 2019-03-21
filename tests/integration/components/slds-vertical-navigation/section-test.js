@@ -13,7 +13,7 @@ module('Integration | Component | slds-vertical-navigation/section', function(ho
 
     await render(hbs`{{slds-vertical-navigation/section}}`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.dom(this.element).hasText('');
 
     // Template block usage:
     await render(hbs`
@@ -23,6 +23,6 @@ module('Integration | Component | slds-vertical-navigation/section', function(ho
     `);
 
     assert.ok(findAll('.slds-nav-vertical__section').length);
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.dom(this.element).hasText('template block text');
   });
 });

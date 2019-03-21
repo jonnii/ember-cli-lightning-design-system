@@ -11,11 +11,11 @@ module('Integration | Component | slds menu', function(hooks) {
   test('it renders', async function(assert) {
     await render(hbs`{{slds-menu}}`);
 
-    assert.equal(findAll('button.slds-button:disabled').length, 0);
-    assert.equal(findAll('div.slds-dropdown-trigger.slds-is-open').length, 0);
-    assert.equal(find('div.slds-dropdown-trigger').getAttribute('aria-expanded'), 'false');
+    assert.dom('button.slds-button').isNotDisabled();
+    assert.dom('div.slds-dropdown-trigger.slds-is-open').doesNotExist();
+    assert.dom('div.slds-dropdown-trigger').hasAttribute('aria-expanded', 'false');
     assert.ok(findAll('.slds-dropdown.slds-dropdown--left').length);
-    assert.equal(find('.slds-button').getAttribute('aria-haspopup'), 'true');
+    assert.dom('.slds-button').hasAttribute('aria-haspopup', 'true');
   });
 
   test('it renders with position', async function(assert) {
@@ -27,14 +27,14 @@ module('Integration | Component | slds menu', function(hooks) {
   test('it renders disabled', async function(assert) {
     await render(hbs`{{slds-menu disabled=true}}`);
 
-    assert.equal(findAll('button.slds-button:disabled').length, 1);
+    assert.dom('button.slds-button').isDisabled();
   });
 
   test('it renders when open', async function(assert) {
     await render(hbs`{{slds-menu isOpen=true}}`);
 
-    assert.equal(findAll('div.slds-dropdown-trigger.slds-is-open').length, 1);
-    assert.equal(find('div.slds-dropdown-trigger').getAttribute('aria-expanded'), 'true');
+    assert.dom('div.slds-dropdown-trigger.slds-is-open').exists({ count: 1 });
+    assert.dom('div.slds-dropdown-trigger').hasAttribute('aria-expanded', 'true');
   });
 
   test('it renders with items', async function(assert) {
@@ -48,7 +48,7 @@ module('Integration | Component | slds menu', function(hooks) {
       {{/slds-menu}}
     `);
 
-    assert.equal(findAll('li.slds-dropdown__item').length, 3);
+    assert.dom('li.slds-dropdown__item').exists({ count: 3 });
   });
 
   test('it opens when clicked', async function(assert) {
@@ -56,7 +56,7 @@ module('Integration | Component | slds menu', function(hooks) {
 
     await click('button');
 
-    assert.equal(findAll('div.slds-dropdown-trigger.slds-is-open').length, 1);
+    assert.dom('div.slds-dropdown-trigger.slds-is-open').exists({ count: 1 });
   });
 
   test('it closes when clicked', async function(assert) {
@@ -64,7 +64,7 @@ module('Integration | Component | slds menu', function(hooks) {
 
     await click('button');
 
-    assert.equal(findAll('div.slds-dropdown-trigger.slds-is-open').length, 0);
+    assert.dom('div.slds-dropdown-trigger.slds-is-open').doesNotExist();
   });
 
   test('it closes when item clicked', async function(assert) {
@@ -83,8 +83,8 @@ module('Integration | Component | slds menu', function(hooks) {
 
     await click('button');
 
-    assert.equal(findAll('div.slds-dropdown-trigger.slds-is-open').length, 1);
+    assert.dom('div.slds-dropdown-trigger.slds-is-open').exists({ count: 1 });
     await click('li.slds-dropdown__item a');
-    assert.equal(findAll('div.slds-dropdown-trigger.slds-is-open').length, 0);
+    assert.dom('div.slds-dropdown-trigger.slds-is-open').doesNotExist();
   });
 });

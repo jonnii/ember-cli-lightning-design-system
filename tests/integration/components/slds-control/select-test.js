@@ -14,9 +14,9 @@ module('Integration | Component | slds-control/select', function(hooks) {
       options=names
     }}`);
 
-    assert.ok(find('.slds-select_container'));
-    assert.equal(findAll('select option').length, 3);
-    assert.equal(find('select option[value=bob]').textContent.trim(), 'bob');
+    assert.dom('.slds-select_container').exists();
+    assert.dom('select option').exists({ count: 3 });
+    assert.dom('select option[value=bob]').hasText('bob');
   });
 
   test('it renders with options hash', async function(assert) {
@@ -24,8 +24,8 @@ module('Integration | Component | slds-control/select', function(hooks) {
       options=(hash 3='bob' 4='jeff' 5='tim')
     }}`);
 
-    assert.equal(findAll('select option').length, 4);
-    assert.equal(find("select option[value='5']").textContent.trim(), 'tim');
+    assert.dom('select option').exists({ count: 4 });
+    assert.dom("select option[value='5']").hasText('tim');
   });
 
   test('it renders with selected item', async function(assert) {
@@ -36,7 +36,7 @@ module('Integration | Component | slds-control/select', function(hooks) {
       selected='bob'
     }}`);
 
-    assert.equal(find('option:checked').textContent.trim(), 'bob');
+    assert.dom('option:checked').hasText('bob');
   });
 
   test('it renders disabled', async function(assert) {
@@ -48,7 +48,7 @@ module('Integration | Component | slds-control/select', function(hooks) {
       isDisabled=true
     }}`);
 
-    assert.ok(find('select:disabled'));
+    assert.dom('select').isDisabled();
   });
 
   test('it reacts to selecting an item', async function(assert) {

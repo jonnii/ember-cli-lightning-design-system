@@ -13,7 +13,7 @@ module('Integration | Component | slds lookup action', function(hooks) {
 
     await render(hbs`{{slds-lookup-action}}`);
 
-    assert.equal(find('*').textContent.trim(), '');
+    assert.dom('*').hasText('');
 
     // // Template block usage:
     // this.render(hbs`
