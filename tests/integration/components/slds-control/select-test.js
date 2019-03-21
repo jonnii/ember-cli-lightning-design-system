@@ -1,4 +1,4 @@
-import { fillIn, findAll, find } from 'ember-native-dom-helpers';
+import { fillIn } from "@ember/test-helpers";
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';

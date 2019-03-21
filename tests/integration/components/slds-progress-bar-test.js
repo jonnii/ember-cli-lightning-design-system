@@ -1,4 +1,4 @@
-import { find, findAll } from 'ember-native-dom-helpers';
+import { findAll } from 'ember-native-dom-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
@@ -11,9 +11,9 @@ module('Integration | Component | slds progress bar', function(hooks) {
     await render(hbs`{{slds-progress-bar}}`);
 
     assert.dom('.slds-assistive-text').hasText('Progress: 0%');
-    assert.dom('.slds-progress-bar').hasAttribute('aria-valuemin', 0);
-    assert.dom('.slds-progress-bar').hasAttribute('aria-valuemax', 100);
-    assert.dom('.slds-progress-bar').hasAttribute('aria-valuenow', 0);
+    assert.dom('.slds-progress-bar').hasAttribute('aria-valuemin', '0');
+    assert.dom('.slds-progress-bar').hasAttribute('aria-valuemax', '100');
+    assert.dom('.slds-progress-bar').hasAttribute('aria-valuenow', '0');
     assert.dom('.slds-progress-bar').hasAttribute('role', 'progressbar');
   });
 
@@ -22,14 +22,14 @@ module('Integration | Component | slds progress bar', function(hooks) {
 
     assert.dom('.slds-assistive-text').hasText('Progress: 80%');
     assert.dom('.slds-assistive-text').hasText('Progress: 80%');
-    assert.dom('.slds-progress-bar').hasAttribute('aria-valuenow', 80);
+    assert.dom('.slds-progress-bar').hasAttribute('aria-valuenow', '80');
   });
 
   test('it renders with custom min max', async function(assert) {
     await render(hbs`{{slds-progress-bar minValue=20 maxValue=400}}`);
 
-    assert.dom('.slds-progress-bar').hasAttribute('aria-valuemin', 20);
-    assert.dom('.slds-progress-bar').hasAttribute('aria-valuemax', 400);
+    assert.dom('.slds-progress-bar').hasAttribute('aria-valuemin', '20');
+    assert.dom('.slds-progress-bar').hasAttribute('aria-valuemax', '400');
   });
 
   test('it renders with height', async function(assert) {
