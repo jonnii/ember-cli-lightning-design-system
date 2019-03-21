@@ -1,4 +1,4 @@
-import { find, findAll } from 'ember-native-dom-helpers';
+import { findAll } from 'ember-native-dom-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
@@ -11,22 +11,22 @@ module('Integration | Component | slds pill', function(hooks) {
     await render(hbs`{{slds-pill}}`);
 
     assert.ok(findAll('button.slds-pill__remove.slds-button.slds-button--icon').length);
-    assert.equal(find('a').textContent.trim(), 'Label');
+    assert.dom('a').hasText('Label');
   });
 
   test('it renders with label', async function(assert) {
     await render(hbs`{{slds-pill label='awesome label'}}`);
 
     assert.ok(findAll('button.slds-pill__remove.slds-button.slds-button--icon').length);
-    assert.equal(find('a').textContent.trim(), 'awesome label');
+    assert.dom('a').hasText('awesome label');
   });
 
   test('it renders with error', async function(assert) {
     await render(hbs`{{slds-pill isError=true}}`);
 
     assert.ok(findAll('.slds-pill.slds-has-error').length);
-    assert.equal(
-      find('.slds-icon_container').getAttribute('class'),
+    assert.dom('.slds-icon_container').hasAttribute(
+      'class',
       'slds-icon_container slds-pill__icon_container slds-m-left--xx-small'
     );
   });

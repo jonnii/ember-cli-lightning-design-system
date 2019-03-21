@@ -1,4 +1,3 @@
-import { find } from 'ember-native-dom-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
@@ -13,7 +12,7 @@ module('Integration | Component | slds card/footer', function(hooks) {
 
     await render(hbs`{{slds-card/footer}}`);
 
-    assert.equal(find('.slds-card__footer').textContent.trim(), '');
+    assert.dom('.slds-card__footer').hasText('');
 
     // Template block usage:
     await render(hbs`
@@ -22,6 +21,6 @@ module('Integration | Component | slds card/footer', function(hooks) {
       {{/slds-card/footer}}
     `);
 
-    assert.equal(find('.slds-card__footer').textContent.trim(), 'template block text');
+    assert.dom('.slds-card__footer').hasText('template block text');
   });
 });

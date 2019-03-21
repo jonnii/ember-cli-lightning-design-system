@@ -1,4 +1,3 @@
-import { find } from 'ember-native-dom-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
@@ -10,7 +9,7 @@ module('Integration | Component | slds box', function(hooks) {
   test('it renders', async function(assert) {
     await render(hbs`{{slds-box}}`);
 
-    assert.equal(find('.slds-box').textContent.trim(), '');
+    assert.dom('.slds-box').hasText('');
 
     await render(hbs`
       {{#slds-box}}
@@ -18,6 +17,6 @@ module('Integration | Component | slds box', function(hooks) {
       {{/slds-box}}
     `);
 
-    assert.equal(find('.slds-box').textContent.trim(), 'template block text');
+    assert.dom('.slds-box').hasText('template block text');
   });
 });

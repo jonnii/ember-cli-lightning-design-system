@@ -1,4 +1,3 @@
-import { find } from 'ember-native-dom-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
@@ -10,7 +9,7 @@ module('Integration | Component | slds tabs/nav', function(hooks) {
   test('it renders', async function(assert) {
     await render(hbs`{{slds-tabs/nav}}`);
 
-    assert.equal(find('.slds-tabs_default__nav').textContent.trim(), '');
+    assert.dom('.slds-tabs_default__nav').hasText('');
 
     // Template block usage:
     await render(hbs`
@@ -19,6 +18,6 @@ module('Integration | Component | slds tabs/nav', function(hooks) {
       {{/slds-tabs/nav}}
     `);
 
-    assert.equal(find('.slds-tabs_default__nav').textContent.trim(), 'template block text');
+    assert.dom('.slds-tabs_default__nav').hasText('template block text');
   });
 });

@@ -1,4 +1,3 @@
-import { find } from 'ember-native-dom-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
@@ -13,7 +12,7 @@ module('Integration | Component | slds lookup list', function(hooks) {
 
     await render(hbs`{{slds-lookup-list}}`);
 
-    assert.equal(find('.slds-lookup__list').textContent.trim(), '');
+    assert.dom('.slds-lookup__list').hasText('');
 
     // Template block usage:
     await render(hbs`
@@ -22,6 +21,6 @@ module('Integration | Component | slds lookup list', function(hooks) {
       {{/slds-lookup-list}}
     `);
 
-    assert.equal(find('.slds-lookup__list').textContent.trim(), 'template block text');
+    assert.dom('.slds-lookup__list').hasText('template block text');
   });
 });

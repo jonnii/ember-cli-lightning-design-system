@@ -1,4 +1,3 @@
-import { find } from 'ember-native-dom-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
@@ -13,7 +12,7 @@ module('Integration | Component | slds media/icon', function(hooks) {
 
     await render(hbs`{{slds-media/icon}}`);
 
-    assert.equal(find('.slds-media__body').textContent.trim(), '');
+    assert.dom('.slds-media__body').hasText('');
 
     // Template block usage:
     await render(hbs`
@@ -22,6 +21,6 @@ module('Integration | Component | slds media/icon', function(hooks) {
       {{/slds-media/icon}}
     `);
 
-    assert.equal(find('.slds-media__body').textContent.trim(), 'template block text');
+    assert.dom('.slds-media__body').hasText('template block text');
   });
 });

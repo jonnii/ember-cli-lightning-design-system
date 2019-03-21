@@ -1,4 +1,3 @@
-import { find } from 'ember-native-dom-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
@@ -13,7 +12,7 @@ module('Integration | Component | slds lookup action', function(hooks) {
 
     await render(hbs`{{slds-lookup-action}}`);
 
-    assert.equal(find('*').textContent.trim(), '');
+    assert.dom('*').hasText('');
 
     // // Template block usage:
     // this.render(hbs`

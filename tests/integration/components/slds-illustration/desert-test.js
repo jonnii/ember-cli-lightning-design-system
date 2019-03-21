@@ -8,6 +8,6 @@ module('Integration | Component | slds-illustration/desert', function(hooks) {
 
   test('it renders', async function(assert) {
     await render(hbs`{{slds-illustration/desert}}`);
-    assert.equal(this.element.textContent.trim(), '');
+    assert.dom(this.element).hasText('');
   });
 });

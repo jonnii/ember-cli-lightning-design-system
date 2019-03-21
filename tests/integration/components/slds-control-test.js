@@ -14,10 +14,7 @@ module('Integration | Component | slds control', function(hooks) {
       {{/slds-control}}
     `);
 
-    assert.equal(
-      find('.slds-form-element label.slds-form-element__label').getAttribute('for'),
-      find('input.slds-input').id
-    );
+    assert.dom('.slds-form-element label.slds-form-element__label').hasAttribute('for', find('input.slds-input').id);
   });
 
   test('it renders with textarea', async function(assert) {
@@ -37,9 +34,9 @@ module('Integration | Component | slds control', function(hooks) {
       {{/slds-control}}
     `);
 
-    assert.equal(findAll('.slds-form-element__label').length, 1, 'should only have one label');
+    assert.dom('.slds-form-element__label').exists({ count: 1 }, 'should only have one label');
     assert.ok(findAll('div.slds-form-element .slds-form-element__control .slds-checkbox input').length);
-    assert.equal(find('input').getAttribute('type'), 'checkbox');
+    assert.dom('input').hasAttribute('type', 'checkbox');
   });
 
   test('it renders with checkbox required', async function(assert) {
@@ -50,8 +47,8 @@ module('Integration | Component | slds control', function(hooks) {
     `);
 
     assert.ok(findAll('div.slds-form-element .slds-form-element__control .slds-checkbox input').length);
-    assert.equal(find('input').getAttribute('type'), 'checkbox');
-    assert.equal(findAll('.slds-required').length, 1, 'should show required marker');
+    assert.dom('input').hasAttribute('type', 'checkbox');
+    assert.dom('.slds-required').exists({ count: 1 }, 'should show required marker');
   });
 
   test('it renders with checkbox toggle', async function(assert) {
@@ -61,7 +58,7 @@ module('Integration | Component | slds control', function(hooks) {
       {{/slds-control}}
     `);
 
-    assert.equal(findAll('.slds-form-element__label').length, 1, 'should only have one label');
+    assert.dom('.slds-form-element__label').exists({ count: 1 }, 'should only have one label');
     assert.ok(findAll('div.slds-form-element .slds-checkbox_toggle').length);
   });
 
@@ -72,7 +69,7 @@ module('Integration | Component | slds control', function(hooks) {
       {{/slds-control}}
     `);
 
-    assert.equal(findAll('.slds-form-element__label').length, 1, 'should only have one label');
+    assert.dom('.slds-form-element__label').exists({ count: 1 }, 'should only have one label');
     assert.ok(findAll('div.slds-form-element .slds-form-element__control .slds-combobox_container').length);
   });
 
@@ -86,6 +83,6 @@ module('Integration | Component | slds control', function(hooks) {
       {{/slds-control}}
     `);
 
-    assert.ok(find('.slds-form-element.slds-has-error'), 'has errored element');
+    assert.dom('.slds-form-element.slds-has-error').exists('has errored element');
   });
 });

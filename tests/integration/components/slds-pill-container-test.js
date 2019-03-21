@@ -1,4 +1,3 @@
-import { findAll } from 'ember-native-dom-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
@@ -16,6 +15,6 @@ module('Integration | Component | slds pill container', function(hooks) {
       {{/slds-pill-container}}
     `);
 
-    assert.equal(findAll('.slds-pill').length, 3);
+    assert.dom('.slds-pill').exists({ count: 3 });
   });
 });

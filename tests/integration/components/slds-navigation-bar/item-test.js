@@ -10,20 +10,20 @@ module('Integration | Component | slds navigation bar/item', function(hooks) {
   test('it renders', async function(assert) {
     await render(hbs`{{slds-navigation-bar/item}}`);
 
-    assert.equal(find('.slds-context-bar__label-action').textContent.trim(), 'Menu Item');
+    assert.dom('.slds-context-bar__label-action').hasText('Menu Item');
   });
 
   test('it renders with text', async function(assert) {
     await render(hbs`{{slds-navigation-bar/item text='Events'}}`);
 
-    assert.equal(find('.slds-context-bar__label-action').textContent.trim(), 'Events');
-    assert.equal(find('.slds-context-bar__label-action').getAttribute('title'), 'Events');
+    assert.dom('.slds-context-bar__label-action').hasText('Events');
+    assert.dom('.slds-context-bar__label-action').hasAttribute('title', 'Events');
   });
 
   test('it renders with text and title', async function(assert) {
     await render(hbs`{{slds-navigation-bar/item text='Events' title='another title'}}`);
 
-    assert.equal(find('.slds-context-bar__label-action').getAttribute('title'), 'another title');
+    assert.dom('.slds-context-bar__label-action').hasAttribute('title', 'another title');
   });
 
   test('it renders with block', async function(assert) {
@@ -33,7 +33,7 @@ module('Integration | Component | slds navigation bar/item', function(hooks) {
       {{/slds-navigation-bar/item}}
     `);
 
-    assert.equal(find('.slds-context-bar__label-action').textContent.trim(), 'Amazing Item');
+    assert.dom('.slds-context-bar__label-action').hasText('Amazing Item');
     assert.notOk(find('.slds-context-bar__label-action').getAttribute('title'));
   });
 
@@ -44,7 +44,7 @@ module('Integration | Component | slds navigation bar/item', function(hooks) {
       {{/slds-navigation-bar/item}}
     `);
 
-    assert.equal(find('.slds-context-bar__label-action').textContent.trim(), 'Amazing Item');
-    assert.equal(find('.slds-context-bar__label-action').getAttribute('title'), 'my title');
+    assert.dom('.slds-context-bar__label-action').hasText('Amazing Item');
+    assert.dom('.slds-context-bar__label-action').hasAttribute('title', 'my title');
   });
 });

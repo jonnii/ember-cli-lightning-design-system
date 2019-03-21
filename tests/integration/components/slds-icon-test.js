@@ -1,4 +1,4 @@
-import { find, findAll } from 'ember-native-dom-helpers';
+import { find } from 'ember-native-dom-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
@@ -13,11 +13,11 @@ module('Integration | Component | slds icon', function(hooks) {
     const container = find('span.slds-icon_container.slds-icon-standard-default');
 
     assert.notOk(container.getAttribute('title'));
-    assert.equal(findAll('span.slds-assistive-text').length, 0);
+    assert.dom('span.slds-assistive-text').doesNotExist();
 
     const icon = find('.slds-icon');
     assert.ok(icon);
-    assert.equal(find('use').getAttribute('xlink:href'), '/assets/icons/standard-sprite/svg/symbols.svg#default');
+    assert.dom('use').hasAttribute('xlink:href', '/assets/icons/standard-sprite/svg/symbols.svg#default');
   });
 
   test('it renders standard with description', async function(assert) {
@@ -26,7 +26,7 @@ module('Integration | Component | slds icon', function(hooks) {
 
     assert.ok(container);
     assert.equal(container.getAttribute('title'), 'fancy description');
-    assert.equal(find('.slds-assistive-text').textContent.trim(), 'fancy description');
+    assert.dom('.slds-assistive-text').hasText('fancy description');
   });
 
   test('it renders utility', async function(assert) {
@@ -38,7 +38,7 @@ module('Integration | Component | slds icon', function(hooks) {
     const icon = find('.slds-icon');
     assert.equal(icon.getAttribute('class').trim(), 'slds-icon slds-icon-text-default');
 
-    assert.equal(find('use').getAttribute('xlink:href'), '/assets/icons/utility-sprite/svg/symbols.svg#question');
+    assert.dom('use').hasAttribute('xlink:href', '/assets/icons/utility-sprite/svg/symbols.svg#question');
   });
 
   test('it renders doctype', async function(assert) {
@@ -50,7 +50,7 @@ module('Integration | Component | slds icon', function(hooks) {
     const icon = find('.slds-icon');
     assert.equal(icon.getAttribute('class').trim(), 'slds-icon');
 
-    assert.equal(find('use').getAttribute('xlink:href'), '/assets/icons/doctype-sprite/svg/symbols.svg#unknown');
+    assert.dom('use').hasAttribute('xlink:href', '/assets/icons/doctype-sprite/svg/symbols.svg#unknown');
   });
 
   test('it renders sizes', async function(assert) {

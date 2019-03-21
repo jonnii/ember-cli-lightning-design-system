@@ -1,4 +1,4 @@
-import { find, findAll } from 'ember-native-dom-helpers';
+import { findAll } from 'ember-native-dom-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
@@ -10,26 +10,26 @@ module('Integration | Component | slds progress bar', function(hooks) {
   test('it renders', async function(assert) {
     await render(hbs`{{slds-progress-bar}}`);
 
-    assert.equal(find('.slds-assistive-text').textContent.trim(), 'Progress: 0%');
-    assert.equal(find('.slds-progress-bar').getAttribute('aria-valuemin'), 0);
-    assert.equal(find('.slds-progress-bar').getAttribute('aria-valuemax'), 100);
-    assert.equal(find('.slds-progress-bar').getAttribute('aria-valuenow'), 0);
-    assert.equal(find('.slds-progress-bar').getAttribute('role'), 'progressbar');
+    assert.dom('.slds-assistive-text').hasText('Progress: 0%');
+    assert.dom('.slds-progress-bar').hasAttribute('aria-valuemin', '0');
+    assert.dom('.slds-progress-bar').hasAttribute('aria-valuemax', '100');
+    assert.dom('.slds-progress-bar').hasAttribute('aria-valuenow', '0');
+    assert.dom('.slds-progress-bar').hasAttribute('role', 'progressbar');
   });
 
   test('it renders with value', async function(assert) {
     await render(hbs`{{slds-progress-bar value=80}}`);
 
-    assert.equal(find('.slds-assistive-text').textContent.trim(), 'Progress: 80%');
-    assert.equal(find('.slds-assistive-text').textContent.trim(), 'Progress: 80%');
-    assert.equal(find('.slds-progress-bar').getAttribute('aria-valuenow'), 80);
+    assert.dom('.slds-assistive-text').hasText('Progress: 80%');
+    assert.dom('.slds-assistive-text').hasText('Progress: 80%');
+    assert.dom('.slds-progress-bar').hasAttribute('aria-valuenow', '80');
   });
 
   test('it renders with custom min max', async function(assert) {
     await render(hbs`{{slds-progress-bar minValue=20 maxValue=400}}`);
 
-    assert.equal(find('.slds-progress-bar').getAttribute('aria-valuemin'), 20);
-    assert.equal(find('.slds-progress-bar').getAttribute('aria-valuemax'), 400);
+    assert.dom('.slds-progress-bar').hasAttribute('aria-valuemin', '20');
+    assert.dom('.slds-progress-bar').hasAttribute('aria-valuemax', '400');
   });
 
   test('it renders with height', async function(assert) {

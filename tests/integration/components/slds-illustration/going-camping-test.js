@@ -8,6 +8,6 @@ module('Integration | Component | slds-illustration/going-camping', function(hoo
 
   test('it renders', async function(assert) {
     await render(hbs`{{slds-illustration/going-camping}}`);
-    assert.equal(this.element.textContent.trim(), '');
+    assert.dom(this.element).hasText('');
   });
 });

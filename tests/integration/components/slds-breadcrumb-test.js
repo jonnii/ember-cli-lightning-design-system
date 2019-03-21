@@ -1,4 +1,4 @@
-import { find, findAll } from 'ember-native-dom-helpers';
+import { findAll } from 'ember-native-dom-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
@@ -9,7 +9,7 @@ module('Integration | Component | slds breadcrumb', function(hooks) {
 
   test('it renders', async function(assert) {
     await render(hbs`{{slds-breadcrumb}}`);
-    assert.equal(find('nav').textContent.trim(), '');
+    assert.dom('nav').hasText('');
   });
 
   test('it renders with crumb items', async function(assert) {
@@ -21,17 +21,7 @@ module('Integration | Component | slds breadcrumb', function(hooks) {
 
     var nodes = findAll('.slds-breadcrumb__item');
 
-    assert.equal(
-      nodes[0]
-        .textContent
-        .trim(),
-      'Parent Entity'
-    );
-    assert.equal(
-      nodes[nodes.length - 1]
-        .textContent
-        .trim(),
-      'Parent Record Name'
-    );
+    assert.dom(nodes[0]).hasText('Parent Entity');
+    assert.dom(nodes[nodes.length - 1]).hasText('Parent Record Name');
   });
 });

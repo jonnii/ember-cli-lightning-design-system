@@ -16,7 +16,7 @@ module('Integration | Component | slds button group', function(hooks) {
       {{/slds-button-group}}
     `);
 
-    assert.equal(findAll('button').length, 3);
+    assert.dom('button').exists({ count: 3 });
   });
 
   test('it renders with menu', async function(assert) {
@@ -33,7 +33,7 @@ module('Integration | Component | slds button group', function(hooks) {
       {{/slds-button-group}}
     `);
 
-    assert.equal(findAll('.slds-dropdown-trigger').length, 1);
+    assert.dom('.slds-dropdown-trigger').exists({ count: 1 });
     assert.ok(findAll('.slds-button--last.slds-dropdown-trigger.slds-dropdown-trigger--click').length);
     assert.ok(findAll('.slds-dropdown.slds-dropdown--right').length);
   });
